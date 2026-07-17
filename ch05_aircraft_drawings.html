@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0F172A">
+<title>FAA General 핸드북 정리 — Ch.5 항공기 도면</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F172A;--panel:#13203b;--panel2:#1a2a4a;
+  --cyan:#60A5FA;--cyan2:#3B82F6;--gold:#FBBF24;
+  --t1:#F1F5F9;--t2:#CBD5E1;--t3:#7c8db0;--line:rgba(96,165,250,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+
+/* layout */
+.layout{display:grid;grid-template-columns:320px 1fr;min-height:100vh;}
+/* sidebar */
+.side{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--panel);border-right:1px solid var(--line);padding:0;}
+.side-head{padding:22px 20px 14px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);z-index:5;}
+.side-head .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:2px;}
+.side-head h1{font-family:'Space Grotesk',sans-serif;font-size:17px;color:var(--cyan);margin-top:6px;line-height:1.3;}
+.side-head .sub{font-size:12px;color:var(--t3);margin-top:4px;}
+.search{margin-top:14px;width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 12px;color:var(--t1);font-family:'Noto Sans KR';font-size:13px;}
+.search::placeholder{color:var(--t3);}
+.toc{list-style:none;padding:12px 10px 60px;}
+.toc li a{display:block;padding:9px 12px;border-radius:7px;font-size:14px;color:var(--t2);border-left:2px solid transparent;transition:.15s;}
+.toc li a .en{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--t3);margin-top:1px;}
+.toc li a:hover{background:var(--panel2);color:var(--t1);}
+.toc li a.active{background:rgba(96,165,250,.12);border-left-color:var(--cyan);color:var(--cyan);}
+
+/* main */
+.main{padding:0 0 80px;}
+.hero{padding:48px 56px 36px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#13203b,transparent);
+  background-image:linear-gradient(rgba(96,165,250,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(96,165,250,.05) 1px,transparent 1px);background-size:40px 40px;}
+.hero .ch{font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--gold);letter-spacing:3px;}
+.hero h2{font-size:38px;font-weight:900;margin:10px 0 6px;letter-spacing:-.5px;}
+.hero .en{font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:15px;}
+.hero .meta{margin-top:18px;display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--t3);font-family:'JetBrains Mono',monospace;}
+.hero .meta b{color:var(--t2);}
+
+.wrap{padding:30px 56px;max-width:1000px;}
+.comp{margin-bottom:26px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;scroll-margin-top:20px;}
+.comp-head{padding:18px 24px;background:var(--panel2);border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;}
+.comp-head h3{font-size:21px;font-weight:700;color:var(--t1);}
+.comp-head .comp-en{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cyan);}
+.comp-body{padding:22px 24px;display:grid;grid-template-columns:1fr;gap:20px;}
+.comp-body.has-img{grid-template-columns:1.1fr .9fr;}
+.comp-text p{margin-bottom:11px;font-size:15px;color:var(--t2);}
+.comp-text p:last-child{margin-bottom:0;}
+.comp-text b{color:var(--gold);font-weight:700;}
+.fig{align-self:start;}
+.fig img{width:100%;border-radius:8px;border:1px solid var(--line);display:block;}
+.fig figcaption{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--t3);margin-top:7px;text-align:center;}
+
+.no-result{display:none;padding:40px;text-align:center;color:var(--t3);}
+.backtop{position:fixed;right:26px;bottom:26px;background:var(--cyan2);color:#04122e;border:none;width:46px;height:46px;border-radius:50%;font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:.2s;}
+.backtop.show{opacity:1;pointer-events:auto;}
+
+@media(max-width:880px){
+  .layout{grid-template-columns:1fr;}
+  .side{position:fixed;left:-320px;width:300px;z-index:50;transition:.25s;box-shadow:0 0 40px rgba(0,0,0,.5);}
+  .side.open{left:0;}
+  .menu-btn{display:block;position:fixed;top:14px;left:14px;z-index:60;background:var(--cyan2);color:#04122e;border:none;border-radius:8px;padding:10px 14px;font-weight:700;cursor:pointer;}
+  .hero,.wrap{padding-left:20px;padding-right:20px;}
+  .hero h2{font-size:28px;}
+  .comp-body.has-img{grid-template-columns:1fr;}
+}
+.menu-btn{display:none;}
+
+/* === 기출문제 스타일 (이식) === */
+.iq-wrap{margin:18px 0 4px;border-top:1px dashed var(--line);padding-top:16px;}
+.iq-label{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:var(--gold);letter-spacing:.4px;margin-bottom:12px;text-transform:none;}
+.iq-label .iq-pin{font-size:13px;}
+.iq-label .iq-n{font-weight:500;color:var(--t3);font-size:11.5px;background:var(--card);border:1px solid var(--line);padding:2px 8px;border-radius:12px;}
+.iqcard{background:rgba(96,165,250,.04);border:1px solid var(--line);border-radius:10px;margin:9px 0;overflow:hidden;}
+.iqcard .iqno{display:inline-block;background:var(--accent);color:#06223f;font-weight:700;font-size:11px;padding:2px 8px;border-radius:5px;margin-right:8px;letter-spacing:.3px;vertical-align:middle;}
+.iqq{padding:13px 15px;font-size:14px;line-height:1.6;color:var(--t1);}
+.iqopts{list-style:none;padding:0 15px 4px;margin:0;}
+.iqopts li{padding:7px 11px;margin:4px 0;border:1px solid var(--line);border-radius:7px;font-size:13.5px;color:var(--t2);line-height:1.5;cursor:pointer;transition:.15s;}
+.iqopts li:hover{border-color:var(--accent);background:rgba(96,165,250,.06);}
+.iqopts li.correct{border-color:#34d399;background:rgba(52,211,153,.12);color:#a7f3d0;font-weight:600;}
+.iqopts li.wrong{border-color:#f87171;background:rgba(248,113,113,.10);color:#fca5a5;}
+.iqreveal{padding:0 15px 14px;}
+.iqbtn{background:transparent;border:1px solid var(--accent);color:var(--accent);font-size:12.5px;padding:6px 14px;border-radius:7px;cursor:pointer;font-family:inherit;transition:.15s;}
+.iqbtn:hover{background:var(--accent);color:#06223f;}
+.iqexp{display:none;margin-top:11px;padding:12px 14px;background:rgba(251,191,36,.06);border-left:3px solid var(--gold);border-radius:0 7px 7px 0;font-size:13.5px;line-height:1.7;color:var(--t2);}
+.iqexp.show{display:block;}
+.iqexp .iqans{color:#34d399;font-weight:700;}
+.en-text{display:block;margin-top:3px;font-size:13.5px;color:var(--t3);line-height:1.55;font-style:normal;padding-left:11px;border-left:2px solid var(--line);}
+.iqexp .en-text{display:block;margin-top:5px;font-size:12.5px;color:var(--t3);line-height:1.5;padding-left:9px;border-left:2px solid var(--line);}
+.iqq .en-text{display:block;margin-top:4px;font-size:13px;color:var(--t3);line-height:1.5;font-weight:400;padding-left:0;border-left:none;}
+.iqopts li .en-text{display:block;margin-top:2px;font-size:12.5px;color:var(--t3);line-height:1.45;padding-left:0;border-left:none;}
+.oral{margin-top:11px;padding:12px 14px;background:rgba(167,139,250,.06);border-left:3px solid #a78bfa;border-radius:0 8px 8px 0;}
+.oral-tag{display:inline-block;font-size:10.5px;font-weight:700;color:#c4b5fd;background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.3);padding:2px 8px;border-radius:5px;letter-spacing:.4px;margin-bottom:8px;}
+.oral-q{font-size:13.5px;color:var(--t1);line-height:1.6;margin-bottom:3px;font-weight:600;}
+.oral-q .en-text{display:block;margin-top:2px;font-size:12.5px;color:#a5b4d4;font-weight:400;font-style:italic;}
+.oral-a{font-size:13px;color:var(--t2);line-height:1.65;margin-top:7px;}
+.oral-a .oral-alabel{color:#c4b5fd;font-weight:700;}
+.oral-a .en-text{display:block;margin-top:3px;font-size:12px;color:var(--t3);padding-left:9px;border-left:2px solid var(--line);line-height:1.5;}
+li.correct{border-color:#34d399;background:rgba(52,211,153,.12);color:#a7f3d0;font-weight:600;}
+li.wrong{border-color:#f87171;background:rgba(248,113,113,.10);color:#fca5a5;}
+
+/* ===== 터빈 배경 레이어 (AeroMech) ===== */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTYwMCAxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iZ2xvdyIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNTAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlM2E1ZiIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI2MiUiIHN0b3AtY29sb3I9IiMxMzIwM2IiIHN0b3Atb3BhY2l0eT0iMC4yIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBGMTcyQSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJib2R5IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMyZGQ0YmYiIHN0b3Atb3BhY2l0eT0iMC4xNSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjQyJSIgc3RvcC1jb2xvcj0iIzYwQTVGQSIgc3RvcC1vcGFjaXR5PSIwLjYyIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJkZDRiZiIgc3RvcC1vcGFjaXR5PSIwLjIyIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJmaWxsRyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjBBNUZBIiBzdG9wLW9wYWNpdHk9IjAuMSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyZGQ0YmYiIHN0b3Atb3BhY2l0eT0iMC4wMyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CgogIDxjaXJjbGUgY3g9IjEwNTAiIGN5PSI1MDAiIHI9IjQ1MCIgZmlsbD0idXJsKCNnbG93KSIvPgogIDwhLS0gRkEtNTAg64+Z7LK0IC0tPgogIDxwYXRoIGQ9IgogICAgTSAxNDAwIDUwMgogICAgQyAxMzY1IDQ4NCwgMTMxMCA0NzYsIDEyNTUgNDc2CiAgICBDIDEyMTAgNDUyLCAxMTMwIDQ0NiwgMTA3MCA0NTIKICAgIEMgMTAzMCA0NTYsIDEwMDggNDY4LCA5OTggNDgwCiAgICBMIDY0MCA0ODYKICAgIEMgNTYwIDQ4OCwgNTA1IDQ5MiwgNDkwIDQ5OAogICAgTCA0NzggNTAwCiAgICBMIDQ5MCA1MTIKICAgIEwgNTA1IDUxNgogICAgQyA1NjAgNTIwLCA2NDAgNTIyLCA3MjAgNTIyCiAgICBMIDEwMTAgNTI0CiAgICBDIDExMjAgNTI2LCAxMjQwIDUyMiwgMTMxMCA1MTYKICAgIEMgMTM2MCA1MTIsIDEzODggNTA4LCAxNDAwIDUwMiBaIgogICAgZmlsbD0idXJsKCNmaWxsRykiIHN0cm9rZT0idXJsKCNib2R5KSIgc3Ryb2tlLXdpZHRoPSIyLjUiIG9wYWNpdHk9IjAuOSIvPgogIDwhLS0g7YOg642kIOy6kOuFuO2UvCAtLT4KICA8cGF0aCBkPSJNIDEwNzAgNDUyIEMgMTEwMCA0NDIsIDExNTAgNDQyLCAxMjAwIDQ0OCBDIDEyMzAgNDUyLCAxMjUwIDQ2MiwgMTI1NSA0NzYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJkZDRiZiIgc3Ryb2tlLXdpZHRoPSIxLjMiIG9wYWNpdHk9IjAuNSIvPgogIDxsaW5lIHgxPSIxMTUwIiB5MT0iNDQ2IiB4Mj0iMTE1NSIgeTI9IjQ3NiIgc3Ryb2tlPSIjMmRkNGJmIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNCIvPgogIDwhLS0gTEVSWCDsnbXqt7zsl7DsnqUgLS0+CiAgPHBhdGggZD0iTSA5OTggNDgwIEMgOTUwIDQ4MiwgOTAwIDQ4NCwgODcwIDQ5MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjBBNUZBIiBzdHJva2Utd2lkdGg9IjEuMiIgb3BhY2l0eT0iMC40Ii8+CiAgPCEtLSDso7zsnbUgKO2bhO2HtOydtSkgLS0+CiAgPHBhdGggZD0iTSA4ODAgNTIwIEwgNjQwIDU1NiBMIDY5MCA1MjggTCA4NTUgNTE2IFoiCiAgICBmaWxsPSJ1cmwoI2ZpbGxHKSIgc3Ryb2tlPSIjNjBBNUZBIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC41Ii8+CiAgPGxpbmUgeDE9IjYzOCIgeTE9IjU1NiIgeDI9IjYwMCIgeTI9IjU1OCIgc3Ryb2tlPSIjMmRkNGJmIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuNCIvPgogIDwhLS0g7IiY7KeBIOuvuOydtSAtLT4KICA8cGF0aCBkPSJNIDY0MCA0NzYgTCA1NjAgMzU2IEwgNjE4IDM2NiBMIDY5MCA0NzAgWiIKICAgIGZpbGw9InVybCgjZmlsbEcpIiBzdHJva2U9IiM2MEE1RkEiIHN0cm9rZS13aWR0aD0iMS42IiBvcGFjaXR5PSIwLjU1Ii8+CiAgPCEtLSDsiJjtj4kg66+47J21IC0tPgogIDxwYXRoIGQ9Ik0gNjQwIDUxNiBMIDUwMCA1MzIgTCA1NjAgNTEwIEwgNjUwIDUwNiBaIgogICAgZmlsbD0idXJsKCNmaWxsRykiIHN0cm9rZT0iIzJkZDRiZiIgc3Ryb2tlLXdpZHRoPSIxLjQiIG9wYWNpdHk9IjAuNDUiLz4KICA8IS0tIOuypO2KuOuftCDtlYAgLS0+CiAgPHBhdGggZD0iTSA2MjAgNTI0IEwgNTg1IDU1NiBMIDY0MCA1MjggWiIgZmlsbD0idXJsKCNmaWxsRykiIHN0cm9rZT0iIzJkZDRiZiIgc3Ryb2tlLXdpZHRoPSIxLjIiIG9wYWNpdHk9IjAuNCIvPgogIDwhLS0g67Cw6riwIOuFuOymkCAtLT4KICA8cGF0aCBkPSJNIDQ5MCA0OTAgTCA0NjIgNDg2IEwgNDYyIDUxNCBMIDQ5MCA1MTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzYwQTVGQSIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNSIvPgogIDxsaW5lIHgxPSI0NzgiIHkxPSI0OTQiIHgyPSI0NzgiIHkyPSI1MDgiIHN0cm9rZT0iIzJkZDRiZiIgc3Ryb2tlLXdpZHRoPSIwLjgiIHN0cm9rZS1kYXNoYXJyYXk9IjIgMyIgb3BhY2l0eT0iMC40Ii8+CiAgPCEtLSDsl5Tsp4Qg7J247YWM7J207YGsIC0tPgogIDxwYXRoIGQ9Ik0gMTAxMCA1MjQgQyAxMDAwIDUzNiwgOTg1IDU0MCwgOTY1IDUzOCBMIDk0MCA1MzQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJkZDRiZiIgc3Ryb2tlLXdpZHRoPSIxLjMiIG9wYWNpdHk9IjAuNCIvPgogIDwhLS0g7ZSE66CI7J6EIOyKpO2FjOydtOyFmCAtLT4KICA8bGluZSB4MT0iNTYwIiB5MT0iNDg2IiB4Mj0iNTYwIiB5Mj0iNTIyIiBzdHJva2U9IiM2MEE1RkEiIHN0cm9rZS13aWR0aD0iMC43IiBzdHJva2UtZGFzaGFycmF5PSIzIDgiIG9wYWNpdHk9IjAuMiIvPgogIDxsaW5lIHgxPSI2NTAiIHkxPSI0ODYiIHgyPSI2NTAiIHkyPSI1MjIiIHN0cm9rZT0iIzYwQTVGQSIgc3Ryb2tlLXdpZHRoPSIwLjciIHN0cm9rZS1kYXNoYXJyYXk9IjMgOCIgb3BhY2l0eT0iMC4yIi8+CiAgPGxpbmUgeDE9Ijc0MCIgeTE9IjQ4NiIgeDI9Ijc0MCIgeTI9IjUyMiIgc3Ryb2tlPSIjNjBBNUZBIiBzdHJva2Utd2lkdGg9IjAuNyIgc3Ryb2tlLWRhc2hhcnJheT0iMyA4IiBvcGFjaXR5PSIwLjIiLz4KICA8bGluZSB4MT0iODMwIiB5MT0iNDg2IiB4Mj0iODMwIiB5Mj0iNTIyIiBzdHJva2U9IiM2MEE1RkEiIHN0cm9rZS13aWR0aD0iMC43IiBzdHJva2UtZGFzaGFycmF5PSIzIDgiIG9wYWNpdHk9IjAuMiIvPgogIDxsaW5lIHgxPSI5MjAiIHkxPSI0ODYiIHgyPSI5MjAiIHkyPSI1MjIiIHN0cm9rZT0iIzYwQTVGQSIgc3Ryb2tlLXdpZHRoPSIwLjciIHN0cm9rZS1kYXNoYXJyYXk9IjMgOCIgb3BhY2l0eT0iMC4yIi8+CiAgPGxpbmUgeDE9IjEwMTAiIHkxPSI0ODYiIHgyPSIxMDEwIiB5Mj0iNTIyIiBzdHJva2U9IiM2MEE1RkEiIHN0cm9rZS13aWR0aD0iMC43IiBzdHJva2UtZGFzaGFycmF5PSIzIDgiIG9wYWNpdHk9IjAuMiIvPgogIDxsaW5lIHgxPSIxMTAwIiB5MT0iNDg2IiB4Mj0iMTEwMCIgeTI9IjUyMiIgc3Ryb2tlPSIjNjBBNUZBIiBzdHJva2Utd2lkdGg9IjAuNyIgc3Ryb2tlLWRhc2hhcnJheT0iMyA4IiBvcGFjaXR5PSIwLjIiLz4KICA8bGluZSB4MT0iMTE5MCIgeTE9IjQ4NiIgeDI9IjExOTAiIHkyPSI1MjIiIHN0cm9rZT0iIzYwQTVGQSIgc3Ryb2tlLXdpZHRoPSIwLjciIHN0cm9rZS1kYXNoYXJyYXk9IjMgOCIgb3BhY2l0eT0iMC4yIi8+CiAgPGxpbmUgeDE9IjEyODAiIHkxPSI0ODYiIHgyPSIxMjgwIiB5Mj0iNTIyIiBzdHJva2U9IiM2MEE1RkEiIHN0cm9rZS13aWR0aD0iMC43IiBzdHJva2UtZGFzaGFycmF5PSIzIDgiIG9wYWNpdHk9IjAuMiIvPgogIDxsaW5lIHgxPSI0NjAiIHkxPSI1MDUiIHgyPSIxNDA1IiB5Mj0iNTA1IiBzdHJva2U9IiMyZGQ0YmYiIHN0cm9rZS13aWR0aD0iMC44IiBzdHJva2UtZGFzaGFycmF5PSIxNiA4IDMgOCIgb3BhY2l0eT0iMC4yMiIvPgogIDxsaW5lIHgxPSIxNDAwIiB5MT0iNjQwIiB4Mj0iNDYyIiB5Mj0iNjQwIiBzdHJva2U9IiMyZGQ0YmYiIHN0cm9rZS13aWR0aD0iMC42IiBvcGFjaXR5PSIwLjE1Ii8+CiAgPGxpbmUgeDE9IjE0MDAiIHkxPSI2MzIiIHgyPSIxNDAwIiB5Mj0iNjQ4IiBzdHJva2U9IiMyZGQ0YmYiIHN0cm9rZS13aWR0aD0iMC42IiBvcGFjaXR5PSIwLjE1Ii8+CiAgPGxpbmUgeDE9IjQ2MiIgeTE9IjYzMiIgeDI9IjQ2MiIgeTI9IjY0OCIgc3Ryb2tlPSIjMmRkNGJmIiBzdHJva2Utd2lkdGg9IjAuNiIgb3BhY2l0eT0iMC4xNSIvPgo8L3N2Zz4=");
+  background-size:cover;background-position:center right;opacity:0.5;}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse at 75% 50%, rgba(15,23,42,0) 0%, rgba(15,23,42,.45) 70%, rgba(15,23,42,.75) 100%);}
+
+.layout{position:relative;z-index:1;}
+.menu-btn{z-index:101;}
+.backtop{z-index:50;}
+
+/* ===== 교재 보기 링크 (Textbook Link) ===== */
+.tb-link{display:inline-flex;align-items:center;gap:5px;background:transparent;border:1px solid var(--gold,#FBBF24);
+  color:var(--gold,#FBBF24);font-size:12px;padding:6px 12px;border-radius:7px;cursor:pointer;font-family:inherit;
+  margin-left:8px;transition:.15s;vertical-align:middle;}
+.tb-link:hover{background:var(--gold,#FBBF24);color:#3a2c05;}
+.tb-flash{animation:tbFlash 1.6s ease;}
+@keyframes tbFlash{0%,100%{background:transparent;}25%,60%{background:rgba(251,191,36,.10);}}
+
+/* ===== 교재 보기 버튼 + 모달 ===== */
+.tb-link{display:inline-flex;align-items:center;gap:5px;background:transparent;border:1px solid var(--gold,#FBBF24);
+  color:var(--gold,#FBBF24);font-size:12.5px;padding:6px 13px;border-radius:7px;cursor:pointer;font-family:inherit;
+  margin-right:8px;transition:.15s;vertical-align:middle;}
+.tb-link:hover{background:var(--gold,#FBBF24);color:#3a2c05;}
+.tbm-overlay{position:fixed;inset:0;z-index:9999;background:rgba(6,12,22,.78);backdrop-filter:blur(4px);
+  display:none;align-items:flex-start;justify-content:center;padding:40px 16px;overflow-y:auto;}
+.tbm-overlay.show{display:flex;}
+.tbm-box{background:var(--bg,#0F172A);border:1px solid var(--gold,#FBBF24);border-radius:16px;max-width:760px;width:100%;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);position:relative;margin:auto;overflow:hidden;}
+.tbm-head{display:flex;align-items:center;gap:10px;padding:18px 22px;border-bottom:1px solid var(--line,rgba(96,165,250,.18));
+  background:rgba(251,191,36,.06);position:sticky;top:0;}
+.tbm-head .tbm-pin{font-size:18px;}
+.tbm-head h3{font-size:17px;font-weight:700;color:var(--t1,#F1F5F9);flex:1;}
+.tbm-head .tbm-en{font-size:12px;color:var(--t3,#7c8db0);font-weight:500;display:block;margin-top:2px;}
+.tbm-close{background:transparent;border:1px solid var(--line,rgba(96,165,250,.18));color:var(--t2,#CBD5E1);
+  width:34px;height:34px;border-radius:8px;font-size:18px;cursor:pointer;flex:0 0 auto;transition:.15s;}
+.tbm-close:hover{background:var(--red,#E0635A);border-color:var(--red,#E0635A);color:#fff;}
+.tbm-body{padding:22px;max-height:70vh;overflow-y:auto;}
+.tbm-body .comp-text{font-size:14.5px;line-height:1.75;color:var(--t1,#F1F5F9);}
+.tbm-body .en-text{display:block;margin-top:3px;font-size:13px;color:var(--t3,#7c8db0);line-height:1.6;}
+.tbm-body .fig{margin:14px 0;text-align:center;}
+.tbm-body .fig img{max-width:100%;border-radius:10px;border:1px solid var(--line,rgba(96,165,250,.18));}
+.tbm-body .fig-cap{font-size:12px;color:var(--t3,#7c8db0);margin-top:6px;}
+.tbm-foot{padding:14px 22px;border-top:1px solid var(--line,rgba(96,165,250,.18));display:flex;gap:10px;justify-content:flex-end;}
+.tbm-foot a{font-size:12.5px;color:var(--cyan,#60A5FA);border:1px solid var(--cyan,#60A5FA);padding:7px 14px;border-radius:8px;transition:.15s;}
+.tbm-foot a:hover{background:var(--cyan,#60A5FA);color:#06223f;}
+.tbm-empty{color:var(--t3,#7c8db0);font-size:14px;text-align:center;padding:30px;}
+
+.tbm-sec-label{font-size:12px;font-weight:800;color:var(--gold,#FBBF24);letter-spacing:.5px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--line,rgba(96,165,250,.18));}
+.tbm-core{background:rgba(52,211,153,.06);border-left:3px solid var(--green,#34D399);border-radius:0 8px 8px 0;padding:14px 16px;font-size:14px;line-height:1.7;color:var(--t1,#F1F5F9);}
+.tbm-core .iqans{color:var(--green,#34D399);font-weight:700;}
+.tbm-core .en-text{display:block;margin-top:3px;font-size:12.5px;color:var(--t3,#7c8db0);font-style:italic;}
+.tbm-core .oral{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line,rgba(96,165,250,.18));}
+.tbm-core .oral-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--cyan,#60A5FA);margin-bottom:5px;}
+.tbm-core .oral-q{font-size:13.5px;font-weight:600;margin-bottom:5px;}
+.tbm-core .oral-a{font-size:13px;color:var(--t2,#CBD5E1);}
+.tbm-core .oral-alabel{color:var(--gold,#FBBF24);font-weight:700;}
+.tbm-rel{font-size:13.5px;line-height:1.7;color:var(--t2,#CBD5E1);margin-bottom:10px;}
+.tbm-rel .en-text{display:block;margin-top:3px;font-size:12px;color:var(--t3,#7c8db0);font-style:italic;}
+
+.tbm-page{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--cyan,#60A5FA);background:rgba(96,165,250,.10);border:1px solid rgba(96,165,250,.30);border-radius:5px;padding:2px 7px;margin-left:6px;vertical-align:middle;}
+
+#tbmPdf{font-size:12.5px;color:#fff;background:linear-gradient(135deg,#E0635A,#C9484A);border:1px solid #E0635A;padding:7px 15px;border-radius:8px;font-weight:600;transition:.15s;}
+#tbmPdf:hover{filter:brightness(1.12);transform:translateY(-1px);}
+
+.sec-pdf-link{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-family:'JetBrains Mono',monospace;color:#E0635A;border:1px solid rgba(224,99,90,.4);background:rgba(224,99,90,.08);padding:3px 9px;border-radius:6px;margin-left:10px;vertical-align:middle;text-decoration:none;transition:.15s;white-space:nowrap;}
+.sec-pdf-link:hover{background:#E0635A;color:#fff;border-color:#E0635A;}
+.comp-head{display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
+
+.ch-pdf-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#fff !important;background:linear-gradient(135deg,#E0635A,#C9484A);border:1px solid #E0635A;padding:5px 12px;border-radius:7px;text-decoration:none;font-weight:600;transition:.15s;}
+.ch-pdf-badge:hover{filter:brightness(1.12);transform:translateY(-1px);}
+
+.hb-block{margin-top:16px;border:1px solid rgba(224,99,90,.25);border-radius:12px;overflow:hidden;background:rgba(224,99,90,.03);}
+.hb-head{display:flex;align-items:center;gap:8px;padding:10px 15px;background:rgba(224,99,90,.08);border-bottom:1px solid rgba(224,99,90,.18);font-size:12.5px;font-weight:700;color:#E0635A;cursor:pointer;user-select:none;}
+.hb-head .hb-toggle{margin-left:auto;font-size:11px;transition:.2s;}
+.hb-block.open .hb-head .hb-toggle{transform:rotate(180deg);}
+.hb-body{display:none;padding:14px 16px;}
+.hb-block.open .hb-body{display:block;}
+.hb-en{font-size:13px;line-height:1.7;color:var(--t2,#CBD5E1);font-style:italic;background:rgba(96,165,250,.04);border-left:2px solid var(--cyan,#60A5FA);padding:9px 13px;border-radius:0 7px 7px 0;margin-bottom:11px;}
+.hb-ko{font-size:14px;line-height:1.75;color:var(--t1,#F1F5F9);}
+.hb-pdflink{display:inline-flex;align-items:center;gap:5px;margin-top:12px;font-size:11.5px;font-family:'JetBrains Mono',monospace;color:#E0635A;border:1px solid rgba(224,99,90,.4);background:rgba(224,99,90,.07);padding:5px 11px;border-radius:6px;text-decoration:none;transition:.15s;}
+.hb-pdflink:hover{background:#E0635A;color:#fff;}
+
+/* === 이미지 라이트박스(확대/축소) === */
+.fig img{cursor:zoom-in;transition:opacity .15s;}
+.fig img:hover{opacity:.9;}
+#imgLightbox{position:fixed;inset:0;z-index:9999;background:rgba(5,10,20,.94);
+  display:none;align-items:center;justify-content:center;
+  -webkit-user-select:none;user-select:none;touch-action:none;}
+#imgLightbox.open{display:flex;}
+#ilbImg{max-width:none;max-height:none;transform-origin:center center;
+  transition:transform .08s ease-out;will-change:transform;
+  box-shadow:0 10px 60px rgba(0,0,0,.6);border-radius:6px;
+  cursor:grab;-webkit-user-drag:none;user-drag:none;pointer-events:auto;}
+#ilbImg.grabbing{cursor:grabbing;transition:none;}
+.ilb-bar{position:fixed;top:18px;right:18px;display:flex;gap:8px;z-index:10000;}
+.ilb-btn{width:46px;height:46px;border-radius:11px;border:1px solid rgba(255,255,255,.18);
+  background:rgba(20,30,50,.85);color:#F1F5F9;font-size:22px;font-weight:700;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  line-height:1;transition:.15s;backdrop-filter:blur(4px);font-family:inherit;}
+.ilb-btn:hover{background:rgba(96,165,250,.85);border-color:rgba(96,165,250,.9);}
+.ilb-cap{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);
+  font-size:13px;color:#CBD5E1;background:rgba(20,30,50,.8);
+  padding:8px 16px;border-radius:10px;backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.12);max-width:90vw;text-align:center;z-index:10000;}
+.ilb-hint{position:fixed;top:18px;left:18px;font-size:12px;color:#94a3b8;
+  background:rgba(20,30,50,.7);padding:7px 13px;border-radius:9px;
+  backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.1);z-index:10000;
+  line-height:1.6;}
+@media(max-width:640px){.ilb-hint{display:none;}.ilb-btn{width:42px;height:42px;}}
+
+
+/* FAA 시험 참조 그림 (접이식) */
+.figref{margin:10px 0 6px;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--panel);}
+.figref-head{display:flex;align-items:center;gap:7px;padding:9px 12px;cursor:pointer;user-select:none;font-size:12.5px;font-weight:700;color:var(--cyan);background:rgba(96,165,250,.08);transition:background .15s;}
+.figref-head:hover{background:rgba(96,165,250,.14);}
+.figref-head .fr-arrow{font-size:10px;transition:transform .2s;}
+.figref-head.open .fr-arrow{transform:rotate(90deg);}
+.figref-body{display:none;padding:10px;}
+.figref-body.open{display:block;}
+.figref-body .fig{margin:0;}
+.figref-body .fig img{background:#fff;}
+
+
+.figgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:14px}
+.figgal{background:#0b1220;border:1px solid #1e293b;border-radius:10px;padding:8px;margin:0}
+.figgal img{width:100%;border-radius:6px;cursor:zoom-in;background:#fff}
+.figgal figcaption{font-size:12px;color:#94a3b8;margin-top:6px;line-height:1.4}
+.figpdf{color:#FBBF24}
+
+
+/* 홈 플로팅 버튼 (항상 보임) */
+.home-fab{position:fixed;top:14px;right:14px;z-index:200;background:var(--gold,#FBBF24);color:#0F172A;
+  border:none;border-radius:22px;padding:9px 16px;font-weight:700;font-size:13px;font-family:'Noto Sans KR',sans-serif;
+  cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.4);text-decoration:none;display:inline-flex;align-items:center;gap:5px;}
+.home-fab:hover{background:#e8c766;}
+.menu-btn{z-index:201 !important;}
+@media(min-width:881px){.home-fab{top:16px;right:16px;}}
+
+.fig-missing{margin:14px 0;}
+.fig-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  min-height:120px;padding:26px 16px;border:1.5px dashed rgba(96,165,250,.4);border-radius:10px;
+  background:rgba(96,165,250,.05);color:#93b4e8;font-size:15px;font-weight:600;text-align:center;}
+.fig-ph-en{font-size:11.5px;color:#7c8db0;font-weight:400;font-style:italic;}
+
+/* 반응형 이미지 보정 - 모든 화면에서 잘림 방지 */
+.comp-text img, .fig img, .fig-page img, figure img {
+  max-width: 100% !important;
+  height: auto !important;
+  box-sizing: border-box;
+}
+.fig, .fig-page, figure { max-width: 100%; overflow: hidden; }
+
+.oralx-intro{font-size:13.5px;color:var(--t2);line-height:1.7;margin-bottom:16px;
+  background:rgba(251,191,36,.05);border-left:3px solid var(--gold);padding:12px 15px;border-radius:0 8px 8px 0;}
+.oralx-intro b{color:var(--gold);}
+.oralx-group{margin:22px 0 8px;}
+.oralx-group-title{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:700;
+  color:var(--cyan);margin-bottom:4px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+.oralx-group-title .gt-en{font-size:12px;color:var(--t3);font-weight:500;font-style:italic;}
+.oralx-group-title .gt-n{margin-left:auto;font-size:11px;font-weight:500;color:var(--t3);
+  background:var(--card);border:1px solid var(--line);padding:2px 9px;border-radius:12px;white-space:nowrap;}
+.oralx-card{background:rgba(96,165,250,.04);border:1px solid var(--line);border-radius:11px;
+  margin:11px 0;overflow:hidden;transition:.15s;}
+.oralx-card.done{border-color:rgba(52,211,153,.5);background:rgba(52,211,153,.04);}
+.oralx-q{padding:14px 16px 13px;}
+.oralx-qno{display:inline-block;background:var(--gold);color:#3a2c05;font-weight:700;font-size:11px;
+  padding:2px 8px;border-radius:5px;margin-right:9px;letter-spacing:.3px;vertical-align:middle;}
+.oralx-q .qk{font-size:14.5px;line-height:1.6;color:var(--t1);font-weight:600;}
+.oralx-q .qe{display:block;margin-top:5px;font-size:13px;color:var(--t3);line-height:1.55;font-style:italic;}
+.oralx-actions{display:flex;gap:8px;padding:0 16px 14px;flex-wrap:wrap;}
+.oralx-btn{background:transparent;border:1px solid var(--cyan);color:var(--cyan);font-size:12.5px;
+  padding:7px 14px;border-radius:8px;cursor:pointer;font-family:inherit;transition:.15s;font-weight:600;}
+.oralx-btn:hover{background:var(--cyan);color:#06223f;}
+.oralx-btn.know{border-color:#34d399;color:#34d399;}
+.oralx-btn.know:hover,.oralx-btn.know.on{background:rgba(52,211,153,.16);color:#34d399;}
+.oralx-btn.again{border-color:#fbbf24;color:#fbbf24;}
+.oralx-btn.again:hover,.oralx-btn.again.on{background:rgba(251,191,36,.14);color:#fbbf24;}
+.oralx-ans{display:none;padding:0 16px 16px;}
+.oralx-ans.show{display:block;}
+.oralx-ans-inner{padding:13px 15px;background:rgba(251,191,36,.06);border-left:3px solid var(--gold);
+  border-radius:0 8px 8px 0;}
+.oralx-ans-label{font-size:10.5px;font-weight:800;color:var(--gold);letter-spacing:1px;margin-bottom:7px;}
+.oralx-ak{font-size:14px;line-height:1.7;color:#a7f3d0;}
+.oralx-ae{display:block;margin-top:9px;padding-top:9px;border-top:1px dashed var(--line);
+  font-size:12.5px;color:var(--t3);line-height:1.65;font-style:italic;}
+.oralx-ref{margin-top:11px;font-size:11px;color:var(--t3);display:flex;align-items:center;gap:6px;}
+.oralx-ref .rdot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex:0 0 auto;}
+.oralx-prog{position:sticky;bottom:0;z-index:5;margin:18px -4px 0;padding:11px 14px;
+  background:rgba(15,23,42,.94);border:1px solid var(--line);border-radius:10px;
+  display:flex;align-items:center;gap:12px;backdrop-filter:blur(6px);}
+.oralx-prog .pbar{flex:1;height:7px;border-radius:4px;background:var(--card);overflow:hidden;}
+.oralx-prog .pfill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),#34d399);transition:width .3s;}
+.oralx-prog .ptxt{font-size:11.5px;color:var(--t3);font-weight:700;white-space:nowrap;}
+.oralx-prog .ptxt b{color:var(--gold);}
+.src-badge{display:inline-block;margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#34D399;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3);border-radius:5px;padding:2px 7px;vertical-align:middle;}</style>
+</head>
+<body>
+<a class="home-fab" href="index.html">🏠 전체목차</a>
+<button class="menu-btn" onclick="document.querySelector('.side').classList.toggle('open')">☰ 목차</button>
+<div class="layout"><aside class="side"><div class="side-head">
+<a href="index.html" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cyan);margin-bottom:10px;">← 전체 목차 (Master Index)</a>
+<div class="kicker">FAA-H-8083-30B</div><h1>General 핸드북 정리</h1>
+<div class="sub">Chapter 5 · 항공기 도면</div>
+<input class="search" id="search" placeholder="🔍 용어 검색 (예: 부식, torque)" oninput="doSearch(this.value)">
+</div><ul class="toc" id="toc"><li><a href="#s-drawing-types" data-target="s-drawing-types">도면의 종류 <span class="en">Types of Drawings</span></a></li>
+<li><a href="#s-blueprint-elements" data-target="s-blueprint-elements">도면 요소 <span class="en">Drawing Elements</span></a></li>
+<li><a href="#s-lines-views" data-target="s-lines-views">선의 종류와 투상도 <span class="en">Line Types &amp; Views</span></a></li>
+<li><a href="#s-diagrams" data-target="s-diagrams">계통도 <span class="en">Diagrams</span></a></li>
+<li><a href="#s-dimensions-tolerance" data-target="s-dimensions-tolerance">치수와 공차 <span class="en">Dimensions &amp; Tolerances</span></a></li>
+<li><a href="#s-orthographic-detail" data-target="s-orthographic-detail">정투상 3면도 상세 <span class="en">Orthographic Views in Detail</span></a></li>
+<li><a href="#s-sectional-views" data-target="s-sectional-views">단면도의 종류 <span class="en">Sectional Views</span></a></li>
+<li><a href="#s-drawing-symbols" data-target="s-drawing-symbols">도면 기호 <span class="en">Drawing Symbols</span></a></li>
+<li><a href="#s-drawing-control" data-target="s-drawing-control">도면 관리와 전자문서 <span class="en">Drawing Control &amp; Digital Data</span></a></li>
+<li><a href="#s-oral" data-target="s-oral" style="border-top:1px solid var(--line);margin-top:6px;padding-top:10px;">🗣 구술시험 <span class="en">Oral Exam</span></a></li>
+<li><a href="#s-quiz" data-target="s-quiz">기출문제 <span class="en">FAA Exam Questions</span></a></li></ul></aside><main>
+<div class="hero"><div class="ch">CHAPTER 5</div>
+<h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;margin:8px 0 4px">항공기 도면</h2>
+<div class="en" style="font-family:'JetBrains Mono',monospace;color:var(--cyan)">Aircraft Drawings</div>
+<p style="color:var(--t2);margin-top:12px">도면의 종류, 도면 요소(제목란·개정란·자재표), 선의 종류와 투상도, 계통도(회로도·블록도·배선도), 치수와 공차를 다룹니다.<br><span style="color:var(--t3)">Covers types of drawings, drawing elements (title block, revision block, bill of materials), line types and orthographic views, diagrams (schematic/block/wiring), and dimensions and tolerances.</span></p>
+<a class="ch-pdf-badge" href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf#page=230" target="_blank" rel="noopener">📄 FAA-H-8083-30B 핸드북 PDF</a>
+</div>
+<div id="noresult" style="display:none;padding:40px;text-align:center;color:var(--t3)">검색 결과가 없습니다.</div>
+<section id="s-drawing-types" class="comp"><div class="comp-head"><h3>도면의 종류 <span class="src-badge">📗 ASA General</span></h3><span class="comp-en">Types of Drawings</span></div><div class="comp-body"><div class="comp-text"><p>상세도(Detail)는 단일 부품의 치수·재질을, 조립도(Assembly)는 부품들이 결합된 모습을, 설치도(Installation)는 완성품이 항공기에 장착되는 위치를 보여줍니다.<span class="en-text">A detail drawing shows one part's dimensions and material; an assembly drawing shows parts joined together; an installation drawing shows where the finished item mounts on the aircraft.</span></p><p>작업도(Working Drawing)는 제작에 필요한 모든 정보를 담습니다. 도면은 형상·치수·재질·공정·마감을 규정하는 '기술적 언어'입니다.<span class="en-text">A working drawing contains all the information needed to make an item. Drawings are the technical language that specifies shape, size, material, process, and finish.</span></p></div></div></section>
+<section id="s-blueprint-elements" class="comp"><div class="comp-head"><h3>도면 요소 <span class="src-badge">📗 ASA General</span></h3><span class="comp-en">Drawing Elements</span></div><div class="comp-body"><div class="comp-text"><p>제목란(Title Block)에는 도면 번호, 명칭, 축척(Scale), 제작사, 작성·검토자, 재질이 들어갑니다. 도면 번호는 부품을 식별·추적하는 핵심입니다.<span class="en-text">The title block carries the drawing number, name, scale, manufacturer, drafter/checker, and material. The drawing number is key to identifying and tracking the part.</span></p><p>개정란(Revision Block)은 변경 이력을 관리합니다. 자재표(BOM, Bill of Materials)는 필요한 부품·수량·규격 목록입니다.<span class="en-text">The revision block tracks change history. The bill of materials (BOM) lists required parts, quantities, and specifications.</span></p></div></div></section>
+<section id="s-lines-views" class="comp"><div class="comp-head"><h3>선의 종류와 투상도 <span class="src-badge">📗 ASA General</span></h3><span class="comp-en">Line Types &amp; Views</span></div><div class="comp-body"><div class="comp-text"><p>선의 종류: 외형선(굵은 실선), 숨은선(파선), 중심선(가는 일점쇄선), 치수·지시선, 절단선. 각 선은 정해진 의미가 있습니다.<span class="en-text">Line types: visible object lines (thick solid), hidden lines (dashed), center lines (thin chain), dimension/leader lines, and cutting-plane lines. Each has a defined meaning.</span></p><p>정투상도(Orthographic)는 정면·평면·측면 등 여러 방향에서 본 2차원 투상을 배치합니다. 단면도(Sectional)는 내부 구조를 보이기 위해 잘라 표현합니다.<span class="en-text">Orthographic drawings arrange 2-D projections seen from front, top, side, etc. A sectional view is cut open to reveal internal structure.</span></p></div></div></section>
+<section id="s-diagrams" class="comp"><div class="comp-head"><h3>계통도 <span class="src-badge">📗 ASA General</span></h3><span class="comp-en">Diagrams</span></div><div class="comp-body"><div class="comp-text"><p>회로도(Schematic)는 부품의 물리적 위치와 무관하게 기능·연결을 기호로 나타냅니다 — 고장탐구에 유용합니다. 블록도(Block)는 계통을 큰 기능 단위로 단순화합니다.<span class="en-text">A schematic shows function and connections with symbols regardless of physical location — useful for troubleshooting. A block diagram simplifies a system into major functional blocks.</span></p><p>배선도(Wiring)는 실제 전선·커넥터·핀 번호를 그려 배선 작업·수리에 사용합니다. 픽토리얼(Pictorial)은 실제 모습에 가깝게 그립니다.<span class="en-text">A wiring diagram shows actual wires, connectors, and pin numbers for wiring and repair. A pictorial diagram is drawn close to the real appearance.</span></p></div></div></section>
+<section id="s-dimensions-tolerance" class="comp"><div class="comp-head"><h3>치수와 공차 <span class="src-badge">📗 ASA General</span></h3><span class="comp-en">Dimensions &amp; Tolerances</span></div><div class="comp-body"><div class="comp-text"><p>공차(Tolerance)는 허용되는 치수 오차 범위입니다. 예: 1.000±0.005는 0.995~1.005까지 허용. 공차가 작을수록 정밀·고비용입니다.<span class="en-text">Tolerance is the allowable variation in a dimension; e.g., 1.000 ±0.005 permits 0.995 to 1.005. Tighter tolerances mean more precision and cost.</span></p><p>끼워맞춤(Fit)에는 헐거운(Clearance)·억지(Interference)·중간(Transition) 끼워맞춤이 있습니다. 축척(Scale)은 도면 치수와 실제 치수의 비(예: 1:1, 1:2)입니다.<span class="en-text">Fits include clearance, interference, and transition types. Scale is the ratio of drawing size to actual size (e.g., 1:1, 1:2).</span></p></div></div></section>
+<section id="s-orthographic-detail" class="comp"><div class="comp-head"><h3>정투상 3면도 상세 <span class="src-badge">📗 ASA General</span></h3><span class="comp-en">Orthographic Views in Detail</span></div><div class="comp-body"><div class="comp-text"><p>정투상은 정면도·평면도·측면도를 정해진 위치에 배치합니다(제3각법: 미국식). 평면도는 정면도 위, 우측면도는 정면도 오른쪽에 놓입니다.<span class="en-text">Orthographic drawing places front, top, and side views in fixed positions (third-angle, U.S. practice): top above the front, right side to the right of the front.</span></p><p>숨은 형상은 파선으로, 대칭 중심은 일점쇄선으로 표시합니다. 세 뷰를 종합해 3차원 형상을 파악합니다.<span class="en-text">Hidden features are dashed and symmetry centers are chain lines. The three views together convey the 3-D shape.</span></p></div></div></section>
+<section id="s-sectional-views" class="comp"><div class="comp-head"><h3>단면도의 종류 <span class="src-badge">📗 ASA General</span></h3><span class="comp-en">Sectional Views</span></div><div class="comp-body"><div class="comp-text"><p>단면도는 내부를 보이려 잘라 표현하며, 절단면은 해칭(Hatching)으로 나타냅니다. 전단면(Full)·반단면(Half)·회전단면·부분단면이 있습니다.<span class="en-text">Sectional views cut a part open to show its interior, with the cut surface shown by hatching. Types include full, half, revolved, and broken-out sections.</span></p><p>절단선(Cutting-Plane Line)과 화살표가 어디를 어느 방향에서 잘랐는지 알려줍니다.<span class="en-text">The cutting-plane line and arrows indicate where and from which direction the cut is taken.</span></p></div></div></section>
+<section id="s-drawing-symbols" class="comp"><div class="comp-head"><h3>도면 기호 <span class="src-badge">📗 ASA General</span></h3><span class="comp-en">Drawing Symbols</span></div><div class="comp-body"><div class="comp-text"><p>도면에는 용접 기호, 표면거칠기 기호, 나사·리벳 기호, 재질 기호가 표준화되어 있습니다. 기호 하나가 여러 문장의 지시를 대신합니다.<span class="en-text">Drawings use standardized symbols for welds, surface finish, threads/rivets, and materials. A single symbol replaces several sentences of instruction.</span></p><p>기하공차(GD&T)는 형상·자세·위치의 허용범위를 기호로 규정해 부품 호환성을 보장합니다.<span class="en-text">Geometric dimensioning and tolerancing (GD&T) uses symbols to specify form, orientation, and location tolerances, ensuring interchangeability.</span></p></div></div></section>
+<section id="s-drawing-control" class="comp"><div class="comp-head"><h3>도면 관리와 전자문서 <span class="src-badge">📗 ASA General</span></h3><span class="comp-en">Drawing Control &amp; Digital Data</span></div><div class="comp-body"><div class="comp-text"><p>도면은 개정 관리(Revision Control)로 최신본만 사용되도록 통제합니다. 구식 도면 사용은 오작업의 원인입니다.<span class="en-text">Drawings are kept under revision control so only the current version is used; using an obsolete drawing causes errors.</span></p><p>오늘날 도면은 CAD·전자매뉴얼(IETM)로 제공되며, 배선도·부품목록이 상호 링크됩니다. 정비사는 태블릿·단말로 최신 개정본을 확인합니다.<span class="en-text">Today drawings come as CAD and interactive electronic manuals (IETM) with linked wiring diagrams and parts lists; mechanics verify the current revision on tablets/terminals.</span></p></div></div></section>
+<section id="s-oral" class="comp"><div class="comp-head"><h2>🗣 ASA 구술시험 (Oral Exam) <span class="cen">Typical Oral Questions</span></h2></div><div class="comp-body"><div class="oralx-intro">ASA General <b>Oral &amp; Practical Study Guide</b> 기반 예상질문입니다. 각 카드의 <b>답 보기</b>로 모범답안(한/영)을 확인하고 <b>✅ 알았음 / 🔄 다시</b>로 스스로 채점하세요.</div><div class="oralx-group"><div class="oralx-group-title">항공기 도면 <span class="gt-en">Aircraft Drawings</span><span class="gt-n">8문항</span></div><div class="oralx-card" id="orx_ch05_aircraft_drawings_1"><div class="oralx-q"><span class="oralx-qno">Q1</span><span class="qk">상세도·조립도·설치도의 차이는?</span><span class="qe">Difference between detail, assembly, and installation drawings?</span></div><div class="oralx-actions"><button class="oralx-btn" onclick="orxToggle(this)">답 보기 / 가리기</button><button class="oralx-btn know" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_1','know')">✅ 알았음</button><button class="oralx-btn again" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_1','again')">🔄 다시</button></div><div class="oralx-ans"><div class="oralx-ans-inner"><div class="oralx-ans-label">MODEL ANSWER · 모범답안</div><div class="oralx-ak">상세도는 단일 부품, 조립도는 결합된 부품들, 설치도는 항공기 장착 위치를 보여줍니다.</div><span class="oralx-ae">Detail shows one part, assembly shows parts joined, installation shows the mounting location on the aircraft.</span><div class="oralx-ref"><span class="rdot"></span>REFERENCE: AMT-G, FAA-H-8083-30B</div></div></div></div><div class="oralx-card" id="orx_ch05_aircraft_drawings_2"><div class="oralx-q"><span class="oralx-qno">Q2</span><span class="qk">제목란(Title Block)에서 가장 중요한 식별 정보는?</span><span class="qe">What is the key identifying item in a title block?</span></div><div class="oralx-actions"><button class="oralx-btn" onclick="orxToggle(this)">답 보기 / 가리기</button><button class="oralx-btn know" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_2','know')">✅ 알았음</button><button class="oralx-btn again" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_2','again')">🔄 다시</button></div><div class="oralx-ans"><div class="oralx-ans-inner"><div class="oralx-ans-label">MODEL ANSWER · 모범답안</div><div class="oralx-ak">도면 번호(Drawing Number)입니다.</div><span class="oralx-ae">The drawing number.</span><div class="oralx-ref"><span class="rdot"></span>REFERENCE: AMT-G, FAA-H-8083-30B</div></div></div></div><div class="oralx-card" id="orx_ch05_aircraft_drawings_3"><div class="oralx-q"><span class="oralx-qno">Q3</span><span class="qk">자재표(BOM)란?</span><span class="qe">What is a bill of materials?</span></div><div class="oralx-actions"><button class="oralx-btn" onclick="orxToggle(this)">답 보기 / 가리기</button><button class="oralx-btn know" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_3','know')">✅ 알았음</button><button class="oralx-btn again" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_3','again')">🔄 다시</button></div><div class="oralx-ans"><div class="oralx-ans-inner"><div class="oralx-ans-label">MODEL ANSWER · 모범답안</div><div class="oralx-ak">필요한 부품·수량·규격을 나열한 목록입니다.</div><span class="oralx-ae">A list of required parts, quantities, and specifications.</span><div class="oralx-ref"><span class="rdot"></span>REFERENCE: AMT-G, FAA-H-8083-30B</div></div></div></div><div class="oralx-card" id="orx_ch05_aircraft_drawings_4"><div class="oralx-q"><span class="oralx-qno">Q4</span><span class="qk">숨은선(Hidden Line)은 어떻게 표시하는가?</span><span class="qe">How is a hidden line drawn?</span></div><div class="oralx-actions"><button class="oralx-btn" onclick="orxToggle(this)">답 보기 / 가리기</button><button class="oralx-btn know" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_4','know')">✅ 알았음</button><button class="oralx-btn again" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_4','again')">🔄 다시</button></div><div class="oralx-ans"><div class="oralx-ans-inner"><div class="oralx-ans-label">MODEL ANSWER · 모범답안</div><div class="oralx-ak">파선(짧은 점선)으로 표시합니다.</div><span class="oralx-ae">As a dashed line.</span><div class="oralx-ref"><span class="rdot"></span>REFERENCE: AMT-G, FAA-H-8083-30B</div></div></div></div><div class="oralx-card" id="orx_ch05_aircraft_drawings_5"><div class="oralx-q"><span class="oralx-qno">Q5</span><span class="qk">고장탐구에 유용한 도면은?</span><span class="qe">Which diagram is most useful for troubleshooting?</span></div><div class="oralx-actions"><button class="oralx-btn" onclick="orxToggle(this)">답 보기 / 가리기</button><button class="oralx-btn know" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_5','know')">✅ 알았음</button><button class="oralx-btn again" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_5','again')">🔄 다시</button></div><div class="oralx-ans"><div class="oralx-ans-inner"><div class="oralx-ans-label">MODEL ANSWER · 모범답안</div><div class="oralx-ak">회로도(Schematic)입니다. 기능·연결을 기호로 보여줍니다.</div><span class="oralx-ae">The schematic; it shows function and connections symbolically.</span><div class="oralx-ref"><span class="rdot"></span>REFERENCE: AMT-G, FAA-H-8083-30B</div></div></div></div><div class="oralx-card" id="orx_ch05_aircraft_drawings_6"><div class="oralx-q"><span class="oralx-qno">Q6</span><span class="qk">치수 1.000±0.005의 허용 범위는?</span><span class="qe">What is the allowable range of 1.000 ±0.005?</span></div><div class="oralx-actions"><button class="oralx-btn" onclick="orxToggle(this)">답 보기 / 가리기</button><button class="oralx-btn know" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_6','know')">✅ 알았음</button><button class="oralx-btn again" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_6','again')">🔄 다시</button></div><div class="oralx-ans"><div class="oralx-ans-inner"><div class="oralx-ans-label">MODEL ANSWER · 모범답안</div><div class="oralx-ak">0.995 ~ 1.005 입니다.</div><span class="oralx-ae">0.995 to 1.005.</span><div class="oralx-ref"><span class="rdot"></span>REFERENCE: AMT-G, FAA-H-8083-30B</div></div></div></div><div class="oralx-card" id="orx_ch05_aircraft_drawings_7"><div class="oralx-q"><span class="oralx-qno">Q7</span><span class="qk">개정란(Revision Block)의 목적은?</span><span class="qe">Purpose of the revision block?</span></div><div class="oralx-actions"><button class="oralx-btn" onclick="orxToggle(this)">답 보기 / 가리기</button><button class="oralx-btn know" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_7','know')">✅ 알았음</button><button class="oralx-btn again" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_7','again')">🔄 다시</button></div><div class="oralx-ans"><div class="oralx-ans-inner"><div class="oralx-ans-label">MODEL ANSWER · 모범답안</div><div class="oralx-ak">도면의 변경 이력을 기록·관리하는 것입니다.</div><span class="oralx-ae">To record and manage the drawing's change history.</span><div class="oralx-ref"><span class="rdot"></span>REFERENCE: AMT-G, FAA-H-8083-30B</div></div></div></div><div class="oralx-card" id="orx_ch05_aircraft_drawings_8"><div class="oralx-q"><span class="oralx-qno">Q8</span><span class="qk">억지끼워맞춤(Interference Fit)이란?</span><span class="qe">What is an interference fit?</span></div><div class="oralx-actions"><button class="oralx-btn" onclick="orxToggle(this)">답 보기 / 가리기</button><button class="oralx-btn know" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_8','know')">✅ 알았음</button><button class="oralx-btn again" onclick="orxGrade(this,'orx_ch05_aircraft_drawings_8','again')">🔄 다시</button></div><div class="oralx-ans"><div class="oralx-ans-inner"><div class="oralx-ans-label">MODEL ANSWER · 모범답안</div><div class="oralx-ak">축이 구멍보다 커서 압입해야 하는 끼워맞춤입니다.</div><span class="oralx-ae">A fit where the shaft is larger than the hole and must be pressed in.</span><div class="oralx-ref"><span class="rdot"></span>REFERENCE: AMT-G, FAA-H-8083-30B</div></div></div></div></div><div class="oralx-prog"><span class="ptxt">구술 학습 <b id="orxDone">0</b> / 8</span><div class="pbar"><div class="pfill" id="orxFill"></div></div><span class="ptxt" id="orxPct">0%</span></div></div></section>
+<section id="s-quiz" class="comp"><div class="comp-head"><h3>기출문제</h3><span class="comp-en">FAA General Exam Questions</span></div><div class="iq-wrap"><div class="iq-label"><span class="iq-pin">📝</span> 이 챕터 연계 FAA 기출문제 <span class="iq-n">10문항</span></div><div class="iqcard" data-q="c5q1"><div class="iqq"><span class="iqno">C5Q1</span>단일 부품의 치수·재질을 보여주는 도면은?<span class="en-text">Which drawing shows one part's dimensions and material?</span></div><ul class="iqopts"><li data-letter="A" onclick="iqPick(this,'B')">A. 조립도<span class="en-text">Assembly</span></li><li data-letter="B" onclick="iqPick(this,'B')">B. 상세도<span class="en-text">Detail</span></li><li data-letter="C" onclick="iqPick(this,'B')">C. 설치도<span class="en-text">Installation</span></li><li data-letter="D" onclick="iqPick(this,'B')">D. 회로도<span class="en-text">Schematic</span></li></ul><div class="iqreveal"><button class="iqbtn" onclick="iqToggle(this)">정답·해설 보기</button><div class="iqexp"><div><span class="iqans">정답: B</span> — 상세도</div><div style="margin-top:7px">상세도(Detail)입니다.<span class="en-text">A detail drawing.</span></div></div></div></div><div class="iqcard" data-q="c5q2"><div class="iqq"><span class="iqno">C5Q2</span>도면에서 부품을 식별하는 핵심 정보는?<span class="en-text">What identifies a part on a drawing?</span></div><ul class="iqopts"><li data-letter="A" onclick="iqPick(this,'B')">A. 축척<span class="en-text">Scale</span></li><li data-letter="B" onclick="iqPick(this,'B')">B. 도면 번호<span class="en-text">Drawing number</span></li><li data-letter="C" onclick="iqPick(this,'B')">C. 재질<span class="en-text">Material</span></li><li data-letter="D" onclick="iqPick(this,'B')">D. 날짜<span class="en-text">Date</span></li></ul><div class="iqreveal"><button class="iqbtn" onclick="iqToggle(this)">정답·해설 보기</button><div class="iqexp"><div><span class="iqans">정답: B</span> — 도면 번호</div><div style="margin-top:7px">제목란의 도면 번호입니다.<span class="en-text">The drawing number in the title block.</span></div></div></div></div><div class="iqcard" data-q="c5q3"><div class="iqq"><span class="iqno">C5Q3</span>숨은선(Hidden Line)은 어떤 선인가?<span class="en-text">A hidden line is a:</span></div><ul class="iqopts"><li data-letter="A" onclick="iqPick(this,'B')">A. 굵은 실선<span class="en-text">Thick solid line</span></li><li data-letter="B" onclick="iqPick(this,'B')">B. 파선<span class="en-text">Dashed line</span></li><li data-letter="C" onclick="iqPick(this,'B')">C. 일점쇄선<span class="en-text">Chain line</span></li><li data-letter="D" onclick="iqPick(this,'B')">D. 이점쇄선<span class="en-text">Phantom line</span></li></ul><div class="iqreveal"><button class="iqbtn" onclick="iqToggle(this)">정답·해설 보기</button><div class="iqexp"><div><span class="iqans">정답: B</span> — 파선</div><div style="margin-top:7px">숨은선은 파선으로 그립니다.<span class="en-text">Hidden lines are dashed.</span></div></div></div></div><div class="iqcard" data-q="c5q4"><div class="iqq"><span class="iqno">C5Q4</span>부품의 물리적 위치와 무관하게 기능을 기호로 보여주는 도면은?<span class="en-text">Which shows function symbolically regardless of physical location?</span></div><ul class="iqopts"><li data-letter="A" onclick="iqPick(this,'B')">A. 배선도<span class="en-text">Wiring diagram</span></li><li data-letter="B" onclick="iqPick(this,'B')">B. 회로도<span class="en-text">Schematic</span></li><li data-letter="C" onclick="iqPick(this,'B')">C. 픽토리얼<span class="en-text">Pictorial</span></li><li data-letter="D" onclick="iqPick(this,'B')">D. 설치도<span class="en-text">Installation</span></li></ul><div class="iqreveal"><button class="iqbtn" onclick="iqToggle(this)">정답·해설 보기</button><div class="iqexp"><div><span class="iqans">정답: B</span> — 회로도</div><div style="margin-top:7px">회로도(Schematic)로 고장탐구에 유용합니다.<span class="en-text">A schematic, useful for troubleshooting.</span></div></div></div></div><div class="iqcard" data-q="c5q5"><div class="iqq"><span class="iqno">C5Q5</span>1.500±0.010의 최대 허용 치수는?<span class="en-text">Maximum allowable size for 1.500 ±0.010:</span></div><ul class="iqopts"><li data-letter="A" onclick="iqPick(this,'B')">A. 1.490<span class="en-text">1.490</span></li><li data-letter="B" onclick="iqPick(this,'B')">B. 1.510<span class="en-text">1.510</span></li><li data-letter="C" onclick="iqPick(this,'B')">C. 1.500<span class="en-text">1.500</span></li><li data-letter="D" onclick="iqPick(this,'B')">D. 1.520<span class="en-text">1.520</span></li></ul><div class="iqreveal"><button class="iqbtn" onclick="iqToggle(this)">정답·해설 보기</button><div class="iqexp"><div><span class="iqans">정답: B</span> — 1.510</div><div style="margin-top:7px">1.500+0.010 = 1.510.<span class="en-text">1.500 + 0.010 = 1.510.</span></div></div></div></div><div class="iqcard" data-q="c5q6"><div class="iqq"><span class="iqno">C5Q6</span>변경 이력을 관리하는 도면 요소는?<span class="en-text">Which element manages change history?</span></div><ul class="iqopts"><li data-letter="A" onclick="iqPick(this,'B')">A. 제목란<span class="en-text">Title block</span></li><li data-letter="B" onclick="iqPick(this,'B')">B. 개정란<span class="en-text">Revision block</span></li><li data-letter="C" onclick="iqPick(this,'B')">C. 자재표<span class="en-text">BOM</span></li><li data-letter="D" onclick="iqPick(this,'B')">D. 치수선<span class="en-text">Dimension line</span></li></ul><div class="iqreveal"><button class="iqbtn" onclick="iqToggle(this)">정답·해설 보기</button><div class="iqexp"><div><span class="iqans">정답: B</span> — 개정란</div><div style="margin-top:7px">개정란(Revision Block)입니다.<span class="en-text">The revision block.</span></div></div></div></div><div class="iqcard" data-q="c5q7"><div class="iqq"><span class="iqno">C5Q7</span>실제 전선·핀 번호를 그려 배선 작업에 쓰는 도면은?<span class="en-text">Which diagram shows actual wires and pin numbers?</span></div><ul class="iqopts"><li data-letter="A" onclick="iqPick(this,'B')">A. 블록도<span class="en-text">Block</span></li><li data-letter="B" onclick="iqPick(this,'B')">B. 배선도<span class="en-text">Wiring diagram</span></li><li data-letter="C" onclick="iqPick(this,'B')">C. 회로도<span class="en-text">Schematic</span></li><li data-letter="D" onclick="iqPick(this,'B')">D. 상세도<span class="en-text">Detail</span></li></ul><div class="iqreveal"><button class="iqbtn" onclick="iqToggle(this)">정답·해설 보기</button><div class="iqexp"><div><span class="iqans">정답: B</span> — 배선도</div><div style="margin-top:7px">배선도(Wiring Diagram)입니다.<span class="en-text">The wiring diagram.</span></div></div></div></div><div class="iqcard" data-q="c5q8"><div class="iqq"><span class="iqno">C5Q8</span>축척 1:2가 뜻하는 것은?<span class="en-text">A scale of 1:2 means the drawing is:</span></div><ul class="iqopts"><li data-letter="A" onclick="iqPick(this,'B')">A. 실물의 2배<span class="en-text">Twice actual size</span></li><li data-letter="B" onclick="iqPick(this,'B')">B. 실물의 절반<span class="en-text">Half actual size</span></li><li data-letter="C" onclick="iqPick(this,'B')">C. 실물 크기<span class="en-text">Actual size</span></li><li data-letter="D" onclick="iqPick(this,'B')">D. 치수 없음<span class="en-text">No dimensions</span></li></ul><div class="iqreveal"><button class="iqbtn" onclick="iqToggle(this)">정답·해설 보기</button><div class="iqexp"><div><span class="iqans">정답: B</span> — 실물의 절반</div><div style="margin-top:7px">도면이 실물의 1/2 크기입니다.<span class="en-text">The drawing is half the actual size.</span></div></div></div></div><div class="iqcard" data-q="c5q9"><div class="iqq"><span class="iqno">C5Q9</span>축이 구멍보다 커서 압입하는 끼워맞춤은?<span class="en-text">A fit where the shaft is larger than the hole is:</span></div><ul class="iqopts"><li data-letter="A" onclick="iqPick(this,'B')">A. 헐거운 끼워맞춤<span class="en-text">Clearance fit</span></li><li data-letter="B" onclick="iqPick(this,'B')">B. 억지 끼워맞춤<span class="en-text">Interference fit</span></li><li data-letter="C" onclick="iqPick(this,'B')">C. 중간 끼워맞춤<span class="en-text">Transition fit</span></li><li data-letter="D" onclick="iqPick(this,'B')">D. 나사 끼워맞춤<span class="en-text">Thread fit</span></li></ul><div class="iqreveal"><button class="iqbtn" onclick="iqToggle(this)">정답·해설 보기</button><div class="iqexp"><div><span class="iqans">정답: B</span> — 억지 끼워맞춤</div><div style="margin-top:7px">억지(Interference) 끼워맞춤입니다.<span class="en-text">An interference fit.</span></div></div></div></div><div class="iqcard" data-q="c5q10"><div class="iqq"><span class="iqno">C5Q10</span>공차가 작을수록 일반적으로?<span class="en-text">Tighter tolerances generally mean:</span></div><ul class="iqopts"><li data-letter="A" onclick="iqPick(this,'B')">A. 저비용·저정밀<span class="en-text">Lower cost, less precision</span></li><li data-letter="B" onclick="iqPick(this,'B')">B. 고정밀·고비용<span class="en-text">More precision, higher cost</span></li><li data-letter="C" onclick="iqPick(this,'B')">C. 무게 감소<span class="en-text">Less weight</span></li><li data-letter="D" onclick="iqPick(this,'B')">D. 치수 무시<span class="en-text">Dimensions ignored</span></li></ul><div class="iqreveal"><button class="iqbtn" onclick="iqToggle(this)">정답·해설 보기</button><div class="iqexp"><div><span class="iqans">정답: B</span> — 고정밀·고비용</div><div style="margin-top:7px">공차가 작을수록 정밀하고 비쌉니다.<span class="en-text">Tighter tolerance is more precise and costly.</span></div></div></div></div></div></section>
+</main></div>
+<button id="backtop" class="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+/* ===== 통합 인터랙션 핸들러 (견고 버전) ===== */
+// 정답 선택
+function iqPick(el, ans){
+  try{
+    var ul = el.parentNode;
+    [].forEach.call(ul.children, function(li){ li.classList.remove('correct','wrong'); });
+    [].forEach.call(ul.children, function(li){
+      if(li.getAttribute('data-letter')===ans) li.classList.add('correct');
+    });
+    if(el.getAttribute('data-letter')!==ans) el.classList.add('wrong');
+  }catch(e){}
+}
+// 정답·해설 토글 (구조 비의존: 가장 가까운 .iqreveal 안에서 .iqexp 검색)
+function iqToggle(btn){
+  try{
+    var wrap = btn.closest ? btn.closest('.iqreveal') : btn.parentNode;
+    var exp = wrap ? wrap.querySelector('.iqexp') : btn.nextElementSibling;
+    if(!exp) return;
+    exp.classList.toggle('show');
+    btn.textContent = exp.classList.contains('show') ? '해설 접기' : '정답·해설 보기';
+  }catch(e){}
+}
+
+
+
+/* ===== 교재 보기 모달 (문제 맞춤형) ===== */
+function tbmOpen(btn){
+  try{
+    var card = btn.closest ? btn.closest('.iqcard') : null;
+    if(!card){ var p=btn; while(p&&!(p.className&&p.className.indexOf('iqcard')>=0)){p=p.parentNode;} card=p; }
+    if(!card) return;
+    var qno = card.getAttribute('data-q') || '';
+    var qq = card.querySelector('.iqq');
+    var qtext = qq ? qq.textContent.replace(qno,'').trim() : '';
+    // 정답·해설(iqexp) 내용 = 이 문제의 핵심 교재
+    var exp = card.querySelector('.iqexp');
+    var expClone = exp ? exp.cloneNode(true) : null;
+    if(expClone){ expClone.classList.remove('show'); }
+    // 매칭된 관련 섹션
+    var msid = card.getAttribute('data-tbsec') || '';
+    var mtitle = card.getAttribute('data-tbtitle') || '';
+    var mpage = card.getAttribute('data-tbpage') || '';
+    var mpdf = card.getAttribute('data-pdfpage') || '';
+
+    document.getElementById('tbmTitle').textContent = 'Q'+qno+' 관련 교재';
+    document.getElementById('tbmEn').textContent = qtext.length>60?qtext.slice(0,60)+'…':qtext;
+
+    var body = document.getElementById('tbmBody');
+    body.innerHTML = '';
+    // 1) 핵심: 정답·해설
+    var coreLabel = document.createElement('div');
+    coreLabel.className='tbm-sec-label';
+    coreLabel.textContent='📌 이 문제의 핵심 (정답·해설)';
+    body.appendChild(coreLabel);
+    if(expClone){
+      var core=document.createElement('div');
+      core.className='tbm-core';
+      core.innerHTML = expClone.innerHTML;
+      body.appendChild(core);
+    }
+    // 2) 관련 교재 섹션 (강한 매칭일 때만)
+    var gotoBtn = document.getElementById('tbmGoto');
+    if(msid){
+      var sec = document.getElementById(msid);
+      if(sec){
+        var relLabel=document.createElement('div');
+        relLabel.className='tbm-sec-label';
+        relLabel.style.marginTop='18px';
+        relLabel.innerHTML='📖 관련 교재: '+mtitle+(mpage?' <span class="tbm-page">📄 FAA-H-8083-32B p.'+mpage+'</span>':'');
+        body.appendChild(relLabel);
+        var texts=sec.querySelectorAll('.comp-text');
+        var figs=sec.querySelectorAll('.fig');
+        [].forEach.call(texts,function(tx){var c=tx.cloneNode(true);c.className='tbm-rel';body.appendChild(c);});
+        [].forEach.call(figs,function(fg){body.appendChild(fg.cloneNode(true));});
+        gotoBtn.style.display='';
+        gotoBtn.textContent=mtitle+(mpage?' (p.'+mpage+')':'')+' 교재 전체 보기 →';
+        gotoBtn.onclick=function(e){e.preventDefault();tbmClose();sec.scrollIntoView({behavior:'smooth',block:'start'});};
+        var pdfBtn=document.getElementById('tbmPdf');
+        if(pdfBtn&&mpdf){
+          pdfBtn.style.display='';
+          pdfBtn.textContent='📄 FAA 핸드북 PDF p.'+mpdf+' 열기';
+          pdfBtn.href='https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amt_powerplant_handbook.pdf#page='+mpdf;
+        }
+      } else { gotoBtn.style.display='none'; }
+    } else {
+      gotoBtn.style.display='none';
+      var pb=document.getElementById('tbmPdf');if(pb)pb.style.display='none';
+    }
+    document.getElementById('tbmOverlay').classList.add('show');
+    document.body.style.overflow='hidden';
+  }catch(e){}
+}
+function tbmClose(){
+  var o=document.getElementById('tbmOverlay');
+  if(o)o.classList.remove('show');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')tbmClose();});
+
+
+function figRefToggle(el){
+  el.classList.toggle('open');
+  var body = el.nextElementSibling;
+  if(body) body.classList.toggle('open');
+}
+
+
+// 이미지 있는 섹션에 클래스 부여
+document.querySelectorAll('.comp-body').forEach(function(b){
+  if(b.querySelector('.fig')) b.classList.add('has-img');
+});
+// 스크롤 스파이
+var links=[...document.querySelectorAll('.toc a')];
+var secs=links.map(function(a){return document.getElementById(a.dataset.target);});
+function onScroll(){
+  var y=window.scrollY+120, cur=-1;
+  secs.forEach(function(s,i){ if(s&&s.offsetTop<=y) cur=i; });
+  links.forEach(function(a,i){ a.classList.toggle('active',i===cur); });
+  document.getElementById('backtop').classList.toggle('show',window.scrollY>400);
+}
+window.addEventListener('scroll',onScroll); onScroll();
+// 부드러운 스크롤 + 모바일 메뉴 닫기
+links.forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var t=document.getElementById(a.dataset.target);
+    t.scrollIntoView({behavior:'smooth'});
+    document.querySelector('.side').classList.remove('open');
+  });
+});
+// 검색
+function doSearch(q){
+  q=q.trim().toLowerCase();
+  var any=false;
+  // 1) 제목(한글 h3 + 영문 .en) 우선 매칭
+  var titleHits=[];
+  document.querySelectorAll('.comp').forEach(function(sec){
+    var h3=sec.querySelector('.comp-head h3, h3');
+    var en=sec.querySelector('.comp-en, .en');
+    var title=((h3?h3.textContent:'')+' '+(en?en.textContent:'')).toLowerCase();
+    titleHits.push(!q||title.includes(q));
+  });
+  var anyTitle=titleHits.some(function(h){return h;});
+  // 2) 제목에 하나도 없으면 본문 전체로 폴백
+  document.querySelectorAll('.comp').forEach(function(sec,i){
+    var hit;
+    if(!q){hit=true;}
+    else if(anyTitle){hit=titleHits[i];}
+    else{hit=sec.textContent.toLowerCase().includes(q);}
+    sec.style.display=hit?'':'none';
+    if(hit)any=true;
+  });
+  links.forEach(function(a){
+    var t=document.getElementById(a.dataset.target);
+    a.parentElement.style.display=(!q||(t&&t.style.display!=='none'))?'':'none';
+  });
+  var nr=document.getElementById('noresult');
+  if(nr)nr.style.display=any?'none':'block';
+}
+
+
+
+
+/* === 이미지 라이트박스: 클릭 확대, 휠/버튼 줌, 드래그 이동 === */
+(function(){
+  if(document.getElementById('imgLightbox')) return;
+
+  var lb = document.createElement('div');
+  lb.id = 'imgLightbox';
+  lb.innerHTML =
+    '<div class="ilb-hint">🖱️ 휠/+− 버튼: 확대·축소<br>드래그: 이동 · ESC/배경: 닫기</div>' +
+    '<div class="ilb-bar">' +
+      '<button class="ilb-btn" data-act="out" title="축소">−</button>' +
+      '<button class="ilb-btn" data-act="in" title="확대">＋</button>' +
+      '<button class="ilb-btn" data-act="reset" title="원래대로">⤢</button>' +
+      '<button class="ilb-btn" data-act="close" title="닫기">✕</button>' +
+    '</div>' +
+    '<img id="ilbImg" alt="">' +
+    '<div class="ilb-cap" id="ilbCap"></div>';
+  document.body.appendChild(lb);
+
+  var img = document.getElementById('ilbImg');
+  var cap = document.getElementById('ilbCap');
+  var scale = 1, tx = 0, ty = 0;
+  var MIN = 0.3, MAX = 8;
+
+  function apply(){
+    img.style.transform = 'translate('+tx+'px,'+ty+'px) scale('+scale+')';
+  }
+  function reset(){
+    scale = 1; tx = 0; ty = 0; apply();
+  }
+  function open(src, caption){
+    img.src = src;
+    cap.textContent = caption || '';
+    cap.style.display = caption ? 'block' : 'none';
+    reset();
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    img.src = '';
+  }
+  function zoomAt(factor){
+    var ns = Math.min(MAX, Math.max(MIN, scale * factor));
+    scale = ns; apply();
+  }
+
+  // 썸네일 클릭 → 열기
+  document.addEventListener('click', function(e){
+    var im = e.target.closest && e.target.closest('.fig img');
+    if(im){
+      e.preventDefault();
+      var fc = im.parentNode.querySelector('figcaption');
+      open(im.src, fc ? fc.textContent : '');
+    }
+  });
+
+  // 버튼
+  lb.querySelector('.ilb-bar').addEventListener('click', function(e){
+    var b = e.target.closest('.ilb-btn'); if(!b) return;
+    var a = b.getAttribute('data-act');
+    if(a==='in') zoomAt(1.3);
+    else if(a==='out') zoomAt(1/1.3);
+    else if(a==='reset') reset();
+    else if(a==='close') close();
+  });
+
+  // 배경 클릭 닫기 (이미지/버튼 제외)
+  lb.addEventListener('click', function(e){
+    if(e.target === lb) close();
+  });
+
+  // 휠 줌 (커서 기준)
+  lb.addEventListener('wheel', function(e){
+    if(!lb.classList.contains('open')) return;
+    e.preventDefault();
+    var factor = e.deltaY < 0 ? 1.12 : 1/1.12;
+    var ns = Math.min(MAX, Math.max(MIN, scale * factor));
+    // 커서 위치 기준 확대
+    var rect = img.getBoundingClientRect();
+    var cx = e.clientX - (rect.left + rect.width/2);
+    var cy = e.clientY - (rect.top + rect.height/2);
+    var ratio = ns/scale;
+    tx -= cx*(ratio-1);
+    ty -= cy*(ratio-1);
+    scale = ns; apply();
+  }, {passive:false});
+
+  // 더블클릭: 확대/원복 토글
+  img.addEventListener('dblclick', function(e){
+    e.preventDefault();
+    if(scale > 1.2){ reset(); } else { zoomAt(2); }
+  });
+
+  // 드래그 이동 (마우스)
+  var dragging=false, sx=0, sy=0, stx=0, sty=0;
+  img.addEventListener('mousedown', function(e){
+    e.preventDefault(); dragging=true;
+    sx=e.clientX; sy=e.clientY; stx=tx; sty=ty;
+    img.classList.add('grabbing');
+  });
+  window.addEventListener('mousemove', function(e){
+    if(!dragging) return;
+    tx = stx + (e.clientX - sx);
+    ty = sty + (e.clientY - sy);
+    apply();
+  });
+  window.addEventListener('mouseup', function(){
+    dragging=false; img.classList.remove('grabbing');
+  });
+
+  // 터치: 1손가락 이동, 2손가락 핀치 줌
+  var touchMode=null, startDist=0, startScale=1, ttx=0, tty=0, tsx=0, tsy=0;
+  function dist(t){var dx=t[0].clientX-t[1].clientX,dy=t[0].clientY-t[1].clientY;return Math.hypot(dx,dy);}
+  img.addEventListener('touchstart', function(e){
+    if(e.touches.length===1){
+      touchMode='pan'; tsx=e.touches[0].clientX; tsy=e.touches[0].clientY; ttx=tx; tty=ty;
+    } else if(e.touches.length===2){
+      touchMode='pinch'; startDist=dist(e.touches); startScale=scale;
+    }
+  }, {passive:true});
+  img.addEventListener('touchmove', function(e){
+    if(touchMode==='pan' && e.touches.length===1){
+      tx = ttx + (e.touches[0].clientX - tsx);
+      ty = tty + (e.touches[0].clientY - tsy);
+      apply();
+    } else if(touchMode==='pinch' && e.touches.length===2){
+      var d = dist(e.touches);
+      scale = Math.min(MAX, Math.max(MIN, startScale * (d/startDist)));
+      apply();
+    }
+    if(e.cancelable) e.preventDefault();
+  }, {passive:false});
+  img.addEventListener('touchend', function(e){
+    if(e.touches.length===0) touchMode=null;
+  });
+
+  // 키보드
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='+'||e.key==='=') zoomAt(1.3);
+    else if(e.key==='-'||e.key==='_') zoomAt(1/1.3);
+    else if(e.key==='0') reset();
+  });
+})();
+</script>
+<script>
+
+// ===== 구술시험 인터랙션 =====
+(function(){
+  var orxState = {};
+  var orxTotal = document.querySelectorAll('.oralx-card').length;
+  window.orxToggle = function(btn){
+    var card = btn.closest('.oralx-card');
+    card.querySelector('.oralx-ans').classList.toggle('show');
+  };
+  window.orxGrade = function(btn,id,v){
+    var card = document.getElementById(id);
+    var knowBtn = card.querySelector('.oralx-btn.know');
+    var againBtn = card.querySelector('.oralx-btn.again');
+    if(orxState[id]===v){ orxState[id]=null; }
+    else { orxState[id]=v; }
+    knowBtn.classList.toggle('on', orxState[id]==='know');
+    againBtn.classList.toggle('on', orxState[id]==='again');
+    card.classList.toggle('done', orxState[id]==='know');
+    orxUpdate();
+  };
+  function orxUpdate(){
+    var done=0;
+    for(var k in orxState){ if(orxState[k]==='know') done++; }
+    var f=document.getElementById('orxFill'),
+        d=document.getElementById('orxDone'),
+        p=document.getElementById('orxPct');
+    if(!f) return;
+    var pct = orxTotal? Math.round(done/orxTotal*100):0;
+    f.style.width=pct+'%'; d.textContent=done; p.textContent=pct+'%';
+  }
+})();
+
+</script>
+</body></html>
