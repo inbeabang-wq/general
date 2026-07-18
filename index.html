@@ -55,7 +55,8 @@ a{color:inherit;text-decoration:none;}
 @media(max-width:560px){.statbar{grid-template-columns:repeat(2,1fr);}}
 .stat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
   background:linear-gradient(135deg,rgba(96,165,250,.08),rgba(52,211,153,.03));
-  border:1px solid var(--line);border-radius:12px;padding:16px 10px;}
+  border:1px solid var(--line);border-radius:12px;padding:16px 10px;transition:.18s;cursor:pointer;}
+.stat:hover{border-color:var(--cyan);transform:translateY(-2px);background:linear-gradient(135deg,rgba(96,165,250,.16),rgba(52,211,153,.06));}
 .stat-n{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--cyan);line-height:1;}
 .stat-l{font-size:11.5px;color:var(--t3);font-weight:500;letter-spacing:.5px;}
 .foot{margin-top:46px;padding-top:22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--t3);line-height:1.7;}
@@ -80,6 +81,12 @@ a{color:inherit;text-decoration:none;}
       <a class="cur" href="index.html">📘 General</a>
       <a href="https://inbeabang-wq.github.io/airframe/" target="_blank" rel="noopener">✈️ Airframe ↗</a>
       <a href="https://inbeabang-wq.github.io/powerplant/" target="_blank" rel="noopener">⚙️ Powerplant ↗</a>
+    </div>
+    <div class="statbar">
+      <a href="mock_exam.html" class="stat"><span class="stat-n">150</span><span class="stat-l">필기 문제</span></a>
+      <a href="practical_acs.html" class="stat"><span class="stat-n">120</span><span class="stat-l">구술 문항</span></a>
+      <a href="practical_acs.html" class="stat"><span class="stat-n">12</span><span class="stat-l">실기 프로젝트</span></a>
+      <a href="textbook.html" class="stat"><span class="stat-n">143</span><span class="stat-l">교재 주제</span></a>
     </div>
   </div>
 
@@ -123,13 +130,6 @@ a{color:inherit;text-decoration:none;}
     <div class="desc" style="font-size:13px;color:var(--t3);margin-top:10px;line-height:1.5;">15개 챕터 143개 주제를 한곳에. 한/영 검색으로 원하는 주제를 찾아 클릭하면 해당 챕터 본문으로 바로 이동합니다.</div>
     <div class="quizbadge">📚 주제 143개 · 한/영 통합 검색</div>
   </a>
-
-  <div class="statbar">
-    <div class="stat"><span class="stat-n">15</span><span class="stat-l">챕터</span></div>
-    <div class="stat"><span class="stat-n">143</span><span class="stat-l">본문 주제</span></div>
-    <div class="stat"><span class="stat-n">120</span><span class="stat-l">구술 문항</span></div>
-    <div class="stat"><span class="stat-n">150</span><span class="stat-l">기출 문제</span></div>
-  </div>
 
   <div class="foot">
     <b>이용 안내</b> · 각 챕터를 클릭하면 좌측 목차와 검색으로 원하는 주제를 빠르게 찾을 수 있습니다. 구술시험 카드는 '답 보기'로 모범답안(한/영)을 확인하고 스스로 채점할 수 있습니다.<br>
