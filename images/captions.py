@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-update_captions.py — 캡션만 다시 추출 (이미지 재렌더링 없음, 수십 초 소요)
+update_captions.py  (v3 — 캡션 + 페이지 정보 FIGPAGE 포함판)
+이미지 재렌더링 없이 캡션과 'PDF 페이지 번호'만 다시 추출한다 (수십 초 소요).
 v3와 같은 순서·필터로 이미지 번호를 재현하고, 페이지 전체의 "Figure X-Y." 캡션 블록을
-모아 각 이미지에 '가장 가까운 아래쪽 캡션'을 매칭한다. 결과는 captions.js 갱신.
+모아 각 이미지에 '가장 가까운 아래쪽 캡션'을 매칭한다.
+
+결과: ~/Downloads/general_figures2/captions.js
+  → window.FIGCAP (캡션) + window.FIGPAGE (도면별 PDF 페이지)
+  → 이 파일 '하나만' GitHub general 저장소의 images/ 폴더에 덮어쓰기 업로드하면 됨.
 
 사용법:
   python3 ~/Downloads/update_captions.py
-결과: ~/Downloads/general_figures2/captions.js  (이 파일만 GitHub images/ 폴더에 올리면 됨)
 """
 import os, sys, re, json
 
@@ -84,7 +88,7 @@ for pno in range(doc.page_count):
         x0, y0, x1, y1, text = b[0], b[1], b[2], b[3], (b[4] or "")
         t = " ".join(text.split())
         m = FIG_RE.search(t)
-        if m and m.start() < 15:  # 블록 앞머리에 Figure가 나와야 캡션으로 인정
+        if m and m.start() < 15:
             cap_blocks.append({"rect": fitz.Rect(x0, y0, x1, y1), "text": t[m.start():][:220], "used": False})
 
     # 2) v3와 같은 순서·필터로 이미지 열거 → 번호 재현
@@ -108,20 +112,20 @@ for pno in range(doc.page_count):
         key = "%s_fig%d" % (cid, counter[cid])
         pages[key] = p1
 
-        # 3) 캡션 매칭: 이미지 아래쪽(약간 겹침 허용)에서 세로거리 최소 + 가로 겹침 우선
+        # 3) 캡션 매칭
         best, best_d = None, 1e9
         for cb in cap_blocks:
             if cb["used"]:
                 continue
             cr = cb["rect"]
             dy = cr.y0 - r.y1
-            if dy < -30 or dy > 150:   # 이미지 하단 기준 -30pt(겹침)~150pt 아래까지
+            if dy < -30 or dy > 150:
                 continue
             overlap = min(r.x1, cr.x1) - max(r.x0, cr.x0)
-            d = dy + (0 if overlap > 10 else 60)   # 가로로 겹치면 우선
+            d = dy + (0 if overlap > 10 else 60)
             if d < best_d:
                 best, best_d = cb, d
-        if best is None:  # 폴백: 같은 페이지의 미사용 캡션 중 세로거리 최소
+        if best is None:
             for cb in cap_blocks:
                 if cb["used"]:
                     continue
@@ -138,8 +142,8 @@ open(os.path.join(OUTDIR, "captions.js"), "w", encoding="utf-8").write(
     + "window.FIGPAGE=" + json.dumps(pages) + ";")
 
 total = sum(counter.values())
-print("완료 ✅  이미지 %d개 중 캡션 매칭 %d개 (%.0f%%) → %s/captions.js"
-      % (total, matched, matched / total * 100 if total else 0, OUTDIR))
+print("완료 ✅  이미지 %d개 | 캡션 %d개(%.0f%%) | 페이지정보(FIGPAGE) %d개 → %s/captions.js"
+      % (total, matched, matched / total * 100 if total else 0, len(pages), OUTDIR))
 for cid in sorted(counter):
     have = sum(1 for k in caps if k.startswith(cid))
     print("   %-26s %3d개 (캡션 %d)" % (cid, counter[cid], have))
