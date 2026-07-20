@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>핵심 원리 & 판정·고장탐구 | FAA-H-8083-30B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F172A;--panel:#13203b;--panel2:#1a2a4a;--cyan:#60A5FA;--cyan2:#3B82F6;--gold:#FBBF24;--green:#34D399;--red:#E0635A;--t1:#F1F5F9;--t2:#CBD5E1;--t3:#7c8db0;--line:rgba(96,165,250,.18);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;line-height:1.6;}
+a{color:inherit;}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:11px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.topbar a.home{color:var(--cyan);font-weight:700;font-size:13.5px;text-decoration:none;}
+.topbar .tb-tag{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:12px;}
+.layout{display:flex;max-width:1240px;margin:0 auto;gap:24px;padding:22px 20px 60px;position:relative;z-index:1;}
+.sidebar{width:255px;flex-shrink:0;position:sticky;top:70px;align-self:flex-start;max-height:calc(100vh - 90px);overflow-y:auto;}
+.side-title{font-family:'Space Grotesk';font-size:12px;color:var(--t3);letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px;padding-left:4px;}
+.snav{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;text-decoration:none;color:var(--t2);transition:.15s;margin-bottom:3px;border:1px solid transparent;}
+.snav:hover{background:var(--panel);color:var(--t1);}
+.snav.active{background:var(--panel2);border-color:var(--line);color:var(--t1);}
+.snav-ic{font-size:18px;}
+.snav b{display:block;font-size:13.5px;font-weight:700;}
+.snav i{display:block;font-style:normal;font-size:10.5px;color:var(--t3);font-family:'JetBrains Mono',monospace;}
+.content{flex:1;min-width:0;}
+.page-hero{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin-bottom:26px;}
+.page-hero .tag{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:12px;}
+.page-hero h1{font-size:27px;font-weight:900;margin:8px 0 6px;}
+.page-hero p{color:var(--t2);font-size:14px;}
+.sys-sec{margin-bottom:38px;scroll-margin-top:74px;}
+.sys-head{display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:2px solid var(--line);margin-bottom:18px;}
+.sys-ic{font-size:30px;}
+.sys-head h2{font-size:21px;font-weight:900;}
+.sys-en{font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:12.5px;}
+.sys-pdf{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red);border:1px solid rgba(224,99,90,.4);background:rgba(224,99,90,.08);padding:5px 12px;border-radius:7px;text-decoration:none;transition:.15s;white-space:nowrap;}
+.sys-pdf:hover{background:var(--red);color:#fff;}
+.block-label{font-size:14.5px;font-weight:700;color:var(--gold);margin:18px 0 11px;}
+.block-label span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--t3);font-weight:400;margin-left:6px;}
+.principle{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+.principle .p-ko{font-size:14.5px;color:var(--t1);margin-bottom:10px;}
+.principle .p-en{font-size:13px;color:var(--t2);font-style:italic;background:rgba(96,165,250,.05);border-left:2px solid var(--cyan);padding:9px 13px;border-radius:0 7px 7px 0;}
+.ts-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;}
+.ts-table{width:100%;border-collapse:collapse;min-width:640px;}
+.ts-table th{background:var(--panel2);color:var(--cyan);font-size:12.5px;font-weight:700;text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);}
+.ts-table td{padding:12px 14px;font-size:13.5px;vertical-align:top;border-bottom:1px solid rgba(96,165,250,.08);}
+.ts-table tr:last-child td{border-bottom:none;}
+.ts-table tbody tr:hover{background:rgba(96,165,250,.04);}
+.ts-sym{width:26%;}
+.ts-sym b{color:var(--red);}
+.ts-en{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--t3);margin-top:3px;}
+.ts-cause{width:36%;color:var(--t2);}
+.ts-act{width:38%;color:var(--green);}
+.kw-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.kw-chip{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--cyan);background:rgba(96,165,250,.1);border:1px solid rgba(96,165,250,.25);padding:4px 11px;border-radius:20px;}
+.goto-ch{margin-left:auto;font-size:12.5px;font-weight:700;color:var(--gold);text-decoration:none;border:1px solid rgba(251,191,36,.3);padding:6px 14px;border-radius:8px;transition:.15s;}
+.goto-ch:hover{background:var(--gold);color:var(--bg);}
+.scrolltop{position:fixed;bottom:26px;right:26px;width:44px;height:44px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);color:var(--cyan);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:60;}
+@media(max-width:860px){.sidebar{display:none;}.layout{padding:16px 14px 50px;}.goto-ch{margin-left:0;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="home" href="index.html">← 전체 목차 (Master Index)</a>
+  <a class="home" href="textbook.html">📖 교재 색인</a>
+  <span class="tb-tag">FAA-H-8083-30B · SYSTEMS</span>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="side-title">핵심 원리 (Key Principles)</div>
+    <a class="snav" href="#electrical"><span class="snav-ic">⚡</span><span><b>전기 회로 계통</b><i>Electrical Circuits</i></span></a>
+<a class="snav" href="#battery"><span class="snav-ic">🔋</span><span><b>축전지·충전 계통</b><i>Battery & Charging</i></span></a>
+<a class="snav" href="#weight"><span class="snav-ic">⚖️</span><span><b>무게·평형</b><i>Weight & Balance</i></span></a>
+<a class="snav" href="#hardware"><span class="snav-ic">🔩</span><span><b>재료·체결(하드웨어)</b><i>Materials & Hardware</i></span></a>
+<a class="snav" href="#corrosion"><span class="snav-ic">🧪</span><span><b>부식 방지</b><i>Corrosion Control</i></span></a>
+<a class="snav" href="#fluid"><span class="snav-ic">🔧</span><span><b>유체 라인·피팅</b><i>Fluid Lines & Fittings</i></span></a>
+<a class="snav" href="#drawing"><span class="snav-ic">📐</span><span><b>도면 판독</b><i>Aircraft Drawings</i></span></a>
+<a class="snav" href="#regs"><span class="snav-ic">📋</span><span><b>규정·정비기록</b><i>Regulations & Records</i></span></a>
+
+  </aside>
+
+  <main class="content">
+    <div class="page-hero">
+      <div class="tag">FAA GENERAL · PRINCIPLES & TROUBLESHOOTING</div>
+      <h1>핵심 원리 &amp; 판정·고장탐구</h1>
+      <p>General은 A·P 공통 기초 과목입니다. 각 핵심 주제의 작동·판정 원리와, 실무·시험에서 마주치는 증상/오류 → 원인 → 점검·조치를 한눈에 정리했습니다. FAA-H-8083-30B 핸드북 기반이며, 각 주제의 연계 기출문제로 바로 이동할 수 있습니다.</p>
+    </div>
+
+    <section id="electrical" class="sys-sec">
+      <div class="sys-head">
+        <span class="sys-ic">⚡</span>
+        <div>
+          <h2>전기 회로 계통</h2>
+          <span class="sys-en">Electrical Circuits</span>
+        </div>
+        <a class="sys-pdf" href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf" target="_blank" rel="noopener">📄 FAA 핸드북</a>
+      </div>
+
+      <div class="block-label">⚙️ 작동 원리 <span>Operating Principle</span></div>
+      <div class="principle">
+        <p class="p-ko">전류는 전위차(전압)가 있을 때 폐회로를 따라 흐른다. 옴의 법칙 E=I×R로 전압·전류·저항이 연결된다. 직렬회로는 전류가 일정하고 전압이 각 저항에 나뉘며, 병렬회로는 전압이 일정하고 전류가 나뉜다. 실제 배선의 저항은 회로 곳곳에서 전압강하(voltage drop)를 만들며, 모든 부하의 전압강하 합은 공급전압과 같다. 접지(ground)는 전류의 귀로이며, 접지 불량은 저항 증가·발열의 흔한 원인이다.</p>
+        <p class="p-en">Current flows through a closed circuit when a potential difference (voltage) exists. Ohm's law E = I × R links voltage, current, and resistance. In a series circuit the current is constant and voltage divides across each resistor; in a parallel circuit the voltage is constant and current divides. Real wiring resistance creates voltage drops around the circuit, and the sum of all load drops equals the source voltage. The ground is the current's return path, and a poor ground is a common cause of added resistance and heat.</p>
+      </div>
+
+      <div class="block-label">🔧 고장탐구 <span>Troubleshooting</span></div>
+      <div class="ts-wrap">
+        <table class="ts-table">
+          <thead><tr><th>증상 Symptom</th><th>가능 원인 Probable Cause</th><th>점검·조치 Action</th></tr></thead>
+          <tbody><tr>
+          <td class="ts-sym"><b>회로 전체 무동작</b><span class="ts-en">Open circuit — no operation</span></td>
+          <td class="ts-cause">단선(open), 끊어진 퓨즈·차단기, 커넥터 이탈, 스위치 불량</td>
+          <td class="ts-act">전압 존재 여부를 부하 양단에서 점검, 도통(continuity) 시험으로 단선 구간 격리, 커넥터·스위치 확인</td>
+        </tr><tr>
+          <td class="ts-sym"><b>차단기 반복 트립</b><span class="ts-en">Repeated breaker trip / short</span></td>
+          <td class="ts-cause">전선 피복 손상에 의한 단락(short), 접지 합선, 과부하</td>
+          <td class="ts-act">해당 회로 격리·절연저항 점검, 마모·눌림 배선 확인, 정격 초과 부하 여부 확인</td>
+        </tr><tr>
+          <td class="ts-sym"><b>부하가 약하게 작동</b><span class="ts-en">Excessive voltage drop</span></td>
+          <td class="ts-cause">부식·헐거운 단자, 가는 전선, 긴 배선의 누적 저항</td>
+          <td class="ts-act">규정 허용 전압강하 초과 여부 측정, 단자 청소·재체결, 전선 게이지·경로 확인</td>
+        </tr><tr>
+          <td class="ts-sym"><b>간헐 작동·발열</b><span class="ts-en">Intermittent / hot connection</span></td>
+          <td class="ts-cause">접지 불량, 헐거운 접속, 산화 피막</td>
+          <td class="ts-act">접지점 청소·본딩 확인, 접속부 조임 토크 점검, 산화·부식 제거</td>
+        </tr></tbody>
+        </table>
+      </div>
+
+      <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
+      <div class="kw-row">
+        <span class="kw-chip">옴의 법칙</span><span class="kw-chip">개방회로</span><span class="kw-chip">단락</span><span class="kw-chip">전압강하</span><span class="kw-chip">접지·본딩</span>
+        <a class="goto-ch" href="ch04_basic_electricity.html">전기 계통 기출문제 풀기 →</a>
+      </div>
+    </section>
+
+    <section id="battery" class="sys-sec">
+      <div class="sys-head">
+        <span class="sys-ic">🔋</span>
+        <div>
+          <h2>축전지·충전 계통</h2>
+          <span class="sys-en">Battery & Charging</span>
+        </div>
+        <a class="sys-pdf" href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf" target="_blank" rel="noopener">📄 FAA 핸드북</a>
+      </div>
+
+      <div class="block-label">⚙️ 작동 원리 <span>Operating Principle</span></div>
+      <div class="principle">
+        <p class="p-ko">축전지는 화학에너지를 전기에너지로 저장·방출한다. 납산전지(lead-acid)는 전해질 비중(specific gravity)으로 충전상태를 판정하고, 니켈-카드뮴(Ni-Cd)전지는 비중이 변하지 않아 전압·용량으로 판정한다. 충전 방식은 정전압(constant voltage, 병렬 다수전지에 흔함)과 정전류(constant current, 정확한 충전량 관리)로 나뉜다. Ni-Cd는 급속 방전·충전 시 열이 축적되면 열폭주(thermal runaway)로 이어질 수 있어 온도 감시가 중요하다.</p>
+        <p class="p-en">A battery stores and releases energy by chemical reaction. A lead-acid battery's state of charge is judged by electrolyte specific gravity, while a nickel-cadmium (Ni-Cd) battery does not change gravity and is judged by voltage and capacity. Charging is either constant-voltage (common for many parallel cells) or constant-current (precise charge control). Ni-Cd can enter thermal runaway if heat builds during rapid discharge/charge, so temperature monitoring matters.</p>
+      </div>
+
+      <div class="block-label">🔧 고장탐구 <span>Troubleshooting</span></div>
+      <div class="ts-wrap">
+        <table class="ts-table">
+          <thead><tr><th>증상 Symptom</th><th>가능 원인 Probable Cause</th><th>점검·조치 Action</th></tr></thead>
+          <tbody><tr>
+          <td class="ts-sym"><b>용량 저하·빨리 방전</b><span class="ts-en">Low capacity</span></td>
+          <td class="ts-cause">납산: 설페이션·전해질 부족 / Ni-Cd: 셀 불균형·기억효과</td>
+          <td class="ts-act">용량시험 실시, 전해질 액위·비중 점검, Ni-Cd는 딥디스차지 후 재충전</td>
+        </tr><tr>
+          <td class="ts-sym"><b>비중이 셀마다 다름</b><span class="ts-en">Uneven specific gravity</span></td>
+          <td class="ts-cause">셀 열화, 전해질 손실, 내부 단락</td>
+          <td class="ts-act">비중계로 각 셀 측정, 편차 큰 셀 교환, 규정 충전 후 재측정</td>
+        </tr><tr>
+          <td class="ts-sym"><b>과열·전해질 끓음</b><span class="ts-en">Overheating / thermal runaway</span></td>
+          <td class="ts-cause">과충전, 충전전압 과다, Ni-Cd 내부저항 저하</td>
+          <td class="ts-act">즉시 충전 중단, 충전기 전압·전류 점검, 온도센서·회로 점검</td>
+        </tr><tr>
+          <td class="ts-sym"><b>부식·백색 결정(단자)</b><span class="ts-en">Terminal corrosion</span></td>
+          <td class="ts-cause">전해질 누출, 통풍 불량, 과충전 가스 발생</td>
+          <td class="ts-act">중화·세척(납산=베이킹소다, Ni-Cd=붕산), 벤트·배수 점검, 단자 보호</td>
+        </tr></tbody>
+        </table>
+      </div>
+
+      <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
+      <div class="kw-row">
+        <span class="kw-chip">비중</span><span class="kw-chip">정전압충전</span><span class="kw-chip">열폭주</span><span class="kw-chip">설페이션</span><span class="kw-chip">용량시험</span>
+        <a class="goto-ch" href="ch04_basic_electricity.html">축전지 기출문제 풀기 →</a>
+      </div>
+    </section>
+
+    <section id="weight" class="sys-sec">
+      <div class="sys-head">
+        <span class="sys-ic">⚖️</span>
+        <div>
+          <h2>무게·평형</h2>
+          <span class="sys-en">Weight & Balance</span>
+        </div>
+        <a class="sys-pdf" href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf" target="_blank" rel="noopener">📄 FAA 핸드북</a>
+      </div>
+
+      <div class="block-label">⚙️ 작동 원리 <span>Operating Principle</span></div>
+      <div class="principle">
+        <p class="p-ko">무게중심(CG)은 항공기가 균형을 이루는 점이다. 기준선(datum)에서 각 무게까지의 거리(아암)를 곱해 모멘트를 구하고, 총모멘트를 총무게로 나누면 CG가 나온다(CG = 총모멘트 ÷ 총무게). 자중(empty weight)과 자중 CG는 무게측정으로 구하고, 여기에 승무원·연료·화물을 더해 운용 CG가 전방·후방 한계 안에 드는지 확인한다. CG가 한계를 벗어나면 안정성·조종성이 나빠진다.</p>
+        <p class="p-en">The center of gravity (CG) is the point where the aircraft balances. Multiply each weight by its distance from the datum (arm) to get a moment, then divide total moment by total weight (CG = total moment ÷ total weight). Empty weight and empty-weight CG come from weighing; add crew, fuel, and cargo to verify the loaded CG falls within forward and aft limits. A CG outside limits degrades stability and control.</p>
+      </div>
+
+      <div class="block-label">🔧 판정·오류 점검 <span>Common Errors</span></div>
+      <div class="ts-wrap">
+        <table class="ts-table">
+          <thead><tr><th>상황 Case</th><th>원인 Cause</th><th>올바른 처리 Action</th></tr></thead>
+          <tbody><tr>
+          <td class="ts-sym"><b>CG 후방 한계 초과</b><span class="ts-en">CG aft of limit</span></td>
+          <td class="ts-cause">후방 화물·승객 과다, 후방 연료탱크 편중</td>
+          <td class="ts-act">화물 전방 재배치, 밸러스트 계산, 적재 한계표(로딩) 재확인</td>
+        </tr><tr>
+          <td class="ts-sym"><b>CG 전방 한계 초과</b><span class="ts-en">CG forward of limit</span></td>
+          <td class="ts-cause">전방 편중 적재, 노즈 밸러스트 과다</td>
+          <td class="ts-act">적재 재배분, 후방 밸러스트 계산, 아암 부호(±) 확인</td>
+        </tr><tr>
+          <td class="ts-sym"><b>계산 결과가 실제와 다름</b><span class="ts-en">Calculation error</span></td>
+          <td class="ts-cause">기준선 앞 아암의 음(−)부호 누락, 단위 혼용</td>
+          <td class="ts-act">datum 기준 부호 규칙 적용, in·lb 단위 통일, 모멘트 재계산</td>
+        </tr><tr>
+          <td class="ts-sym"><b>자중 측정값 오류</b><span class="ts-en">Weighing error</span></td>
+          <td class="ts-cause">저울 미영점(tare) 미보정, 타이어 초크 하중 포함, 기체 미수평</td>
+          <td class="ts-act">스케일 영점·태어 보정, 수평 확인, 잔여물(연료·오물) 규정상태로</td>
+        </tr></tbody>
+        </table>
+      </div>
+
+      <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
+      <div class="kw-row">
+        <span class="kw-chip">기준선</span><span class="kw-chip">아암·모멘트</span><span class="kw-chip">CG 계산</span><span class="kw-chip">자중·유용하중</span><span class="kw-chip">밸러스트</span>
+        <a class="goto-ch" href="ch06_weight_balance.html">무게·평형 기출문제 풀기 →</a>
+      </div>
+    </section>
+
+    <section id="hardware" class="sys-sec">
+      <div class="sys-head">
+        <span class="sys-ic">🔩</span>
+        <div>
+          <h2>재료·체결(하드웨어)</h2>
+          <span class="sys-en">Materials & Hardware</span>
+        </div>
+        <a class="sys-pdf" href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf" target="_blank" rel="noopener">📄 FAA 핸드북</a>
+      </div>
+
+      <div class="block-label">⚙️ 작동 원리 <span>Operating Principle</span></div>
+      <div class="principle">
+        <p class="p-ko">체결부품은 하중을 정확히 전달하도록 규정 토크로 조인다. 볼트의 그립(grip) 길이는 체결 두께와 맞아 나사부가 아닌 몸통이 전단하중을 받아야 한다. 토크는 마찰을 통해 볼트에 장력을 만들며, 과소 토크는 풀림·피로파괴, 과대 토크는 나사 손상·볼트 항복을 부른다. 안전결선(safety wire)은 항상 부품이 풀리는 반대 방향으로 당기도록 건다. 금속은 열처리로 강도·경도를 조절하며, 재질·결함은 비파괴검사(NDI)로 확인한다.</p>
+        <p class="p-en">Fasteners are torqued to spec so loads transfer correctly. A bolt's grip length must match the material thickness so the shank — not the threads — carries shear. Torque creates bolt tension through friction; too little invites loosening and fatigue, too much damages threads or yields the bolt. Safety wire is always routed to pull in the direction that tightens the part. Metals are heat-treated to set strength and hardness, and material or defects are confirmed by nondestructive inspection (NDI).</p>
+      </div>
+
+      <div class="block-label">🔧 판정·고장탐구 <span>Troubleshooting</span></div>
+      <div class="ts-wrap">
+        <table class="ts-table">
+          <thead><tr><th>증상·상황 Symptom</th><th>가능 원인 Probable Cause</th><th>점검·조치 Action</th></tr></thead>
+          <tbody><tr>
+          <td class="ts-sym"><b>볼트 반복 풀림</b><span class="ts-en">Fastener loosens</span></td>
+          <td class="ts-cause">토크 부족, 안전장치 미적용, 진동, 그립 부적정</td>
+          <td class="ts-act">규정 토크로 재체결, 코터핀·안전결선·록와셔 적용, 그립 길이 확인</td>
+        </tr><tr>
+          <td class="ts-sym"><b>나사·볼트 손상</b><span class="ts-en">Stripped / yielded bolt</span></td>
+          <td class="ts-cause">과대 토크, 윤활 여부와 토크값 불일치, 재사용 부품</td>
+          <td class="ts-act">토크표의 건식/습식 값 확인, 토크렌치 교정 확인, 셀프록너트 재사용 금지</td>
+        </tr><tr>
+          <td class="ts-sym"><b>안전결선 무효</b><span class="ts-en">Ineffective safety wire</span></td>
+          <td class="ts-cause">당김 방향 반대, 와이어 굵기·꼬임 부족, 손상</td>
+          <td class="ts-act">조임 방향으로 당기게 재작업, 규정 와이어 사용, 6~8회/인치 꼬임 유지</td>
+        </tr><tr>
+          <td class="ts-sym"><b>표면 균열 의심</b><span class="ts-en">Suspected crack</span></td>
+          <td class="ts-cause">피로·응력집중, 열처리 부적정</td>
+          <td class="ts-act">적정 NDI 선택(자분=강자성, 침투=비자성 표면, 와전류·초음파=표면하) 후 판정</td>
+        </tr></tbody>
+        </table>
+      </div>
+
+      <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
+      <div class="kw-row">
+        <span class="kw-chip">토크</span><span class="kw-chip">그립 길이</span><span class="kw-chip">안전결선</span><span class="kw-chip">열처리</span><span class="kw-chip">NDI</span>
+        <a class="goto-ch" href="ch07_materials_processes.html">재료·하드웨어 기출문제 풀기 →</a>
+      </div>
+    </section>
+
+    <section id="corrosion" class="sys-sec">
+      <div class="sys-head">
+        <span class="sys-ic">🧪</span>
+        <div>
+          <h2>부식 방지</h2>
+          <span class="sys-en">Corrosion Control</span>
+        </div>
+        <a class="sys-pdf" href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf" target="_blank" rel="noopener">📄 FAA 핸드북</a>
+      </div>
+
+      <div class="block-label">⚙️ 작동 원리 <span>Operating Principle</span></div>
+      <div class="principle">
+        <p class="p-ko">부식은 금속이 산화되어 원래의 광석 상태로 돌아가려는 전기화학 반응이다. 성립에는 양극·음극·전해질·전기적 통로가 필요하다. 이질금속(dissimilar-metal)이 전해질과 접촉하면 갈바닉 부식이 활발해지고, 습기·염분·오염물이 전해질로 작용한다. 방지는 이 회로를 끊는 것 — 세척, 배수, 밀봉, 이질금속 절연, 그리고 양극산화·알로다인(전환코팅)·프라이머·페인트 같은 보호막이 핵심이다.</p>
+        <p class="p-en">Corrosion is an electrochemical reaction in which metal oxidizes, tending to return to its ore state. It needs an anode, cathode, electrolyte, and an electrical path. Dissimilar-metal contact with an electrolyte accelerates galvanic corrosion, and moisture, salt, and contaminants act as the electrolyte. Prevention breaks that circuit — cleaning, drainage, sealing, insulating dissimilar metals, plus protective films such as anodize, Alodine (conversion coating), primer, and paint.</p>
+      </div>
+
+      <div class="block-label">🔧 판정·고장탐구 <span>Troubleshooting</span></div>
+      <div class="ts-wrap">
+        <table class="ts-table">
+          <thead><tr><th>증상 Symptom</th><th>가능 원인 Probable Cause</th><th>점검·조치 Action</th></tr></thead>
+          <tbody><tr>
+          <td class="ts-sym"><b>표면 백분·거칠음(알루미늄)</b><span class="ts-en">Surface corrosion</span></td>
+          <td class="ts-cause">보호막 손상, 습기 노출, 산화 진행</td>
+          <td class="ts-act">비금속 연마재로 제거, 손상 범위 확인, 전환코팅·프라이머 재도포</td>
+        </tr><tr>
+          <td class="ts-sym"><b>작은 구멍·점부식</b><span class="ts-en">Pitting</span></td>
+          <td class="ts-cause">국부적 보호막 파괴, 염분·오염물 정체</td>
+          <td class="ts-act">깊이 측정으로 허용한계 판정, 제거·중화, 재보호, 원인부 배수 개선</td>
+        </tr><tr>
+          <td class="ts-sym"><b>접합부 부풂·백색 침전</b><span class="ts-en">Dissimilar-metal / filiform</span></td>
+          <td class="ts-cause">이질금속 접촉, 페인트 밑 습기 침투</td>
+          <td class="ts-act">절연(파세이트·실런트) 복원, 도막 제거·재도장, 접촉면 분리</td>
+        </tr><tr>
+          <td class="ts-sym"><b>응력부위 균열성 부식</b><span class="ts-en">Stress / intergranular</span></td>
+          <td class="ts-cause">지속 인장응력 + 부식환경, 열처리 부적정</td>
+          <td class="ts-act">NDI로 범위 판정, 구조 수리·교환은 정비교범 준수, 응력·환경 원인 제거</td>
+        </tr></tbody>
+        </table>
+      </div>
+
+      <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
+      <div class="kw-row">
+        <span class="kw-chip">이질금속</span><span class="kw-chip">공식(pitting)</span><span class="kw-chip">전환코팅</span><span class="kw-chip">알로다인·양극산화</span><span class="kw-chip">응력부식</span>
+        <a class="goto-ch" href="ch08_corrosion_control.html">부식 방지 기출문제 풀기 →</a>
+      </div>
+    </section>
+
+    <section id="fluid" class="sys-sec">
+      <div class="sys-head">
+        <span class="sys-ic">🔧</span>
+        <div>
+          <h2>유체 라인·피팅</h2>
+          <span class="sys-en">Fluid Lines & Fittings</span>
+        </div>
+        <a class="sys-pdf" href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf" target="_blank" rel="noopener">📄 FAA 핸드북</a>
+      </div>
+
+      <div class="block-label">⚙️ 작동 원리 <span>Operating Principle</span></div>
+      <div class="principle">
+        <p class="p-ko">유체 라인은 연료·오일·유압·산소를 알맞은 압력으로 이송한다. 강성 튜브는 고정 구간에, 연성 호스는 상대운동·진동 구간에 쓴다. 항공용 플레어는 37°로 자동차용 45°와 호환되지 않으며, 두꺼운 고압 튜브는 플레어리스(프리셋) 피팅을 쓴다. 밀봉은 실런트가 아니라 플레어면·피팅 콘의 금속 접촉으로 이루어지므로, 정렬을 너트로 당기지 말고 규정 토크로 조여야 한다. 모든 구간에 굽힘을 두어 진동·열팽창을 흡수한다.</p>
+        <p class="p-en">Fluid lines carry fuel, oil, hydraulics, and oxygen at the right pressure. Rigid tube serves fixed runs; flexible hose serves relative-motion and vibration areas. Aviation flares are 37° and not interchangeable with automotive 45°, while thick high-pressure tube uses flareless (preset) fittings. The seal is metal contact between the flare face and fitting cone — not sealant — so don't pull alignment with the nut; torque to spec. Every run has a bend to absorb vibration and thermal expansion.</p>
+      </div>
+
+      <div class="block-label">🔧 판정·고장탐구 <span>Troubleshooting</span></div>
+      <div class="ts-wrap">
+        <table class="ts-table">
+          <thead><tr><th>증상 Symptom</th><th>가능 원인 Probable Cause</th><th>점검·조치 Action</th></tr></thead>
+          <tbody><tr>
+          <td class="ts-sym"><b>피팅부 누설</b><span class="ts-en">Fitting leak</span></td>
+          <td class="ts-cause">플레어 균열·불량, 토크 과소, 밀봉면 흠</td>
+          <td class="ts-act">플레어 상태·각도(37°) 확인, 규정 토크 재적용(과조임 금지), 손상 시 재제작</td>
+        </tr><tr>
+          <td class="ts-sym"><b>과조임에도 계속 새는 라인</b><span class="ts-en">Persistent leak</span></td>
+          <td class="ts-cause">밀봉면 스크래치, 이물, 부품 부적합</td>
+          <td class="ts-act">분해·세척·표면 점검, 올바른 슬리브·너트 확인, 절대 과조임으로 해결하지 않음</td>
+        </tr><tr>
+          <td class="ts-sym"><b>튜브 균열·마모</b><span class="ts-en">Cracked / chafed tube</span></td>
+          <td class="ts-cause">진동, 클램프 부족, 구조와 쓸림</td>
+          <td class="ts-act">쿠션 클램프로 지지, 벽두께 10%·지름 20% 손상 한계로 판정, 초과 시 교환</td>
+        </tr><tr>
+          <td class="ts-sym"><b>라인 오식별·오연결</b><span class="ts-en">Misidentified line</span></td>
+          <td class="ts-cause">색·테이프 식별 누락, FLAM·PHDAN 표시 미숙지</td>
+          <td class="ts-act">식별 테이프·기호 규정대로 부착, 계통별 색코드 확인, 인화·위험 라인 표시</td>
+        </tr></tbody>
+        </table>
+      </div>
+
+      <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
+      <div class="kw-row">
+        <span class="kw-chip">37° 플레어</span><span class="kw-chip">AN vs AC</span><span class="kw-chip">플레어리스</span><span class="kw-chip">누설·과조임</span><span class="kw-chip">라인 식별</span>
+        <a class="goto-ch" href="ch09_fluid_lines.html">유체 라인 기출문제 풀기 →</a>
+      </div>
+    </section>
+
+    <section id="drawing" class="sys-sec">
+      <div class="sys-head">
+        <span class="sys-ic">📐</span>
+        <div>
+          <h2>도면 판독</h2>
+          <span class="sys-en">Aircraft Drawings</span>
+        </div>
+        <a class="sys-pdf" href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf" target="_blank" rel="noopener">📄 FAA 핸드북</a>
+      </div>
+
+      <div class="block-label">⚙️ 작동 원리 <span>Operating Principle</span></div>
+      <div class="principle">
+        <p class="p-ko">도면은 정비사가 부품·계통을 정확히 이해하고 제작·수리하기 위한 언어다. 정투상도(orthographic)는 정면·평면·측면으로 물체를 표현하고, 상세도·단면도·계통도가 이를 보완한다. 선의 종류(외형선·은선·중심선·치수선)와 기호가 의미를 전달하며, 제목란·개정란·자재명세서(BOM)에 부품번호·재질·개정 이력이 담긴다. 공차(tolerance)는 허용 오차 범위를 정한다. 블록다이어그램·배선도·유압도는 계통의 흐름과 연결을 보여준다.</p>
+        <p class="p-en">A drawing is the mechanic's language for understanding, building, and repairing parts and systems. Orthographic projection shows an object in front, top, and side views, supplemented by detail, section, and schematic drawings. Line types (visible, hidden, center, dimension) and symbols convey meaning, while the title block, revision block, and bill of materials (BOM) carry part numbers, material, and revision history. Tolerance sets the allowable range. Block diagrams, wiring, and hydraulic schematics show system flow and connections.</p>
+      </div>
+
+      <div class="block-label">🔧 판독·오류 점검 <span>Common Errors</span></div>
+      <div class="ts-wrap">
+        <table class="ts-table">
+          <thead><tr><th>상황 Case</th><th>원인 Cause</th><th>올바른 처리 Action</th></tr></thead>
+          <tbody><tr>
+          <td class="ts-sym"><b>형상을 잘못 해석</b><span class="ts-en">Misread projection</span></td>
+          <td class="ts-cause">은선(hidden)과 외형선 혼동, 뷰 정렬 오독</td>
+          <td class="ts-act">선의 종류별 의미 확인, 세 뷰를 상호 대조해 형상 재구성</td>
+        </tr><tr>
+          <td class="ts-sym"><b>치수·공차 해석 오류</b><span class="ts-en">Tolerance error</span></td>
+          <td class="ts-cause">공차 부호·기준 미확인, 단위 혼용</td>
+          <td class="ts-act">± 공차·기준면 확인, 최대·최소 허용치 계산, 단위(in/mm) 통일</td>
+        </tr><tr>
+          <td class="ts-sym"><b>구버전 도면 사용</b><span class="ts-en">Outdated revision</span></td>
+          <td class="ts-cause">개정란 미확인, 최신 개정 미반영</td>
+          <td class="ts-act">개정란(revision block) 확인, 최신 개정본 사용, 부품번호 대조</td>
+        </tr><tr>
+          <td class="ts-sym"><b>계통 흐름 오판</b><span class="ts-en">Schematic misread</span></td>
+          <td class="ts-cause">기호 오독, 배선·유압 기호 미숙지</td>
+          <td class="ts-act">범례(legend)·기호표 참조, 흐름 방향·연결점 추적</td>
+        </tr></tbody>
+        </table>
+      </div>
+
+      <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
+      <div class="kw-row">
+        <span class="kw-chip">정투상</span><span class="kw-chip">선의 종류</span><span class="kw-chip">공차</span><span class="kw-chip">개정란·BOM</span><span class="kw-chip">계통도</span>
+        <a class="goto-ch" href="ch05_aircraft_drawings.html">도면 판독 기출문제 풀기 →</a>
+      </div>
+    </section>
+
+    <section id="regs" class="sys-sec">
+      <div class="sys-head">
+        <span class="sys-ic">📋</span>
+        <div>
+          <h2>규정·정비기록</h2>
+          <span class="sys-en">Regulations & Records</span>
+        </div>
+        <a class="sys-pdf" href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf" target="_blank" rel="noopener">📄 FAA 핸드북</a>
+      </div>
+
+      <div class="block-label">⚙️ 작동 원리 <span>Operating Principle</span></div>
+      <div class="principle">
+        <p class="p-ko">14 CFR(연방항공규정)은 항공정비의 법적 틀이다. 정비사는 승인 자료(approved data)와 수용 자료(acceptable data)를 구분해 사용해야 하며, 주요 개조·수리는 Form 337과 승인 자료가 필요하다. 감항성 지시(AD)는 강제 사항이고, 정비회보(SB)는 권고 사항이다. 작업 완료 후에는 정비기록에 내용·날짜·서명을 남겨 사용가능 복귀(RTS)를 증명한다. 기록은 항공기 이력과 감항성을 증명하는 법적 문서다.</p>
+        <p class="p-en">14 CFR (Federal Aviation Regulations) is the legal framework for maintenance. A mechanic must distinguish approved data from acceptable data, and major alterations/repairs require Form 337 with approved data. Airworthiness Directives (ADs) are mandatory; Service Bulletins (SBs) are advisory. After work, the maintenance record must show the description, date, and signature to certify return to service (RTS). Records are legal documents proving the aircraft's history and airworthiness.</p>
+      </div>
+
+      <div class="block-label">🔧 판정·상황 점검 <span>Compliance Check</span></div>
+      <div class="ts-wrap">
+        <table class="ts-table">
+          <thead><tr><th>상황 Case</th><th>원인 Cause</th><th>올바른 처리 Action</th></tr></thead>
+          <tbody><tr>
+          <td class="ts-sym"><b>AD 미이행 항공기</b><span class="ts-en">AD not complied</span></td>
+          <td class="ts-cause">AD 강제성 미인지, 반복 AD 주기 누락</td>
+          <td class="ts-act">해당 AD 확인·이행, 방법·주기 준수, 기록에 AD 번호·일자 기재</td>
+        </tr><tr>
+          <td class="ts-sym"><b>기록 미비로 RTS 불가</b><span class="ts-en">Incomplete record</span></td>
+          <td class="ts-cause">서명·날짜·자격번호 누락, 작업 내용 불명확</td>
+          <td class="ts-act">필수 항목(내용·일자·서명·자격) 기재, RTS 요건 충족 확인</td>
+        </tr><tr>
+          <td class="ts-sym"><b>주요 개조를 잘못 처리</b><span class="ts-en">Major alteration mishandled</span></td>
+          <td class="ts-cause">Major/Minor 판정 오류, 승인 자료 미사용</td>
+          <td class="ts-act">Major 여부 판정, Form 337 작성·승인 자료(STC·PMA) 사용</td>
+        </tr><tr>
+          <td class="ts-sym"><b>자료 종류 오판</b><span class="ts-en">Wrong data type</span></td>
+          <td class="ts-cause">승인 자료와 수용 자료 혼동</td>
+          <td class="ts-act">작업 종류에 맞는 자료 선택(승인=Major, 수용=Minor 기준), 출처 확인</td>
+        </tr></tbody>
+        </table>
+      </div>
+
+      <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
+      <div class="kw-row">
+        <span class="kw-chip">14 CFR</span><span class="kw-chip">AD·SB</span><span class="kw-chip">Form 337</span><span class="kw-chip">승인·수용 자료</span><span class="kw-chip">RTS</span>
+        <a class="goto-ch" href="ch11_regulations.html">규정·기록 기출문제 풀기 →</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<button class="scrolltop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// 스크롤 스파이
+(function(){
+  try{
+    var secs=document.querySelectorAll('.sys-sec');
+    var navs=document.querySelectorAll('.snav');
+    function spy(){
+      var y=window.scrollY+120,cur='';
+      secs.forEach(function(s){ if(s.offsetTop<=y) cur=s.id; });
+      navs.forEach(function(n){ n.classList.toggle('active', n.getAttribute('href')==='#'+cur); });
+    }
+    window.addEventListener('scroll',spy);spy();
+    navs.forEach(function(n){
+      n.addEventListener('click',function(e){
+        e.preventDefault();
+        var el=document.getElementById(this.getAttribute('href').slice(1));
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
