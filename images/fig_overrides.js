@@ -1,0 +1,1 @@
+window.FIG_OVERRIDE={"ch06_weight_balance|s-helicopter-wb": "none", "ch07_materials_processes|s-steel-alloys": "none"};

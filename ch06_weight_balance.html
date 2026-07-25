@@ -723,4 +723,4 @@ function doSearch(q){
 })();
 
 </script>
-</body></html>
+<script src="images/fig_overrides.js"></script><script>(function(){var OV=window.FIG_OVERRIDE||{},caps=window.FIGCAP||{},HB="FAA-H-8083-30B";var CHID=(location.pathname.split("/").pop()||"").replace(".html","");function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;");}function apply(){document.querySelectorAll("section.comp").forEach(function(sec){var key=OV[CHID+"|"+sec.id];if(!key)return;var body=sec.querySelector(".comp-body");if(!body)return;body.querySelectorAll("figure.fig").forEach(function(f){f.remove();});if(key==="none")return;var f=document.createElement("figure");f.className="fig";var im=new Image();im.alt=key;im.src="images/"+key+".jpg";im.onerror=function(){f.remove();};f.appendChild(im);var cp=document.createElement("figcaption");cp.innerHTML=esc(caps[key]||key)+' <span class="figpdf">('+HB+')</span>';f.appendChild(cp);body.appendChild(f);});}if(document.readyState!=="loading")setTimeout(apply,80);else document.addEventListener("DOMContentLoaded",function(){setTimeout(apply,80);});})();</script></body></html>
