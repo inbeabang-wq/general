@@ -330,7 +330,7 @@ body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
 <li><a href="#s-faa-figures" data-target="s-faa-figures">FAA 핸드북 전체 도면 <span class="en">FAA Handbook Figures</span></a></li></ul></aside><main>
 <div class="hero"><div class="ch">CHAPTER 9</div>
 <h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;margin:8px 0 4px">유체 라인과 피팅</h2>
-<div class="en" style="font-family:'JetBrains Mono',monospace;color:var(--cyan)">Fluid Lines &amp; Fittings</div>
+<div class="en" style="font-family:'JetBrains Mono',monospace;color:var(--cyan)">Fluid Lines &amp; Fittings</div><a class="acs-chip" href="../acs.html" title="ACS 시험 영역 — 클릭하면 블루프린트로 이동" style="display:inline-block;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;color:#FBBF24;border:1px solid rgba(251,191,36,.5);background:rgba(251,191,36,.10);border-radius:20px;padding:5px 13px;text-decoration:none;">🎯 ACS AM.I.D · 유체 라인·피팅</a>
 <p style="color:var(--t2);margin-top:12px">강체 튜브(라인)와 호스, 튜브 벤딩·플레어, AN·MS 피팅, 호스 식별·설치, 라인 식별과 누설 점검을 다룹니다.<br><span style="color:var(--t3)">Covers rigid tubing and hoses, tube bending and flaring, AN/MS fittings, hose identification and installation, line identification, and leak checks.</span></p>
 <a class="ch-pdf-badge" href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf#page=354" target="_blank" rel="noopener">📄 FAA-H-8083-30B 핸드북 PDF</a>
 </div>
@@ -737,4 +737,4 @@ function doSearch(q){
 })();
 
 </script>
-</body></html>
+<script>(function(){var RE=/\b(AM\.[IVX]+\.[A-Z]\.[KSR]\d+[a-z]?)\b/;function run(){document.querySelectorAll(".iqcard").forEach(function(card){var q=card.querySelector(".iqq");if(!q||q.querySelector(".acs-tag"))return;var m=(card.textContent||"").match(RE);if(!m)return;var s=document.createElement("span");s.className="acs-tag";s.textContent="ACS "+m[1];s.style.cssText="display:inline-block;margin-left:8px;font-family:monospace;font-size:10px;font-weight:700;color:#04122e;background:#FBBF24;border-radius:5px;padding:2px 7px;vertical-align:middle;";q.appendChild(s);});}if(document.readyState!=="loading")run();else document.addEventListener("DOMContentLoaded",run);})();</script></body></html>

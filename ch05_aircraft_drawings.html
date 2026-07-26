@@ -325,7 +325,7 @@ body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
 <li><a href="#s-faa-figures" data-target="s-faa-figures">FAA 핸드북 전체 도면 <span class="en">FAA Handbook Figures</span></a></li></ul></aside><main>
 <div class="hero"><div class="ch">CHAPTER 5</div>
 <h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;margin:8px 0 4px">항공기 도면</h2>
-<div class="en" style="font-family:'JetBrains Mono',monospace;color:var(--cyan)">Aircraft Drawings</div>
+<div class="en" style="font-family:'JetBrains Mono',monospace;color:var(--cyan)">Aircraft Drawings</div><a class="acs-chip" href="../acs.html" title="ACS 시험 영역 — 클릭하면 블루프린트로 이동" style="display:inline-block;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;color:#FBBF24;border:1px solid rgba(251,191,36,.5);background:rgba(251,191,36,.10);border-radius:20px;padding:5px 13px;text-decoration:none;">🎯 ACS AM.I.B · 항공기 도면</a>
 <p style="color:var(--t2);margin-top:12px">도면의 종류, 도면 요소(제목란·개정란·자재표), 선의 종류와 투상도, 계통도(회로도·블록도·배선도), 치수와 공차를 다룹니다.<br><span style="color:var(--t3)">Covers types of drawings, drawing elements (title block, revision block, bill of materials), line types and orthographic views, diagrams (schematic/block/wiring), and dimensions and tolerances.</span></p>
 <a class="ch-pdf-badge" href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf#page=124" target="_blank" rel="noopener">📄 FAA-H-8083-30B 핸드북 PDF</a>
 </div>
@@ -727,4 +727,4 @@ function doSearch(q){
 })();
 
 </script>
-</body></html>
+<script>(function(){var RE=/\b(AM\.[IVX]+\.[A-Z]\.[KSR]\d+[a-z]?)\b/;function run(){document.querySelectorAll(".iqcard").forEach(function(card){var q=card.querySelector(".iqq");if(!q||q.querySelector(".acs-tag"))return;var m=(card.textContent||"").match(RE);if(!m)return;var s=document.createElement("span");s.className="acs-tag";s.textContent="ACS "+m[1];s.style.cssText="display:inline-block;margin-left:8px;font-family:monospace;font-size:10px;font-weight:700;color:#04122e;background:#FBBF24;border-radius:5px;padding:2px 7px;vertical-align:middle;";q.appendChild(s);});}if(document.readyState!=="loading")run();else document.addEventListener("DOMContentLoaded",run);})();</script></body></html>

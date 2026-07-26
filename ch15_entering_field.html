@@ -723,4 +723,4 @@ function doSearch(q){
 })();
 
 </script>
-</body></html>
+<script>(function(){var RE=/\b(AM\.[IVX]+\.[A-Z]\.[KSR]\d+[a-z]?)\b/;function run(){document.querySelectorAll(".iqcard").forEach(function(card){var q=card.querySelector(".iqq");if(!q||q.querySelector(".acs-tag"))return;var m=(card.textContent||"").match(RE);if(!m)return;var s=document.createElement("span");s.className="acs-tag";s.textContent="ACS "+m[1];s.style.cssText="display:inline-block;margin-left:8px;font-family:monospace;font-size:10px;font-weight:700;color:#04122e;background:#FBBF24;border-radius:5px;padding:2px 7px;vertical-align:middle;";q.appendChild(s);});}if(document.readyState!=="loading")run();else document.addEventListener("DOMContentLoaded",run);})();</script></body></html>
