@@ -716,7 +716,7 @@ function tbmOpen(btn){
     }
     // 2) 관련 교재 섹션 (강한 매칭일 때만)
     var gotoBtn = document.getElementById('tbmGoto');
-    if(msid){
+    if(false){ /* 관련교재 섹션 숨김: 오매핑 방지 (정답·해설만 표시) */
       var sec = document.getElementById(msid);
       if(sec){
         var relLabel=document.createElement('div');
