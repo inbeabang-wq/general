@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAA General 2026 업데이트 — Test Guide Update</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F172A;--panel:#13203b;--panel2:#1a2a4a;--cyan:#60A5FA;--gold:#FBBF24;--green:#34D399;--t1:#F1F5F9;--t2:#CBD5E1;--t3:#7c8db0;--line:#24344f;}
+*{box-sizing:border-box;} body{margin:0;background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;line-height:1.6;}
+.wrap{max-width:920px;margin:0 auto;padding:32px 20px 80px;}
+.top-link{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--cyan);text-decoration:none;}
+.top-link:hover{text-decoration:underline;}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);letter-spacing:1px;margin:18px 0 6px;}
+h1{font-family:'Space Grotesk',sans-serif;font-size:30px;margin:0 0 6px;display:flex;align-items:center;gap:10px;}
+.sub{color:var(--cyan);font-size:15px;margin-bottom:18px;}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;}
+.chip{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-size:13px;color:var(--t2);}
+.chip b{color:var(--t1);}
+.legend{display:flex;gap:14px;margin-bottom:20px;font-size:13px;color:var(--t3);}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle;}
+.dot.new{background:var(--green);} .dot.rev{background:var(--gold);}
+.search{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 16px;color:var(--t1);font-family:'Noto Sans KR';font-size:15px;margin-bottom:22px;}
+.search::placeholder{color:var(--t3);}
+.card{background:rgba(19,32,59,.95);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid var(--green);}
+.card.rev{border-left-color:var(--gold);}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.qno{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:var(--cyan);}
+.badge{font-size:11px;font-family:'JetBrains Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:600;}
+.badge.new{background:rgba(52,211,153,.15);color:var(--green);border:1px solid rgba(52,211,153,.4);}
+.badge.rev{background:rgba(251,191,36,.15);color:var(--gold);border:1px solid rgba(251,191,36,.4);}
+.qtext{font-size:15.5px;font-weight:500;margin-bottom:4px;}
+.qtext-en{font-size:13.5px;color:var(--t3);font-style:italic;margin-bottom:14px;}
+.opts{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+.opt{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:11px 14px;font-size:14px;}
+.opt.correct{border-color:var(--green);background:rgba(52,211,153,.1);}
+.opt .lt{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--cyan);margin-right:8px;}
+.opt.correct .lt{color:var(--green);}
+.opt-en{display:block;color:var(--t3);font-size:12.5px;margin-top:2px;font-style:italic;}
+.ans{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--green);font-weight:600;margin-bottom:10px;}
+.exp{background:rgba(96,165,250,.07);border:1px solid rgba(96,165,250,.2);border-radius:9px;padding:13px 15px;font-size:14px;color:var(--t2);}
+.exp-en{color:var(--t3);font-size:12.5px;font-style:italic;margin-top:8px;}
+.tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--t3);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:3px 8px;}
+.count{color:var(--green);font-size:14px;font-family:'JetBrains Mono',monospace;margin-bottom:14px;}
+.noresult{color:var(--t3);text-align:center;padding:40px;display:none;}
+.disclaimer{margin-top:30px;padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:10px;font-size:12.5px;color:var(--t3);line-height:1.7;}
+</style></head>
+<body><div class="wrap">
+<a class="top-link" href="index.html">← 전체 목차 (Master Index)</a>
+<div class="kicker">General Mechanic Test Guide 2026 (ASA-AMG-26) · July 2026</div>
+<h1>🔄 2026 업데이트</h1>
+<div class="sub">General Test Guide Update — 신규 추가 및 수정 문제</div>
+<div class="meta">
+<span class="chip">출처 <b>ASA General 2026</b></span>
+<span class="chip">신규 추가 <b>7문항</b></span>
+<span class="chip">수정 <b>5문항</b></span>
+<span class="chip">기준 <b>FAA-CT-8080-4G</b></span>
+</div>
+<div class="legend"><span><span class="dot new"></span>신규 추가</span><span><span class="dot rev"></span>기존 문제 수정</span></div>
+<input class="search" id="q" placeholder="🔍 문제번호·키워드 검색 (예: 8613, 토크, EGT, corrosion)">
+<div class="count" id="count"></div>
+<div id="list"></div>
+<div class="noresult" id="noresult">검색 결과가 없습니다.</div>
+<div class="disclaimer">⚠️ 본 페이지는 ASA 2026 Test Guide Update(July 2026)를 학습용으로 정리한 것입니다. FAA 시험은 "closed test"로 실제 문제은행은 공개되지 않으며, 실제 시험에서는 보기 순서(A·B·C)가 바뀔 수 있습니다. 정답 암기보다 내용 이해를 권장합니다.</div>
+</div>
+<script>
+var DATA = [{"type": "new", "q": "8002-3", "ans": "B", "acs": "AM.I.A.K24", "ref": "FAA-H-8083-30", "page": 16, "question_ko": "\ud56d\uacf5 \uc804\uc790\ubd80\ud488 \uc815\ube44 \uc911 \uc811\uc9c0 \uc2a4\ud2b8\ub7a9 \uc5c6\uc774 \ud68c\ub85c\uae30\ud310\uc744 \uad50\uccb4\ud588\ub354\ub2c8, \uc124\uce58 \uc9c1\ud6c4 \uc678\uad00 \uc190\uc0c1 \uc5c6\uc774 \uc2dc\ud5d8\uc5d0\uc11c \uace0\uc7a5\uc774 \ubc1c\uc0dd\ud588\ub2e4. \uac00\uc7a5 \uc720\ub825\ud55c \uc6d0\uc778\uc740?", "question_en": "While performing maintenance on an aircraft avionics component, a technician installs a replacement circuit board without using a grounding strap. Shortly after installation, the unit fails during testing with no visible signs of damage. What is the most likely cause of this failure?", "opts": [["A", "\ub0c9\uac01 \ubd88\ub7c9\uc73c\ub85c \uc778\ud55c \uc5f4\ud3ed\uc8fc", "Thermal runaway due to improper cooling"], ["B", "\uc815\uc804\uae30 \ubc29\uc804(ESD) \uc190\uc0c1", "Electrostatic discharge (ESD) damage"], ["C", "\uc778\uc811 \ubc30\uc120\uc758 \uc720\ub3c4 \uacb0\ud569", "Inductive coupling from nearby wiring"]], "exp_ko": "\uc815\uc804\uae30 \ubc29\uc804(ESD)\uc740 \uc804\uc704\uac00 \ub2e4\ub978 \ubb3c\uccb4 \uc0ac\uc774\uc5d0\uc11c \uc815\uc804\uae30\uac00 \uac11\uc790\uae30 \uc774\ub3d9\ud560 \ub54c \ubc1c\uc0dd\ud55c\ub2e4. \ubbfc\uac10\ud55c \ud56d\uc804 \ubd80\ud488, \ud2b9\ud788 \ucd5c\uc2e0 \uace0\uccb4\uc18c\uc790\ub294 \uc0ac\ub78c\uc774 \ub290\ub07c\uc9c0 \ubabb\ud558\ub294 \ub0ae\uc740 \uc218\uc900\uc5d0\uc11c\ub3c4 \uc190\uc0c1\u00b7\uc5f4\ud654\ub420 \uc218 \uc788\ub2e4. \uc811\uc9c0 \ubbf8\ube44\ub85c \ucde8\uae09 \uc911 \uc815\uc804\uae30\uac00 \uae30\ud310\uc73c\ub85c \ubc29\uc804\ub418\uba74 \uc678\uad00 \uc190\uc0c1 \uc5c6\uc774 \uc7a0\uc7ac/\uc989\uc2dc \uace0\uc7a5\uc774 \ubc1c\uc0dd\ud55c\ub2e4.", "exp_en": "Electrostatic discharge (ESD) occurs when static electricity is suddenly transferred between objects with different potentials. Sensitive solid-state avionics can be damaged well below what a human can feel. Lack of grounding lets static discharge into the board, causing latent or immediate failure without visible damage."}, {"type": "new", "q": "8613", "ans": "C", "acs": "AM.I.C.K4", "ref": "FAA-H-8083-30", "page": 32, "question_ko": "\uc815\ube44 \ud6c4 W&B \uc810\uac80\uc5d0\uc11c \ucd1d\uc911\ub7c9 2,500 lb, CG\uac00 datum \ud6c4\ubc29 41.5 in. \ucd5c\ub300 \ud5c8\uc6a9 CG\ub294 40.0 in. arm 90 in \uc704\uce58\uc758 \uc7a5\ube44 50 lb\ub97c \uc81c\uac70\ud574 \uc2dc\uc815\ud588\ub2e4. \uc0c8 CG \uc704\uce58\ub294?", "question_en": "During a weight and balance check, an aircraft has total weight 2,500 lb and CG at 41.5 in aft of datum. Max allowable CG is 40.0 in. A technician removes 50 lb of equipment at an arm of 90 in. What is the new CG?", "opts": [["A", "39.9 in", "39.9 inches"], ["B", "40.2 in", "40.2 inches"], ["C", "40.5 in", "40.5 inches"]], "exp_ko": "\uc6d0\ub798 \ubaa8\uba58\ud2b8 = 2,500 \u00d7 41.5 = 103,750 in-lb. \uc81c\uac70 \ubaa8\uba58\ud2b8 = 50 \u00d7 90 = 4,500 in-lb. \uc0c8 \uc911\ub7c9 = 2,450 lb, \uc0c8 \ubaa8\uba58\ud2b8 = 99,250 in-lb. \uc0c8 CG = 99,250 \u00f7 2,450 = 40.5 in (datum \ud6c4\ubc29).", "exp_en": "Original moment = 2,500 \u00d7 41.5 = 103,750 in-lb. Removed = 50 \u00d7 90 = 4,500 in-lb. New weight 2,450 lb, moment 99,250 in-lb. New CG = 99,250 \u00f7 2,450 = 40.5 in aft of datum."}, {"type": "new", "q": "8613-1", "ans": "B", "acs": "AM.I.C.K4", "ref": "FAA-H-8083-30", "page": 32, "question_ko": "\ud56d\uc804 \uc7a5\ube44 \uc7a5\ucc29 \ud6c4 CG \uc7ac\uacc4\uc0b0. \uc6d0\ub798 \ucd1d\uc911\ub7c9 2,200 lb, \ubaa8\uba58\ud2b8 88,000 in-lb. \uc0c8 \ud56d\uc804 40 lb\ub97c arm 10 in\uc5d0 \uc7a5\ucc29. \uc0c8 CG\ub294?", "question_en": "After installing avionics, the aircraft originally had 2,200 lb and moment 88,000 in-lb. New avionics 40 lb at arm 10 in. What is the new CG?", "opts": [["A", "38.6 in", "38.6 inches"], ["B", "39.5 in", "39.5 inches"], ["C", "41.2 in", "41.2 inches"]], "exp_ko": "\ucd94\uac00 \ubaa8\uba58\ud2b8 = 40 \u00d7 10 = 400 in-lb. \uc0c8 \uc911\ub7c9 = 2,240 lb, \uc0c8 \ubaa8\uba58\ud2b8 = 88,400 in-lb. \uc0c8 CG = 88,400 \u00f7 2,240 = 39.5 in.", "exp_en": "Added moment = 40 \u00d7 10 = 400 in-lb. New weight 2,240 lb, moment 88,400 in-lb. New CG = 88,400 \u00f7 2,240 = 39.5 in aft of datum."}, {"type": "new", "q": "8360-1", "ans": "C", "acs": "AM.I.G.K6", "ref": "FAA-H-8083-30", "page": 63, "question_ko": "\uac80\uc0ac \uc911 \uc54c\ub8e8\ubbf8\ub284 \uc678\ud53c\uc5d0 \uac70\uce60\uace0 \ud770 \ubd84\ub9d0\uc0c1 \uce68\uc804\ubb3c\uacfc \uc57d\uac04\uc758 \ud53c\ud305\uc774 \uad00\ucc30\ub410\ub2e4. \uac00\uc7a5 \uc720\ub825\ud55c \ubd80\uc2dd\uc740?", "question_en": "A technician observes a rough, powdery, white deposit on an aluminum skin panel with slight pitting beneath. What type of corrosion is most likely?", "opts": [["A", "\uc785\uacc4 \ubd80\uc2dd", "Intergranular corrosion"], ["B", "\ubc15\ub9ac \ubd80\uc2dd", "Exfoliation corrosion"], ["C", "\ud53c\ud305 \ubd80\uc2dd", "Pitting corrosion"]], "exp_ko": "\ud53c\ud305 \ubd80\uc2dd\uc740 \uae08\uc18d \ud45c\uba74\uc5d0 \uc791\uc740 \uad6c\uba4d/\uc6c0\ud479\ud568\uc73c\ub85c \ub098\ud0c0\ub098\ub294 \uad6d\ubd80 \ubd80\uc2dd\uc774\ub2e4. \uc54c\ub8e8\ubbf8\ub284\uc5d0\uc11c\ub294 \ud770/\ud68c\uc0c9 \ubd84\ub9d0\uc0c1 \uce68\uc804\ubb3c\uacfc \ud45c\uba74 \uce68\ud22c\ub85c \ub098\ud0c0\ub098\uba70, \ubc29\uce58 \uc2dc \uae4a\uc5b4\uc838 \uad6c\uc870 \uac74\uc804\uc131\uc744 \ud574\uce60 \uc218 \uc788\ub2e4.", "exp_en": "Pitting corrosion is a localized form appearing as small pits/holes. On aluminum it presents as white/gray powdery deposit with surface penetration, and can progress deeper if not addressed."}, {"type": "new", "q": "8479-1", "ans": "A", "acs": "AM.I.J.K2", "ref": "FAA-H-8083-30", "page": 94, "question_ko": "1.5 ft \ud578\ub4e4\uc758 \ud1a0\ud06c\ub80c\uce58\ub85c \ubcfc\ud2b8\ub97c \uc870\uc778\ub2e4. \ud578\ub4e4\uc5d0 \uc218\uc9c1\uc73c\ub85c 80 lb \ud798\uc744 \uac00\ud558\uba74 \ud1a0\ud06c\ub294?", "question_en": "A technician uses a torque wrench with a 1.5-ft handle. If 80 lb is applied perpendicular to the handle, how much torque is applied?", "opts": [["A", "120 ft-lb", "120 ft-lb"], ["B", "80 ft-lb", "80 ft-lb"], ["C", "100 ft-lb", "100 ft-lb"]], "exp_ko": "\ud1a0\ud06c = \ud798 \u00d7 \uac70\ub9ac(\ub808\ubc84\uc554) = 80 lb \u00d7 1.5 ft = 120 ft-lb. \ud578\ub4e4\uc5d0 \uc218\uc9c1\uc73c\ub85c \ud798\uc744 \uac00\ud558\uba74 \ucd5c\ub300 \ud1a0\ud06c\uac00 \ub098\uc628\ub2e4.", "exp_en": "Torque = Force \u00d7 Distance = 80 lb \u00d7 1.5 ft = 120 ft-lb. Perpendicular force gives maximum torque."}, {"type": "new", "q": "8222-1", "ans": "B", "acs": "AM.I.K.K3", "ref": "AC 43.13-1B", "page": 101, "question_ko": "\uc54c\ub8e8\ubbf8\ub284\ucc98\ub7fc \ube44\ub2e4\uacf5\uc131 \uc7ac\ub8cc\uc758 \ud45c\uba74\u00b7\uc57d\uac04 \ud45c\uba74\ud558 \uade0\uc5f4 \ud0d0\uc9c0\uc5d0 \uac00\uc7a5 \uc801\ud569\ud55c \ube44\ud30c\uad34\uac80\uc0ac(NDT)\ub294?", "question_en": "Which NDT method is most suitable for detecting surface and slightly subsurface cracks in nonporous materials such as aluminum?", "opts": [["A", "\uc790\ubd84\ud0d0\uc0c1", "Magnetic particle inspection"], ["B", "\uce68\ud22c\ud0d0\uc0c1", "Dye penetrant inspection"], ["C", "\ucd08\uc74c\ud30c\ud0d0\uc0c1", "Ultrasonic inspection"]], "exp_ko": "\uce68\ud22c\ud0d0\uc0c1\uc740 \ube44\ub2e4\uacf5\uc131 \uc7ac\ub8cc\uc758 \ud45c\uba74\u00b7\uc57d\uac04 \ud45c\uba74\ud558 \uacb0\ud568 \ud0d0\uc9c0\uc5d0 \ud754\ud788 \uc4f0\uc778\ub2e4. \uc790\ubd84\ud0d0\uc0c1\uc740 \uac15\uc790\uc131\uccb4\uc5d0\ub9cc \uac00\ub2a5\ud574 \uc54c\ub8e8\ubbf8\ub284\uc5d0 \ubd88\uac00\ud558\uace0, \ucd08\uc74c\ud30c\ub294 \ub0b4\ubd80 \uacb0\ud568\uc5d0 \ud6a8\uacfc\uc801\uc774\ub098 \ubbf8\uc138 \ud45c\uba74\uade0\uc5f4\uc5d4 \ub35c \ubbfc\uac10\ud558\ub2e4.", "exp_en": "Dye penetrant is common for surface/near-surface defects in nonporous materials. Magnetic particle only works on ferromagnetic materials (not aluminum); ultrasonic is better for internal flaws but less sensitive to fine surface cracks."}, {"type": "new", "q": "8244-1", "ans": "C", "acs": "AM.I.K.K3", "ref": "AC 43.13-1B", "page": 101, "question_ko": "\ub9ac\ubcb3 \uc54c\ub8e8\ubbf8\ub284 \uc678\ud53c\uc758 \uc0c1\uc138 \uc721\uc548\uac80\uc0ac\uc5d0\uc11c \uad11\uc6d0\uc744 \ud45c\uba74\uc5d0 \ub0ae\uc740 \uac01\ub3c4\ub85c \ube44\ucd98\ub2e4. \uc8fc\ub41c \uc774\uc810\uc740?", "question_en": "During visual inspection of a riveted aluminum skin, an inspector positions a light at a low angle. What is the primary advantage?", "opts": [["A", "\ub208\ubd80\uc2ec\uc744 \uc904\uc774\uace0 \ubc1d\uae30\ub97c \ub192\uc778\ub2e4", "Reduces glare and improves brightness"], ["B", "\ucd94\uac00 NDT \uc5c6\uc774 \ub0b4\ubd80 \uacb0\ud568 \ud0d0\uc9c0", "Allows internal defect detection without NDT"], ["C", "\uade0\uc5f4\u00b7\ucc0d\ud798\u00b7\ubd80\uc2dd \ub4f1 \ud45c\uba74 \uc694\ucca0 \uac00\uc2dc\uc131 \ud5a5\uc0c1", "Enhances visibility of surface irregularities"]], "exp_ko": "\ub0ae\uc740 \uac01\ub3c4(\uc0ac\uac01) \uc870\uba85\uc740 \ud45c\uba74\uc5d0 \uadf8\ub9bc\uc790\ub97c \ub9cc\ub4e4\uc5b4 \uade0\uc5f4\u00b7\uc19f\uc74c\u00b7\ucc0d\ud798\u00b7\ubd80\uc2dd \uac19\uc740 \uc791\uc740 \ubd88\uc5f0\uc18d\uc744 \ub354 \uc798 \ubcf4\uc774\uac8c \ud55c\ub2e4. \ub9e4\ub048\ud55c \uae08\uc18d\uba74\uc5d0 \ud2b9\ud788 \ud6a8\uacfc\uc801. \ub2e4\ub9cc \ub0b4\ubd80 \uacb0\ud568\uc740 \ub2e4\ub978 NDT\uac00 \ud544\uc694\ud558\ub2e4.", "exp_en": "Low-angle (oblique) light creates shadows that make small discontinuities (cracks, dents, corrosion) more visible, especially on smooth metal. It does not detect internal defects."}, {"type": "revised", "q": "8009-3", "ans": "A", "acs": "AM.I.A.K8", "ref": "FAA-H-8083-30", "page": 4, "question_ko": "[\ud574\uc124 \uc218\uc815] \ud328\ub7ff\uacfc \ud53c\ucf54\ud328\ub7ff \ud658\uc0b0", "question_en": "[Explanation revised]", "opts": [], "exp_ko": "1 \ud328\ub7ff = 10\u00b9\u00b2 \ud53c\ucf54\ud328\ub7ff. \uc608: 2 \ud328\ub7ff = 2 \u00d7 10\u00b9\u00b2 (2,000,000,000,000) \ud53c\ucf54\ud328\ub7ff.", "exp_en": "One farad equals 10\u00b9\u00b2 picofarads. Example: 2 farads = 2 \u00d7 10\u00b9\u00b2 picofarads."}, {"type": "revised", "q": "8018", "ans": "C", "acs": "", "ref": "", "page": 6, "question_ko": "[\ubcf4\uae30 C \uc218\uc815] \ubcf4\uae30 C\uac00 \"25.21 amperes\"\ub85c \ubcc0\uacbd\ub428", "question_en": "[Answer stem C revised] C \u2014 25.21 amperes", "opts": [], "exp_ko": "\ubcf4\uae30 C\uac00 \"25.21 amperes\"\ub85c \uc218\uc815\ub418\uc5c8\uc2b5\ub2c8\ub2e4.", "exp_en": "Answer stem C revised to read: C\u201425.21 amperes."}, {"type": "revised", "q": "8393-1", "ans": "A", "acs": "", "ref": "", "page": 73, "question_ko": "[\ubcf4\uae30 C \uc218\uc815] \ubcf4\uae30 C\uac00 \"Neither(\ub458 \ub2e4 \uc544\ub2d8)\"\uc73c\ub85c \ubcc0\uacbd\ub428", "question_en": "[Answer stem C revised] C \u2014 Neither", "opts": [], "exp_ko": "\ubcf4\uae30 C\uac00 \"Neither\"\ub85c \uc218\uc815\ub418\uc5c8\uc2b5\ub2c8\ub2e4.", "exp_en": "Answer stem C revised to read: C\u2014Neither."}, {"type": "revised", "q": "8457-4", "ans": "B", "acs": "", "ref": "", "page": 82, "question_ko": "[\ubb38\uc81c\ubb38 \uc218\uc815] \"\uc8fc\uc694 \uc218\ub9ac\u00b7\uac1c\uc870 \uc2dc \uc5b4\ub5a4 \ud56d\uacf5\uae30\uc5d0 \ub300\ud574 \uc815\ube44\uc0ac\uac00 Form 337\uc744 FAA\uc5d0 \uc81c\ucd9c\ud574\uc57c \ud558\ub294\uac00?\"\ub85c \ubcc0\uacbd", "question_en": "[Question revised] When performing a major repair or alteration, for which aircraft must an aviation mechanic submit Form 337 to the FAA?", "opts": [], "exp_ko": "\ubb38\uc81c\ubb38\uc774 \uc704\uc640 \uac19\uc774 \uc218\uc815\ub418\uc5c8\uc2b5\ub2c8\ub2e4.", "exp_en": "The question stem was revised as above."}, {"type": "revised", "q": "8527", "ans": "B", "acs": "AM.I.I.K7", "ref": "14 CFR Part 43, Appendix A", "page": 83, "question_ko": "[\uc815\ub2f5 B\ub85c \ubcc0\uacbd + \ud574\uc124 \uc218\uc815] \uc218\uc9c1 \uc548\uc815\ud310\uc740 1\ucc28 \uad6c\uc870 \ubd80\uc7ac\ub2e4. \uc81c\uc791\uc0ac\uc758 \ub3d9\uc77c \uc2e0\ud488\uc73c\ub85c \uad50\uccb4\ud558\uace0 \uc124\uacc4 \ubcc0\uacbd\uc774 \uc5c6\uc5b4\ub3c4, 1\ucc28 \uad6c\uc870\uac00 \uad00\ub828\ub418\ubbc0\ub85c FAA \uc815\uc758\uc0c1 \uc8fc\uc694 \uc218\ub9ac(major repair)\uc5d0 \ud574\ub2f9\ud55c\ub2e4.", "question_en": "[Correct answer is now B] The vertical stabilizer is a primary structural component. Even replaced with an identical new part with no design change, the work involves primary structure and meets the FAA definition of a major repair.", "opts": [], "exp_ko": "\uc815\ub2f5\uc774 B\ub85c \ubcc0\uacbd\ub418\uace0 \ud574\uc124\uc774 \uc704\uc640 \uac19\uc774 \uc218\uc815\ub418\uc5c8\uc2b5\ub2c8\ub2e4.", "exp_en": "Correct answer changed to B with revised explanation."}];
+var list=document.getElementById('list'), cnt=document.getElementById('count'), nr=document.getElementById('noresult');
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function render(items){
+  list.innerHTML='';
+  if(!items.length){nr.style.display='block';cnt.textContent='';return;}
+  nr.style.display='none';
+  cnt.textContent='총 '+items.length+'문항';
+  items.forEach(function(it){
+    var isNew = it.type==='new';
+    var optsHtml='';
+    if(it.opts && it.opts.length){
+      optsHtml='<div class="opts">'+it.opts.map(function(o){
+        var correct = o[0]===it.ans ? ' correct':'';
+        return '<div class="opt'+correct+'"><span class="lt">'+o[0]+'</span>'+esc(o[1])+'<span class="opt-en">'+esc(o[2])+'</span></div>';
+      }).join('')+'</div>';
+    }
+    var tags='';
+    if(it.acs) tags+='<span class="tag">'+esc(it.acs)+'</span>';
+    if(it.ref) tags+='<span class="tag">'+esc(it.ref)+'</span>';
+    if(it.page) tags+='<span class="tag">p.'+it.page+'</span>';
+    var card='<div class="card'+(isNew?'':' rev')+'">'
+      +'<div class="card-top"><span class="qno">Q '+esc(it.q)+'</span>'
+      +'<span class="badge '+(isNew?'new':'rev')+'">'+(isNew?'신규 추가':'수정')+'</span></div>'
+      +'<div class="qtext">'+esc(it.question_ko)+'</div>'
+      +(it.question_en?'<div class="qtext-en">'+esc(it.question_en)+'</div>':'')
+      +optsHtml
+      +(isNew && it.ans?'<div class="ans">✓ 정답: '+esc(it.ans)+'</div>':'')
+      +'<div class="exp">'+esc(it.exp_ko)+(it.exp_en?'<div class="exp-en">'+esc(it.exp_en)+'</div>':'')+'</div>'
+      +(tags?'<div class="tags">'+tags+'</div>':'')
+      +'</div>';
+    list.insertAdjacentHTML('beforeend', card);
+  });
+}
+function doSearch(){
+  var q=document.getElementById('q').value.trim().toLowerCase();
+  if(!q){render(DATA);return;}
+  var f=DATA.filter(function(it){
+    var hay=(it.q+' '+it.question_ko+' '+it.question_en+' '+(it.acs||'')+' '+(it.exp_ko||'')+' '+(it.exp_en||'')).toLowerCase();
+    return hay.indexOf(q)>=0;
+  });
+  render(f);
+}
+document.getElementById('q').addEventListener('input',doSearch);
+render(DATA);
+</script></body></html>
