@@ -1,0 +1,3841 @@
+{
+ "ch01/asa-fig2-1": {
+  "file": "asa-image/ch01/asa-fig2-1.jpg",
+  "num": "2-1",
+  "cap": "Figure 2-1. Comparison of Roman and Arabic numerals",
+  "flags": [
+   "duplicate"
+  ],
+  "duplicate_of": "asa-image/ch02/asa-fig2-1.jpg"
+ },
+ "ch01/asa-fig2-41": {
+  "file": "asa-image/ch01/asa-fig2-41.jpg",
+  "num": "2-41",
+  "cap": "Figure 2-41. Dividing numbers in scientific notation",
+  "flags": [
+   "duplicate"
+  ],
+  "duplicate_of": "asa-image/ch02/asa-fig2-41.jpg"
+ },
+ "ch02/asa-fig2-1": {
+  "file": "asa-image/ch02/asa-fig2-1.jpg",
+  "num": "2-1",
+  "cap": "Figure 2-1. Comparison of Roman and Arabic numerals",
+  "flags": []
+ },
+ "ch02/asa-fig2-2": {
+  "file": "asa-image/ch02/asa-fig2-2.jpg",
+  "num": "2-2",
+  "cap": "Figure 2-2. On the number line, all numbers to the left of the decimal point are whole numbers, and all numbers to the right of the decimal point are fractional parts of a whole number.",
+  "flags": []
+ },
+ "ch02/asa-fig2-3": {
+  "file": "asa-image/ch02/asa-fig2-3.jpg",
+  "num": "2-3",
+  "cap": "Figure 2-3. Place values for numbers greater than 1 in the decimal system",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch02/asa-fig2-4": {
+  "file": "asa-image/ch02/asa-fig2-4.jpg",
+  "num": "2-4",
+  "cap": "Figure 2-4. Place values for numbers smaller than I in the decimal system",
+  "flags": []
+ },
+ "ch02/asa-fig2-5": {
+  "file": "asa-image/ch02/asa-fig2-5.jpg",
+  "num": "2-5",
+  "cap": "Figure 2-5. Place values for mixed numbers in the decimal system",
+  "flags": []
+ },
+ "ch02/asa-fig2-6": {
+  "file": "asa-image/ch02/asa-fig2-6.jpg",
+  "num": "2-6",
+  "cap": "Figure 2-6. Conversion between the binary and decimal system",
+  "flags": []
+ },
+ "ch02/asa-fig2-7": {
+  "file": "asa-image/ch02/asa-fig2-7.jpg",
+  "num": "2-7",
+  "cap": "Figure 2-7. Arrangement of numbers for addtion",
+  "flags": []
+ },
+ "ch02/asa-fig2-8": {
+  "file": "asa-image/ch02/asa-fig2-8.jpg",
+  "num": "2-8",
+  "cap": "Figure 2-8. The process of addtion",
+  "flags": []
+ },
+ "ch02/asa-fig2-9": {
+  "file": "asa-image/ch02/asa-fig2-9.jpg",
+  "num": "2-9",
+  "cap": "Figure 2-9. This subtraction process does not involve borrowing.",
+  "flags": []
+ },
+ "ch02/asa-fig2-10": {
+  "file": "asa-image/ch02/asa-fig2-10.jpg",
+  "num": "2-10",
+  "cap": "Figure 2-10. This subtraction process does involve borrowing.",
+  "flags": []
+ },
+ "ch02/asa-fig2-11": {
+  "file": "asa-image/ch02/asa-fig2-11.jpg",
+  "num": "2-11",
+  "cap": "Figure 2-11. The process of multiplication",
+  "flags": []
+ },
+ "ch02/asa-fig2-12": {
+  "file": "asa-image/ch02/asa-fig2-12.jpg",
+  "num": "2-12",
+  "cap": "Figure 2-12. Division is actually a series of subtractions.",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch02/asa-fig2-13": {
+  "file": "asa-image/ch02/asa-fig2-13.jpg",
+  "num": "2-13",
+  "cap": "Figure 2-13. The process of long division",
+  "flags": []
+ },
+ "ch02/asa-fig2-14": {
+  "file": "asa-image/ch02/asa-fig2-14.jpg",
+  "num": "2-14",
+  "cap": "Figure 2-14. Ways of writing division problems",
+  "flags": []
+ },
+ "ch02/asa-fig2-15": {
+  "file": "asa-image/ch02/asa-fig2-15.jpg",
+  "num": "2-15",
+  "cap": "Figure 2-15. To add common fractions, first change them into fractions with a common denominator, and then add.",
+  "flags": []
+ },
+ "ch02/asa-fig2-16": {
+  "file": "asa-image/ch02/asa-fig2-16.jpg",
+  "num": "2-16",
+  "cap": "Figure 2-16. To subtract common fractions, first change them into fractions with a common denominator, and then subtract.",
+  "flags": []
+ },
+ "ch02/asa-fig2-17": {
+  "file": "asa-image/ch02/asa-fig2-17.jpg",
+  "num": "2-17",
+  "cap": "Figure 2-17. Finding the smallest common denominator",
+  "flags": []
+ },
+ "ch02/asa-fig2-18": {
+  "file": "asa-image/ch02/asa-fig2-18.jpg",
+  "num": "2-18",
+  "cap": "Figure 2-18. The value of a fraction is not changed when both its numerator and denominator are multiplied or divided by the same number.",
+  "flags": []
+ },
+ "ch02/asa-fig2-19": {
+  "file": "asa-image/ch02/asa-fig2-19.jpg",
+  "num": "2-19",
+  "cap": "Figure 2-19. Reducing a common fraction to its lowest terms",
+  "flags": []
+ },
+ "ch02/asa-fig2-20": {
+  "file": "asa-image/ch02/asa-fig2-20.jpg",
+  "num": "2-20",
+  "cap": "Figure 2-20. Multiplication of common fractions.",
+  "flags": []
+ },
+ "ch02/asa-fig2-21": {
+  "file": "asa-image/ch02/asa-fig2-21.jpg",
+  "num": "2-21",
+  "cap": "Figure 2-21. Division of common fractions is done by inverting the divisor and multiplying.",
+  "flags": []
+ },
+ "ch02/asa-fig2-22": {
+  "file": "asa-image/ch02/asa-fig2-22.jpg",
+  "num": "2-22",
+  "cap": "Figure 2-22. Changing a mixed number into an improper fraction.",
+  "flags": []
+ },
+ "ch02/asa-fig2-23": {
+  "file": "asa-image/ch02/asa-fig2-23.jpg",
+  "num": "2-23",
+  "cap": "Figure 2-23. The value of the denominator of a decimal fraction is shown by the number of digits to the right of the decimal point.",
+  "flags": []
+ },
+ "ch02/asa-fig2-24": {
+  "file": "asa-image/ch02/asa-fig2-24.jpg",
+  "num": "2-24",
+  "cap": "Figure 2-24. When adding numbers with decimal fractions, keep the decimal points all in vertical alignment. The decimal point in the answer will be in line with the other decimal points.",
+  "flags": []
+ },
+ "ch02/asa-fig2-25": {
+  "file": "asa-image/ch02/asa-fig2-25.jpg",
+  "num": "2-25",
+  "cap": "Figure 2-25. When subtracting numbers with decimal fractions, keep the decimal points all in vertical alignment. The decimal point in the answer will be in line the other points.",
+  "flags": []
+ },
+ "ch02/asa-fig2-26": {
+  "file": "asa-image/ch02/asa-fig2-26.jpg",
+  "num": "2-26",
+  "cap": "Figure 2-26. Multiplication of numbers containing decimal fractions",
+  "flags": []
+ },
+ "ch02/asa-fig2-27": {
+  "file": "asa-image/ch02/asa-fig2-27.jpg",
+  "num": "2-27",
+  "cap": "Figure 2-27. Division by a number containing a decimal fraction",
+  "flags": []
+ },
+ "ch02/asa-fig2-28": {
+  "file": "asa-image/ch02/asa-fig2-28.jpg",
+  "num": "2-28",
+  "cap": "Figure 2-28. To find a ratio, put both values in the same terms and divide one by the other. Reduce both the numerator and denominator by the same value to get the lowest terms. If the denominator reduces to 1, it is usually omitted when the ratio is expressed.",
+  "flags": []
+ },
+ "ch02/asa-fig2-29": {
+  "file": "asa-image/ch02/asa-fig2-29.jpg",
+  "num": "2-29",
+  "cap": "Figure 2-29. /n a proportion, the product of the extremes always equals the product of the means.",
+  "flags": []
+ },
+ "ch02/asa-fig2-30": {
+  "file": "asa-image/ch02/asa-fig2-30.jpg",
+  "num": "2-30",
+  "cap": "Figure 2-30. A proportion problem",
+  "flags": []
+ },
+ "ch02/asa-fig2-31": {
+  "file": "asa-image/ch02/asa-fig2-31.jpg",
+  "num": "2-31",
+  "cap": "Figure 2-31. Finding the percentage one number is of another number.",
+  "flags": []
+ },
+ "ch02/asa-fig2-32": {
+  "file": "asa-image/ch02/asa-fig2-32.jpg",
+  "num": "2-32",
+  "cap": "Figure 2-32. Finding a number of which a given percentage is known",
+  "flags": []
+ },
+ "ch02/asa-fig2-33": {
+  "file": "asa-image/ch02/asa-fig2-33.jpg",
+  "num": "2-33",
+  "cap": "Figure 2-33. Subtracting signed numbers",
+  "flags": []
+ },
+ "ch02/asa-fig2-34": {
+  "file": "asa-image/ch02/asa-fig2-34.jpg",
+  "num": "2-34",
+  "cap": "Figure 2-34. Multiplying signed numbers",
+  "flags": []
+ },
+ "ch02/asa-fig2-35": {
+  "file": "asa-image/ch02/asa-fig2-35.jpg",
+  "num": "2-35",
+  "cap": "Figure 2-35. Dividing signed numbers",
+  "flags": []
+ },
+ "ch02/asa-fig2-36": {
+  "file": "asa-image/ch02/asa-fig2-36.jpg",
+  "num": "2-36",
+  "cap": "Figure 2-36. The power of a number tells how many times the number is multiplied by itself.",
+  "flags": []
+ },
+ "ch02/asa-fig2-37": {
+  "file": "asa-image/ch02/asa-fig2-37.jpg",
+  "num": "2-37",
+  "cap": "Figure 2-37. The root which is to be taken of a number is shown by the small number written above the radical sign.",
+  "flags": []
+ },
+ "ch02/asa-fig2-38": {
+  "file": "asa-image/ch02/asa-fig2-38.jpg",
+  "num": "2-38",
+  "cap": "Figure 2-38. Adding numbers in scientific notation",
+  "flags": []
+ },
+ "ch02/asa-fig2-39": {
+  "file": "asa-image/ch02/asa-fig2-39.jpg",
+  "num": "2-39",
+  "cap": "Figure 2-39. Subtracting numbers in scientific notation",
+  "flags": []
+ },
+ "ch02/asa-fig2-40": {
+  "file": "asa-image/ch02/asa-fig2-40.jpg",
+  "num": "2-40",
+  "cap": "Figure 2-40. Multiplying numbers in scientific notation",
+  "flags": []
+ },
+ "ch02/asa-fig2-41": {
+  "file": "asa-image/ch02/asa-fig2-41.jpg",
+  "num": "2-41",
+  "cap": "Figure 2-41. Dividing numbers in scientific notation",
+  "flags": []
+ },
+ "ch02/asa-fig2-42": {
+  "file": "asa-image/ch02/asa-fig2-42.jpg",
+  "num": "2-42",
+  "cap": "Figure 2-42. Raising scientific notation to a power",
+  "flags": []
+ },
+ "ch02/asa-fig2-43": {
+  "file": "asa-image/ch02/asa-fig2-43.jpg",
+  "num": "2-43",
+  "cap": "Figure 2-43. A right triangle contains a 90° or right angle.",
+  "flags": []
+ },
+ "ch02/asa-fig2-45": {
+  "file": "asa-image/ch02/asa-fig2-45.jpg",
+  "num": "2-45",
+  "cap": "Figure 2-45. Trigonometric functions",
+  "flags": []
+ },
+ "ch02/asa-fig2-46": {
+  "file": "asa-image/ch02/asa-fig2-46.jpg",
+  "num": "2-46",
+  "cap": "Figure 2-46. Finding an angle using the tangent",
+  "flags": []
+ },
+ "ch02/asa-fig2-47": {
+  "file": "asa-image/ch02/asa-fig2-47.jpg",
+  "num": "2-47",
+  "cap": "Figure 2-47. Finding the length of the hypotenuse using the Pythagorean formula",
+  "flags": []
+ },
+ "ch02/asa-fig2-48": {
+  "file": "asa-image/ch02/asa-fig2-48.jpg",
+  "num": "2-48",
+  "cap": "Figure 2-48. Finding the length of the hypotenuse using the sine function",
+  "flags": []
+ },
+ "ch02/asa-fig2-49": {
+  "file": "asa-image/ch02/asa-fig2-49.jpg",
+  "num": "2-49",
+  "cap": "Figure 2-49. Finding an angle using the sine function",
+  "flags": []
+ },
+ "ch02/asa-fig2-51": {
+  "file": "asa-image/ch02/asa-fig2-51.jpg",
+  "num": "2-51",
+  "cap": "Figure 2-51. Values of secant, cosecant, and cotangent",
+  "flags": []
+ },
+ "ch03/asa-fig3-1": {
+  "file": "asa-image/ch03/asa-fig3-1.jpg",
+  "num": "3-1",
+  "cap": "Figure 3-1. An atom of oxygen is made of eight positive charges of electricity called protons and eight neutral charges called neutrons, all bound together in its nucleus. Spinning around the nucleus at great speed are eight electrons which are negative charges of electricity.",
+  "flags": []
+ },
+ "ch03/asa-fig3-2": {
+  "file": "asa-image/ch03/asa-fig3-2.jpg",
+  "num": "3-2",
+  "cap": "Figure 3-2. All electrons, protons, and neutrons are the same, but atoms of each of the different chemical elements have different amounts of electrons, protons, and neutrons.",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch03/asa-fig3-3": {
+  "file": "asa-image/ch03/asa-fig3-3.jpg",
+  "num": "3-3",
+  "cap": "Figure 3-3. Water is a chemical compound, and it is the same substance, whether it is a glassful or a drop.",
+  "flags": []
+ },
+ "ch03/asa-fig3-4": {
+  "file": "asa-image/ch03/asa-fig3-4.jpg",
+  "num": "3-4",
+  "cap": "Figure 3-4. A molecule of water is made of two atoms of hydrogen joined with one atom of oxygen.",
+  "flags": []
+ },
+ "ch03/asa-fig3-5": {
+  "file": "asa-image/ch03/asa-fig3-5.jpg",
+  "num": "3-5",
+  "cap": "Figure 3-5. Ice is water in its solid form. It holds its shape and does not take the shape of its container. Water is normally a liquid. It takes the shape of the container, but it does not expand to fill it. Steam is water in its vapor, or gaseous, form, and is lighter than air. Steam takes the shape of its container and expands to fill the entire container.",
+  "flags": []
+ },
+ "ch03/asa-fig3-6": {
+  "file": "asa-image/ch03/asa-fig3-6.jpg",
+  "num": "3-6",
+  "cap": "Figure 3-6. When heat is added to a material such as water, it changes from a solid to a liquid. When more heat energy is added, it changes from a liquid into a gas.",
+  "flags": []
+ },
+ "ch03/asa-fig3-7": {
+  "file": "asa-image/ch03/asa-fig3-7.jpg",
+  "num": "3-7",
+  "cap": "Figure 3-7. An object is pulled toward the center of the earth by a force called gravity. The amount of this pull is the weight of the object. The closer the object is to the center of the earth, the more it weighs. If the object were in space beyond the pull of gravity, it would not have any weight, but its mass would be the same.",
+  "flags": []
+ },
+ "ch03/asa-fig3-8": {
+  "file": "asa-image/ch03/asa-fig3-8.jpg",
+  "num": "3-8",
+  "cap": "Figure 3-8. Lead is more dense than wood or cork; therefore a block of lead weighs more than the same size block of wood or cork. Lead is the most dense of the three materials.",
+  "flags": []
+ },
+ "ch03/asa-fig3-9": {
+  "file": "asa-image/ch03/asa-fig3-9.jpg",
+  "num": "3-9",
+  "cap": "Figure 3-9. Density and specific gravity of various materials",
+  "flags": []
+ },
+ "ch03/asa-fig3-10": {
+  "file": "asa-image/ch03/asa-fig3-10.jpg",
+  "num": "3-10",
+  "cap": "Figure 3-10. /f the specific gravity of a material is less than 1.0, it will float in water. If it is greater than 1.0, it will sink.",
+  "flags": []
+ },
+ "ch03/asa-fig3-11": {
+  "file": "asa-image/ch03/asa-fig3-11.jpg",
+  "num": "3-11",
+  "cap": "Figure 3-11. The sun is our main source of energy. Plants absorb energy from the sun and furnish us with energy when we eat them. Plants and animals that absorbed energy from the sun millions of years ago have become petroleum and coal. We can convert solar energy directly into electricity with solar cells.",
+  "flags": []
+ },
+ "ch03/asa-fig3-12": {
+  "file": "asa-image/ch03/asa-fig3-12.jpg",
+  "num": "3-12",
+  "cap": "Figure 3-12. Forms of potential energy",
+  "flags": []
+ },
+ "ch03/asa-fig3-13": {
+  "file": "asa-image/ch03/asa-fig3-13.jpg",
+  "num": "3-13",
+  "cap": "Figure 3-13. The conversion of potential energy into kinetic energy",
+  "flags": []
+ },
+ "ch03/asa-fig3-14": {
+  "file": "asa-image/ch03/asa-fig3-14.jpg",
+  "num": "3-14",
+  "cap": "Figure 3-14. Aerodynamic lift is produced when the air flowing over an airfoil speeds up. Some potential energy (pressure) is changed into kinetic energy (velocity). The lowered pressure on the top of the wing produces aerodynamic lift.",
+  "flags": []
+ },
+ "ch03/asa-fig3-15": {
+  "file": "asa-image/ch03/asa-fig3-15.jpg",
+  "num": "3-15",
+  "cap": "Figure 3-15. When a neutron is shot into the nucleus of a uranium atom (A), the atom splits. This splitting releases other neutrons (B, C, D, E) which split other atoms (F, G, H). This chain reaction produces enormous amounts of heat.",
+  "flags": []
+ },
+ "ch03/asa-fig3-16": {
+  "file": "asa-image/ch03/asa-fig3-16.jpg",
+  "num": "3-16",
+  "cap": "Figure 3-16. The tremendous amount of heat that is released when atoms are split is used to produce steam which drives generators, producing electrical power.",
+  "flags": []
+ },
+ "ch03/asa-fig3-17": {
+  "file": "asa-image/ch03/asa-fig3-17.jpg",
+  "num": "3-17",
+  "cap": "Figure 3-17. Work is the result of energy used to produce a force that moves an object.",
+  "flags": []
+ },
+ "ch03/asa-fig3-18": {
+  "file": "asa-image/ch03/asa-fig3-18.jpg",
+  "num": "3-18",
+  "cap": "Figure 3-18. An automobile jack is a form of lever we use to get a mechanical advantage. A small force acting downward produces a much larger force acting upward.",
+  "flags": []
+ },
+ "ch03/asa-fig3-19": {
+  "file": "asa-image/ch03/asa-fig3-19.jpg",
+  "num": "3-19",
+  "cap": "Figure 3-19. When the lever is balanced, the sum of the moments about the fulcrum is zero.",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch03/asa-fig3-20": {
+  "file": "asa-image/ch03/asa-fig3-20.jpg",
+  "num": "3-20",
+  "cap": "Figure 3-20. First-class lever",
+  "flags": []
+ },
+ "ch03/asa-fig3-21": {
+  "file": "asa-image/ch03/asa-fig3-21.jpg",
+  "num": "3-21",
+  "cap": "Figure 3-21. Second-class lever = 50 pounds",
+  "flags": []
+ },
+ "ch03/asa-fig3-22": {
+  "file": "asa-image/ch03/asa-fig3-22.jpg",
+  "num": "3-22",
+  "cap": "Figure 3-22. Third-class lever",
+  "flags": []
+ },
+ "ch03/asa-fig3-23": {
+  "file": "asa-image/ch03/asa-fig3-23.jpg",
+  "num": "3-23",
+  "cap": "Figure 3-23. An inclined plane is used to gain a mechanical advantage.",
+  "flags": []
+ },
+ "ch03/asa-fig3-25": {
+  "file": "asa-image/ch03/asa-fig3-25.jpg",
+  "num": "3-25",
+  "cap": "Figure 3-25. Gears are used to change the direction of rotation between shafts and to gain a mechanical advantage.",
+  "flags": []
+ },
+ "ch03/asa-fig3-26": {
+  "file": "asa-image/ch03/asa-fig3-26.jpg",
+  "num": "3-26",
+  "cap": "Figure 3-26. The bucket of water is trying to obey Newton's first law and travel in a straight line from A to B. But the rope holds it along the curved path A to C. The resultant, C-B, is the centrifugal force, and this is the force that holds water in the bucket and makes the bucket heavier.",
+  "flags": []
+ },
+ "ch03/asa-fig3-27": {
+  "file": "asa-image/ch03/asa-fig3-27.jpg",
+  "num": "3-27",
+  "cap": "Figure 3-27. When a helicopter rotor is not turning, gravity causes the blades to droop. But when the rotor is turning, centrifugal force holds the blades straight out.",
+  "flags": []
+ },
+ "ch03/asa-fig3-28": {
+  "file": "asa-image/ch03/asa-fig3-28.jpg",
+  "num": "3-28",
+  "cap": "Figure 3-28. Vector \"A\" shown here has a length, or magnitude, of 10 units, and its direction is 45° clockwise from north.",
+  "flags": []
+ },
+ "ch03/asa-fig3-29": {
+  "file": "asa-image/ch03/asa-fig3-29.jpg",
+  "num": "3-29",
+  "cap": "Figure 3-29. The magnitude of vector A is 8 units, and its direction is 90° clockwise from north. Vector B is 6 units long, and its direction is 180° clockwise from north. The resultant of vectors A and B is 10 units long, and its direction is 127° clockwise from north.",
+  "flags": []
+ },
+ "ch03/asa-fig3-30": {
+  "file": "asa-image/ch03/asa-fig3-30.jpg",
+  "num": "3-30",
+  "cap": "Figure 3-30. The resultant, vector R, is the hypotenuse of a right triangle with vectors A and B as the two sides. The length of R is the square root of the sum of the squares of the lengths of A and B.",
+  "flags": []
+ },
+ "ch03/asa-fig3-31": {
+  "file": "asa-image/ch03/asa-fig3-31.jpg",
+  "num": "3-31",
+  "cap": "Figure 3-31. Trigonometric functions",
+  "flags": []
+ },
+ "ch03/asa-fig3-32": {
+  "file": "asa-image/ch03/asa-fig3-32.jpg",
+  "num": "3-32",
+  "cap": "Figure 3-32. Vector addition is used to find the heading required to fly a given track, and to find the ground speed when the airspeed, track and wind direction and velocity are known.",
+  "flags": []
+ },
+ "ch03/asa-fig3-33": {
+  "file": "asa-image/ch03/asa-fig3-33.jpg",
+  "num": "3-33",
+  "cap": "Figure 3-33. Graphic addition of three vectors to find the resultant vector",
+  "flags": []
+ },
+ "ch03/asa-fig3-34": {
+  "file": "asa-image/ch03/asa-fig3-34.jpg",
+  "num": "3-34",
+  "cap": "Figure 3-34. Three vectors drawn from a common origin and measured from a common reference line.",
+  "flags": []
+ },
+ "ch03/asa-fig3-35": {
+  "file": "asa-image/ch03/asa-fig3-35.jpg",
+  "num": "3-35",
+  "cap": "Figure 3-35. Finding the vertical and horizontal components of the three vectors in Figure 3-34",
+  "flags": [
+   "manual",
+   "page-capture"
+  ]
+ },
+ "ch03/asa-fig3-36": {
+  "file": "asa-image/ch03/asa-fig3-36.jpg",
+  "num": "3-36",
+  "cap": "Figure 3-36. Finding the resultant of the three vectors in Figure 3-34",
+  "flags": []
+ },
+ "ch03/asa-fig3-37": {
+  "file": "asa-image/ch03/asa-fig3-37.jpg",
+  "num": "3-37",
+  "cap": "Figure 3-37. When a weight is held up with a chain, the chain has a tensile stress in it.",
+  "flags": []
+ },
+ "ch03/asa-fig3-38": {
+  "file": "asa-image/ch03/asa-fig3-38.jpg",
+  "num": "3-38",
+  "cap": "Figure 3-38. When a rivet is driven with a compressive force on its ends, it expands to tightly fill the hole.",
+  "flags": []
+ },
+ "ch03/asa-fig3-39": {
+  "file": "asa-image/ch03/asa-fig3-39.jpg",
+  "num": "3-39",
+  "cap": "Figure 3-39. Torsion is a combination of tension and compression. These two stresses act at right angles to each other and at 45° to the axis of the shaft.",
+  "flags": []
+ },
+ "ch03/asa-fig3-40": {
+  "file": "asa-image/ch03/asa-fig3-40.jpg",
+  "num": "3-40",
+  "cap": "Figure 3-40. The wing of an airplane is subjected to a bending stress. On the ground the top of the wing is under tension and the bottom is under compression. In flight, the opposite is true; the bottom is under a tensile stress and the top is under a compressive stress.",
+  "flags": []
+ },
+ "ch03/asa-fig3-41": {
+  "file": "asa-image/ch03/asa-fig3-41.jpg",
+  "num": "3-41",
+  "cap": "Figure 3-41. A shear stress tries to slide the clevis bolt apart.",
+  "flags": []
+ },
+ "ch03/asa-fig3-42": {
+  "file": "asa-image/ch03/asa-fig3-42.jpg",
+  "num": "3-42",
+  "cap": "Figure 3-42. The physical shape of a beam determines the amount of stress it can withstand before it is bent, or strained.",
+  "flags": []
+ },
+ "ch03/asa-fig3-43": {
+  "file": "asa-image/ch03/asa-fig3-43.jpg",
+  "num": "3-43",
+  "cap": "Figure 3-43. If the elastic limit of the spring in the scale is not exceeded, it will stretch an amount proportional to the weight and will return to zero when the weight is removed.",
+  "flags": []
+ },
+ "ch03/asa-fig3-44": {
+  "file": "asa-image/ch03/asa-fig3-44.jpg",
+  "num": "3-44",
+  "cap": "Figure 3-44. [f too much weight is put on a spring scale, the spring will be deformed, and the scale will not return to zero when the weight is removed.",
+  "flags": []
+ },
+ "ch03/asa-fig3-45": {
+  "file": "asa-image/ch03/asa-fig3-45.jpg",
+  "num": "3-45",
+  "cap": "Figure 3-45. When sensible heat is added to water, When latent heat is added to water, its its temperature increases, but the water temperature remains constant, but the water does not change its physical state. changes its state from liquid water into steam.",
+  "flags": []
+ },
+ "ch03/asa-fig3-46": {
+  "file": "asa-image/ch03/asa-fig3-46.jpg",
+  "num": "3-46",
+  "cap": "Figure 3-46. Specific heat of various materials",
+  "flags": []
+ },
+ "ch03/asa-fig3-47": {
+  "file": "asa-image/ch03/asa-fig3-47.jpg",
+  "num": "3-47",
+  "cap": "Figure 3-47. When the end of the bar is heated with the flame, heat is transferred through the bar by conduction.",
+  "flags": []
+ },
+ "ch03/asa-fig3-48": {
+  "file": "asa-image/ch03/asa-fig3-48.jpg",
+  "num": "3-48",
+  "cap": "Figure 3-48. When water in a container is heated by conduction, it becomes less dense and rises, forcing the cold water down to where it can be heated. This is heat transfer by convection.",
+  "flags": []
+ },
+ "ch03/asa-fig3-49": {
+  "file": "asa-image/ch03/asa-fig3-49.jpg",
+  "num": "3-49",
+  "cap": "Figure 3-49. Heat energy from the sun reaches the earth through the vacuum of empty space by radiation. Invisible heat energy passes through empty space in the same way as visible light energy.",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch03/asa-fig3-50": {
+  "file": "asa-image/ch03/asa-fig3-50.jpg",
+  "num": "3-50",
+  "cap": "Figure 3-50. The four temperature scales have values for absolute zero and for the points at which pure water freezes and boils.",
+  "flags": []
+ },
+ "ch03/asa-fig3-51": {
+  "file": "asa-image/ch03/asa-fig3-51.jpg",
+  "num": "3-51",
+  "cap": "Figure 3-51. Standard sea-level atmospheric pressure will support a column of mercury 29.92 inches, or 760 millimeters, high.",
+  "flags": []
+ },
+ "ch03/asa-fig3-52": {
+  "file": "asa-image/ch03/asa-fig3-52.jpg",
+  "num": "3-52",
+  "cap": "Figure 3-52. Gage pressure is referenced from atmospheric pressure and is a measure of the amount of pressure rise caused by the pump.",
+  "flags": []
+ },
+ "ch03/asa-fig3-53": {
+  "file": "asa-image/ch03/asa-fig3-53.jpg",
+  "num": "3-53",
+  "cap": "Figure 3-53. An airspeed indicator measures the difference between ram air pressure and the pressure of the surrounding static air. It is a differential pressure.",
+  "flags": []
+ },
+ "ch03/asa-fig3-55": {
+  "file": "asa-image/ch03/asa-fig3-55.jpg",
+  "num": "3-55",
+  "cap": "Figure 3-55. When the pressure of the gas in a container remains constant, an increase in the temperature of the gas causes the volume of the gas to increase.",
+  "flags": []
+ },
+ "ch03/asa-fig3-56": {
+  "file": "asa-image/ch03/asa-fig3-56.jpg",
+  "num": "3-56",
+  "cap": "Figure 3-56. When the volume of a container of gas remains constant, an increase in the absolute temperature of the gas causes its pressure to increase.",
+  "flags": []
+ },
+ "ch03/asa-fig3-57": {
+  "file": "asa-image/ch03/asa-fig3-57.jpg",
+  "num": "3-57",
+  "cap": "Figure 3-57. Finding the change in pressure with a change in temperature when the volume remains constant",
+  "flags": []
+ },
+ "ch03/asa-fig3-58": {
+  "file": "asa-image/ch03/asa-fig3-58.jpg",
+  "num": "3-58",
+  "cap": "Figure 3-58. Finding the change in volume with a change in temperature when the pressure remains constant",
+  "flags": []
+ },
+ "ch03/asa-fig3-59": {
+  "file": "asa-image/ch03/asa-fig3-59.jpg",
+  "num": "3-59",
+  "cap": "Figure 3-59. Finding the change in temperature with a change in volume when the pressure remains constant.",
+  "flags": []
+ },
+ "ch03/asa-fig3-60": {
+  "file": "asa-image/ch03/asa-fig3-60.jpg",
+  "num": "3-60",
+  "cap": "Figure 3-60. The pressure at the bottom of a column of liquid is caused by the height of the liquid, and it is not affected by the quantity of the fluid or the shape of the container.",
+  "flags": []
+ },
+ "ch03/asa-fig3-61": {
+  "file": "asa-image/ch03/asa-fig3-61.jpg",
+  "num": "3-61",
+  "cap": "Figure 3-61. Density and specific gravity of various liquids",
+  "flags": []
+ },
+ "ch03/asa-fig3-62": {
+  "file": "asa-image/ch03/asa-fig3-62.jpg",
+  "num": "3-62",
+  "cap": "Figure 3-62. The pressure produced by a liquid in a container is caused by the height of the liquid above the point at which the pressure is measured. The higher the liquid above the gage, the greater the pressure.",
+  "flags": []
+ },
+ "ch03/asa-fig3-63": {
+  "file": "asa-image/ch03/asa-fig3-63.jpg",
+  "num": "3-63",
+  "cap": "Figure 3-63. When we apply pressure on the liquid in a closed container, the pressure rises the same amount in all parts of the container.",
+  "flags": []
+ },
+ "ch03/asa-fig3-64": {
+  "file": "asa-image/ch03/asa-fig3-64.jpg",
+  "num": "3-64",
+  "cap": "Figure 3-64. Hydraulic cylinders produce a mechanical advantage. A 1-pound force (F ;) can lift a 10-pound weight (W>), but no work is gained. The work done by the small piston is the same as that done by the large piston.",
+  "flags": []
+ },
+ "ch03/asa-fig3-65": {
+  "file": "asa-image/ch03/asa-fig3-65.jpg",
+  "num": "3-65",
+  "cap": "Figure 3-65. The amount of force produced by the piston in a hydraulic cylinder may be found by multiplying the area of the piston by the amount of pressure inside the cylinder.",
+  "flags": []
+ },
+ "ch03/asa-fig3-66": {
+  "file": "asa-image/ch03/asa-fig3-66.jpg",
+  "num": "3-66",
+  "cap": "Figure 3-66. The area of a piston needed to produce a given amount of force with a certain amount of pressure may be found by dividing the amount of force by the pressure.",
+  "flags": []
+ },
+ "ch03/asa-fig3-67": {
+  "file": "asa-image/ch03/asa-fig3-67.jpg",
+  "num": "3-67",
+  "cap": "Figure 3-67. The amount of pressure produced in a hydraulic cylinder may be found by dividing the amount of force on the piston by the area of the piston.",
+  "flags": []
+ },
+ "ch03/asa-fig3-68": {
+  "file": "asa-image/ch03/asa-fig3-68.jpg",
+  "num": "3-68",
+  "cap": "Figure 3-68. The volume of fluid moved out of a cylinder by a piston may be found by multiplying the area of the piston by the distance the piston is moved.",
+  "flags": []
+ },
+ "ch03/asa-fig3-69": {
+  "file": "asa-image/ch03/asa-fig3-69.jpg",
+  "num": "3-69",
+  "cap": "Figure 3-69. The area of a piston needed to move a given volume of fluid when it moves a certain distance may be found by dividing the volume by the distance the piston is moved.",
+  "flags": []
+ },
+ "ch03/asa-fig3-70": {
+  "file": "asa-image/ch03/asa-fig3-70.jpg",
+  "num": "3-70",
+  "cap": "Figure 3-70. The distance a piston must move to force a given amount of fluid out of a cylinder may be found by dividing the volume of the fluid by the area of the piston.",
+  "flags": []
+ },
+ "ch03/asa-fig3-71": {
+  "file": "asa-image/ch03/asa-fig3-71.jpg",
+  "num": "3-71",
+  "cap": "Figure 3-71. When energy is neither added to nor taken from fluid in motion, any restriction that causes the fluid to speed up will cause the pressure to decrease.",
+  "flags": []
+ },
+ "ch03/asa-fig3-72": {
+  "file": "asa-image/ch03/asa-fig3-72.jpg",
+  "num": "3-72",
+  "cap": "Figure 3-72. An atomizer, such as is used in a spray gun, is a form of venturi. When the air flow is restricted, the pressure drops, and atmospheric pressure forces the liquid up so that it mixes with the high-velocity air and is broken up into tiny droplets. It is atomized.",
+  "flags": []
+ },
+ "ch03/asa-fig3-73": {
+  "file": "asa-image/ch03/asa-fig3-73.jpg",
+  "num": "3-73",
+  "cap": "Figure 3-73. Aerodynamic lift is produced by an airfoil when the kinetic energy (velocity) in the air flowing over its upper surface increases and its potential energy (pressure) decreases. Below the surface, the velocity decreases and the pressure increases.",
+  "flags": []
+ },
+ "ch03/asa-fig3-74": {
+  "file": "asa-image/ch03/asa-fig3-74.jpg",
+  "num": "3-74",
+  "cap": "Figure 3-74. The pressure exerted by the liquid in a container increases with the depth of the liquid, and the pressure is greatest at the bottom. When a block of material is submerged in the liquid, the pressure acts on all sides of the block, and since the pressure is greater on the bottom of the block than it is on the top, the liquid tries to force the block up. The block is said to be buoyed up by the liquid.",
+  "flags": []
+ },
+ "ch03/asa-fig3-75": {
+  "file": "asa-image/ch03/asa-fig3-75.jpg",
+  "num": "3-75",
+  "cap": "Figure 3-75. Aluminum weighs 0.101 pound per cubic inch, so a 10+ 10 - 10 inch block of aluminum weighs 101 pounds. When the block is lowered into a container of water, it takes the place of 1,000 cubic inches of water, which weighs 36.1 pounds. The block is buoyed up by a force equal to the weight of the water it displaced, and it now pulls down on the spring scale with a force of only 64.9 pounds.",
+  "flags": []
+ },
+ "ch03/asa-fig3-76": {
+  "file": "asa-image/ch03/asa-fig3-76.jpg",
+  "num": "3-76",
+  "cap": "Figure 3-76. A playground swing is a form of pendulum. Its period, or the time needed for one complete cycle, is determined by its length.",
+  "flags": []
+ },
+ "ch03/asa-fig3-77": {
+  "file": "asa-image/ch03/asa-fig3-77.jpg",
+  "num": "3-77",
+  "cap": "Figure 3-77. Jn a transverse wave, the particles in motion rise above and drop below their original position, and the wave travels away from the point of disturbance. In a longitudinal wave, the particles in motion move back and forth parallel to the direction the wave is moving.",
+  "flags": []
+ },
+ "ch03/asa-fig3-78": {
+  "file": "asa-image/ch03/asa-fig3-78.jpg",
+  "num": "3-78",
+  "cap": "Figure 3-78. When the tines of a tuning fork vibrate, they cause the particles of air to be alternately compressed and rarefied. This longitudinal wave affects our ear drums so we hear sound.",
+  "flags": []
+ },
+ "ch03/asa-fig3-79": {
+  "file": "asa-image/ch03/asa-fig3-79.jpg",
+  "num": "3-79",
+  "cap": "Figure 3-79. When the source of sound moves at the speed of sound, the sound waves cannot move out ahead of the source. They pile up and form a shock wave that causes the familiar sonic boom.",
+  "flags": []
+ },
+ "ch03/asa-fig3-80": {
+  "file": "asa-image/ch03/asa-fig3-80.jpg",
+  "num": "3-80",
+  "cap": "Figure 3-80. Visible light makes up only a very small portion of the spectrum of electromagnetic radiation. We can see only the electromagnetic waves whose length is between 0.000 038 and 0.000 078 centimeters.",
+  "flags": []
+ },
+ "ch03/asa-fig3-81": {
+  "file": "asa-image/ch03/asa-fig3-81.jpg",
+  "num": "3-81",
+  "cap": "Figure 3-81. Light travels from its source in a Straight line. If a beam of light is interrupted, a shadow is formed.",
+  "flags": []
+ },
+ "ch03/asa-fig3-82": {
+  "file": "asa-image/ch03/asa-fig3-82.jpg",
+  "num": "3-82",
+  "cap": "Figure 3-82. When light passes through a hole, it spreads out. The closer the hole is to the source, the more the light spreads out.",
+  "flags": []
+ },
+ "ch03/asa-fig3-83": {
+  "file": "asa-image/ch03/asa-fig3-83.jpg",
+  "num": "3-83",
+  "cap": "Figure 3-83. Light obeys the Inverse Square Law. The light that illuminates a surface spreads out as it gets farther from the source. If we double the distance between the source of light and the surface on which it falls, the same amount of light that fell on one square unit of surface spreads out over 4 square units. Each square unit of surface receives one-quarter of the light.",
+  "flags": []
+ },
+ "ch03/asa-fig3-84": {
+  "file": "asa-image/ch03/asa-fig3-84.jpg",
+  "num": "3-84",
+  "cap": "Figure 3-84. The angle of reflectance of a light beam is always exactly the same as the angle of incidence.",
+  "flags": []
+ },
+ "ch03/asa-fig3-85": {
+  "file": "asa-image/ch03/asa-fig3-85.jpg",
+  "num": "3-85",
+  "cap": "Figure 3-85. A. Light reflects from a smooth surface and causes sharp-edged shadows if it is blocked. B. When light strikes a rough surface, it is diffused, or scattered. It does not cause sharp-edged shadows.",
+  "flags": []
+ },
+ "ch03/asa-fig3-86": {
+  "file": "asa-image/ch03/asa-fig3-86.jpg",
+  "num": "3-86",
+  "cap": "Figure 3-86. The speed at which light travels through glass is less than its speed through air, so a beam of light is refracted (bent) as it passes through glass.",
+  "flags": []
+ },
+ "ch03/asa-fig3-87": {
+  "file": "asa-image/ch03/asa-fig3-87.jpg",
+  "num": "3-87",
+  "cap": "Figure 3-87. The spoon appears to bend when a part of it is seen through air and a part is seen through the water. The shape of the glass and the water forms a lens that magnifies the spoon.",
+  "flags": []
+ },
+ "ch04/asa-fig4-1": {
+  "file": "asa-image/ch04/asa-fig4-1.jpg",
+  "num": "4-1",
+  "cap": "Figure 4-1. A. Electrons circle the nucleus of an atom in shells, with all the electrons in each shell circling the nucleus the same distance from the center. This is an atom of oxygen, which has two electrons in its inner shell and six in its outer shell. B. This type of diagram helps us see the way an atom of oxygen is constructed.",
+  "flags": []
+ },
+ "ch04/asa-fig4-2": {
+  "file": "asa-image/ch04/asa-fig4-2.jpg",
+  "num": "4-2",
+  "cap": "Figure 4-2. The electrons in all of these atoms are exactly alike. A. Hydrogen is a very active gas. Materials differ from each other because of the different number of B. Neon is an inert gas. electrons and protons in their atoms. C. Sulfur is a nonmetal solid that opposes the flow of electrons. D. Copper is a metal that is a very good conductor of electricity.",
+  "flags": []
+ },
+ "ch04/asa-fig4-3": {
+  "file": "asa-image/ch04/asa-fig4-3.jpg",
+  "num": "4-3",
+  "cap": "Figure 4-3. Jons with like charges repel each other, while ions with unlike charges attract each other.",
+  "flags": []
+ },
+ "ch04/asa-fig4-4": {
+  "file": "asa-image/ch04/asa-fig4-4.jpg",
+  "num": "4-4",
+  "cap": "Figure 4-4. Chemical action in a battery changes neutral zinc atoms into positive zinc ions. This leaves extra electrons on the can and gives the can a negative charge. The positive ions in the electrolyte pull electrons away from the carbon rod and leave it with a positive charge.",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch04/asa-fig4-5": {
+  "file": "asa-image/ch04/asa-fig4-5.jpg",
+  "num": "4-5",
+  "cap": "Figure 4-5. When a copper wire is connected across a battery, electrons leave its negative end, flow through the load, and return to the positive end. This movement of electrons is called electron current, or just current. When one electron leaves the battery, it knocks a valence electron out of a copper atom and replaces it. The electron that has been knocked out, now knocks an electron out of another atom and replaces it. This action continues through the wire until one electron is knocked out of the copper and goes into the positive terminal of the battery.",
+  "flags": []
+ },
+ "ch04/asa-fig4-6": {
+  "file": "asa-image/ch04/asa-fig4-6.jpg",
+  "num": "4-6",
+  "cap": "Figure 4-6. A. Electron current flows from the negative terminal of a battery through the load (the light bulb), back to the positive terminal of the battery. This flow is opposite the arrowhead in the symbol for the solid-state diode. B. Conventional current is an imaginary flow of electricity that is considered to flow from the positive terminal of a battery, through the load and the diode, to the negative terminal. This assumed flow is in the direction of the arrowhead in the solid-state diode symbol.",
+  "flags": []
+ },
+ "ch04/asa-fig4-7": {
+  "file": "asa-image/ch04/asa-fig4-7.jpg",
+  "num": "4-7",
+  "cap": "Figure 4-7. Static discharge points are installed on the trailing edge of control surfaces to bleed off the static charges that are built up as air flows over the surfaces.",
+  "flags": []
+ },
+ "ch04/asa-fig4-8": {
+  "file": "asa-image/ch04/asa-fig4-8.jpg",
+  "num": "4-8",
+  "cap": "Figure 4-8. Aircraft must be electrically grounded before they are fueled. Ground wires connect the aircraft and the fueling truck or pit together, and both of them are connected to the earth ground so that static charges that build up during fueling can pass harmlessly to the ground.",
+  "flags": []
+ },
+ "ch04/asa-fig4-9": {
+  "file": "asa-image/ch04/asa-fig4-9.jpg",
+  "num": "4-9",
+  "cap": "Figure 4-9. This is a complete electrical circuit. When the switch is closed to complete the path, electrons are forced out of the battery by internal chemical action. Electrons move through the conductor to the lamp where they find so much friction, or opposition, that they get the filament white hot. After the electrons lose all of their pressure, they return to the positive terminal of the battery.",
+  "flags": []
+ },
+ "ch04/asa-fig4-10": {
+  "file": "asa-image/ch04/asa-fig4-10.jpg",
+  "num": "4-10",
+  "cap": "Figure 4-10. A battery is a source of electrical pressure that may be spoken of as an EMF, electromotive force, potential, or potential difference. All are measured in volts, and all mean essentially the same thing. When current flows through the resistor, power is used and voltage is dropped. The voltage across a resistor can be measured with a voltmeter in the same way as the voltage produced by a battery. This voltage is caused by current (1) flowing through the resistor (R), and it is called an IR drop, or a voltage drop. The end of the resistor where the electron current enters is the negative end, and the end where it leaves is the positive end.",
+  "flags": []
+ },
+ "ch04/asa-fig4-11": {
+  "file": "asa-image/ch04/asa-fig4-11.jpg",
+  "num": "4-11",
+  "cap": "Figure 4-11. A thermocouple made of two different kinds of wire produces electricity when one of its junctions is heated. The amount of current that flows is determined by the difference in the temperature between the hot and cold junctions, and by the resistance of the wires.",
+  "flags": []
+ },
+ "ch04/asa-fig4-12": {
+  "file": "asa-image/ch04/asa-fig4-12.jpg",
+  "num": "4-12",
+  "cap": "Figure 4-12. A flashlight battery is a device that changes chemical energy into electricity. Chemical action changes the zinc of the can into zinc chloride, and when this change is made, electrons are released. When a wire connects the zinc can to the carbon rod, electrons flow from the can to the rod.",
+  "flags": []
+ },
+ "ch04/asa-fig4-13": {
+  "file": "asa-image/ch04/asa-fig4-13.jpg",
+  "num": "4-13",
+  "cap": "Figure 4-13. A piece of crystal produces electricity when it is bent or twisted by the needle riding in the grooves of a phonograph record. Electrons move through the external circuit from one side of the crystal to the other. This weak flow of electrons is made stronger by an amplifier so that it can power a speaker.",
+  "flags": []
+ },
+ "ch04/asa-fig4-14": {
+  "file": "asa-image/ch04/asa-fig4-14.jpg",
+  "num": "4-14",
+  "cap": "Figure 4-14. When light strikes a solar cell, electrons are driven from it to produce a flow of current.",
+  "flags": []
+ },
+ "ch04/asa-fig4-15": {
+  "file": "asa-image/ch04/asa-fig4-15.jpg",
+  "num": "4-15",
+  "cap": "Figure 4-15. When a coil of wire is moved back and forth so that it cuts across a magnetic field, electrons are forced to flow in the wire. This is the way almost all of the electricity used in aircraft electrical systems is produced.",
+  "flags": []
+ },
+ "ch04/asa-fig4-16": {
+  "file": "asa-image/ch04/asa-fig4-16.jpg",
+  "num": "4-16",
+  "cap": "Figure 4-16. Relationship between voltage, current, resistance, and power in an electrical circuit. The top quantity is equal to the product of the two bottom quantities, and one bottom quantity is equal to the top quantity divided by the other bottom quantity.",
+  "flags": []
+ },
+ "ch04/asa-fig4-17": {
+  "file": "asa-image/ch04/asa-fig4-17.jpg",
+  "num": "4-17",
+  "cap": "Figure 4-17. Scientific notation and metric prefixes",
+  "flags": []
+ },
+ "ch04/asa-fig4-20": {
+  "file": "asa-image/ch04/asa-fig4-20.jpg",
+  "num": "4-20",
+  "cap": "Figure 4-20. Method of measuring current",
+  "flags": []
+ },
+ "ch04/asa-fig4-21": {
+  "file": "asa-image/ch04/asa-fig4-21.jpg",
+  "num": "4-21",
+  "cap": "Figure 4-21. Typical symbols used in electrical schematic diagrams",
+  "flags": []
+ },
+ "ch04/asa-fig4-22": {
+  "file": "asa-image/ch04/asa-fig4-22.jpg",
+  "num": "4-22",
+  "cap": "Figure 4-22. Analysis of a simple series DC circuit",
+  "flags": []
+ },
+ "ch04/asa-fig4-23": {
+  "file": "asa-image/ch04/asa-fig4-23.jpg",
+  "num": "4-23",
+  "cap": "Figure 4-23. Finding the source voltage in a series DC circuit",
+  "flags": []
+ },
+ "ch04/asa-fig4-24": {
+  "file": "asa-image/ch04/asa-fig4-24.jpg",
+  "num": "4-24",
+  "cap": "Figure 4-24. Pictorial and schematic diagrams of a parallel circuit.",
+  "flags": []
+ },
+ "ch04/asa-fig4-25": {
+  "file": "asa-image/ch04/asa-fig4-25.jpg",
+  "num": "4-25",
+  "cap": "Figure 4-25. Analysis of a simple parallel circuit",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch04/asa-fig4-26": {
+  "file": "asa-image/ch04/asa-fig4-26.jpg",
+  "num": "4-26",
+  "cap": "Figure 4-26. Analysis of a complex circuit, with some resistors connected in series and others connected in parallel",
+  "flags": []
+ },
+ "ch04/asa-fig4-27": {
+  "file": "asa-image/ch04/asa-fig4-27.jpg",
+  "num": "4-27",
+  "cap": "Figure 4-27. Voltage loops in a series-parallel circuit",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch04/asa-fig4-28": {
+  "file": "asa-image/ch04/asa-fig4-28.jpg",
+  "num": "4-28",
+  "cap": "Figure 4-28. Current branches in a series-parallel circuit.",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch04/asa-fig4-30": {
+  "file": "asa-image/ch04/asa-fig4-30.jpg",
+  "num": "4-30",
+  "cap": "Figure 4-30. Bridge circuits are used as measuring circuits. The current through the indicator varies as the resistance of R4 changes.",
+  "flags": []
+ },
+ "ch04/asa-fig4-31": {
+  "file": "asa-image/ch04/asa-fig4-31.jpg",
+  "num": "4-31",
+  "cap": "Figure 4-31. To find the equivalent resistance of a bridge circuit, the delta portion of the circuit, Ry, Ry, and Rz, must be converted into an equivalent Y-circuit, Rs, Rp, and Rc.",
+  "flags": []
+ },
+ "ch04/asa-fig4-32": {
+  "file": "asa-image/ch04/asa-fig4-32.jpg",
+  "num": "4-32",
+  "cap": "Figure 4-32. A Y-circuit can be changed into an equivalent delta circuit.",
+  "flags": []
+ },
+ "ch04/asa-fig4-33": {
+  "file": "asa-image/ch04/asa-fig4-33.jpg",
+  "num": "4-33",
+  "cap": "Figure 4-33. The current produced by magnetism is alternating current. Electrons flow only as long as the coil of wire is moving in the magnetic field and cutting lines of magnetic flux.",
+  "flags": []
+ },
+ "ch04/asa-fig4-34": {
+  "file": "asa-image/ch04/asa-fig4-34.jpg",
+  "num": "4-34",
+  "cap": "Figure 4-34. A cycle of alternating current is one complete sequence of events. The voltage or current starts at zero, rises to a positive peak, and drops back to zero in one alternation. In the next alternation, it starts at zero, drops to the negative peak, and then returns to zero. One cycle of alternating current consists of two alternations.",
+  "flags": []
+ },
+ "ch04/asa-fig4-35": {
+  "file": "asa-image/ch04/asa-fig4-35.jpg",
+  "num": "4-35",
+  "cap": "Figure 4-35. The sine of an angle is the ratio of the length of the side opposite the angle to the length of the hypotenuse.",
+  "flags": []
+ },
+ "ch04/asa-fig4-36": {
+  "file": "asa-image/ch04/asa-fig4-36.jpg",
+  "num": "4-36",
+  "cap": "Figure 4-36. The instantaneous value of sine-wave alternating current varies as the sine of the angle through which the generator armature has turned.",
+  "flags": []
+ },
+ "ch04/asa-fig4-37": {
+  "file": "asa-image/ch04/asa-fig4-37.jpg",
+  "num": "4-37",
+  "cap": "Figure 4-37. When the coils of an AC generator rotate inside a magnetic field, they produce a voltage and current whose instantaneous values vary with the number of lines of magnetic flux the coils cut across.",
+  "flags": []
+ },
+ "ch04/asa-fig4-38": {
+  "file": "asa-image/ch04/asa-fig4-38.jpg",
+  "num": "4-38",
+  "cap": "Figure 4-38. The effective, or rms, value of sine wave AC is 0.707 times the peak value. The average value is 0.636 times the peak value, and the peak-to-peak value is twice the peak value.",
+  "flags": []
+ },
+ "ch04/asa-fig4-39": {
+  "file": "asa-image/ch04/asa-fig4-39.jpg",
+  "num": "4-39",
+  "cap": "Figure 4-39. When the switch is closed in a DC circuit, the voltage and the current rise at the same time. This means that the voltage and current are in phase.",
+  "flags": []
+ },
+ "ch04/asa-fig4-40": {
+  "file": "asa-image/ch04/asa-fig4-40.jpg",
+  "num": "4-40",
+  "cap": "Figure 4-40. The voltage and current are in phase in an AC circuit in which the load is purely resistive.",
+  "flags": []
+ },
+ "ch04/asa-fig4-41": {
+  "file": "asa-image/ch04/asa-fig4-41.jpg",
+  "num": "4-41",
+  "cap": "Figure 4-41. /f the load in an AC circuit is purely capacitive, the current must flow into the capacitor before the voltage can build up across it. The current LEADS the voltage.",
+  "flags": []
+ },
+ "ch04/asa-fig4-42": {
+  "file": "asa-image/ch04/asa-fig4-42.jpg",
+  "num": "4-42",
+  "cap": "Figure 4-42. /f the load in an AC circuit is purely inductive, a change in the voltage produces a current that opposes the voltage change. The voltage change leads the current change, or we can say that the current LAGS the voltage.",
+  "flags": []
+ },
+ "ch04/asa-fig4-43": {
+  "file": "asa-image/ch04/asa-fig4-43.jpg",
+  "num": "4-43",
+  "cap": "Figure 4-43. At the instant the switch is closed, current begins to flow into the capacitor. As current flows into it, the voltage across it rises, and the current flow decreases.",
+  "flags": []
+ },
+ "ch04/asa-fig4-46": {
+  "file": "asa-image/ch04/asa-fig4-46.jpg",
+  "num": "4-46",
+  "cap": "Figure 4-46. Jn this circuit, the 1,000 ohms of resistance and the 1,061.3 ohms of capacitive reactance combine to form 1,458.2 ohms of impedance.",
+  "flags": []
+ },
+ "ch04/asa-fig4-47": {
+  "file": "asa-image/ch04/asa-fig4-47.jpg",
+  "num": "4-47",
+  "cap": "Figure 4-47. A. Phase rotation in an alternating current circuit is considered to be counterclockwise from zero degrees. Zero degrees is drawn to the right of the origin. B. Finding the impedance in a series R-C circuit using the graphic method.",
+  "flags": []
+ },
+ "ch04/asa-fig4-48": {
+  "file": "asa-image/ch04/asa-fig4-48.jpg",
+  "num": "4-48",
+  "cap": "Figure 4-48. To find the total current in a parallel R-C circuit, we add the current through the resistor and the current through the capacitor vectorially.",
+  "flags": []
+ },
+ "ch04/asa-fig4-49": {
+  "file": "asa-image/ch04/asa-fig4-49.jpg",
+  "num": "4-49",
+  "cap": "Figure 4-49. Any time electrons flow in a conductor, a magnetic field surrounds the conductor. When the current flowing in the conductor changes, the magnetic field builds up or collapses, and as it does, it cuts across the conductor and induces, or creates, a current in it. This induced current flows in the direction opposite to that of the current which caused it.",
+  "flags": []
+ },
+ "ch04/asa-fig4-50": {
+  "file": "asa-image/ch04/asa-fig4-50.jpg",
+  "num": "4-50",
+  "cap": "Figure 4-50. The current in a purely inductive circuit lags 90° behind the voltage that causes it to flow. When the current changes, it induces, or causes, a back voltage to be produced in the circuit. This voltage is 180° out of phase with the source voltage.",
+  "flags": []
+ },
+ "ch04/asa-fig4-51": {
+  "file": "asa-image/ch04/asa-fig4-51.jpg",
+  "num": "4-51",
+  "cap": "Figure 4-51. Finding the impedance of a series R-L circuit",
+  "flags": []
+ },
+ "ch04/asa-fig4-52": {
+  "file": "asa-image/ch04/asa-fig4-52.jpg",
+  "num": "4-52",
+  "cap": "Figure 4-52. Finding the impedance of a parallel R-L circuit",
+  "flags": []
+ },
+ "ch04/asa-fig4-53": {
+  "file": "asa-image/ch04/asa-fig4-53.jpg",
+  "num": "4-53",
+  "cap": "Figure 4-53. Finding the characteristics of a series R-L-C circuit",
+  "flags": []
+ },
+ "ch04/asa-fig4-54": {
+  "file": "asa-image/ch04/asa-fig4-54.jpg",
+  "num": "4-54",
+  "cap": "Figure 4-54. Finding the characteristics of a parallel R-L-C circuit",
+  "flags": []
+ },
+ "ch04/asa-fig4-55": {
+  "file": "asa-image/ch04/asa-fig4-55.jpg",
+  "num": "4-55",
+  "cap": "Figure 4-55. A. Capacitive reactance decreases as the frequency increases. B. Inductive reactance increases as the frequency increases. C. The resonant frequency of an AC circuit is the frequency at which the inductive reactance and the capacitive reactance are equal.",
+  "flags": []
+ },
+ "ch04/asa-fig4-56": {
+  "file": "asa-image/ch04/asa-fig4-56.jpg",
+  "num": "4-56",
+  "cap": "Figure 4-56. Phase relationships in a series R-L-C circuit",
+  "flags": []
+ },
+ "ch04/asa-fig4-57": {
+  "file": "asa-image/ch04/asa-fig4-57.jpg",
+  "num": "4-57",
+  "cap": "Figure 4-57. Voltage distribution in a series R-L-C circuit at its resonant frequency",
+  "flags": []
+ },
+ "ch04/asa-fig4-58": {
+  "file": "asa-image/ch04/asa-fig4-58.jpg",
+  "num": "4-58",
+  "cap": "Figure 4-58. The Q (quality factor) of an R-L-C circuit determines the steepness of the band pass curve.",
+  "flags": []
+ },
+ "ch04/asa-fig4-60": {
+  "file": "asa-image/ch04/asa-fig4-60.jpg",
+  "num": "4-60",
+  "cap": "Figure 4-60. A parallel L-C circuit is called a tank circuit. When the circuit is energized by alternating current at its resonant frequency, current will flow back and forth between the inductor and the capacitor as energy is alternately stored in electromagnetic and electrostatic fields.",
+  "flags": []
+ },
+ "ch04/asa-fig4-63": {
+  "file": "asa-image/ch04/asa-fig4-63.jpg",
+  "num": "4-63",
+  "cap": "Figure 4-63. A. A series L-C bandpass filter B. A parallel L-C bandpass filter C. Current flow through a bandpass filter as frequency changes",
+  "flags": []
+ },
+ "ch04/asa-fig4-66": {
+  "file": "asa-image/ch04/asa-fig4-66.jpg",
+  "num": "4-66",
+  "cap": "Figure 4-66. Voltage between each phase winding and neutral in a Y-connected three-phase circuit",
+  "flags": []
+ },
+ "ch04/asa-fig4-67": {
+  "file": "asa-image/ch04/asa-fig4-67.jpg",
+  "num": "4-67",
+  "cap": "Figure 4-67. Voltage across the three phases of a delta-connected three-phase circuit",
+  "flags": []
+ },
+ "ch04/asa-fig4-68": {
+  "file": "asa-image/ch04/asa-fig4-68.jpg",
+  "num": "4-68",
+  "cap": "Figure 4-68. A voltmeter must be connected in parallel with the voltage to be measured.",
+  "flags": []
+ },
+ "ch04/asa-fig4-69": {
+  "file": "asa-image/ch04/asa-fig4-69.jpg",
+  "num": "4-69",
+  "cap": "Figure 4-69. A. A voltmeter across an open switch reads the system voltage. B. A voltmeter across a closed switch reads zero voltage",
+  "flags": []
+ },
+ "ch04/asa-fig4-70": {
+  "file": "asa-image/ch04/asa-fig4-70.jpg",
+  "num": "4-70",
+  "cap": "Figure 4-70. Ammeters are connected in series with the load to measure the current flowing through the load.",
+  "flags": []
+ },
+ "ch04/asa-fig4-71": {
+  "file": "asa-image/ch04/asa-fig4-71.jpg",
+  "num": "4-71",
+  "cap": "Figure 4-71. Generator output current is determined by measuring the millivoltage drop across an ammeter shunt installed in the generator output lead. The millivoltmeter is calibrated in amperes.",
+  "flags": [
+   "manual",
+   "page-capture"
+  ]
+ },
+ "ch04/asa-fig4-72": {
+  "file": "asa-image/ch04/asa-fig4-72.jpg",
+  "num": "4-72",
+  "cap": "Figure 4-72. Before the resistance of a component can be measured with an ohmmeter, the component must be isolated from the rest of the circuit.",
+  "flags": []
+ },
+ "ch04/asa-fig4-73": {
+  "file": "asa-image/ch04/asa-fig4-73.jpg",
+  "num": "4-73",
+  "cap": "Figure 4-73. Relative resistance of electrical conductors",
+  "flags": []
+ },
+ "ch04/asa-fig4-74": {
+  "file": "asa-image/ch04/asa-fig4-74.jpg",
+  "num": "4-74",
+  "cap": "Figure 4-74. Factors affecting resistance",
+  "flags": []
+ },
+ "ch04/asa-fig4-75": {
+  "file": "asa-image/ch04/asa-fig4-75.jpg",
+  "num": "4-75",
+  "cap": "Figure 4-75. One circular mil is the area of a circle whose diameter is one mil (0.001 inch).",
+  "flags": []
+ },
+ "ch04/asa-fig4-76": {
+  "file": "asa-image/ch04/asa-fig4-76.jpg",
+  "num": "4-76",
+  "cap": "Figure 4-76. Standard annealed solid copper wire",
+  "flags": []
+ },
+ "ch04/asa-fig4-77": {
+  "file": "asa-image/ch04/asa-fig4-77.jpg",
+  "num": "4-77",
+  "cap": "Figure 4-77. Stranded copper wire cable",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch04/asa-fig4-78": {
+  "file": "asa-image/ch04/asa-fig4-78.jpg",
+  "num": "4-78",
+  "cap": "Figure 4-78. The bands of color around a composition resistor show its resistance. The first band is the first digit, or number. The second band is the second digit, or number. The third band is the number of zeros to add to the first two digits. Silver and gold in this position are multipliers. The fourth band, if one is used, shows the tolerance in percentage of the resistance value.",
+  "flags": []
+ },
+ "ch04/asa-fig4-79": {
+  "file": "asa-image/ch04/asa-fig4-79.jpg",
+  "num": "4-79",
+  "cap": "Figure 4-79. Examples of resistance range of composition resistors",
+  "flags": []
+ },
+ "ch04/asa-fig4-80": {
+  "file": "asa-image/ch04/asa-fig4-80.jpg",
+  "num": "4-80",
+  "cap": "Figure 4-80. Multipliers for preferred values for composition resistors",
+  "flags": []
+ },
+ "ch04/asa-fig4-82": {
+  "file": "asa-image/ch04/asa-fig4-82.jpg",
+  "num": "4-82",
+  "cap": "Figure 4-82. Symbols for various types of resistors",
+  "flags": []
+ },
+ "ch04/asa-fig4-83": {
+  "file": "asa-image/ch04/asa-fig4-83.jpg",
+  "num": "4-83",
+  "cap": "Figure 4-83. Symbols for various types of switches",
+  "flags": []
+ },
+ "ch04/asa-fig4-84": {
+  "file": "asa-image/ch04/asa-fig4-84.jpg",
+  "num": "4-84",
+  "cap": "Figure 4-84. Schematic of a solenoid switch",
+  "flags": []
+ },
+ "ch04/asa-fig4-85": {
+  "file": "asa-image/ch04/asa-fig4-85.jpg",
+  "num": "4-85",
+  "cap": "Figure 4-85. Schematic of a relay switch",
+  "flags": []
+ },
+ "ch04/asa-fig4-86": {
+  "file": "asa-image/ch04/asa-fig4-86.jpg",
+  "num": "4-86",
+  "cap": "Figure 4-86. A. Glass tubular fuse B. Slow-blow fuse",
+  "flags": []
+ },
+ "ch04/asa-fig4-87": {
+  "file": "asa-image/ch04/asa-fig4-87.jpg",
+  "num": "4-87",
+  "cap": "Figure 4-87. A. Push-to-reset-type circuit breaker in its closed condition. B. Excessive current has warped the bimetallic strip and snapped the contacts open.",
+  "flags": []
+ },
+ "ch04/asa-fig4-88": {
+  "file": "asa-image/ch04/asa-fig4-88.jpg",
+  "num": "4-88",
+  "cap": "Figure 4-88. Factors affecting capacitance",
+  "flags": []
+ },
+ "ch04/asa-fig4-89": {
+  "file": "asa-image/ch04/asa-fig4-89.jpg",
+  "num": "4-89",
+  "cap": "Figure 4-89. Uncharged plates do not affect the orbital pattern of the electrons in the dielectric. When a capacitor is charged, the orbits of the electrons in the dielectric are distorted, and electrical energy is stored in the distorted field.",
+  "flags": []
+ },
+ "ch04/asa-fig4-90": {
+  "file": "asa-image/ch04/asa-fig4-90.jpg",
+  "num": "4-90",
+  "cap": "Figure 4-90. An electrolytic capacitor has as its dielectric an extremely thin film of oxide deposited, or formed, on the aluminum foil plate. Electrolytic capacitors are polarized, which means that they can be used only in DC circuits. Electrons cannot flow from the oxide to the aluminum, but they can flow from the aluminum to the oxide.",
+  "flags": []
+ },
+ "ch04/asa-fig4-91": {
+  "file": "asa-image/ch04/asa-fig4-91.jpg",
+  "num": "4-91",
+  "cap": "Figure 4-91. Symbols for capacitors: A. Fixed nonelectrolytic capacitor B. Variable capacitor C. Fixed electrolytic capacitor",
+  "flags": []
+ },
+ "ch04/asa-fig4-93": {
+  "file": "asa-image/ch04/asa-fig4-93.jpg",
+  "num": "4-93",
+  "cap": "Figure 4-93. Anytime electrons flow in a conductor, a magnetic field surrounds the conductor. When the current flowing in the conductor changes, the magnetic field builds up or collapses. As it does, it cuts across the conductor and induces, or creates, a current in it. This induced current flows in a direction opposite to that of the current which caused it.",
+  "flags": []
+ },
+ "ch04/asa-fig4-95": {
+  "file": "asa-image/ch04/asa-fig4-95.jpg",
+  "num": "4-95",
+  "cap": "Figure 4-95. Factors affecting inductance",
+  "flags": []
+ },
+ "ch04/asa-fig4-96": {
+  "file": "asa-image/ch04/asa-fig4-96.jpg",
+  "num": "4-96",
+  "cap": "Figure 4-96. The amount of coupling between two coils is determined by the type of core used in the coils, by the distance the coils are apart, and by the angle between the two coils.",
+  "flags": []
+ },
+ "ch04/asa-fig4-97": {
+  "file": "asa-image/ch04/asa-fig4-97.jpg",
+  "num": "4-97",
+  "cap": "Figure 4-97. Finding the total inductance of inductors connected in series.",
+  "flags": []
+ },
+ "ch04/asa-fig4-98": {
+  "file": "asa-image/ch04/asa-fig4-98.jpg",
+  "num": "4-98",
+  "cap": "Figure 4-98. Finding the total inductance of inductors connected in parallel",
+  "flags": []
+ },
+ "ch04/asa-fig4-101": {
+  "file": "asa-image/ch04/asa-fig4-101.jpg",
+  "num": "4-101",
+  "cap": "Figure 4-101. Types of power-frequency transformers",
+  "flags": []
+ },
+ "ch04/asa-fig4-102": {
+  "file": "asa-image/ch04/asa-fig4-102.jpg",
+  "num": "4-102",
+  "cap": "Figure 4-102. The 90° phase shift between the voltage and current in the primary winding and the 90° phase shift between the current and voltage in the secondary winding cause the secondary voltage to be 180° out of phase with the voltage in the primary winding.",
+  "flags": []
+ },
+ "ch04/asa-fig4-103": {
+  "file": "asa-image/ch04/asa-fig4-103.jpg",
+  "num": "4-103",
+  "cap": "Figure 4-103. No current flows in the primary winding of a doorbell transformer until the switch is closed, allowing secondary current to flow. This secondary current induces a current into the primary winding that cancels some of the current caused by the changing source voltage. This allows primary current to flow.",
+  "flags": []
+ },
+ "ch04/asa-fig4-104": {
+  "file": "asa-image/ch04/asa-fig4-104.jpg",
+  "num": "4-104",
+  "cap": "Figure 4-104. A diode controls electron flow in the same way a check valve controls the flow of hydraulic fluid.",
+  "flags": []
+ },
+ "ch04/asa-fig4-105": {
+  "file": "asa-image/ch04/asa-fig4-105.jpg",
+  "num": "4-105",
+  "cap": "Figure 4-105. A half-wave rectifier. A. Input waveform of AC in the transformer B. Half-wave rectifier circuit C. Output waveform of pulsating DC in the load",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch04/asa-fig4-106": {
+  "file": "asa-image/ch04/asa-fig4-106.jpg",
+  "num": "4-106",
+  "cap": "Figure 4-106. A barrier-type terminal strip A. When it is necessary to connect more than 4 wires to a single point, 2 or more studs are connected with a bus strap. B. Correct method of stacking wire terminals on a stud.",
+  "flags": []
+ },
+ "ch04/asa-fig4-107": {
+  "file": "asa-image/ch04/asa-fig4-107.jpg",
+  "num": "4-107",
+  "cap": "Figure 4-107. A. Single atom of silicon has four electrons in its valence shell. B. Atoms of silicon join with other silicon atoms to form a silicon crystal. Each atom shares electrons with four other atoms by the process called covalent bonding.",
+  "flags": []
+ },
+ "ch04/asa-fig4-108": {
+  "file": "asa-image/ch04/asa-fig4-108.jpg",
+  "num": "4-108",
+  "cap": "Figure 4-108. Heat or a high voltage across a crystal of silicon can cause a few electrons to break out of their covalent bond and become free electrons. When an electron breaks out of its bond, it leaves a hole.",
+  "flags": []
+ },
+ "ch04/asa-fig4-109": {
+  "file": "asa-image/ch04/asa-fig4-109.jpg",
+  "num": "4-109",
+  "cap": "Figure 4-109. When a piece of pure silicon is connected across a battery, some electrons will flow through it because of the electron-hole pairs that form when an electron breaks out of its covalent bond. The amount of current flowing through the silicon is determined b) the temperature of the silicon and by the amount of voltage across it.",
+  "flags": []
+ },
+ "ch04/asa-fig4-110": {
+  "file": "asa-image/ch04/asa-fig4-110.jpg",
+  "num": "4-110",
+  "cap": "Figure 4-110. When a few atoms of a pentavalent element such as arsenic are added to pure silicon and a crystal is produced, there are free electrons left after all of the covalent bonds have formed. Since there are more electrons than are needed for all of the covalent bonds, this is called N-type (negative-type) silicon.",
+  "flags": []
+ },
+ "ch04/asa-fig4-111": {
+  "file": "asa-image/ch04/asa-fig4-111.jpg",
+  "num": "4-111",
+  "cap": "Figure 4-111. When silicon is doped with a trivalent impurity such as gallium there are some places where covalent bonds cannot form, and these locations are called holes. Holes have no electrical charge, but since they are where there should be a negative charge, they act as though they are positive. Free electrons are attracted to holes, and they fill them.",
+  "flags": []
+ },
+ "ch04/asa-fig4-113": {
+  "file": "asa-image/ch04/asa-fig4-113.jpg",
+  "num": "4-113",
+  "cap": "Figure 4-113. A barrier voltage, or barrier potential, forms at the PN-junction when free electrons from the N-silicon combine with the holes in the P-silicon to form positive and negative ions.",
+  "flags": [
+   "page-capture"
+  ]
+ },
+ "ch04/asa-fig4-114": {
+  "file": "asa-image/ch04/asa-fig4-114.jpg",
+  "num": "4-114",
+  "cap": "Figure 4-114. When the negative terminal of a battery is connected to the cathode of a silicon diode, and the positive terminal is connected to the anode, the diode is forward biased and current flows through it. The depletion area is very narrow, and the barrier voltage is low.",
+  "flags": []
+ },
+ "ch04/asa-fig4-115": {
+  "file": "asa-image/ch04/asa-fig4-115.jpg",
+  "num": "4-115",
+  "cap": "Figure 4-115. When the positive terminal of a battery is connected to the cathode of a silicon diode, and the negative terminal is connected to the anode, the diode is reverse biased and only leakage current flows through it. The depletion area is very wide, and the barrier voltage is high.",
+  "flags": []
+ },
+ "ch04/asa-fig4-116": {
+  "file": "asa-image/ch04/asa-fig4-116.jpg",
+  "num": "4-116",
+  "cap": "Figure 4-116. A zener diode",
+  "flags": []
+ },
+ "ch04/asa-fig4-117": {
+  "file": "asa-image/ch04/asa-fig4-117.jpg",
+  "num": "4-117",
+  "cap": "Figure 4-117. A voltage regulator circuit using a zener diode as the voltagesensing unit",
+  "flags": []
+ },
+ "ch04/asa-fig4-118": {
+  "file": "asa-image/ch04/asa-fig4-118.jpg",
+  "num": "4-118",
+  "cap": "Figure 4-118. A silicon controlled rectifier, or SCR",
+  "flags": []
+ },
+ "ch04/asa-fig4-119": {
+  "file": "asa-image/ch04/asa-fig4-119.jpg",
+  "num": "4-119",
+  "cap": "Figure 4-119. An SCR acts in the same way as a holding relay. Momentarily closing switch S, triggers the SCR into conduction, and it continues to conduct until switch S, is opened.",
+  "flags": []
+ },
+ "ch04/asa-fig4-122": {
+  "file": "asa-image/ch04/asa-fig4-122.jpg",
+  "num": "4-122",
+  "cap": "Figure 4-122. A triac acts much like an SCR except that it can be triggered with a pulse of either polarity.",
+  "flags": []
+ },
+ "ch04/asa-fig4-123": {
+  "file": "asa-image/ch04/asa-fig4-123.jpg",
+  "num": "4-123",
+  "cap": "Figure 4-123. Bipolar transistors",
+  "flags": []
+ },
+ "ch04/asa-fig4-124": {
+  "file": "asa-image/ch04/asa-fig4-124.jpg",
+  "num": "4-124",
+  "cap": "Figure 4-124. A transistor acts much like a relay in an electrical circuit. When switch S, is closed, a small current flows in the base circuit of the transistor. This small current allows a much larger current to flow through the collector and emitter and the electrical load.",
+  "flags": []
+ },
+ "ch04/asa-fig4-125": {
+  "file": "asa-image/ch04/asa-fig4-125.jpg",
+  "num": "4-125",
+  "cap": "Figure 4-125. A transistor acts as a variable resistor when its base current is varied. The greater the base current, the greater the load current.",
+  "flags": []
+ },
+ "ch04/asa-fig4-127": {
+  "file": "asa-image/ch04/asa-fig4-127.jpg",
+  "num": "4-127",
+  "cap": "Figure 4-127. Metal-oxide semiconductor field effect transistors",
+  "flags": []
+ },
+ "ch04/asa-fig4-128": {
+  "file": "asa-image/ch04/asa-fig4-128.jpg",
+  "num": "4-128",
+  "cap": "Figure 4-128. A unijunction transistor",
+  "flags": []
+ },
+ "ch04/asa-fig4-129": {
+  "file": "asa-image/ch04/asa-fig4-129.jpg",
+  "num": "4-129",
+  "cap": "Figure 4-129. This unijunction transistor sends a pulse of current through the load each time the voltage across the capacitor rises to the trigger voltage of the UJT.",
+  "flags": []
+ },
+ "ch04/asa-fig4-131": {
+  "file": "asa-image/ch04/asa-fig4-131.jpg",
+  "num": "4-131",
+  "cap": "Figure 4-131. Semiconductor light sensors",
+  "flags": []
+ },
+ "ch04/asa-fig4-132": {
+  "file": "asa-image/ch04/asa-fig4-132.jpg",
+  "num": "4-132",
+  "cap": "Figure 4-132. Symbols for digital logic gates",
+  "flags": []
+ },
+ "ch04/asa-fig4-133": {
+  "file": "asa-image/ch04/asa-fig4-133.jpg",
+  "num": "4-133",
+  "cap": "Figure 4-133. Symbol for an operational amplifier",
+  "flags": []
+ },
+ "ch04/asa-fig4-134": {
+  "file": "asa-image/ch04/asa-fig4-134.jpg",
+  "num": "4-134",
+  "cap": "Figure 4-134. Jn a simple electrochemical cell, the zinc reacts with chlorine ions from the hydrochloric acid to form zinc chloride. This reaction causes the zinc to release electrons which travel through the external circuit to the copper where they attract and neutralize hydrogen ions from the hydrochloric acid. Two atoms of hydrogen make one molecule of hydrogen gas which forms as bubbles on the copper.",
+  "flags": []
+ },
+ "ch04/asa-fig4-135": {
+  "file": "asa-image/ch04/asa-fig4-135.jpg",
+  "num": "4-135",
+  "cap": "Figure 4-135. Construction of a carbonzinc cell",
+  "flags": []
+ },
+ "ch04/asa-fig4-136": {
+  "file": "asa-image/ch04/asa-fig4-136.jpg",
+  "num": "4-136",
+  "cap": "Figure 4-136. Chemical changes in a lead-acid cell during discharge",
+  "flags": []
+ },
+ "ch04/asa-fig4-137": {
+  "file": "asa-image/ch04/asa-fig4-137.jpg",
+  "num": "4-137",
+  "cap": "Figure 4-137. Chemical changes in a lead-acid cell during charge",
+  "flags": []
+ },
+ "ch04/asa-fig4-138": {
+  "file": "asa-image/ch04/asa-fig4-138.jpg",
+  "num": "4-138",
+  "cap": "Figure 4-138. A. In an atom of unmagnetized iron, the spin axes of the electrons point in different directions so the atom has no magnetic axis; it is magnetically inert. B. When an atom of iron is magnetized, the spin axes of all of the electrons are lined up in the same direction, and the atom has a magnetic axis.",
+  "flags": []
+ },
+ "ch04/asa-fig4-139": {
+  "file": "asa-image/ch04/asa-fig4-139.jpg",
+  "num": "4-139",
+  "cap": "Figure 4-139. Domain alignment in an unmagnetized material",
+  "flags": []
+ },
+ "ch04/asa-fig4-140": {
+  "file": "asa-image/ch04/asa-fig4-140.jpg",
+  "num": "4-140",
+  "cap": "Figure 4-140. The domains in a material may all be aligned in the same direction by holding the material in a strong magnetic field.",
+  "flags": []
+ },
+ "ch04/asa-fig4-141": {
+  "file": "asa-image/ch04/asa-fig4-141.jpg",
+  "num": "4-141",
+  "cap": "Figure 4-141. The curve of magnetic strength (B) versus magnetizing force (H) of a piece of steel",
+  "flags": []
+ },
+ "ch04/asa-fig4-142": {
+  "file": "asa-image/ch04/asa-fig4-142.jpg",
+  "num": "4-142",
+  "cap": "Figure 4-142. The hysteresis loop of a piece of steel",
+  "flags": []
+ },
+ "ch04/asa-fig4-143": {
+  "file": "asa-image/ch04/asa-fig4-143.jpg",
+  "num": "4-143",
+  "cap": "Figure 4-143. A. The hysteresis loop for hard steel B. The hysteresis loop for soft iron",
+  "flags": []
+ },
+ "ch04/asa-fig4-144": {
+  "file": "asa-image/ch04/asa-fig4-144.jpg",
+  "num": "4-144",
+  "cap": "Figure 4-144. Lines of magnetic flux surrounding a bar magnet",
+  "flags": []
+ },
+ "ch04/asa-fig4-145": {
+  "file": "asa-image/ch04/asa-fig4-145.jpg",
+  "num": "4-145",
+  "cap": "Figure 4-145. Lines of magnetic force surrounding two bar magnets placed with their unlike poles next to one another",
+  "flags": []
+ },
+ "ch04/asa-fig4-146": {
+  "file": "asa-image/ch04/asa-fig4-146.jpg",
+  "num": "4-146",
+  "cap": "Figure 4-146. Lines of magnetic force surrounding two bar magnets placed with their like poles next to one another.",
+  "flags": []
+ },
+ "ch04/asa-fig4-147": {
+  "file": "asa-image/ch04/asa-fig4-147.jpg",
+  "num": "4-147",
+  "cap": "Figure 4-147. A. Lines of magnetic flux passing through air repel each other and spread out. B. Soft iron with a high permeability concentrates the lines of flux.",
+  "flags": []
+ },
+ "ch04/asa-fig4-148": {
+  "file": "asa-image/ch04/asa-fig4-148.jpg",
+  "num": "4-148",
+  "cap": "Figure 4-148. /f you hold a currentcarrying conductor in your left hand with your thumb pointing in the direction of electron flow, your fingers will encircle the conductor in the same direction as the lines of magnetic flux.",
+  "flags": []
+ },
+ "ch04/asa-fig4-149": {
+  "file": "asa-image/ch04/asa-fig4-149.jpg",
+  "num": "4-149",
+  "cap": "Figure 4-149. The magnetic fields caused by current flowing in the same direction through parallel wires will pull the wires together.",
+  "flags": []
+ },
+ "ch04/asa-fig4-150": {
+  "file": "asa-image/ch04/asa-fig4-150.jpg",
+  "num": "4-150",
+  "cap": "Figure 4-150. The magnetic fields caused by current flowing through wires in the opposite direction will force the wires apart.",
+  "flags": []
+ },
+ "ch04/asa-fig4-151": {
+  "file": "asa-image/ch04/asa-fig4-151.jpg",
+  "num": "4-151",
+  "cap": "Figure 4-151. Electrons are forced to flow in a conductor when lines of magnetic flux wrap around the conductor as it moves through a magnetic field.",
+  "flags": []
+ },
+ "ch04/asa-fig4-152": {
+  "file": "asa-image/ch04/asa-fig4-152.jpg",
+  "num": "4-152",
+  "cap": "Figure 4-152. /f you hold an electromagnet in your left hand with your fingers encircling it in the same direction electrons flow through the conductor, your thumb will point to its north pole.",
+  "flags": []
+ },
+ "ch04/asa-fig4-153": {
+  "file": "asa-image/ch04/asa-fig4-153.jpg",
+  "num": "4-153",
+  "cap": "Figure 4-153. The force that rotates the armature of an electric motor is caused by two magnetic fields reacting with each other.",
+  "flags": []
+ },
+ "ch04/asa-fig4-154": {
+  "file": "asa-image/ch04/asa-fig4-154.jpg",
+  "num": "4-154",
+  "cap": "Figure 4-154. Jf you hold your right hand with your forefinger pointing in the direction of the flux (north to south) and your second finger pointing in the direction of electron flow (negative to positive), your thumb will point in the direction the conductor will move.",
+  "flags": []
+ },
+ "ch04/asa-fig4-156": {
+  "file": "asa-image/ch04/asa-fig4-156.jpg",
+  "num": "4-156",
+  "cap": "Figure 4-156. The brush and commutator arrangement allows the direction of current flow to reverse in the armature coils so that it always flows in the same direction as the coil passes in front of a field magnet pole.",
+  "flags": []
+ },
+ "ch04/asa-fig4-157": {
+  "file": "asa-image/ch04/asa-fig4-157.jpg",
+  "num": "4-157",
+  "cap": "Figure 4-157. A typical armature for a small DC motor",
+  "flags": []
+ },
+ "ch04/asa-fig4-158": {
+  "file": "asa-image/ch04/asa-fig4-158.jpg",
+  "num": "4-158",
+  "cap": "Figure 4-158. A typical permanent-magnet DC motor such as is used in a cassette tape player",
+  "flags": []
+ },
+ "ch04/asa-fig4-159": {
+  "file": "asa-image/ch04/asa-fig4-159.jpg",
+  "num": "4-159",
+  "cap": "Figure 4-159. Armature and coil arrangement of a shunt-field DC motor",
+  "flags": []
+ },
+ "ch04/asa-fig4-160": {
+  "file": "asa-image/ch04/asa-fig4-160.jpg",
+  "num": "4-160",
+  "cap": "Figure 4-160. Increasing the resistance in the field circuit of a DC shunt-field motor increases the motor speed.",
+  "flags": []
+ },
+ "ch04/asa-fig4-161": {
+  "file": "asa-image/ch04/asa-fig4-161.jpg",
+  "num": "4-161",
+  "cap": "Figure 4-161. Armature and field arrangement of a series-field DC motor",
+  "flags": []
+ },
+ "ch04/asa-fig4-162": {
+  "file": "asa-image/ch04/asa-fig4-162.jpg",
+  "num": "4-162",
+  "cap": "Figure 4-162. A compound-wound DC motor has both a series and a shunt field.",
+  "flags": []
+ },
+ "ch04/asa-fig4-163": {
+  "file": "asa-image/ch04/asa-fig4-163.jpg",
+  "num": "4-163",
+  "cap": "Figure 4-163. Diagram of a single-phase AC induction motor",
+  "flags": []
+ },
+ "ch04/asa-fig4-164": {
+  "file": "asa-image/ch04/asa-fig4-164.jpg",
+  "num": "4-164",
+  "cap": "Figure 4-164. Single-phase AC induction motor with a high resistance start winding",
+  "flags": []
+ },
+ "ch04/asa-fig4-165": {
+  "file": "asa-image/ch04/asa-fig4-165.jpg",
+  "num": "4-165",
+  "cap": "Figure 4-165. Single-phase AC induction motor with a capacitor in its start winding circuit.",
+  "flags": []
+ },
+ "ch04/asa-fig4-167": {
+  "file": "asa-image/ch04/asa-fig4-167.jpg",
+  "num": "4-167",
+  "cap": "Figure 4-167. A. Repulsion motor with brushes in the neutral position. The rotor will not turn with the brushes in this position. B. When the brushes are moved around the commutator, a magnetic field is set up in the armature that is repelled by the pulsating stationary field. This causes the armature to spin.",
+  "flags": []
+ },
+ "ch04/asa-fig4-168": {
+  "file": "asa-image/ch04/asa-fig4-168.jpg",
+  "num": "4-168",
+  "cap": "Figure 4-168. A. Three-phase, delta-connected AC motor B. Three-phase, Y-connected AC motor",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch04/asa-fig4-170": {
+  "file": "asa-image/ch04/asa-fig4-170.jpg",
+  "num": "4-170",
+  "cap": "Figure 4-170. If we hold our left hand so the forefinger points in the direction of the magnetic flux, with the thumb in the direction of conductor movement, the second finger will point in the direction of electron flow.",
+  "flags": []
+ },
+ "ch04/asa-fig4-171": {
+  "file": "asa-image/ch04/asa-fig4-171.jpg",
+  "num": "4-171",
+  "cap": "Figure 4-171. Principle of a practical AC generator",
+  "flags": []
+ },
+ "ch04/asa-fig4-172": {
+  "file": "asa-image/ch04/asa-fig4-172.jpg",
+  "num": "4-172",
+  "cap": "Figure 4-172. The voltage produced by an AC generator varies with the number of degree the armature coils have rotated from zero.",
+  "flags": []
+ },
+ "ch04/asa-fig4-173": {
+  "file": "asa-image/ch04/asa-fig4-173.jpg",
+  "num": "4-173",
+  "cap": "Figure 4-173. Principle of operation of a direct-current generator",
+  "flags": []
+ },
+ "ch04/asa-fig4-174": {
+  "file": "asa-image/ch04/asa-fig4-174.jpg",
+  "num": "4-174",
+  "cap": "Figure 4-174. Voltage output of a DC generator",
+  "flags": []
+ },
+ "ch04/asa-fig4-175": {
+  "file": "asa-image/ch04/asa-fig4-175.jpg",
+  "num": "4-175",
+  "cap": "Figure 4-175. Commonly used symbols for aircraft electrical system schematic diagrams 3 3 ) 1g",
+  "flags": []
+ },
+ "ch04/asa-fig4-176": {
+  "file": "asa-image/ch04/asa-fig4-176.jpg",
+  "num": "4-176",
+  "cap": "Figure 4-176. Landing gear circuit with the airplane on the ground and the switches in the Gear Down position",
+  "flags": []
+ },
+ "ch04/asa-fig4-177": {
+  "file": "asa-image/ch04/asa-fig4-177.jpg",
+  "num": "4-177",
+  "cap": "Figure 4-177. Landing gear circuit with the airplane in the air, the switches in the Gear Up position, and the gear in transit",
+  "flags": []
+ },
+ "ch04/asa-fig4-178": {
+  "file": "asa-image/ch04/asa-fig4-178.jpg",
+  "num": "4-178",
+  "cap": "Figure 4-178. Landing gear circuit with the airplane in the air, the switches in the Gear Up position, and the gear up and locked",
+  "flags": []
+ },
+ "ch04/asa-fig4-179": {
+  "file": "asa-image/ch04/asa-fig4-179.jpg",
+  "num": "4-179",
+  "cap": "Figure 4-179. Landing gear actuating circuit",
+  "flags": []
+ },
+ "ch04/asa-fig4-180": {
+  "file": "asa-image/ch04/asa-fig4-180.jpg",
+  "num": "4-180",
+  "cap": "Figure 4-180. Landing gear actuating circuit",
+  "flags": []
+ },
+ "ch04/asa-fig4-181": {
+  "file": "asa-image/ch04/asa-fig4-181.jpg",
+  "num": "4-181",
+  "cap": "Figure 4-181. Current flow when the fuel selector switch is in the NORM position",
+  "flags": []
+ },
+ "ch04/asa-fig4-182": {
+  "file": "asa-image/ch04/asa-fig4-182.jpg",
+  "num": "4-182",
+  "cap": "Figure 4-182. Current flow when the fuel selector switch is in the R H TANK position",
+  "flags": []
+ },
+ "ch04/asa-fig4-183": {
+  "file": "asa-image/ch04/asa-fig4-183.jpg",
+  "num": "4-183",
+  "cap": "Figure 4-183. Current flow when the fuel selector switch is in the LH TANK position",
+  "flags": []
+ },
+ "ch04/asa-fig4-184": {
+  "file": "asa-image/ch04/asa-fig4-184.jpg",
+  "num": "4-184",
+  "cap": "Figure 4-184. Current flow when the fuel selector switch is in the X-FEED position",
+  "flags": []
+ },
+ "ch05/asa-fig5-1": {
+  "file": "asa-image/ch05/asa-fig5-1.jpg",
+  "num": "5-1",
+  "cap": "Figure 5-1. A detail drawing includes enough information to fabricate the part.",
+  "flags": []
+ },
+ "ch05/asa-fig5-5": {
+  "file": "asa-image/ch05/asa-fig5-5.jpg",
+  "num": "5-5",
+  "cap": "Figure 5-5. Half-sectional view of a hydraulic quick-disconnect coupling",
+  "flags": []
+ },
+ "ch05/asa-fig5-6": {
+  "file": "asa-image/ch05/asa-fig5-6.jpg",
+  "num": "5-6",
+  "cap": "Figure 5-6. Partial cutaway drawing of a piston-type hydraulic pump",
+  "flags": []
+ },
+ "ch05/asa-fig5-7": {
+  "file": "asa-image/ch05/asa-fig5-7.jpg",
+  "num": "5-7",
+  "cap": "Figure 5-7. Exploded view of a hydraulic restrictor",
+  "flags": []
+ },
+ "ch05/asa-fig5-8": {
+  "file": "asa-image/ch05/asa-fig5-8.jpg",
+  "num": "5-8",
+  "cap": "Figure 5-8. Schematic diagram of an aircraft air conditioning system",
+  "flags": []
+ },
+ "ch05/asa-fig5-9": {
+  "file": "asa-image/ch05/asa-fig5-9.jpg",
+  "num": "5-9",
+  "cap": "Figure 5-9. Block diagram of an airborne marker beacon receiver",
+  "flags": []
+ },
+ "ch05/asa-fig5-10": {
+  "file": "asa-image/ch05/asa-fig5-10.jpg",
+  "num": "5-10",
+  "cap": "Figure 5-10. Repair drawing of an aircraft nose rib",
+  "flags": []
+ },
+ "ch05/asa-fig5-11": {
+  "file": "asa-image/ch05/asa-fig5-11.jpg",
+  "num": "5-11",
+  "cap": "Figure 5-11. Wiring diagram of an aircraft battery circuit",
+  "flags": []
+ },
+ "ch05/asa-fig5-12": {
+  "file": "asa-image/ch05/asa-fig5-12.jpg",
+  "num": "5-12",
+  "cap": "Figure 5-12. Pictorial diagram of a light airplane electrical system",
+  "flags": []
+ },
+ "ch05/asa-fig5-13": {
+  "file": "asa-image/ch05/asa-fig5-13.jpg",
+  "num": "5-13",
+  "cap": "Figure 5-13. Sequence of steps used for making a sketch",
+  "flags": []
+ },
+ "ch05/asa-fig5-14": {
+  "file": "asa-image/ch05/asa-fig5-14.jpg",
+  "num": "5-14",
+  "cap": "Figure 5-14. /n a perspective view, parallel lines converge at a vanishing point off the drawing.",
+  "flags": []
+ },
+ "ch05/asa-fig5-15": {
+  "file": "asa-image/ch05/asa-fig5-15.jpg",
+  "num": "5-15",
+  "cap": "Figure 5-15. Three surfaces of an isometric view are visible, and all lines in this drawing are true length except A and B.",
+  "flags": []
+ },
+ "ch05/asa-fig5-16": {
+  "file": "asa-image/ch05/asa-fig5-16.jpg",
+  "num": "5-16",
+  "cap": "Figure 5-16. An orthographic projection shows six possible views of an object.",
+  "flags": []
+ },
+ "ch05/asa-fig5-17": {
+  "file": "asa-image/ch05/asa-fig5-17.jpg",
+  "num": "5-17",
+  "cap": "Figure 5-17. Auxiliary views are used a when the orthographic views do not ee Le convey the needed information.",
+  "flags": []
+ },
+ "ch05/asa-fig5-18": {
+  "file": "asa-image/ch05/asa-fig5-18.jpg",
+  "num": "5-18",
+  "cap": "Figure 5-18. Line characteristics and conventions",
+  "flags": []
+ },
+ "ch05/asa-fig5-19": {
+  "file": "asa-image/ch05/asa-fig5-19.jpg",
+  "num": "5-19",
+  "cap": "Figure 5-19. Typical section lines used to identify materials",
+  "flags": []
+ },
+ "ch05/asa-fig5-20": {
+  "file": "asa-image/ch05/asa-fig5-20.jpg",
+  "num": "5-20",
+  "cap": "Figure 5-20. Note flags are used to allow information to be placed on the drawing at some convenient location to prevent the drawing from becoming too cluttered.",
+  "flags": []
+ },
+ "ch05/asa-fig5-21": {
+  "file": "asa-image/ch05/asa-fig5-21.jpg",
+  "num": "5-21",
+  "cap": "Figure 5-21. Typical ways of showing allowable tolerances",
+  "flags": []
+ },
+ "ch05/asa-fig5-22": {
+  "file": "asa-image/ch05/asa-fig5-22.jpg",
+  "num": "5-22",
+  "cap": "Figure 5-22. Tolerances may be specified by the number of digits following the decimal point in a dimension.",
+  "flags": []
+ },
+ "ch05/asa-fig5-23": {
+  "file": "asa-image/ch05/asa-fig5-23.jpg",
+  "num": "5-23",
+  "cap": "Figure 5-23. Typical methods used for dimensioning",
+  "flags": []
+ },
+ "ch05/asa-fig5-24": {
+  "file": "asa-image/ch05/asa-fig5-24.jpg",
+  "num": "5-24",
+  "cap": "Figure 5-24. Fuselage stations and waterlines on a typical multiengine airplane fuselage",
+  "flags": []
+ },
+ "ch05/asa-fig5-25": {
+  "file": "asa-image/ch05/asa-fig5-25.jpg",
+  "num": "5-25",
+  "cap": "Figure 5-25. Brake Horsepower—Brake Mean Effective Pressure Chart",
+  "flags": []
+ },
+ "ch05/asa-fig5-26": {
+  "file": "asa-image/ch05/asa-fig5-26.jpg",
+  "num": "5-26",
+  "cap": "Figure 5-26. Electric wire chart for determining the correct size wire to use when the total current and allowable voltage drop are known",
+  "flags": []
+ },
+ "ch05/asa-fig5-27": {
+  "file": "asa-image/ch05/asa-fig5-27.jpg",
+  "num": "5-27",
+  "cap": "Figure 5-27. Control cable tension chart",
+  "flags": []
+ },
+ "ch05/asa-fig5-28": {
+  "file": "asa-image/ch05/asa-fig5-28.jpg",
+  "num": "5-28",
+  "cap": "Figure 5-28. Specific fuel consumption curve",
+  "flags": []
+ },
+ "ch06/asa-fig6-1": {
+  "file": "asa-image/ch06/asa-fig6-1.jpg",
+  "num": "6-1",
+  "cap": "Figure 6-1. Locating the balance point from a datum located off the board",
+  "flags": []
+ },
+ "ch06/asa-fig6-2": {
+  "file": "asa-image/ch06/asa-fig6-2.jpg",
+  "num": "6-2",
+  "cap": "Figure 6-2. Chart for finding the CG of a board with three weights with the datum located off the board",
+  "flags": []
+ },
+ "ch06/asa-fig6-3": {
+  "file": "asa-image/ch06/asa-fig6-3.jpg",
+  "num": "6-3",
+  "cap": "Figure 6-3. Proof that the board balances at a point 110 inches to the right of the datum. The board is balanced when the sum of the moments is zero.",
+  "flags": []
+ },
+ "ch06/asa-fig6-5": {
+  "file": "asa-image/ch06/asa-fig6-5.jpg",
+  "num": "6-5",
+  "cap": "Figure 6-5. Chart for finding the CG of a board with three weights with the datum located at the CG of Weight A",
+  "flags": []
+ },
+ "ch06/asa-fig6-6": {
+  "file": "asa-image/ch06/asa-fig6-6.jpg",
+  "num": "6-6",
+  "cap": "Figure 6-6. Locating the balance point from a datum located at the CG of Weight C",
+  "flags": []
+ },
+ "ch06/asa-fig6-7": {
+  "file": "asa-image/ch06/asa-fig6-7.jpg",
+  "num": "6-7",
+  "cap": "Figure 6-7. Chart for finding the CG of a board with three weights with the datum located at the CG of Weight C",
+  "flags": []
+ },
+ "ch06/asa-fig6-8": {
+  "file": "asa-image/ch06/asa-fig6-8.jpg",
+  "num": "6-8",
+  "cap": "Figure 6-8. Locating the CG of an airplane whose datum is ahead of the airplane",
+  "flags": []
+ },
+ "ch06/asa-fig6-9": {
+  "file": "asa-image/ch06/asa-fig6-9.jpg",
+  "num": "6-9",
+  "cap": "Figure 6-9. Chart for finding the CG of an airplane whose datum is ahead of the airplane",
+  "flags": []
+ },
+ "ch06/asa-fig6-11": {
+  "file": "asa-image/ch06/asa-fig6-11.jpg",
+  "num": "6-11",
+  "cap": "Figure 6-11. Chart for shifting the CG of a board by moving one of the weights. This is the original condition of the board.",
+  "flags": []
+ },
+ "ch06/asa-fig6-12": {
+  "file": "asa-image/ch06/asa-fig6-12.jpg",
+  "num": "6-12",
+  "cap": "Figure 6-12. Finding the moment of Weight B needed to cause the board to balance about its center",
+  "flags": []
+ },
+ "ch06/asa-fig6-13": {
+  "file": "asa-image/ch06/asa-fig6-13.jpg",
+  "num": "6-13",
+  "cap": "Figure 6-13. Placement of Weight B to cause the board to balance at its center",
+  "flags": []
+ },
+ "ch06/asa-fig6-14": {
+  "file": "asa-image/ch06/asa-fig6-14.jpg",
+  "num": "6-14",
+  "cap": "Figure 6-14. Proof that the board balances at its center. The board is balanced when the sum of the moments is zero.",
+  "flags": []
+ },
+ "ch06/asa-fig6-16": {
+  "file": "asa-image/ch06/asa-fig6-16.jpg",
+  "num": "6-16",
+  "cap": "Figure 6-16. Locating the CG of a tail wheel airplane with the datum ahead of the main wheels",
+  "flags": []
+ },
+ "ch06/asa-fig6-17": {
+  "file": "asa-image/ch06/asa-fig6-17.jpg",
+  "num": "6-17",
+  "cap": "Figure 6-17. Locating the CG of a tail wheel airplane with the datum behind the main wheels",
+  "flags": []
+ },
+ "ch06/asa-fig6-18": {
+  "file": "asa-image/ch06/asa-fig6-18.jpg",
+  "num": "6-18",
+  "cap": "Figure 6-18. Locating the CG of a nosewheel airplane with the datum ahead of the main wheels",
+  "flags": []
+ },
+ "ch06/asa-fig6-19": {
+  "file": "asa-image/ch06/asa-fig6-19.jpg",
+  "num": "6-19",
+  "cap": "Figure 6-19. Locating the CG of a nosewheel airplane with the datum behind the main wheels",
+  "flags": []
+ },
+ "ch06/asa-fig6-20": {
+  "file": "asa-image/ch06/asa-fig6-20.jpg",
+  "num": "6-20",
+  "cap": "Figure 6-20. The mean aerodynamic chord (MAC) may be thought of as the chord drawn through the geographic center of the plan area of the wing.",
+  "flags": []
+ },
+ "ch06/asa-fig6-21": {
+  "file": "asa-image/ch06/asa-fig6-21.jpg",
+  "num": "6-21",
+  "cap": "Figure 6-21. Locating the new CG in inches aft of the datum after 6,500 pounds of cargo has been removed.",
+  "flags": []
+ },
+ "ch06/asa-fig6-22": {
+  "file": "asa-image/ch06/asa-fig6-22.jpg",
+  "num": "6-22",
+  "cap": "Figure 6-22. Chart made by using the loading graph of Figure 6-23 on Page 428",
+  "flags": []
+ },
+ "ch06/asa-fig6-23": {
+  "file": "asa-image/ch06/asa-fig6-23.jpg",
+  "num": "6-23",
+  "cap": "Figure 6-23. Chart made by using the loading graph of Figure 6-22",
+  "flags": []
+ },
+ "ch06/asa-fig6-24": {
+  "file": "asa-image/ch06/asa-fig6-24.jpg",
+  "num": "6-24",
+  "cap": "Figure 6-24. CG moment envelope from Pilot's Operating Handbook",
+  "flags": []
+ },
+ "ch06/asa-fig6-25": {
+  "file": "asa-image/ch06/asa-fig6-25.jpg",
+  "num": "6-25",
+  "cap": "Figure 6-25. Twin-engine airplane CG range envelope",
+  "flags": []
+ },
+ "ch06/asa-fig6-26": {
+  "file": "asa-image/ch06/asa-fig6-26.jpg",
+  "num": "6-26",
+  "cap": "Figure 6-26. Chart for finding the EWCG of a light twin-engine airplane",
+  "flags": []
+ },
+ "ch06/asa-fig6-27": {
+  "file": "asa-image/ch06/asa-fig6-27.jpg",
+  "num": "6-27",
+  "cap": "Figure 6-27. Twin-engine airplane weight and balance diagram",
+  "flags": []
+ },
+ "ch06/asa-fig6-28": {
+  "file": "asa-image/ch06/asa-fig6-28.jpg",
+  "num": "6-28",
+  "cap": "Figure 6-28. Chart for finding the operational center gravity of the airplane in Figure 6-27",
+  "flags": []
+ },
+ "ch06/asa-fig6-29": {
+  "file": "asa-image/ch06/asa-fig6-29.jpg",
+  "num": "6-29",
+  "cap": "Figure 6-29. Locating the EWCG relative to MAC",
+  "flags": []
+ },
+ "ch06/asa-fig6-30": {
+  "file": "asa-image/ch06/asa-fig6-30.jpg",
+  "num": "6-30",
+  "cap": "Figure 6-30. Load conditions for adverse loaded CG checks",
+  "flags": []
+ },
+ "ch06/asa-fig6-31": {
+  "file": "asa-image/ch06/asa-fig6-31.jpg",
+  "num": "6-31",
+  "cap": "Figure 6-31. Chart for finding the most forward center of gravity",
+  "flags": []
+ },
+ "ch06/asa-fig6-32": {
+  "file": "asa-image/ch06/asa-fig6-32.jpg",
+  "num": "6-32",
+  "cap": "Figure 6-32. Chart for finding the most rearward center of gravity",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch06/asa-fig6-33": {
+  "file": "asa-image/ch06/asa-fig6-33.jpg",
+  "num": "6-33",
+  "cap": "Figure 6-33. Chart for locating the center of gravity after a repair",
+  "flags": []
+ },
+ "ch06/asa-fig6-34": {
+  "file": "asa-image/ch06/asa-fig6-34.jpg",
+  "num": "6-34",
+  "cap": "Figure 6-34. Chart showing the effect of cargo and fuel on the center of gravity of a large aircraft using arms and moments",
+  "flags": []
+ },
+ "ch06/asa-fig6-35": {
+  "file": "asa-image/ch06/asa-fig6-35.jpg",
+  "num": "6-35",
+  "cap": "Figure 6-35. CX-2 electronic flight computer can solve most complex weight and balance problems quickly and accurately.",
+  "flags": [
+   "manual",
+   "page-capture"
+  ]
+ },
+ "ch06/asa-fig6-36": {
+  "file": "asa-image/ch06/asa-fig6-36.jpg",
+  "num": "6-36",
+  "cap": "Figure 6-36. Step-by-step solution for finding the center of gravity of a large aircraft in % MAC using an electronic flight computer",
+  "flags": [
+   "page-capture"
+  ]
+ },
+ "ch06/asa-fig6-37": {
+  "file": "asa-image/ch06/asa-fig6-37.jpg",
+  "num": "6-37",
+  "cap": "Figure 6-37. Chart showing the effect of cargo and fuel on the center of gravity of a large aircraft using weights and moment indices",
+  "flags": []
+ },
+ "ch06/asa-fig6-38": {
+  "file": "asa-image/ch06/asa-fig6-38.jpg",
+  "num": "6-38",
+  "cap": "Figure 6-38. Step-by-step solution for finding the center of gravity of a large aircraft in % MAC with an electronic flight computer using moment indices",
+  "flags": []
+ },
+ "ch07/asa-fig7-1": {
+  "file": "asa-image/ch07/asa-fig7-1.jpg",
+  "num": "7-1",
+  "cap": "Figure 7-1. /dentification of aluminum alloys",
+  "flags": []
+ },
+ "ch07/asa-fig7-2": {
+  "file": "asa-image/ch07/asa-fig7-2.jpg",
+  "num": "7-2",
+  "cap": "Figure 7-2. Temperature ranges for heat treating steel alloys",
+  "flags": []
+ },
+ "ch07/asa-fig7-3": {
+  "file": "asa-image/ch07/asa-fig7-3.jpg",
+  "num": "7-3",
+  "cap": "Figure 7-3. Tempering temperatures for various steel alloys to obtain the indicated tensile strength",
+  "flags": []
+ },
+ "ch07/asa-fig7-4": {
+  "file": "asa-image/ch07/asa-fig7-4.jpg",
+  "num": "7-4",
+  "cap": "Figure 7-4. Tempering of small tools by observing the color of the oxides that form when the steel is heated",
+  "flags": []
+ },
+ "ch07/asa-fig7-5": {
+  "file": "asa-image/ch07/asa-fig7-5.jpg",
+  "num": "7-5",
+  "cap": "Figure 7-5. Typical temperatures for heat treatment of various aluminum alloys",
+  "flags": []
+ },
+ "ch07/asa-fig7-6": {
+  "file": "asa-image/ch07/asa-fig7-6.jpg",
+  "num": "7-6",
+  "cap": "Figure 7-6. Temper designations of aluminum alloys",
+  "flags": []
+ },
+ "ch07/asa-fig7-7": {
+  "file": "asa-image/ch07/asa-fig7-7.jpg",
+  "num": "7-7",
+  "cap": "Figure 7-7. Rockwell hardness tester",
+  "flags": []
+ },
+ "ch07/asa-fig7-8": {
+  "file": "asa-image/ch07/asa-fig7-8.jpg",
+  "num": "7-8",
+  "cap": "Figure 7-8. Relationship between the hardness of steel in Rockwell numbers and its tensile strength",
+  "flags": []
+ },
+ "ch07/asa-fig7-9": {
+  "file": "asa-image/ch07/asa-fig7-9.jpg",
+  "num": "7-9",
+  "cap": "Figure 7-9. A. Brinell hardness tester B. Microscopic view of impression made by a Brinell tester",
+  "flags": []
+ },
+ "ch07/asa-fig7-10": {
+  "file": "asa-image/ch07/asa-fig7-10.jpg",
+  "num": "7-10",
+  "cap": "Figure 7-10. Brinell hardness 7075 135 number for various aluminum alloys",
+  "flags": []
+ },
+ "ch07/asa-fig7-11": {
+  "file": "asa-image/ch07/asa-fig7-11.jpg",
+  "num": "7-11",
+  "cap": "Figure 7-11. Radiographic inspection is done by electromagnetic energy that passes through the material being inspected. Discontinuities within the material change its overall density, which varies the amount of energy allowed to strike the photographic film.",
+  "flags": []
+ },
+ "ch07/asa-fig7-12": {
+  "file": "asa-image/ch07/asa-fig7-12.jpg",
+  "num": "7-12",
+  "cap": "Figure 7-12. Fatigue cracks normally appear at locations of high stress and are often found where the cross-sectional area of the part undergoes a drastic change.",
+  "flags": []
+ },
+ "ch07/asa-fig7-13": {
+  "file": "asa-image/ch07/asa-fig7-13.jpg",
+  "num": "7-13",
+  "cap": "Figure 7-13. Circular magnetization is put into a large object, such as a crankshaft, by passing the direct current through it while it is firmly clamped between the heads of the machine.",
+  "flags": []
+ },
+ "ch07/asa-fig7-14": {
+  "file": "asa-image/ch07/asa-fig7-14.jpg",
+  "num": "7-14",
+  "cap": "Figure 7-14. Circular magnetization is put into a small object, such as a wrist pin, by passing the current through a rod inserted through the hollow pin. The rod is clamped firmly between the heads of the machine.",
+  "flags": []
+ },
+ "ch07/asa-fig7-15": {
+  "file": "asa-image/ch07/asa-fig7-15.jpg",
+  "num": "7-15",
+  "cap": "Figure 7-15. Circular magnetization produces a magnetic field encircling the part. North and south poles are formed across a fault, and the oxide particles show up faults that extend along the length of the part.",
+  "flags": []
+ },
+ "ch07/asa-fig7-16": {
+  "file": "asa-image/ch07/asa-fig7-16.jpg",
+  "num": "7-16",
+  "cap": "Figure 7-16. Longitudinal magnetization is put into a part by passing the magnetizing current through a coil which surrounds it. The part becomes the core of an electromagnet, and the lines of flux extend lengthwise through the part.",
+  "flags": []
+ },
+ "ch07/asa-fig7-17": {
+  "file": "asa-image/ch07/asa-fig7-17.jpg",
+  "num": "7-17",
+  "cap": "Figure 7-17. Large parts, such as steel propeller blades, can be longitudinally magnetized by passing the magnetizing current through a heavy insulated copper cable wrapped around the blade.",
+  "flags": []
+ },
+ "ch07/asa-fig7-18": {
+  "file": "asa-image/ch07/asa-fig7-18.jpg",
+  "num": "7-18",
+  "cap": "Figure 7-18. Longitudinal magnetization produces a magnetic field that extends lengthwise through the part. North and south poles form along the part, and the oxide particles show up faults that extend across the part.",
+  "flags": []
+ },
+ "ch07/asa-fig7-19": {
+  "file": "asa-image/ch07/asa-fig7-19.jpg",
+  "num": "7-19",
+  "cap": "Figure 7-19. Eddy current inspection being used to check for cracks in the blade root radius on a ram air turbine. (Photo courtesy Dowty-Rotol, Inc.)",
+  "flags": []
+ },
+ "ch07/asa-fig7-20": {
+  "file": "asa-image/ch07/asa-fig7-20.jpg",
+  "num": "7-20",
+  "cap": "Figure 7-20. Vibrations from the transducer pass through the test specimen and reflect off of the back surface. This produces two pips on the CRT screen, one for the front surface and one for the back surface.",
+  "flags": []
+ },
+ "ch07/asa-fig7-21": {
+  "file": "asa-image/ch07/asa-fig7-21.jpg",
+  "num": "7-21",
+  "cap": "Figure 7-21. A fault within the material being inspected by the ultrasonic method will reflect enough energy to form a pip between the front and back surface pips.",
+  "flags": []
+ },
+ "ch07/asa-fig7-22": {
+  "file": "asa-image/ch07/asa-fig7-22.jpg",
+  "num": "7-22",
+  "cap": "Figure 7-22. Typical faults detected with dye-penetrant inspection: A. Pits of porosity B. Tight crack or partially welded lap C. Crack or similar opening",
+  "flags": []
+ },
+ "ch07/asa-fig7-23": {
+  "file": "asa-image/ch07/asa-fig7-23.jpg",
+  "num": "7-23",
+  "cap": "Figure 7-23. Typical weld beads. A. Good weld B. Weld made too rapidly with an excessive amount of heat or an oxidizing flame C. Weld with improper penetration and cold laps caused by insufficient heat D. Weld made with a flame having an excess of acetylene E. Bad weld with irregular edges and considerable variation in the depth of penetration",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch07/asa-fig7-24": {
+  "file": "asa-image/ch07/asa-fig7-24.jpg",
+  "num": "7-24",
+  "cap": "Figure 7-24. Types of welds",
+  "flags": []
+ },
+ "ch07/asa-fig7-25": {
+  "file": "asa-image/ch07/asa-fig7-25.jpg",
+  "num": "7-25",
+  "cap": "Figure 7-25. Recommended torque values for nut and bolt combinations. Values are for clean and dry threads.",
+  "flags": []
+ },
+ "ch07/asa-fig7-26": {
+  "file": "asa-image/ch07/asa-fig7-26.jpg",
+  "num": "7-26",
+  "cap": "Figure 7-26. When an extension is used with a torque wrench, a correction must be applied to the indication on the wrench to get the actual torque on the fitting. A. The extension adds to the length of the wrench. B. The extension subtracts from the length of the wrench.",
+  "flags": []
+ },
+ "ch07/asa-fig7-27": {
+  "file": "asa-image/ch07/asa-fig7-27.jpg",
+  "num": "7-27",
+  "cap": "Figure 7-27. Torque conversions",
+  "flags": []
+ },
+ "ch07/asa-fig7-28": {
+  "file": "asa-image/ch07/asa-fig7-28.jpg",
+  "num": "7-28",
+  "cap": "Figure 7-28. Aircraft bolt identification. (See Glossary, page 792, for further information about bolt sizes.)",
+  "flags": []
+ },
+ "ch07/asa-fig7-29": {
+  "file": "asa-image/ch07/asa-fig7-29.jpg",
+  "num": "7-29",
+  "cap": "Figure 7-29. Grip length of a bolt",
+  "flags": []
+ },
+ "ch07/asa-fig7-30": {
+  "file": "asa-image/ch07/asa-fig7-30.jpg",
+  "num": "7-30",
+  "cap": "Figure 7-30. A clevis bolt is designed to take shear loads only, and should never be used where a tensile load is imposed.",
+  "flags": []
+ },
+ "ch07/asa-fig7-31": {
+  "file": "asa-image/ch07/asa-fig7-31.jpg",
+  "num": "7-31",
+  "cap": "Figure 7-31. Commonly used non-self-locking aircraft nuts",
+  "flags": []
+ },
+ "ch07/asa-fig7-32": {
+  "file": "asa-image/ch07/asa-fig7-32.jpg",
+  "num": "7-32",
+  "cap": "Figure 7-32. A fiber-type self-locking nut",
+  "flags": []
+ },
+ "ch07/asa-fig7-34": {
+  "file": "asa-image/ch07/asa-fig7-34.jpg",
+  "num": "7-34",
+  "cap": "Figure 7-34. A Tinnerman speed nut",
+  "flags": []
+ },
+ "ch07/asa-fig7-35": {
+  "file": "asa-image/ch07/asa-fig7-35.jpg",
+  "num": "7-35",
+  "cap": "Figure 7-35. Lockwashers",
+  "flags": []
+ },
+ "ch07/asa-fig7-36": {
+  "file": "asa-image/ch07/asa-fig7-36.jpg",
+  "num": "7-36",
+  "cap": "Figure 7-36. Machine screws",
+  "flags": []
+ },
+ "ch07/asa-fig7-37": {
+  "file": "asa-image/ch07/asa-fig7-37.jpg",
+  "num": "7-37",
+  "cap": "Figure 7-37. Self-tapping screws",
+  "flags": []
+ },
+ "ch07/asa-fig7-38": {
+  "file": "asa-image/ch07/asa-fig7-38.jpg",
+  "num": "7-38",
+  "cap": "Figure 7-38. Dzus fastener installation",
+  "flags": []
+ },
+ "ch07/asa-fig7-39": {
+  "file": "asa-image/ch07/asa-fig7-39.jpg",
+  "num": "7-39",
+  "cap": "Figure 7-39. Dzus fastener identification",
+  "flags": []
+ },
+ "ch07/asa-fig7-40": {
+  "file": "asa-image/ch07/asa-fig7-40.jpg",
+  "num": "7-40",
+  "cap": "Figure 7-40. Camlock fastener: exploded view",
+  "flags": []
+ },
+ "ch07/asa-fig7-41": {
+  "file": "asa-image/ch07/asa-fig7-41.jpg",
+  "num": "7-41",
+  "cap": "Figure 7-41. Airloc fastener: assembly view receptacle",
+  "flags": []
+ },
+ "ch07/asa-fig7-42": {
+  "file": "asa-image/ch07/asa-fig7-42.jpg",
+  "num": "7-42",
+  "cap": "Figure 7-42. Control cables",
+  "flags": []
+ },
+ "ch07/asa-fig7-43": {
+  "file": "asa-image/ch07/asa-fig7-43.jpg",
+  "num": "7-43",
+  "cap": "Figure 7-43. Swaged-type control cable terminals. A. AN664 Single shank ball end B. AN663 Double shank ball end C. AN666 Threaded cable terminal D. AN667 Fork end cable terminal E. AN668 Eye end cable terminal",
+  "flags": []
+ },
+ "ch07/asa-fig7-44": {
+  "file": "asa-image/ch07/asa-fig7-44.jpg",
+  "num": "7-44",
+  "cap": "Figure 7-44. Control cable swaging tools with dies",
+  "flags": []
+ },
+ "ch07/asa-fig7-45": {
+  "file": "asa-image/ch07/asa-fig7-45.jpg",
+  "num": "7-45",
+  "cap": "Figure 7-45. A. Gaging a swaged-on control cable terminal to determine that it has been properly swaged. B. Typical terminal gage",
+  "flags": []
+ },
+ "ch07/asa-fig7-46": {
+  "file": "asa-image/ch07/asa-fig7-46.jpg",
+  "num": "7-46",
+  "cap": "Figure 7-46. A. Installation of Nicopress-type sleeves on a control cable. B. Typical Nicopress gage",
+  "flags": []
+ },
+ "ch07/asa-fig7-47": {
+  "file": "asa-image/ch07/asa-fig7-47.jpg",
+  "num": "7-47",
+  "cap": "Figure 7-47. Typical control cable turnbuckle",
+  "flags": []
+ },
+ "ch07/asa-fig7-48": {
+  "file": "asa-image/ch07/asa-fig7-48.jpg",
+  "num": "7-48",
+  "cap": "Figure 7-48. Turnbuckle safetying methods",
+  "flags": []
+ },
+ "ch07/asa-fig7-49": {
+  "file": "asa-image/ch07/asa-fig7-49.jpg",
+  "num": "7-49",
+  "cap": "Figure 7-49. Turnbuckle safetying guide",
+  "flags": []
+ },
+ "ch07/asa-fig7-50": {
+  "file": "asa-image/ch07/asa-fig7-50.jpg",
+  "num": "7-50",
+  "cap": "Figure 7-50. Clip type locking device for turnbuckles",
+  "flags": []
+ },
+ "ch07/asa-fig7-51": {
+  "file": "asa-image/ch07/asa-fig7-51.jpg",
+  "num": "7-51",
+  "cap": "Figure 7-51. Material specifications for aircraft solid rivets",
+  "flags": []
+ },
+ "ch07/asa-fig7-52": {
+  "file": "asa-image/ch07/asa-fig7-52.jpg",
+  "num": "7-52",
+  "cap": "Figure 7-52. MS rivet replacement for AN rivets",
+  "flags": []
+ },
+ "ch07/asa-fig7-54": {
+  "file": "asa-image/ch07/asa-fig7-54.jpg",
+  "num": "7-54",
+  "cap": "Figure 7-54. Examples of rivet identification",
+  "flags": []
+ },
+ "ch07/asa-fig7-55": {
+  "file": "asa-image/ch07/asa-fig7-55.jpg",
+  "num": "7-55",
+  "cap": "Figure 7-55. Method of measuring solid rivets",
+  "flags": []
+ },
+ "ch07/asa-fig7-56": {
+  "file": "asa-image/ch07/asa-fig7-56.jpg",
+  "num": "7-56",
+  "cap": "Figure 7-56. Friction-lock self-plugging rivets",
+  "flags": []
+ },
+ "ch07/asa-fig7-57": {
+  "file": "asa-image/ch07/asa-fig7-57.jpg",
+  "num": "7-57",
+  "cap": "Figure 7-57. Determining the length of friction-lock rivets",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch07/asa-fig7-58": {
+  "file": "asa-image/ch07/asa-fig7-58.jpg",
+  "num": "7-58",
+  "cap": "Figure 7-58. Cherrylock® mechanical-lock self-plugging rivet A. The stem has been pulled up into the shank, the shank has expanded to tightly fill the rivet hole, and the locking groove has been pulled up into the rivet head. B. The locking collar has been swaged into the groove in the stem, and the stem has been snapped off flush with the rivet head.",
+  "flags": []
+ },
+ "ch07/asa-fig7-59": {
+  "file": "asa-image/ch07/asa-fig7-59.jpg",
+  "num": "7-59",
+  "cap": "Figure 7-59. Using a grip gage to determine the grip length of a mechanical-lock self-plugging rivet",
+  "flags": []
+ },
+ "ch07/asa-fig7-60": {
+  "file": "asa-image/ch07/asa-fig7-60.jpg",
+  "num": "7-60",
+  "cap": "Figure 7-60. Countersunk head Rivnut installed in a piece of thin sheet metal",
+  "flags": []
+ },
+ "ch07/asa-fig7-61": {
+  "file": "asa-image/ch07/asa-fig7-61.jpg",
+  "num": "7-61",
+  "cap": "Figure 7-61. A Hi-Shear pin rivet with collar",
+  "flags": []
+ },
+ "ch07/asa-fig7-62": {
+  "file": "asa-image/ch07/asa-fig7-62.jpg",
+  "num": "7-62",
+  "cap": "Figure 7-62. Dial indicator set up to check the radial play of a turbosupercharger rotor",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch07/asa-fig7-63": {
+  "file": "asa-image/ch07/asa-fig7-63.jpg",
+  "num": "7-63",
+  "cap": "Figure 7-63. Nomenclature of an outside micrometer caliper",
+  "flags": []
+ },
+ "ch07/asa-fig7-64": {
+  "file": "asa-image/ch07/asa-fig7-64.jpg",
+  "num": "7-64",
+  "cap": "Figure 7-64. An inside micrometer caliper",
+  "flags": []
+ },
+ "ch07/asa-fig7-65": {
+  "file": "asa-image/ch07/asa-fig7-65.jpg",
+  "num": "7-65",
+  "cap": "Figure 7-65. A depth micrometer caliper",
+  "flags": []
+ },
+ "ch07/asa-fig7-66": {
+  "file": "asa-image/ch07/asa-fig7-66.jpg",
+  "num": "7-66",
+  "cap": "Figure 7-66. Vernier micrometer caliper",
+  "flags": []
+ },
+ "ch07/asa-fig7-67": {
+  "file": "asa-image/ch07/asa-fig7-67.jpg",
+  "num": "7-67",
+  "cap": "Figure 7-67. Metric vernier micrometer caliper",
+  "flags": []
+ },
+ "ch07/asa-fig7-68": {
+  "file": "asa-image/ch07/asa-fig7-68.jpg",
+  "num": "7-68",
+  "cap": "Figure 7-68. A vernier caliper",
+  "flags": []
+ },
+ "ch07/asa-fig7-69": {
+  "file": "asa-image/ch07/asa-fig7-69.jpg",
+  "num": "7-69",
+  "cap": "Figure 7-69. Gages",
+  "flags": []
+ },
+ "ch07/asa-fig7-70": {
+  "file": "asa-image/ch07/asa-fig7-70.jpg",
+  "num": "7-70",
+  "cap": "Figure 7-70. Calipers",
+  "flags": []
+ },
+ "ch07/asa-fig7-72": {
+  "file": "asa-image/ch07/asa-fig7-72.jpg",
+  "num": "7-72",
+  "cap": "Figure 7-72. Thickness gage being used to measure piston ring side clearance",
+  "flags": []
+ },
+ "ch07/asa-fig7-73": {
+  "file": "asa-image/ch07/asa-fig7-73.jpg",
+  "num": "7-73",
+  "cap": "Figure 7-73. A combination set",
+  "flags": []
+ },
+ "ch07/asa-fig7-74": {
+  "file": "asa-image/ch07/asa-fig7-74.jpg",
+  "num": "7-74",
+  "cap": "Figure 7-74. A valve stretch gage",
+  "flags": []
+ },
+ "ch07/asa-fig7-75": {
+  "file": "asa-image/ch07/asa-fig7-75.jpg",
+  "num": "7-75",
+  "cap": "Figure 7-75. Arbors, parallel bars, and thickness gages are used to measure the amount of twist in a connecting rod.",
+  "flags": []
+ },
+ "ch08/asa-fig8-1": {
+  "file": "asa-image/ch08/asa-fig8-1.jpg",
+  "num": "8-1",
+  "cap": "Figure 8-1. When electrons leave the zinc can, chloride ions from the electrolyte replace them and change some of the zinc into zinc chloride, a salt of corrosion.",
+  "flags": []
+ },
+ "ch08/asa-fig8-2": {
+  "file": "asa-image/ch08/asa-fig8-2.jpg",
+  "num": "8-2",
+  "cap": "Figure 8-2. A simple electrochemical cell breaks the hydrochloric acid down into its two chemical elements.",
+  "flags": []
+ },
+ "ch08/asa-fig8-3": {
+  "file": "asa-image/ch08/asa-fig8-3.jpg",
+  "num": "8-3",
+  "cap": "Figure 8-3. Electrochemical series for metals",
+  "flags": []
+ },
+ "ch08/asa-fig8-4": {
+  "file": "asa-image/ch08/asa-fig8-4.jpg",
+  "num": "8-4",
+  "cap": "Figure 8-4. A simple cell consisting of an aluminum anode, a copper cathode, and an electrolyte of hydrochloric acid. When electrons flow from the aluminum to the copper, negative chlorine ions from the electrolyte combine with positive aluminum tons to form aluminum chloride, which is a salt and is the product of corrosion.",
+  "flags": []
+ },
+ "ch08/asa-fig8-5": {
+  "file": "asa-image/ch08/asa-fig8-5.jpg",
+  "num": "8-5",
+  "cap": "Figure 8-5. An aircraft exposed to contaminated industrial atmosphere forms an electrochemical cell, and corrosion eats away the skin.",
+  "flags": []
+ },
+ "ch08/asa-fig8-6": {
+  "file": "asa-image/ch08/asa-fig8-6.jpg",
+  "num": "8-6",
+  "cap": "Figure 8-6. Appearance of corrosion on various metals",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch08/asa-fig8-7": {
+  "file": "asa-image/ch08/asa-fig8-7.jpg",
+  "num": "8-7",
+  "cap": "Figure 8-7. /ntergranular corrosion can start on the surface and progress through the metal, following the grain boundaries.",
+  "flags": []
+ },
+ "ch08/asa-fig8-8": {
+  "file": "asa-image/ch08/asa-fig8-8.jpg",
+  "num": "8-8",
+  "cap": "Figure 8-8. /ntergranular corrosion can form between sheets of aluminum alloy that are spot welded together.",
+  "flags": []
+ },
+ "ch08/asa-fig8-9": {
+  "file": "asa-image/ch08/asa-fig8-9.jpg",
+  "num": "8-9",
+  "cap": "Figure 8-9. Exfoliation corrosion is a severe case of intergranular corrosion that forms in extruded materials. The corrosion deposits force the metal to separate in layers.",
+  "flags": []
+ },
+ "ch08/asa-fig8-10": {
+  "file": "asa-image/ch08/asa-fig8-10.jpg",
+  "num": "8-10",
+  "cap": "Figure 8-10. Stress corrosion is a form of intergranular corrosion that progresses along the grain boundaries in a material that is under a constant tensile stress.",
+  "flags": []
+ },
+ "ch08/asa-fig8-11": {
+  "file": "asa-image/ch08/asa-fig8-11.jpg",
+  "num": "8-11",
+  "cap": "Figure 8-11. Galvanic corrosion attacks an aluminum alloy skin adjacent to a steel screw.",
+  "flags": []
+ },
+ "ch08/asa-fig8-12": {
+  "file": "asa-image/ch08/asa-fig8-12.jpg",
+  "num": "8-12",
+  "cap": "Figure 8-12. Galvanic grouping of metals.",
+  "flags": []
+ },
+ "ch08/asa-fig8-13": {
+  "file": "asa-image/ch08/asa-fig8-13.jpg",
+  "num": "8-13",
+  "cap": "Figure 8-13. When two molecules of water absorb one molecule of oxygen from the air, they attract four electrons from the metal and form four negative hydroxide ions.",
+  "flags": []
+ },
+ "ch08/asa-fig8-14": {
+  "file": "asa-image/ch08/asa-fig8-14.jpg",
+  "num": "8-14",
+  "cap": "Figure 8-14. Low oxygen concentration cell corrosion forms in areas where there is not enough oxygen for the formation of hydroxide ions. Electrons migrate from this area and leave it anodic. The positive aluminum ions attract negative hydroxide ions from the water and form corrosion.",
+  "flags": []
+ },
+ "ch08/asa-fig8-15": {
+  "file": "asa-image/ch08/asa-fig8-15.jpg",
+  "num": "8-15",
+  "cap": "Figure 8-15. High metal ion concentration cell corrosion forms in areas where the electrolyte contains a concentration of negative hydroxide ions. The area between the sheets contains a high concentration of positive metal ions, and it is the cathodic area of the corrosion cell.",
+  "flags": []
+ },
+ "ch08/asa-fig8-16": {
+  "file": "asa-image/ch08/asa-fig8-16.jpg",
+  "num": "8-16",
+  "cap": "Figure 8-16. Corrosion in a spot-welded seam causes the skin to buckle between the spots.",
+  "flags": []
+ },
+ "ch08/asa-fig8-17": {
+  "file": "asa-image/ch08/asa-fig8-17.jpg",
+  "num": "8-17",
+  "cap": "Figure 8-17. Piano hinges are a prime location for corrosion. They contain dissimilar metals and trap moisture which acts as the electrolyte.",
+  "flags": []
+ },
+ "ch08/asa-fig8-18": {
+  "file": "asa-image/ch08/asa-fig8-18.jpg",
+  "num": "8-18",
+  "cap": "Figure 8-18. Corrosion is likely to form around rivet heads, in skin crevices, and under fairings in the exhaust trail area of both reciprocating and turbine engine aircraft.",
+  "flags": []
+ },
+ "ch08/asa-fig8-19": {
+  "file": "asa-image/ch08/asa-fig8-19.jpg",
+  "num": "8-19",
+  "cap": "Figure 8-19. Likely locations for the formation of corrosion in an aircraft landing gear",
+  "flags": []
+ },
+ "ch08/asa-fig8-20": {
+  "file": "asa-image/ch08/asa-fig8-20.jpg",
+  "num": "8-20",
+  "cap": "Figure 8-20. Battery boxes are vented to the outside air through a sump jar that contains a porous pad moistened with a neutralizing agent. Bicarbonate of soda is used for leadacid batteries, and boric acid is used for nickel-cadmium batteries.",
+  "flags": []
+ },
+ "ch08/asa-fig8-21": {
+  "file": "asa-image/ch08/asa-fig8-21.jpg",
+  "num": "8-21",
+  "cap": "Figure 8-21. /ntergranular corrosion in an aircraft structure may be detected by ultrasonic inspection. The first pip represents the front side of the structure, the third pip represents the back side of the structure, and the pip in the middle represents the location of the corrosion within the structure.",
+  "flags": []
+ },
+ "ch08/asa-fig8-22": {
+  "file": "asa-image/ch08/asa-fig8-22.jpg",
+  "num": "8-22",
+  "cap": "Figure 8-22. Electrochemical series to determine the chemical activity of various metals",
+  "flags": []
+ },
+ "ch08/asa-fig8-23": {
+  "file": "asa-image/ch08/asa-fig8-23.jpg",
+  "num": "8-23",
+  "cap": "Figure 8-23. Blending out a single pit in a corroded area",
+  "flags": []
+ },
+ "ch08/asa-fig8-24": {
+  "file": "asa-image/ch08/asa-fig8-24.jpg",
+  "num": "8-24",
+  "cap": "Figure 8-24. Corrosion pits should be worked out with the length of the cleaned-up area at least 20 times its depth.",
+  "flags": []
+ },
+ "ch08/asa-fig8-25": {
+  "file": "asa-image/ch08/asa-fig8-25.jpg",
+  "num": "8-25",
+  "cap": "Figure 8-25. Blending out multiple pits in a corroded area",
+  "flags": []
+ },
+ "ch08/asa-fig8-26": {
+  "file": "asa-image/ch08/asa-fig8-26.jpg",
+  "num": "8-26",
+  "cap": "Figure 8-26. Special care must be exercised when reworking a corroded area near a stiffener to prevent damaging it.",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch09/asa-fig9-1": {
+  "file": "asa-image/ch09/asa-fig9-1.jpg",
+  "num": "9-1",
+  "cap": "Figure 9-1. Relationship between fluid line size and its outside diameter",
+  "flags": []
+ },
+ "ch09/asa-fig9-2": {
+  "file": "asa-image/ch09/asa-fig9-2.jpg",
+  "num": "9-2",
+  "cap": "Figure 9-2. A wheel-type tubing cutter cuts the end of a metal tube smooth and square.",
+  "flags": []
+ },
+ "ch09/asa-fig9-3": {
+  "file": "asa-image/ch09/asa-fig9-3.jpg",
+  "num": "9-3",
+  "cap": "Figure 9-3. Correct and incorrect tubing bends",
+  "flags": []
+ },
+ "ch09/asa-fig9-4": {
+  "file": "asa-image/ch09/asa-fig9-4.jpg",
+  "num": "9-4",
+  "cap": "Figure 9-4. Hand-operated tubing benders can bend thin-wall tubing up to ¥4-inch diameter without the walls collapsing.",
+  "flags": []
+ },
+ "ch09/asa-fig9-5": {
+  "file": "asa-image/ch09/asa-fig9-5.jpg",
+  "num": "9-5",
+  "cap": "Figure 9-5. Minimum bend radius for aluminum alloy and steel tubing",
+  "flags": []
+ },
+ "ch09/asa-fig9-6": {
+  "file": "asa-image/ch09/asa-fig9-6.jpg",
+  "num": "9-6",
+  "cap": "Figure 9-6. Ends of metal tubing may be beaded and joined with a section of rubber hose and two hose clamps.",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch09/asa-fig9-7": {
+  "file": "asa-image/ch09/asa-fig9-7.jpg",
+  "num": "9-7",
+  "cap": "Figure 9-7. A double flare on a piece of metal tubing provides extra metal to prevent damage when the fitting is torqued.",
+  "flags": []
+ },
+ "ch09/asa-fig9-8": {
+  "file": "asa-image/ch09/asa-fig9-8.jpg",
+  "num": "9-8",
+  "cap": "Figure 9-8. Forming a double flare on a piece of tubing A. Insert the tube in the flaring tool until it contacts the stop pin. B. Insert the upsetting tool and strike it with a hammer. C. Insert the flaring cone and strike it with a hammer.",
+  "flags": []
+ },
+ "ch09/asa-fig9-9": {
+  "file": "asa-image/ch09/asa-fig9-9.jpg",
+  "num": "9-9",
+  "cap": "Figure 9-9. An impact-type flaring tool for making single flares on rigid fluid lines",
+  "flags": []
+ },
+ "ch09/asa-fig9-10": {
+  "file": "asa-image/ch09/asa-fig9-10.jpg",
+  "num": "9-10",
+  "cap": "Figure 9-10. Proper flare dimensions Toe of sleeve",
+  "flags": []
+ },
+ "ch09/asa-fig9-11": {
+  "file": "asa-image/ch09/asa-fig9-11.jpg",
+  "num": "9-11",
+  "cap": "Figure 9-11. Flared tubing end fittings",
+  "flags": []
+ },
+ "ch09/asa-fig9-12": {
+  "file": "asa-image/ch09/asa-fig9-12.jpg",
+  "num": "9-12",
+  "cap": "Figure 9-12. MS flareless fitting for rigid fluid lines",
+  "flags": []
+ },
+ "ch09/asa-fig9-13": {
+  "file": "asa-image/ch09/asa-fig9-13.jpg",
+  "num": "9-13",
+  "cap": "Figure 9-13. Presetting a flareless tube fitting on a rigid fluid line",
+  "flags": []
+ },
+ "ch09/asa-fig9-14": {
+  "file": "asa-image/ch09/asa-fig9-14.jpg",
+  "num": "9-14",
+  "cap": "Figure 9-14. Characteristics of a properly preset sleeve",
+  "flags": []
+ },
+ "ch09/asa-fig9-15": {
+  "file": "asa-image/ch09/asa-fig9-15.jpg",
+  "num": "9-15",
+  "cap": "Figure 9-15. Swaging tool used to swage fittings onto rigid fluid lines",
+  "flags": []
+ },
+ "ch09/asa-fig9-16": {
+  "file": "asa-image/ch09/asa-fig9-16.jpg",
+  "num": "9-16",
+  "cap": "Figure 9-16. Maximum distance between supports for rigid fluid lines",
+  "flags": []
+ },
+ "ch09/asa-fig9-17": {
+  "file": "asa-image/ch09/asa-fig9-17.jpg",
+  "num": "9-17",
+  "cap": "Figure 9-17. Correct and incorrect ways of installing the clamps to hold fluid lines Incorrect Teflon liner Liner improperly interference with positioned mating surfaces of clamp strap",
+  "flags": []
+ },
+ "ch09/asa-fig9-18": {
+  "file": "asa-image/ch09/asa-fig9-18.jpg",
+  "num": "9-18",
+  "cap": "Figure 9-18. Metal tubing may be repaired by removing the damaged area and splicing in a new Section using the appropriate nuts, sleeves, and unions.",
+  "flags": []
+ },
+ "ch09/asa-fig9-19": {
+  "file": "asa-image/ch09/asa-fig9-19.jpg",
+  "num": "9-19",
+  "cap": "Figure 9-19. Tubing repair using swaged fittings A. A pinhole leak may be repaired with a single swaged fitting. B. An extensively damaged tube may be repaired by cutting out the damaged area and splicing in a new section of tubing using two swaged fittings.",
+  "flags": []
+ },
+ "ch09/asa-fig9-20": {
+  "file": "asa-image/ch09/asa-fig9-20.jpg",
+  "num": "9-20",
+  "cap": "Figure 9-20. Rigid tubing identification",
+  "flags": []
+ },
+ "ch09/asa-fig9-22": {
+  "file": "asa-image/ch09/asa-fig9-22.jpg",
+  "num": "9-22",
+  "cap": "Figure 9-22. A support wire should be used to prevent a preformed tube or one that has taken a permanent set from being inadvertently straightened when it is removed from the aircraft.",
+  "flags": []
+ },
+ "ch09/asa-fig9-23": {
+  "file": "asa-image/ch09/asa-fig9-23.jpg",
+  "num": "9-23",
+  "cap": "Figure 9-23. Correct and incorrect installation of flexible hose A. Flexible hose should be 5% to 8% longer than the distance between the fittings to prevent straining the fittings. B. Elbow fittings should be used to keep flexible hose from having to bend at a sharp angle. C. Flexible hose should be installed on a movable actuator in such away that the hose is not crimped in any position of the actuator.",
+  "flags": []
+ },
+ "ch09/asa-fig9-24": {
+  "file": "asa-image/ch09/asa-fig9-24.jpg",
+  "num": "9-24",
+  "cap": "Figure 9-24. Replaceable sleeve-type fitting for flexible fluid lines",
+  "flags": []
+ },
+ "ch09/asa-fig9-25": {
+  "file": "asa-image/ch09/asa-fig9-25.jpg",
+  "num": "9-25",
+  "cap": "Figure 9-25. Installation of end fitting on a high-pressure hose A. Cut the hose to the correct length with a fine-tooth hacksaw blade or a cutoff wheel. B. Cut the outer cover with a knife and slit it so it can be twisted off to expose the outer braid for the distance that will be inserted into the socket. C. Twist the socket onto the end of the hose, twisting in a counterclockwise direction. D. Lubricate the inside of the hose and the threads on the nipple. E. Screw the nipple into the socket until it bottoms, and then back it off until there is a slight clearance between the nut and the socket.",
+  "flags": []
+ },
+ "ch09/asa-fig9-26": {
+  "file": "asa-image/ch09/asa-fig9-26.jpg",
+  "num": "9-26",
+  "cap": "Figure 9-26. This AN8/6 nipple has tapered pipe threads on the end that screws into the component. The other end has a flare cone and threads that fit an AN818 nut.",
+  "flags": []
+ },
+ "ch09/asa-fig9-27": {
+  "file": "asa-image/ch09/asa-fig9-27.jpg",
+  "num": "9-27",
+  "cap": "Figure 9-27. AN804 Universal fitting. This is also called a bulkhead fitting.",
+  "flags": []
+ },
+ "ch09/asa-fig9-29": {
+  "file": "asa-image/ch09/asa-fig9-29.jpg",
+  "num": "9-29",
+  "cap": "Figure 9-29. AN flared tube fittings A. AN816 Nipple, flared tube to pipe thread B. AN821 Elbow 909 flared tube C. AN914 Elbow 909 flared tube to internal pipe thread D. AN815 Union, flared tube E. AN820 Cap, flared tube F. AN806 Plug, flared tube",
+  "flags": []
+ },
+ "ch09/asa-fig9-30": {
+  "file": "asa-image/ch09/asa-fig9-30.jpg",
+  "num": "9-30",
+  "cap": "Figure 9-30. AN and AC flare-type fittings",
+  "flags": []
+ },
+ "ch10/asa-fig10-1": {
+  "file": "asa-image/ch10/asa-fig10-1.jpg",
+  "num": "10-1",
+  "cap": "Figure 10-1. Three things are required fora fire: fuel, oxygen, and heat. If any one of the three is missing there can be no fire.",
+  "flags": []
+ },
+ "ch10/asa-fig10-2": {
+  "file": "asa-image/ch10/asa-fig10-2.jpg",
+  "num": "10-2",
+  "cap": "Figure 10-2. Classification of fires",
+  "flags": []
+ },
+ "ch10/asa-fig10-3": {
+  "file": "asa-image/ch10/asa-fig10-3.jpg",
+  "num": "10-3",
+  "cap": "Figure 10-3. Fire extinguishing agents arranged according to their toxicity. The higher the number, the less toxic the agent.",
+  "flags": []
+ },
+ "ch10/asa-fig10-4": {
+  "file": "asa-image/ch10/asa-fig10-4.jpg",
+  "num": "10-4",
+  "cap": "Figure 10-4. When the handle of this fire extinguisher is twisted, the seal on the CO2 cartridge is broken and the water in the cylinder is pressurized and sprays out to extinguish the fire.",
+  "flags": []
+ },
+ "ch10/asa-fig10-5": {
+  "file": "asa-image/ch10/asa-fig10-5.jpg",
+  "num": "10-5",
+  "cap": "Figure 10-5. Ear protectors for use on a noisy flight line.",
+  "flags": []
+ },
+ "ch10/asa-fig10-6": {
+  "file": "asa-image/ch10/asa-fig10-6.jpg",
+  "num": "10-6",
+  "cap": "Figure 10-6. /dentification of grades of aviation gasoline",
+  "flags": []
+ },
+ "ch10/asa-fig10-7": {
+  "file": "asa-image/ch10/asa-fig10-7.jpg",
+  "num": "10-7",
+  "cap": "Figure 10-7. The proper sequence for attaching the ground wires when preparing an aircraft for fueling",
+  "flags": []
+ },
+ "ch10/asa-fig10-8": {
+  "file": "asa-image/ch10/asa-fig10-8.jpg",
+  "num": "10-8",
+  "cap": "Figure 10-8. /nternational standard bayonet fueling nozzle for single-point fueling",
+  "flags": []
+ },
+ "ch10/asa-fig10-9": {
+  "file": "asa-image/ch10/asa-fig10-9.jpg",
+  "num": "10-9",
+  "cap": "Figure 10-9. Fueling control panel under the wing of a jet transport aircraft",
+  "flags": []
+ },
+ "ch10/asa-fig10-10": {
+  "file": "asa-image/ch10/asa-fig10-10.jpg",
+  "num": "10-10",
+  "cap": "Figure 10-10. A. Tow bar for moving a tail wheel aircraft from the main landing gear B. Tow bar for moving a tail wheel aircraft from the tail wheel C. Tow bar for moving a small tricycle gear aircraft by hand",
+  "flags": []
+ },
+ "ch10/asa-fig10-11": {
+  "file": "asa-image/ch10/asa-fig10-11.jpg",
+  "num": "10-11",
+  "cap": "Figure 10-11. When directing an aircraft moving into a parking area, the taxi signalman should be in a position that allows him to be seen by the pilot and allows him to see the wing tip.",
+  "flags": []
+ },
+ "ch10/asa-fig10-12": {
+  "file": "asa-image/ch10/asa-fig10-12.jpg",
+  "num": "10-12",
+  "cap": "Figure 10-12. Standard FAA hand signals used for directing an aircraft on the ground",
+  "flags": []
+ },
+ "ch10/asa-fig10-13": {
+  "file": "asa-image/ch10/asa-fig10-13.jpg",
+  "num": "10-13",
+  "cap": "Figure 10-13. Light signals used to control taxiing aircraft",
+  "flags": []
+ },
+ "ch10/asa-fig10-14": {
+  "file": "asa-image/ch10/asa-fig10-14.jpg",
+  "num": "10-14",
+  "cap": "Figure 10-14. Standard hand signals used for directing a helicopter",
+  "flags": []
+ },
+ "ch10/asa-fig10-15": {
+  "file": "asa-image/ch10/asa-fig10-15.jpg",
+  "num": "10-15",
+  "cap": "Figure 10-15. Steps in tying a bowline knot",
+  "flags": []
+ },
+ "ch10/asa-fig10-16": {
+  "file": "asa-image/ch10/asa-fig10-16.jpg",
+  "num": "10-16",
+  "cap": "Figure 10-16. When securing an aircraft with chains and clips, do not depend upon the clip to sustain a tensile load.",
+  "flags": []
+ },
+ "ch10/asa-fig10-17": {
+  "file": "asa-image/ch10/asa-fig10-17.jpg",
+  "num": "10-17",
+  "cap": "Figure 10-17. Method of securing aircraft to a wire cable on the flight line ramp",
+  "flags": []
+ },
+ "ch10/asa-fig10-18": {
+  "file": "asa-image/ch10/asa-fig10-18.jpg",
+  "num": "10-18",
+  "cap": "Figure 10-18. Control surface locks should prevent the surface banging in the wind and should have a red streamer attached to help the pilot remember to remove them before flight.",
+  "flags": []
+ },
+ "ch10/asa-fig10-19": {
+  "file": "asa-image/ch10/asa-fig10-19.jpg",
+  "num": "10-19",
+  "cap": "Figure 10-19. A spoiler board tied to the upper surface of the wing above the front spar will prevent the wind producing enough lift to strain the tiedowns.",
+  "flags": []
+ },
+ "ch10/asa-fig10-20": {
+  "file": "asa-image/ch10/asa-fig10-20.jpg",
+  "num": "10-20",
+  "cap": "Figure 10-20. Jack placement for raising one wheel for wheel or brake maintenance",
+  "flags": []
+ },
+ "ch10/asa-fig10-21": {
+  "file": "asa-image/ch10/asa-fig10-21.jpg",
+  "num": "10-21",
+  "cap": "Figure 10-21. Jacking airplanes with the jack points ahead of the aircraft CG requires a weighted tail stand to be attached to the tail tiedown ring.",
+  "flags": []
+ },
+ "ch10/asa-fig10-22": {
+  "file": "asa-image/ch10/asa-fig10-22.jpg",
+  "num": "10-22",
+  "cap": "Figure 10-22. Typical jack pad used under the main wing spar of an airplane",
+  "flags": []
+ },
+ "ch10/asa-fig10-23": {
+  "file": "asa-image/ch10/asa-fig10-23.jpg",
+  "num": "10-23",
+  "cap": "Figure 10-23. Turbojet engine intake and exhaust hazard areas (shaded)",
+  "flags": []
+ },
+ "ch11/asa-fig11-1": {
+  "file": "asa-image/ch11/asa-fig11-1.jpg",
+  "num": "11-1",
+  "cap": "Figure 11-1. Domestic regions of the Federal Aviation Administration",
+  "flags": []
+ },
+ "ch11/asa-fig11-2": {
+  "file": "asa-image/ch11/asa-fig11-2.jpg",
+  "num": "11-2",
+  "cap": "Figure 11-2. Some of the regulations most often used by aviation maintenance technicians",
+  "flags": []
+ },
+ "ch11/asa-fig11-3": {
+  "file": "asa-image/ch11/asa-fig11-3.jpg",
+  "num": "11-3",
+  "cap": "Figure 11-3. Federal Aviation Regulations describing the design criteria for various categories of aircraft, engines, and propellers.",
+  "flags": []
+ },
+ "ch11/asa-fig11-4": {
+  "file": "asa-image/ch11/asa-fig11-4.jpg",
+  "num": "11-4",
+  "cap": "Figure 11-4. Volume number and contents of Type Certificate Data Sheets, Aircraft Specifications, and Aircraft Listings",
+  "flags": []
+ },
+ "ch11/asa-fig11-5": {
+  "file": "asa-image/ch11/asa-fig11-5.jpg",
+  "num": "11-5",
+  "cap": "Figure 11-5. /nformation included in an aircraft Type Certificate Data Sheet",
+  "flags": []
+ },
+ "ch11/asa-fig11-6": {
+  "file": "asa-image/ch11/asa-fig11-6.jpg",
+  "num": "11-6",
+  "cap": "Figure 11-6. [Information included in an engine Type Certificate Data Sheet",
+  "flags": []
+ },
+ "ch11/asa-fig11-7": {
+  "file": "asa-image/ch11/asa-fig11-7.jpg",
+  "num": "11-7",
+  "cap": "Figure 11-7. /nformation included in a propeller Type Certificate Data Sheet",
+  "flags": []
+ },
+ "ch11/asa-fig11-8": {
+  "file": "asa-image/ch11/asa-fig11-8.jpg",
+  "num": "11-8",
+  "cap": "Figure 11-8. Classification of Airworthiness Directives",
+  "flags": []
+ },
+ "ch11/asa-fig11-10": {
+  "file": "asa-image/ch11/asa-fig11-10.jpg",
+  "num": "11-10",
+  "cap": "Figure 11-10. Excerpt from Aircraft Service Manual",
+  "flags": []
+ },
+ "ch11/asa-fig11-11": {
+  "file": "asa-image/ch11/asa-fig11-11.jpg",
+  "num": "11-11",
+  "cap": "Figure 11-11. Time interval specified for checking thrust bearing nuts",
+  "flags": []
+ },
+ "ch11/asa-fig11-12": {
+  "file": "asa-image/ch11/asa-fig11-12.jpg",
+  "num": "11-12",
+  "cap": "Figure 11-12. ATA /00 Specifications",
+  "flags": []
+ },
+ "ch11/asa-fig11-13": {
+  "file": "asa-image/ch11/asa-fig11-13.jpg",
+  "num": "11-13",
+  "cap": "Figure 11-13. The cover of a typical Sep 1/92 Component Maintenance Manual (CMM).",
+  "flags": []
+ },
+ "ch12/asa-fig12-1": {
+  "file": "asa-image/ch12/asa-fig12-1.jpg",
+  "num": "12-1",
+  "cap": "Figure 12-1. A typical preflight inspection checklist for a commercial twin-engine airplane",
+  "flags": []
+ },
+ "ch12/asa-fig12-2": {
+  "file": "asa-image/ch12/asa-fig12-2.jpg",
+  "num": "12-2",
+  "cap": "Figure 12-2. /4 CFR Part 43, Appendix D, the scope and detail of the items that must be inspected on Annual and 100-hour inspections",
+  "flags": []
+ },
+ "ch12/asa-fig12-3": {
+  "file": "asa-image/ch12/asa-fig12-3.jpg",
+  "num": "12-3",
+  "cap": "Figure 12-3. An inspection checklist for a typical twin-engine general aviation airplane",
+  "flags": []
+ },
+ "ch12/asa-fig12-5": {
+  "file": "asa-image/ch12/asa-fig12-5.jpg",
+  "num": "12-5",
+  "cap": "Figure 12-5. Examples of powerplant major repairs",
+  "flags": []
+ },
+ "ch12/asa-fig12-7": {
+  "file": "asa-image/ch12/asa-fig12-7.jpg",
+  "num": "12-7",
+  "cap": "Figure 12-7. Examples of appliance major repairs",
+  "flags": []
+ },
+ "ch12/asa-fig12-8": {
+  "file": "asa-image/ch12/asa-fig12-8.jpg",
+  "num": "12-8",
+  "cap": "Figure 12-8. Examples of airframe major alterations",
+  "flags": []
+ },
+ "ch12/asa-fig12-10": {
+  "file": "asa-image/ch12/asa-fig12-10.jpg",
+  "num": "12-10",
+  "cap": "Figure 12-10. Examples of propeller major alterations",
+  "flags": []
+ },
+ "ch12/asa-fig12-11": {
+  "file": "asa-image/ch12/asa-fig12-11.jpg",
+  "num": "12-11",
+  "cap": "Figure 12-11. Examples of appliance major alterations",
+  "flags": []
+ },
+ "ch12/asa-fig12-12": {
+  "file": "asa-image/ch12/asa-fig12-12.jpg",
+  "num": "12-12",
+  "cap": "Figure 12-12. Examples of preventive maintenance",
+  "flags": []
+ },
+ "ch13/asa-fig13-1": {
+  "file": "asa-image/ch13/asa-fig13-1.jpg",
+  "num": "13-1",
+  "cap": "Figure 13-1. Typical Airworthiness Directive Compliance record. It is a good idea to have a page for each category.",
+  "flags": []
+ },
+ "ch13/asa-fig13-2": {
+  "file": "asa-image/ch13/asa-fig13-2.jpg",
+  "num": "13-2",
+  "cap": "Figure 13-2. Maintenance record for an aircraft that has passed an annual or 100-hour inspection",
+  "flags": []
+ },
+ "ch13/asa-fig13-3": {
+  "file": "asa-image/ch13/asa-fig13-3.jpg",
+  "num": "13-3",
+  "cap": "Figure 13-3. Maintenance record for an aircraft that has not passed an annual or 100-hour inspection",
+  "flags": []
+ },
+ "ch13/asa-fig13-4": {
+  "file": "asa-image/ch13/asa-fig13-4.jpg",
+  "num": "13-4",
+  "cap": "Figure 13-4. (a). An FAA Form 337 must be completed for each major repair or major alteration performed on a certificated airframe, engine, or propeller.",
+  "flags": []
+ },
+ "ch13/asa-fig13-5": {
+  "file": "asa-image/ch13/asa-fig13-5.jpg",
+  "num": "13-5",
+  "cap": "Figure 13-5. Malfunction or Defect Report card",
+  "flags": []
+ },
+ "ch13/asa-fig13-6": {
+  "file": "asa-image/ch13/asa-fig13-6.jpg",
+  "num": "13-6",
+  "cap": "Figure 13-6. Inspection Reminder form",
+  "flags": []
+ },
+ "ch14/asa-fig14-1": {
+  "file": "asa-image/ch14/asa-fig14-1.jpg",
+  "num": "14-1",
+  "cap": "Figure 14-1. Fraction, decimal, and metric conversions",
+  "flags": []
+ },
+ "ch14/asa-fig14-2": {
+  "file": "asa-image/ch14/asa-fig14-2.jpg",
+  "num": "14-2",
+  "cap": "Figure 14-2. For greater accuracy when using a steel rule, measure between two marks away from the end.",
+  "flags": []
+ },
+ "ch14/asa-fig14-3": {
+  "file": "asa-image/ch14/asa-fig14-3.jpg",
+  "num": "14-3",
+  "cap": "Figure 14-3. Hook rules are used to measure distances from an edge when a radius is involved.",
+  "flags": []
+ },
+ "ch14/asa-fig14-4": {
+  "file": "asa-image/ch14/asa-fig14-4.jpg",
+  "num": "14-4",
+  "cap": "Figure 14-4. A combination set consists of a 12-inch steel rule with three heads that may be placed anywhere along the rule.",
+  "flags": []
+ },
+ "ch14/asa-fig14-5": {
+  "file": "asa-image/ch14/asa-fig14-5.jpg",
+  "num": "14-5",
+  "cap": "Figure 14-5. The distance between the points of a divider is measured with a steel rule.",
+  "flags": []
+ },
+ "ch14/asa-fig14-6": {
+  "file": "asa-image/ch14/asa-fig14-6.jpg",
+  "num": "14-6",
+  "cap": "Figure 14-6. Outside calipers for measuring the outside of an object— the distance between the tips of the legs is measured with a steel rule.",
+  "flags": []
+ },
+ "ch14/asa-fig14-7": {
+  "file": "asa-image/ch14/asa-fig14-7.jpg",
+  "num": "14-7",
+  "cap": "Figure 14-7. Inside calipers for measuring the inside of an object—the distance between the tips of the legs is measured with a steel rule.",
+  "flags": []
+ },
+ "ch14/asa-fig14-8": {
+  "file": "asa-image/ch14/asa-fig14-8.jpg",
+  "num": "14-8",
+  "cap": "Figure 14-8. Hermaphrodite calipers are used to scribe a line along an object a specific distance from its edge.",
+  "flags": []
+ },
+ "ch14/asa-fig14-9": {
+  "file": "asa-image/ch14/asa-fig14-9.jpg",
+  "num": "14-9",
+  "cap": "Figure 14-9. Use a scriber to mark very fine lines on a piece of metal to be cut.",
+  "flags": []
+ },
+ "ch14/asa-fig14-10": {
+  "file": "asa-image/ch14/asa-fig14-10.jpg",
+  "num": "14-10",
+  "cap": "Figure 14-10. This U.S. vernier caliper measures from 0 to 8 inches in increments of 0.001 inch.",
+  "flags": []
+ },
+ "ch14/asa-fig14-11": {
+  "file": "asa-image/ch14/asa-fig14-11.jpg",
+  "num": "14-11",
+  "cap": "Figure 14-11. Vernier scale on a U.S. vernier caliper",
+  "flags": []
+ },
+ "ch14/asa-fig14-12": {
+  "file": "asa-image/ch14/asa-fig14-12.jpg",
+  "num": "14-12",
+  "cap": "Figure 14-12. Vernier scale on a metric vernier caliper",
+  "flags": []
+ },
+ "ch14/asa-fig14-13": {
+  "file": "asa-image/ch14/asa-fig14-13.jpg",
+  "num": "14-13",
+  "cap": "Figure 14-13. Micrometer caliper",
+  "flags": []
+ },
+ "ch14/asa-fig14-14": {
+  "file": "asa-image/ch14/asa-fig14-14.jpg",
+  "num": "14-14",
+  "cap": "Figure 14-14. U.S. vernier micrometer caliper scale",
+  "flags": []
+ },
+ "ch14/asa-fig14-15": {
+  "file": "asa-image/ch14/asa-fig14-15.jpg",
+  "num": "14-15",
+  "cap": "Figure 14-15. Metric vernier micrometer caliper scale",
+  "flags": []
+ },
+ "ch14/asa-fig14-16": {
+  "file": "asa-image/ch14/asa-fig14-16.jpg",
+  "num": "14-16",
+  "cap": "Figure 14-16. Dial indicator",
+  "flags": []
+ },
+ "ch14/asa-fig14-17": {
+  "file": "asa-image/ch14/asa-fig14-17.jpg",
+  "num": "14-17",
+  "cap": "Figure 14-17. Feeler gages",
+  "flags": []
+ },
+ "ch14/asa-fig14-18": {
+  "file": "asa-image/ch14/asa-fig14-18.jpg",
+  "num": "14-18",
+  "cap": "Figure 14-18. Ball-type small-hole gages",
+  "flags": []
+ },
+ "ch14/asa-fig14-19": {
+  "file": "asa-image/ch14/asa-fig14-19.jpg",
+  "num": "14-19",
+  "cap": "Figure 14-19. Telescoping gages",
+  "flags": []
+ },
+ "ch14/asa-fig14-20": {
+  "file": "asa-image/ch14/asa-fig14-20.jpg",
+  "num": "14-20",
+  "cap": "Figure 14-20. Bench vise",
+  "flags": []
+ },
+ "ch14/asa-fig14-21": {
+  "file": "asa-image/ch14/asa-fig14-21.jpg",
+  "num": "14-21",
+  "cap": "Figure 14-21. Drill-press vise",
+  "flags": []
+ },
+ "ch14/asa-fig14-22": {
+  "file": "asa-image/ch14/asa-fig14-22.jpg",
+  "num": "14-22",
+  "cap": "Figure 14-22. Combination/slip-joint pliers",
+  "flags": []
+ },
+ "ch14/asa-fig14-23": {
+  "file": "asa-image/ch14/asa-fig14-23.jpg",
+  "num": "14-23",
+  "cap": "Figure 14-23. Tongue-and-groove type water pump pliers",
+  "flags": []
+ },
+ "ch14/asa-fig14-25": {
+  "file": "asa-image/ch14/asa-fig14-25.jpg",
+  "num": "14-25",
+  "cap": "Figure 14-25. Needle-nose pliers",
+  "flags": []
+ },
+ "ch14/asa-fig14-26": {
+  "file": "asa-image/ch14/asa-fig14-26.jpg",
+  "num": "14-26",
+  "cap": "Figure 14-26. Diagonal cutters",
+  "flags": []
+ },
+ "ch14/asa-fig14-27": {
+  "file": "asa-image/ch14/asa-fig14-27.jpg",
+  "num": "14-27",
+  "cap": "Figure 14-27. Duckbill pliers for twisting safety wire.",
+  "flags": []
+ },
+ "ch14/asa-fig14-28": {
+  "file": "asa-image/ch14/asa-fig14-28.jpg",
+  "num": "14-28",
+  "cap": "Figure 14-28. Milbar safety wire twister",
+  "flags": []
+ },
+ "ch14/asa-fig14-32": {
+  "file": "asa-image/ch14/asa-fig14-32.jpg",
+  "num": "14-32",
+  "cap": "Figure 14-32. Slip roll former",
+  "flags": []
+ },
+ "ch14/asa-fig14-33": {
+  "file": "asa-image/ch14/asa-fig14-33.jpg",
+  "num": "14-33",
+  "cap": "Figure 14-33. Rollers in a slip roll former",
+  "flags": []
+ },
+ "ch14/asa-fig14-36": {
+  "file": "asa-image/ch14/asa-fig14-36.jpg",
+  "num": "14-36",
+  "cap": "Figure 14-36. Throatless shears",
+  "flags": []
+ },
+ "ch14/asa-fig14-38": {
+  "file": "asa-image/ch14/asa-fig14-38.jpg",
+  "num": "14-38",
+  "cap": "Figure 14-38. Tin snips",
+  "flags": []
+ },
+ "ch14/asa-fig14-39": {
+  "file": "asa-image/ch14/asa-fig14-39.jpg",
+  "num": "14-39",
+  "cap": "Figure 14-39. Compound shears",
+  "flags": []
+ },
+ "ch14/asa-fig14-40": {
+  "file": "asa-image/ch14/asa-fig14-40.jpg",
+  "num": "14-40",
+  "cap": "Figure 14-40. Contour band saw",
+  "flags": []
+ },
+ "ch14/asa-fig14-41": {
+  "file": "asa-image/ch14/asa-fig14-41.jpg",
+  "num": "14-41",
+  "cap": "Figure 14-41. Hacksaw frame",
+  "flags": []
+ },
+ "ch14/asa-fig14-42": {
+  "file": "asa-image/ch14/asa-fig14-42.jpg",
+  "num": "14-42",
+  "cap": "Figure 14-42. Teeth of a crosscut saw",
+  "flags": []
+ },
+ "ch14/asa-fig14-43": {
+  "file": "asa-image/ch14/asa-fig14-43.jpg",
+  "num": "14-43",
+  "cap": "Figure 14-43. Teeth of a ripsaw",
+  "flags": []
+ },
+ "ch14/asa-fig14-44": {
+  "file": "asa-image/ch14/asa-fig14-44.jpg",
+  "num": "14-44",
+  "cap": "Figure 14-44. Compass, or keyhole saw",
+  "flags": []
+ },
+ "ch14/asa-fig14-45": {
+  "file": "asa-image/ch14/asa-fig14-45.jpg",
+  "num": "14-45",
+  "cap": "Figure 14-45. Backsaw",
+  "flags": []
+ },
+ "ch14/asa-fig14-46": {
+  "file": "asa-image/ch14/asa-fig14-46.jpg",
+  "num": "14-46",
+  "cap": "Figure 14-46. The cutting edge of a flat chisel is ground to an angle of 70° and it is rounded to concentrate the blows.",
+  "flags": []
+ },
+ "ch14/asa-fig14-47": {
+  "file": "asa-image/ch14/asa-fig14-47.jpg",
+  "num": "14-47",
+  "cap": "Figure 14-47. A cape chisel is used to remove the head of a rivet after it has been drilled through.",
+  "flags": []
+ },
+ "ch14/asa-fig14-48": {
+  "file": "asa-image/ch14/asa-fig14-48.jpg",
+  "num": "14-48",
+  "cap": "Figure 14-48. A diamond-point chisel is used for cutting V-shaped grooves in metal.",
+  "flags": []
+ },
+ "ch14/asa-fig14-49": {
+  "file": "asa-image/ch14/asa-fig14-49.jpg",
+  "num": "14-49",
+  "cap": "Figure 14-49. A round-nose chisel is used for cutting radii in the bottom of grooves in metal.",
+  "flags": []
+ },
+ "ch14/asa-fig14-50": {
+  "file": "asa-image/ch14/asa-fig14-50.jpg",
+  "num": "14-50",
+  "cap": "Figure 14-50. Typical metalworking files",
+  "flags": []
+ },
+ "ch14/asa-fig14-51": {
+  "file": "asa-image/ch14/asa-fig14-51.jpg",
+  "num": "14-51",
+  "cap": "Figure 14-51. Twist drill nomenclature",
+  "flags": []
+ },
+ "ch14/asa-fig14-52": {
+  "file": "asa-image/ch14/asa-fig14-52.jpg",
+  "num": "14-52",
+  "cap": "Figure 14-52. Twist drill sizes",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch14/asa-fig14-53": {
+  "file": "asa-image/ch14/asa-fig14-53.jpg",
+  "num": "14-53",
+  "cap": "Figure 14-53. Twist drill gage",
+  "flags": []
+ },
+ "ch14/asa-fig14-55": {
+  "file": "asa-image/ch14/asa-fig14-55.jpg",
+  "num": "14-55",
+  "cap": "Figure 14-55. Recommended angles for twist drill points",
+  "flags": []
+ },
+ "ch14/asa-fig14-56": {
+  "file": "asa-image/ch14/asa-fig14-56.jpg",
+  "num": "14-56",
+  "cap": "Figure 14-56. Drill point gage",
+  "flags": []
+ },
+ "ch14/asa-fig14-57": {
+  "file": "asa-image/ch14/asa-fig14-57.jpg",
+  "num": "14-57",
+  "cap": "Figure 14-57. Auger bit for drilling wood",
+  "flags": []
+ },
+ "ch14/asa-fig14-59": {
+  "file": "asa-image/ch14/asa-fig14-59.jpg",
+  "num": "14-59",
+  "cap": "Figure 14-59. Flat wood boring bits are mounted in an electric or pneumatic drill motor to bore holes in wood.",
+  "flags": []
+ },
+ "ch14/asa-fig14-60": {
+  "file": "asa-image/ch14/asa-fig14-60.jpg",
+  "num": "14-60",
+  "cap": "Figure 14-60. Brad-point drills are used to drill Kevlar without leaving fuzz inside the hole.",
+  "flags": []
+ },
+ "ch14/asa-fig14-61": {
+  "file": "asa-image/ch14/asa-fig14-61.jpg",
+  "num": "14-61",
+  "cap": "Figure 14-61. Spade drill for drilling graphite material.",
+  "flags": []
+ },
+ "ch14/asa-fig14-62": {
+  "file": "asa-image/ch14/asa-fig14-62.jpg",
+  "num": "14-62",
+  "cap": "Figure 14-62. Fixed diameter reamers. The top reamer is tapered and the bottom reamer has straight flutes.",
+  "flags": []
+ },
+ "ch14/asa-fig14-63": {
+  "file": "asa-image/ch14/asa-fig14-63.jpg",
+  "num": "14-63",
+  "cap": "Figure 14-63. Expansion reamer",
+  "flags": []
+ },
+ "ch14/asa-fig14-64": {
+  "file": "asa-image/ch14/asa-fig14-64.jpg",
+  "num": "14-64",
+  "cap": "Figure 14-64. Hole saws are used to cut large-diameter holes in thin sheet metal or wood.",
+  "flags": []
+ },
+ "ch14/asa-fig14-65": {
+  "file": "asa-image/ch14/asa-fig14-65.jpg",
+  "num": "14-65",
+  "cap": "Figure 14-65. A fly cutter is an adjustable hole cutter.",
+  "flags": []
+ },
+ "ch14/asa-fig14-66": {
+  "file": "asa-image/ch14/asa-fig14-66.jpg",
+  "num": "14-66",
+  "cap": "Figure 14-66. A stop countersink allows you to countersink a series of holes exactly the correct depth for the fastener being installed.",
+  "flags": []
+ },
+ "ch14/asa-fig14-67": {
+  "file": "asa-image/ch14/asa-fig14-67.jpg",
+  "num": "14-67",
+  "cap": "Figure 14-67. Threads per inch for various diameter screws and bolts using the Unified and American Standard threads.",
+  "flags": []
+ },
+ "ch14/asa-fig14-68": {
+  "file": "asa-image/ch14/asa-fig14-68.jpg",
+  "num": "14-68",
+  "cap": "Figure 14-68. Adjustable die and die stock",
+  "flags": []
+ },
+ "ch14/asa-fig14-69": {
+  "file": "asa-image/ch14/asa-fig14-69.jpg",
+  "num": "14-69",
+  "cap": "Figure 14-69. Taps for cutting threads inside a hole",
+  "flags": []
+ },
+ "ch14/asa-fig14-71": {
+  "file": "asa-image/ch14/asa-fig14-71.jpg",
+  "num": "14-71",
+  "cap": "Figure 14-71. Body and tap drill sizes for UNC threads",
+  "flags": []
+ },
+ "ch14/asa-fig14-72": {
+  "file": "asa-image/ch14/asa-fig14-72.jpg",
+  "num": "14-72",
+  "cap": "Figure 14-72. Tap drill for National Taper Pipe thread series",
+  "flags": []
+ },
+ "ch14/asa-fig14-73": {
+  "file": "asa-image/ch14/asa-fig14-73.jpg",
+  "num": "14-73",
+  "cap": "Figure 14-73. Tap drill sizes for metric threads",
+  "flags": []
+ },
+ "ch14/asa-fig14-75": {
+  "file": "asa-image/ch14/asa-fig14-75.jpg",
+  "num": "14-75",
+  "cap": "Figure 14-75. A click-type torque wrench can be adjusted so it will click, or snap, when the desired torque is being applied.",
+  "flags": []
+ },
+ "ch14/asa-fig14-76": {
+  "file": "asa-image/ch14/asa-fig14-76.jpg",
+  "num": "14-76",
+  "cap": "Figure 14-76. A typical deflecting-beam torque wrench",
+  "flags": []
+ },
+ "ch14/asa-fig14-77": {
+  "file": "asa-image/ch14/asa-fig14-77.jpg",
+  "num": "14-77",
+  "cap": "Figure 14-77. Determine the proper torque indication when using an extension that adds to the lever length of the wrench.",
+  "flags": []
+ },
+ "ch14/asa-fig14-78": {
+  "file": "asa-image/ch14/asa-fig14-78.jpg",
+  "num": "14-78",
+  "cap": "Figure 14-78. Determine the proper torque indication when using an extension that subtracts from the lever length of the wrench.",
+  "flags": []
+ },
+ "ch14/asa-fig14-79": {
+  "file": "asa-image/ch14/asa-fig14-79.jpg",
+  "num": "14-79",
+  "cap": "Figure 14-79. Torque conversion",
+  "flags": []
+ },
+ "ch14/asa-fig14-80": {
+  "file": "asa-image/ch14/asa-fig14-80.jpg",
+  "num": "14-80",
+  "cap": "Figure 14-80. Recommended torque values for fine-thread-series steel fasteners",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch14/asa-fig14-81": {
+  "file": "asa-image/ch14/asa-fig14-81.jpg",
+  "num": "14-81",
+  "cap": "Figure 14-81. Recommended torque values for coarse-thread-series steel fasteners",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch14/asa-fig14-82": {
+  "file": "asa-image/ch14/asa-fig14-82.jpg",
+  "num": "14-82",
+  "cap": "Figure 14-82. Recommended torque values for fine-thread-series aluminum alloy fasteners",
+  "flags": [
+   "manual"
+  ]
+ },
+ "ch14/asa-fig14-83": {
+  "file": "asa-image/ch14/asa-fig14-83.jpg",
+  "num": "14-83",
+  "cap": "Figure 14-83. The face of a carpenter's claw hammer is slightly crowned to concentrate the force for control when driving nails.",
+  "flags": []
+ },
+ "ch14/asa-fig14-84": {
+  "file": "asa-image/ch14/asa-fig14-84.jpg",
+  "num": "14-84",
+  "cap": "Figure 14-84. The face of a ball peen hammer is flat.",
+  "flags": []
+ },
+ "ch14/asa-fig14-87": {
+  "file": "asa-image/ch14/asa-fig14-87.jpg",
+  "num": "14-87",
+  "cap": "Figure 14-87. Soft-faced mallets are used in sheet metal work to form the metal without damaging it with hammer blows.",
+  "flags": []
+ },
+ "ch14/asa-fig14-88": {
+  "file": "asa-image/ch14/asa-fig14-88.jpg",
+  "num": "14-88",
+  "cap": "Figure 14-88. Punches",
+  "flags": []
+ },
+ "ch14/asa-fig14-89": {
+  "file": "asa-image/ch14/asa-fig14-89.jpg",
+  "num": "14-89",
+  "cap": "Figure 14-89. An automatic center punch saves time when a large number of hole locations must be marked.",
+  "flags": []
+ },
+ "ch14/asa-fig14-90": {
+  "file": "asa-image/ch14/asa-fig14-90.jpg",
+  "num": "14-90",
+  "cap": "Figure 14-90. Open end wrench",
+  "flags": []
+ },
+ "ch14/asa-fig14-91": {
+  "file": "asa-image/ch14/asa-fig14-91.jpg",
+  "num": "14-91",
+  "cap": "Figure 14-91. The most popular sizes for 1-1/4 - 1-5/16 24 - 26 open end and box end wrenches",
+  "flags": []
+ },
+ "ch14/asa-fig14-92": {
+  "file": "asa-image/ch14/asa-fig14-92.jpg",
+  "num": "14-92",
+  "cap": "Figure 14-92. Adjustable open end wrench",
+  "flags": []
+ },
+ "ch14/asa-fig14-93": {
+  "file": "asa-image/ch14/asa-fig14-93.jpg",
+  "num": "14-93",
+  "cap": "Figure 14-93. Ratcheting open end wrench",
+  "flags": []
+ },
+ "ch14/asa-fig14-94": {
+  "file": "asa-image/ch14/asa-fig14-94.jpg",
+  "num": "14-94",
+  "cap": "Figure 14-94. Box end wrench",
+  "flags": []
+ },
+ "ch14/asa-fig14-95": {
+  "file": "asa-image/ch14/asa-fig14-95.jpg",
+  "num": "14-95",
+  "cap": "Figure 14-95. Ratcheting box wrench",
+  "flags": []
+ },
+ "ch14/asa-fig14-96": {
+  "file": "asa-image/ch14/asa-fig14-96.jpg",
+  "num": "14-96",
+  "cap": "Figure 14-96. Combination wrench",
+  "flags": []
+ },
+ "ch14/asa-fig14-97": {
+  "file": "asa-image/ch14/asa-fig14-97.jpg",
+  "num": "14-97",
+  "cap": "Figure 14-97. Flare nut wrench",
+  "flags": []
+ },
+ "ch14/asa-fig14-98": {
+  "file": "asa-image/ch14/asa-fig14-98.jpg",
+  "num": "14-98",
+  "cap": "Figure 14-98. Handles for socket wrenches",
+  "flags": []
+ },
+ "ch14/asa-fig14-99": {
+  "file": "asa-image/ch14/asa-fig14-99.jpg",
+  "num": "14-99",
+  "cap": "Figure 14-99. Hand-impact driver for loosening stubborn screws and nuts",
+  "flags": []
+ },
+ "ch14/asa-fig14-100": {
+  "file": "asa-image/ch14/asa-fig14-100.jpg",
+  "num": "14-100",
+  "cap": "Figure 14-100. Typical socket wrenches used in aviation maintenance",
+  "flags": []
+ },
+ "ch14/asa-fig14-101": {
+  "file": "asa-image/ch14/asa-fig14-101.jpg",
+  "num": "14-101",
+  "cap": "Figure 14-101. Extension and adapters used with socket wrenches",
+  "flags": []
+ },
+ "ch14/asa-fig14-102": {
+  "file": "asa-image/ch14/asa-fig14-102.jpg",
+  "num": "14-102",
+  "cap": "Figure 14-102. A typical set of Allen wrenches",
+  "flags": []
+ },
+ "ch14/asa-fig14-103": {
+  "file": "asa-image/ch14/asa-fig14-103.jpg",
+  "num": "14-103",
+  "cap": "Figure 14-103. The tip of a slot screwdriver should be ground so its sides are parallel, and it should fill approximately 75% of the width of the slot in the screw.",
+  "flags": []
+ },
+ "ch14/asa-fig14-104": {
+  "file": "asa-image/ch14/asa-fig14-104.jpg",
+  "num": "14-104",
+  "cap": "Figure 14-104. Offset screwdriver",
+  "flags": []
+ },
+ "ch14/asa-fig14-105": {
+  "file": "asa-image/ch14/asa-fig14-105.jpg",
+  "num": "14-105",
+  "cap": "Figure 14-105. The Phillips and the Reed & Prince screws are the most widely used recessed head screws in general aviation.",
+  "flags": []
+ },
+ "ch14/asa-fig14-106": {
+  "file": "asa-image/ch14/asa-fig14-106.jpg",
+  "num": "14-106",
+  "cap": "Figure 14-106. Screw heads for special structural screws. Screwdriver bits are made to fit all of these special screws.",
+  "flags": []
+ },
+ "ch15/asa-fig15-1": {
+  "file": "asa-image/ch15/asa-fig15-1.jpg",
+  "num": "15-1",
+  "cap": "Figure 15-1. Use and Effectiveness of Job Search Methods",
+  "flags": []
+ },
+ "ch15/asa-fig15-2": {
+  "file": "asa-image/ch15/asa-fig15-2.jpg",
+  "num": "15-2",
+  "cap": "Figure 15-2. A typical technical résumé",
+  "flags": []
+ },
+ "ch15/asa-fig15-3": {
+  "file": "asa-image/ch15/asa-fig15-3.jpg",
+  "num": "15-3",
+  "cap": "Figure 15-3. A typical cover letter to accompany your résumé",
+  "flags": []
+ }
+}
