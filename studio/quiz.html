@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Quiz Studio · AEROMECHEXPERT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+:root{--bg:#070910;--panel:#10141f;--line:#232a3b;--tx:#e8edf7;--sub:#8b97b0;--mc:#4A90D9;--ox:#FF9500;--bl:#30D158;--red:#FF3B30}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 "Noto Sans KR",sans-serif}
+a{color:#7fb4ff}
+.wrap{max-width:1180px;margin:0 auto;padding:16px}
+h1{font:900 20px/1.2 Orbitron,sans-serif;letter-spacing:1px;margin:6px 0 2px}
+h1 small{display:block;font:400 13px "Noto Sans KR";color:var(--sub);letter-spacing:0;margin-top:4px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}
+.panel h2{font:700 15px "Noto Sans KR";margin:0 0 10px;color:#cfe0ff}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--sub);flex:1 1 160px}
+select,input[type=text],textarea{background:#0b0e16;color:var(--tx);border:1px solid #2c3550;border-radius:8px;padding:9px 10px;font:14px "Noto Sans KR";width:100%}
+textarea{font:13px/1.55 "JetBrains Mono","Noto Sans KR",monospace;min-height:150px;resize:vertical}
+button{font:700 14px "Noto Sans KR";border-radius:9px;border:1px solid #33405e;background:#18203a;color:#dce8ff;padding:9px 14px;cursor:pointer}
+button:hover{border-color:#5d7bc0}
+button.pri{background:linear-gradient(90deg,#FF9500,#4A90D9);border:0;color:#fff}
+button.sm{font-size:12px;padding:6px 10px}
+button:disabled{opacity:.5;cursor:default}
+.seg{display:inline-flex;border:1px solid #33405e;border-radius:9px;overflow:hidden}
+.seg button{border:0;border-radius:0;background:transparent}
+.seg button.on{background:#2a3a66;color:#fff}
+.hint{font-size:12px;color:var(--sub)}
+.bgs{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.slot{position:relative;border:1px dashed #3a4566;border-radius:8px;height:62px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;color:var(--sub);cursor:pointer;overflow:hidden;background:#0b0e16 center/cover}
+.slot.loaded{border-style:solid;border-color:var(--bl);color:#fff;text-shadow:0 1px 3px #000}
+.slot input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.slot .x{position:absolute;top:2px;right:4px;font-size:13px;color:#fff;display:none;z-index:2}
+.slot.loaded .x{display:block}
+@media(max-width:600px){.bgs{grid-template-columns:repeat(4,1fr)}}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:18px;margin-top:8px}
+.cell{display:flex;flex-direction:column;gap:6px}
+.frame{position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.5)}
+.frame>.card{position:absolute;left:0;top:0;transform-origin:0 0}
+.cellbar{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.cellbar .nm{font:600 12px "JetBrains Mono";color:var(--sub);margin-right:auto}
+.prog{height:8px;background:#0b0e16;border-radius:6px;overflow:hidden;border:1px solid #2c3550;margin-top:8px}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,#FF9500,#4A90D9);transition:width .2s}
+.edit .card [data-p]{outline:1px dashed rgba(255,214,10,.55);outline-offset:3px;cursor:text}
+.cnt{font:12px "JetBrains Mono";color:var(--sub)}.cnt.bad{color:var(--red)}
+.outs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:12px}
+.out h3{font:700 13px "Noto Sans KR";margin:0 0 6px;display:flex;justify-content:space-between;align-items:center;gap:6px}
+#stage{position:absolute;left:-20000px;top:0;width:1080px;height:1080px;overflow:hidden}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#1c2742;border:1px solid #4A90D9;border-radius:10px;padding:9px 14px;font-size:13px;display:none;z-index:99}
+
+/* ===== 1080 × 1080 card ===== */
+.card{width:1080px;height:1080px;position:relative;overflow:hidden;color:#fff;font-family:"Noto Sans KR",sans-serif;background:linear-gradient(145deg,#0a0a0f 0%,#1a1a2e 55%,#0f0f1a 100%)}
+.card.en{font-family:Inter,"Noto Sans KR",sans-serif}
+.card .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.card .dim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,8,14,var(--dimT,.0)) 0%,rgba(6,8,14,var(--dimB,.0)) 100%)}
+.card.hasbg .dim{--dimT:.72;--dimB:.9}
+.card .scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 2px,transparent 2px 5px);pointer-events:none}
+.card .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(74,144,217,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,144,217,.06) 1px,transparent 1px);background-size:54px 54px;pointer-events:none}
+.card .topbar{position:absolute;left:0;right:0;top:0;height:10px;background:var(--ac)}
+.card .hud{position:absolute;width:64px;height:64px;border-color:var(--ac);border-style:solid;border-width:0;opacity:.9}
+.hud.tl{left:34px;top:44px;border-left-width:5px;border-top-width:5px}
+.hud.tr{right:34px;top:44px;border-right-width:5px;border-top-width:5px}
+.hud.bl{left:34px;bottom:92px;border-left-width:5px;border-bottom-width:5px}
+.hud.br{right:34px;bottom:92px;border-right-width:5px;border-bottom-width:5px}
+.card .foot{position:absolute;left:0;right:0;bottom:0;height:62px;background:rgba(0,0,0,.55);border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;padding:0 64px;font:600 20px "JetBrains Mono",monospace;letter-spacing:3px;color:rgba(255,255,255,.62)}
+.card .foot b{color:#fff;font-family:Orbitron;font-weight:700;letter-spacing:2px}
+.card .inner{position:absolute;left:84px;right:84px;top:92px;bottom:118px;display:flex;flex-direction:column}
+.card .lab{font:700 22px Orbitron,sans-serif;letter-spacing:5px;color:var(--ac)}
+/* cover */
+.cv .inner{justify-content:center}
+.cv .lab{position:absolute;top:0;left:0}
+.cv .ttl{font-weight:900;font-size:92px;line-height:1.12;letter-spacing:-1px;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.cv.en .ttl{font-family:Orbitron;font-size:76px;letter-spacing:0}
+.cv .ttl2{font:600 30px "JetBrains Mono";color:rgba(255,255,255,.62);margin-top:18px}
+.cv .div{width:96px;height:8px;background:#FF9500;margin:40px 0 34px;border-radius:2px}
+.cv .meta{display:flex;gap:14px;flex-wrap:wrap}
+.cv .meta span{font:700 26px "Noto Sans KR";padding:10px 22px;border:2px solid rgba(255,255,255,.28);border-radius:40px;background:rgba(0,0,0,.35)}
+.cv.en .meta span{font-family:Inter}
+.cv .meta span:first-child{border-color:#FF9500;color:#FFB340}
+.cv .types{display:flex;gap:12px;margin-top:22px}
+.cv .types i{font:normal 700 20px "JetBrains Mono";padding:6px 14px;border-radius:6px}
+.cv .go{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:flex-end}
+.cv .go .cta{font:700 34px "Noto Sans KR";color:#FFB340}
+.cv.en .go .cta{font-family:Inter}
+.cv .go .by{font:500 22px "Noto Sans KR";color:rgba(255,255,255,.6);text-align:right;line-height:1.5}
+/* question */
+.qc .head{display:flex;align-items:flex-start;gap:26px}
+.qc .qn{font:900 118px/0.9 Orbitron;color:var(--ac);text-shadow:0 0 40px var(--acg)}
+.qc .tags{display:flex;flex-direction:column;gap:12px;padding-top:6px}
+.qc .badge{align-self:flex-start;font:800 26px "Noto Sans KR";padding:7px 20px;border-radius:8px;background:var(--acs);border:2px solid var(--ac);color:#fff}
+.qc.en .badge{font-family:Inter}
+.qc .cat{font:600 21px "JetBrains Mono";color:rgba(255,255,255,.62);letter-spacing:1px}
+.qc .body{flex:1;display:flex;flex-direction:column;justify-content:center;font-size:calc(42px*var(--k,1));min-height:0;overflow:hidden;padding:6px 0}
+.qc .qt{font-weight:700;font-size:1em;line-height:1.42;letter-spacing:-.3px}
+.qc.en .qt{letter-spacing:0;font-weight:600}
+.qc .qt u{text-decoration:none;border-bottom:5px solid var(--ac);padding:0 .4em}
+.qc .ch{display:flex;flex-direction:column;gap:.36em;margin-top:.8em}
+.qc .cb{display:flex;align-items:center;gap:.6em;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.14);border-radius:14px;padding:.42em .7em}
+.qc .cn{flex:0 0 auto;width:1.55em;height:1.55em;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 .74em Orbitron;background:var(--acs);border:2.5px solid var(--ac);color:var(--ac)}
+.qc .ct{font-size:.8em;line-height:1.42;color:rgba(255,255,255,.93)}
+.qc .claim{margin-top:.75em;border-left:8px solid var(--ac);background:rgba(255,149,0,.1);padding:.5em .8em;border-radius:0 12px 12px 0}
+.qc .claim small{display:block;font:700 .55em "JetBrains Mono";letter-spacing:3px;color:var(--ac);margin-bottom:.2em}
+.qc .claim span{font-size:.86em;font-weight:700;line-height:1.4}
+.qc .oxrow{display:flex;justify-content:center;gap:110px;margin-top:.8em}
+.qc .ox{width:4.2em;height:4.2em;border-radius:50%;display:flex;align-items:center;justify-content:center;font:900 2.1em Orbitron}
+.qc .ox.o{background:rgba(48,209,88,.15);border:6px solid #30D158;color:#30D158}
+.qc .ox.x{background:rgba(255,59,48,.15);border:6px solid #FF3B30;color:#FF3B30}
+.qc .ask{text-align:center;font-size:.62em;color:rgba(255,255,255,.7);margin-top:.5em}
+.qc .blank{margin-top:.85em;display:flex;align-items:flex-end;gap:.5em;font-size:.9em;font-weight:700}
+.qc .blank .ln{flex:1;border-bottom:6px solid var(--ac);height:1.2em}
+.qc .bh{margin-top:.6em;font:600 .6em "JetBrains Mono","Noto Sans KR";color:var(--ac)}
+.card-ref{margin-top:18px;background:rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 20px}
+.card-ref .ref-label{font:600 18px "JetBrains Mono",monospace;color:rgba(180,200,230,.62);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.1)}
+.card-ref .ref-row{display:flex;gap:10px;align-items:baseline;margin-bottom:3px}
+.card-ref .ref-icon{font-size:16px;color:rgba(255,255,255,.35)}
+.card-ref .ref-text{font:500 19px/1.4 "JetBrains Mono","Noto Sans KR",monospace;color:rgba(170,195,230,.78)}
+/* answer */
+.an .topbar{background:linear-gradient(90deg,#FF9500,#4A90D9)}
+.an .hdr{display:flex;align-items:baseline;justify-content:space-between}
+.an .hdr .t{font:900 54px Orbitron;letter-spacing:4px;color:#FFB340}
+.an .hdr .s{font:700 26px "Noto Sans KR";color:rgba(255,255,255,.6)}
+.an .body{flex:1;display:flex;flex-direction:column;justify-content:center;font-size:calc(30px*var(--k,1));min-height:0;overflow:hidden;gap:.5em;padding:.4em 0}
+.an .ar{display:flex;gap:.7em;align-items:flex-start;padding-bottom:.45em;border-bottom:1px solid rgba(255,255,255,.1)}
+.an .ar:last-child{border-bottom:0}
+.an .aq{flex:0 0 auto;font:900 1em Orbitron;color:var(--c);min-width:2.1em}
+.an .aa{flex:0 0 auto;font:800 1em "Noto Sans KR";color:#000;background:var(--c);border-radius:8px;padding:0 .45em;min-width:1.6em;text-align:center;max-width:9.5em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.an .ax{font-size:.86em;line-height:1.45;color:rgba(255,255,255,.88)}
+.an .cta{margin-top:auto;border-top:2px solid rgba(255,255,255,.14);padding-top:18px}
+.an .cta .c1{font:800 32px "Noto Sans KR"}
+.an .cta .c2{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font:700 25px "Noto Sans KR";color:#FFB340}
+.an .cta .c2 span:last-child{font:500 20px "JetBrains Mono";color:rgba(255,255,255,.6)}
+.an .cta .tg{margin-top:8px;font:500 19px "Noto Sans KR";color:rgba(160,190,235,.72)}
+.an.en .cta .c1,.an.en .cta .c2,.an.en .aa,.an.en .hdr .s{font-family:Inter}
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+ <h1>QUIZ STUDIO · @AEROMECHEXPERT<small>세 사이트(General·Airframe·Powerplant) 문제은행 3,200여 문항 → 인스타 퀴즈 캐러셀 7장(1080×1080) + 캡션 + 스레드 + 이미지 프롬프트</small></h1>
+
+ <div class="panel">
+  <h2>① 문제 고르기</h2>
+  <div class="row">
+   <label class="f">과목 Subject
+    <select id="subj"><option value="general">일반 General</option><option value="airframe">기체 Airframe</option><option value="powerplant" selected>동력장치 Powerplant</option><option value="mix">세 과목 섞기 Mixed</option></select></label>
+   <label class="f">챕터 Chapter<select id="chap"></select></label>
+   <label class="f">난이도 표시 Level
+    <select id="lvl"><option value="b">초급 Beginner</option><option value="i" selected>중급 Intermediate</option><option value="a">고급 Advanced</option></select></label>
+  </div>
+  <div class="row" style="margin-top:10px">
+   <button class="pri" id="gen">🎲 새 퀴즈 5문제 뽑기</button>
+   <span class="seg" id="lang"><button data-l="ko" class="on">한국어 KO</button><button data-l="en">English EN</button></span>
+   <label class="row hint" style="gap:6px"><input type="checkbox" id="edit"> ✏️ 카드 글자 직접 고치기</label>
+  </div>
+  <p class="hint" style="margin:8px 0 0">구성: 객관식 3 · OX 1 · 빈칸 1 (문제은행의 FAA 문항을 그대로 쓰고, OX·빈칸은 같은 문항을 바꿔 만듭니다). 마음에 안 드는 문제는 카드 아래 <b>🔄 바꾸기</b>. 편집 모드에서 노란 점선 글자를 누르면 바로 고칠 수 있고, 고친 내용은 캡션·JSON에도 반영됩니다.</p>
+ </div>
+
+ <div class="panel">
+  <h2>② 배경 이미지 (선택) <span class="hint">— 없으면 다크 그라디언트. 7칸 = 카드 7장</span></h2>
+  <div class="bgs" id="bgs"></div>
+ </div>
+
+ <div class="panel">
+  <h2 class="row" style="justify-content:space-between">③ 카드 미리보기 · PNG 저장 <span class="row"><button class="pri" id="saveAll">⬇️ 7장 모두 저장</button></span></h2>
+  <div class="prog"><i id="bar"></i></div>
+  <div class="cards" id="cards"></div>
+ </div>
+
+ <div class="panel">
+  <h2 class="row" style="justify-content:space-between">④ 캡션 · 스레드 · 이미지 프롬프트 · JSON <span class="row"><button id="dlAll">⬇️ 산출물 파일 4종 받기</button></span></h2>
+  <div class="outs" id="outs"></div>
+ </div>
+ <p class="hint">출처 표기: 각 문제 카드에 FAA-H-8083 핸드북과 FAA-S-ACS-1(ACS) 2개를 표시합니다. 해설은 사이트 문제은행 해설을 그대로 씁니다 — 올리기 전에 한 번 읽어 확인하세요. · 폰트·라이브러리를 인터넷에서 불러오므로 온라인에서 쓰세요.</p>
+</div>
+<div id="stage"></div>
+<div class="toast" id="toast"></div>
+
+<script src="meta.js"></script>
+<script src="qbank.js"></script>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)}, LS='aq_studio_v1';
+var state=null, lang='ko', bgs=[null,null,null,null,null,null,null], SIZE=1080;
+var LVL={b:['초급','Beginner'],i:['중급','Intermediate'],a:['고급','Advanced']};
+var TYPE={mc:{ko:'객관식',en:'MULTIPLE CHOICE',ac:'#4A90D9',rgb:'74,144,217',jk:'multiple_choice'},ox:{ko:'OX 퀴즈',en:'TRUE / FALSE',ac:'#FF9500',rgb:'255,149,0',jk:'ox'},blank:{ko:'빈칸 채우기',en:'FILL IN THE BLANK',ac:'#30D158',rgb:'48,209,88',jk:'fill_blank'}};
+var ROLES=['cover','q1','q2','q3','q4','q5','answer'];
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function toast(t){var e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(e._t);e._t=setTimeout(function(){e.style.display='none';},2200);}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function firstSent(s,max){s=String(s||'').trim();var m=s.match(/^(.+?[.!?。])(\s|$)/);var r=m?m[1]:s;if(r.length>max)r=r.slice(0,max-1).replace(/\s+\S*$/,'')+'…';return r;}
+
+/* ---------- chapter select ---------- */
+function fillChap(){var s=$('#subj').value,sel=$('#chap');var h='<option value="all">전체 챕터 All</option>';
+ if(s!=='mix'){var C=SUBJ[s].ch;Object.keys(C).forEach(function(k){var n=QBANK[s].filter(function(r){return r[1]==k;}).length;h+='<option value="'+k+'">Ch.'+k+' '+C[k][0]+' · '+C[k][1]+' ('+n+')</option>';});}
+ sel.innerHTML=h;sel.disabled=s==='mix';}
+
+/* ---------- picking ---------- */
+function pool(){var s=$('#subj').value,c=$('#chap').value,out=[];
+ (s==='mix'?['general','airframe','powerplant']:[s]).forEach(function(k){QBANK[k].forEach(function(r){if(c==='all'||s==='mix'||r[1]==c)out.push({s:k,r:r});});});return out;}
+function np(t){return String(t).trim().replace(/[.。]$/,'');}
+function makeItem(type,p){var r=p.r,s=p.s,ch=SUBJ[s].ch[r[1]]||['Ch.'+r[1],'Ch.'+r[1]];
+ var it={type:type,src:{s:s,id:r[0],ch:r[1],chko:ch[0],chen:ch[1]},ko:{},en:{}};
+ var ok=r[4].slice(),oe=r[5].slice(),a=r[6];
+ if(type==='mc'){
+  if(!r[9]){var idx=shuffle(ok.map(function(_,i){return i;}));ok=idx.map(function(i){return r[4][i];});oe=idx.map(function(i){return r[5][i];});a=idx.indexOf(r[6]);}
+  it.ans=a;it.ko={q:r[2],opts:ok,exp:r[7]};it.en={q:r[3],opts:oe,exp:r[8]};
+ }else if(type==='ox'){
+  var truth=Math.random()<0.5,pick=a;
+  if(!truth){var w=ok.map(function(_,i){return i;}).filter(function(i){return i!==a;});pick=w[Math.floor(Math.random()*w.length)];}
+  it.ans=truth?'O':'X';
+  it.ko={q:r[2],claim:np(ok[pick]),correct:np(ok[a]),exp:(truth?'':'정답은 「'+np(ok[a])+'」. ')+r[7]};
+  it.en={q:r[3],claim:np(oe[pick]),correct:np(oe[a]),exp:(truth?'':'Correct answer: "'+np(oe[a])+'". ')+r[8]};
+ }else{
+  it.ko={q:r[2],answer:np(ok[a]),hint:hintOf(np(ok[a]),'ko'),exp:r[7]};it.en={q:r[3],answer:np(oe[a]),hint:hintOf(np(oe[a]),'en'),exp:r[8]};
+ }
+ var pk=(type==='ox'&&it.ans==='X')?['정답: '+it.ko.correct+' — ','Correct: '+it.en.correct+' — ']:['',''];
+ it.ko.short=pk[0]+firstSent(r[7],64);it.en.short=pk[1]+firstSent(r[8],110);
+ return it;}
+function hintOf(t,l){t=String(t).trim();var core=t.replace(/\s*\(.*?\)\s*/g,'').trim()||t;
+ return l==='ko'?'힌트 ▸ 첫 글자 「'+core.charAt(0)+'」 · '+core.replace(/\s/g,'').length+'글자':'HINT ▸ starts with "'+core.charAt(0).toUpperCase()+'" · '+core.split(/\s+/).length+' word'+(core.split(/\s+/).length>1?'s':'');}
+function okFor(type,p,used){var r=p.r;if(used[p.s+r[0]])return false;
+ if(type==='mc')return true;if(r[9])return false;
+ if(type==='blank'){var k=np(r[4][r[6]]),e=np(r[5][r[6]]);return k.replace(/\s*\(.*?\)/g,'').length<=12&&e.split(/\s+/).length<=4&&!/[,~]/.test(k);}
+ return String(r[4][r[6]]).length<=60;}
+function pickOne(type,used){var P=shuffle(pool().slice());for(var i=0;i<P.length;i++)if(okFor(type,P[i],used))return P[i];
+ for(i=0;i<P.length;i++)if(!used[P[i].s+P[i].r[0]]&&(type==='mc'||!P[i].r[9]))return P[i];return null;}
+function generate(){var used={},items=[],types=['mc','mc','mc','ox','blank'];
+ for(var tries=0;tries<20;tries++){used={};items=[];var fail=false;
+  for(var i=0;i<5;i++){var p=pickOne(types[i],used);if(!p){fail=true;break;}used[p.s+p.r[0]]=1;items.push(makeItem(types[i],p));}
+  if(fail){toast('이 범위에는 문제가 부족합니다');return;}
+  var A=items.slice(0,3).map(function(x){return x.ans;});if(!(A[0]===A[1]&&A[1]===A[2]))break;}
+ var s=$('#subj').value,c=$('#chap').value,ko,en;
+ if(s==='mix'){ko='FAA A&P 종합';en='FAA A&P Mixed';}
+ else if(c==='all'){ko='FAA A&P '+SUBJ[s].ko;en='FAA A&P '+SUBJ[s].en;}
+ else{ko=SUBJ[s].ch[c][0];en=SUBJ[s].ch[c][1];}
+ state={subj:s,chap:c,lvl:$('#lvl').value,title:{ko:ko,en:en},items:items,date:new Date().toISOString().slice(0,10)};
+ save();render();}
+function reroll(i){var used={};state.items.forEach(function(x,j){if(j!==i)used[x.src.s+x.src.id]=1;});
+ var t=state.items[i].type,p=pickOne(t,used);if(!p){toast('바꿀 문제가 없습니다');return;}
+ state.items[i]=makeItem(t,p);save();render();}
+
+/* ---------- cards ---------- */
+function P(path,txt,tag){tag=tag||'span';return '<'+tag+' data-p="'+path+'">'+esc(txt)+'</'+tag+'>';}
+function chrome(ac,n){return '<div class="bg"></div><div class="dim"></div><div class="grid"></div><div class="scan"></div><div class="topbar"></div><i class="hud tl"></i><i class="hud tr"></i><i class="hud bl"></i><i class="hud br"></i>'+
+ '<div class="foot"><span><b>AEROMECHEXPERT</b> · FAA A&amp;P QUIZ</span><span>'+('0'+n).slice(-2)+'/07</span></div>';}
+function subjLabel(l){var s=state.subj;if(s==='mix')return l==='ko'?'FAA A&P · 3과목':'FAA A&P · 3 SUBJECTS';return 'FAA A&P · '+(l==='ko'?SUBJ[s].ko:SUBJ[s].en);}
+function cover(l){var lv=LVL[state.lvl];
+ return '<div class="card cv '+l+'" style="--ac:#FF9500">'+chrome('#FF9500',1)+'<div class="inner"><div class="lab">AVIATION MAINTENANCE QUIZ</div>'+
+ P('title.'+l,state.title[l],'div').replace('<div','<div class="ttl"')+
+ '<div class="ttl2">'+esc(l==='ko'?state.title.en:'Test yourself · 5 questions')+'</div><div class="div"></div>'+
+ '<div class="meta"><span>'+(l==='ko'?lv[0]:lv[1])+'</span><span>'+(l==='ko'?'5문제':'5 Questions')+'</span><span>'+esc(subjLabel(l))+'</span></div>'+
+ '<div class="types"><i style="background:rgba(74,144,217,.2);color:#8cc0ff">'+(l==='ko'?'객관식 ×3':'MC ×3')+'</i><i style="background:rgba(255,149,0,.18);color:#FFB340">OX ×1</i><i style="background:rgba(48,209,88,.16);color:#6be38c">'+(l==='ko'?'빈칸 ×1':'BLANK ×1')+'</i></div>'+
+ '<div class="go"><div class="cta">'+(l==='ko'?'옆으로 넘겨 도전하세요 →':'Swipe to start →')+'</div><div class="by">@AEROMECHEXPERT<br>'+(l==='ko'?'30년 공군 전투기 정비사 출신 선배의 퀴즈':'By a 30-year fighter-jet mechanic')+'</div></div>'+
+ '</div></div>';}
+function refBox(it,l){var S=SUBJ[it.src.s];return '<div class="card-ref"><div class="ref-label">'+(l==='ko'?'📚 관련 근거':'📚 REFERENCE')+'</div>'+
+ '<div class="ref-row"><span class="ref-icon">▸</span><span class="ref-text">'+esc(S.hb)+'</span></div>'+
+ '<div class="ref-row"><span class="ref-icon">▸</span><span class="ref-text">'+esc(S.acs)+'</span></div></div>';}
+function qcard(i,l){var it=state.items[i],T=TYPE[it.type],d=it[l],b='items.'+i+'.'+l+'.';
+ var h='<div class="card qc '+l+'" style="--ac:'+T.ac+';--acs:rgba('+T.rgb+',.2);--acg:rgba('+T.rgb+',.45)">'+chrome(T.ac,i+2)+'<div class="inner"><div class="head"><div class="qn">Q'+(i+1)+'</div><div class="tags"><span class="badge">'+(l==='ko'?T.ko:T.en)+'</span>'+
+  '<span class="cat">'+esc(SUBJ[it.src.s].en.toUpperCase()+' · CH.'+it.src.ch+' '+(l==='ko'?it.src.chko:it.src.chen))+'</span></div></div><div class="body">';
+ h+=it.type==='blank'&&!/[?？]\s*$/.test(d.q)?'<div class="qt">'+P(b+'q',d.q)+' <u>&nbsp;&nbsp;&nbsp;</u></div>':P(b+'q',d.q,'div').replace('<div','<div class="qt"');
+ if(it.type==='mc'){h+='<div class="ch">';d.opts.forEach(function(o,k){h+='<div class="cb"><span class="cn">'+'ABCD'[k]+'</span>'+P(b+'opts.'+k,o).replace('<span','<span class="ct"')+'</div>';});h+='</div>';}
+ else if(it.type==='ox'){h+='<div class="claim"><small>'+(l==='ko'?'제시된 답':'PROPOSED ANSWER')+'</small>'+P(b+'claim',d.claim)+'</div><div class="oxrow"><div class="ox o">O</div><div class="ox x">X</div></div><div class="ask">'+(l==='ko'?'이 답은 맞을까요, 틀릴까요?':'Is this answer correct?')+'</div>';}
+ else{h+='<div class="blank"><span>'+(l==='ko'?'정답 ▸':'ANSWER ▸')+'</span><span class="ln"></span></div>'+P(b+'hint',d.hint,'div').replace('<div','<div class="bh"');}
+ h+='</div>'+refBox(it,l)+'</div></div>';return h;}
+function ansText(it,l){if(it.type==='mc')return 'ABCD'[it.ans];if(it.type==='ox')return it.ans;return it[l].answer;}
+function acard(l){var h='<div class="card an '+l+'" style="--ac:#FF9500">'+chrome('#FF9500',7)+'<div class="inner"><div class="hdr"><span class="t">ANSWERS</span><span class="s">'+(l==='ko'?'정답과 해설':'Answers & key points')+'</span></div><div class="body">';
+ state.items.forEach(function(it,i){h+='<div class="ar" style="--c:'+TYPE[it.type].ac+'"><span class="aq">Q'+(i+1)+'</span><span class="aa">'+esc(ansText(it,l))+'</span>'+P('items.'+i+'.'+l+'.short',it[l].short).replace('<span','<span class="ax"')+'</div>';});
+ var site=state.subj==='mix'?'general':SUBJ[state.subj].site;
+ h+='</div><div class="cta"><div class="c1">'+(l==='ko'?'몇 개 맞았나요? 댓글로 점수를 남겨주세요 🔥':'How many did you get? Drop your score below 🔥')+'</div>'+
+  '<div class="c2"><span>'+(l==='ko'?'팔로우 @AEROMECHEXPERT':'FOLLOW @AEROMECHEXPERT')+'</span><span>inbeabang-wq.github.io/'+site+'</span></div>'+
+  '<div class="tg">'+esc(HASH[l])+'</div></div></div></div>';return h;}
+function cardHTML(n,l){return n===0?cover(l):n===6?acard(l):qcard(n-1,l);}
+
+function applyBg(card,n){var u=bgs[n],bg=card.querySelector('.bg');if(u){bg.style.backgroundImage='url("'+u+'")';card.classList.add('hasbg');}else{bg.style.backgroundImage='';card.classList.remove('hasbg');}}
+function fit(card){var body=card.querySelector('.body');if(!body)return;var k=1;body.style.setProperty('--k',k);
+ var guard=0;while(body.scrollHeight>body.clientHeight+1&&k>0.5&&guard++<40){k-=0.03;body.style.setProperty('--k',k.toFixed(2));}}
+function scaleAll(){document.querySelectorAll('.frame').forEach(function(f){var c=f.firstElementChild;if(c)c.style.transform='scale('+(f.clientWidth/SIZE)+')';});}
+function fname(n){var t=(state.title.en||'quiz').toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,'');
+ return 'aero_quiz_'+t+'_'+lang.toUpperCase()+'_card'+(n+1)+'_'+ROLES[n]+'.png';}
+function render(){if(!state)return;var box=$('#cards'),h='';
+ for(var n=0;n<7;n++){h+='<div class="cell"><div class="frame" id="f'+n+'">'+cardHTML(n,lang)+'</div><div class="cellbar"><span class="nm">'+(n+1)+'/7 · '+ROLES[n].toUpperCase()+(n>=1&&n<=5?' · '+TYPE[state.items[n-1].type].ko:'')+'</span>'+
+  (n>=1&&n<=5?'<button class="sm" data-rr="'+(n-1)+'">🔄 바꾸기</button>':'')+'<button class="sm" data-sv="'+n+'">⬇️ PNG</button></div></div>';}
+ box.innerHTML=h;
+ box.querySelectorAll('.frame').forEach(function(f,n){applyBg(f.firstElementChild,n);});
+ setEdit();scaleAll();
+ (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){box.querySelectorAll('.card').forEach(fit);});
+ outputs();}
+function setEdit(){var on=$('#edit').checked;document.body.classList.toggle('edit',on);document.querySelectorAll('#cards [data-p]').forEach(function(e){e.contentEditable=on?'true':'false';});}
+function setPath(path,v){var a=path.split('.'),o=state;for(var i=0;i<a.length-1;i++)o=o[a[i]];o[a[a.length-1]]=v;}
+document.addEventListener('input',function(e){var t=e.target.closest&&e.target.closest('#cards [data-p]');if(!t)return;setPath(t.getAttribute('data-p'),t.innerText.replace(/\n+/g,' ').trim());
+ save();var c=t.closest('.card');clearTimeout(c._f);c._f=setTimeout(function(){fit(c);outputs();},350);});
+document.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+ if(b.dataset.rr!=null)reroll(+b.dataset.rr);
+ if(b.dataset.sv!=null)saveOne(+b.dataset.sv,b);
+ if(b.dataset.cp!=null){var ta=document.getElementById(b.dataset.cp);copy(ta.value);}
+ if(b.dataset.dl!=null)dlOut(b.dataset.dl);});
+
+/* ---------- PNG ---------- */
+function capture(n){var st=$('#stage');st.innerHTML=cardHTML(n,lang);var c=st.firstElementChild;applyBg(c,n);fit(c);
+ return (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){fit(c);
+  return html2canvas(c,{scale:1,useCORS:true,backgroundColor:null,width:SIZE,height:SIZE,windowWidth:1400,logging:false});})
+  .then(function(cv){return new Promise(function(res){cv.toBlob(function(b){st.innerHTML='';res(b);},'image/png');});});}
+function dlBlob(b,name){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},1500);}
+function saveOne(n,btn){if(typeof html2canvas==='undefined'){toast('html2canvas를 불러오지 못했습니다 (인터넷 확인)');return Promise.resolve();}
+ var old=btn?btn.textContent:'';if(btn){btn.disabled=true;btn.textContent='⏳ 저장 중';}
+ return capture(n).then(function(b){dlBlob(b,fname(n));if(btn){btn.textContent='✅ 완료';setTimeout(function(){btn.textContent=old;btn.disabled=false;},1500);}})
+  .catch(function(){if(btn){btn.textContent='❗ 오류';btn.disabled=false;}});}
+$('#saveAll').onclick=function(){var btn=this,n=0,bar=$('#bar');btn.disabled=true;bar.style.width='0';
+ (function next(){if(n>=7){btn.disabled=false;toast('7장 저장 완료 ✅');return;}
+  saveOne(n).then(function(){n++;bar.style.width=(n/7*100)+'%';setTimeout(next,450);});})();};
+
+/* ---------- text outputs ---------- */
+function S(it){return SUBJ[it.src.s];}
+function subjName(l){return state.subj==='mix'?(l==='ko'?'3과목 종합':'Mixed'):(l==='ko'?SUBJ[state.subj].ko:SUBJ[state.subj].en);}
+function siteUrl(){return SITE_URL+(state.subj==='mix'?'general':SUBJ[state.subj].site)+'/';}
+function refs(){var seen={},o=[];state.items.forEach(function(it){var s=S(it);if(!seen[s.hb]){seen[s.hb]=1;o.push(s.hb);}});o.push('FAA-S-ACS-1 · Aviation Mechanic General, Airframe & Powerplant ACS');return o;}
+function caption(l){var t=state.title[l];
+ if(l==='ko')return ['✈️ FAA A&P '+subjName('ko')+' 퀴즈 — '+t+' 5문제','',
+  '시험장에서 헷갈리기 쉬운 포인트만 골랐다. 머리로 아는 것과 바로 답하는 것은 다르다.','',
+  '📌 구성: 객관식 3 · OX 1 · 빈칸 1','👉 카드를 넘기며 풀고, 마지막 장에서 정답과 해설을 확인하세요.','',
+  '💬 댓글로 점수를 남겨주세요!','5/5 🏆 현장 투입 가능','4/5 🥇 합격권','3/5 🔧 복습 한 번 더','0–2 📘 사이트에서 해당 챕터부터','',
+  '📚 출제 근거','· '+refs().join('\n· '),'· 문제은행: '+siteUrl(),'',
+  '30년 공군 전투기 정비사 출신 선배가 직접 만든 퀴즈 · 매주 수·금·일 업로드','팔로우 @AEROMECHEXPERT','',HASH.ko].join('\n');
+ return ['✈️ FAA A&P '+subjName('en')+' Quiz — '+t+' (5 questions)','',
+  'Knowing it and answering it fast on test day are two different things. Here are five that trip people up.','',
+  '📌 Format: 3 multiple choice · 1 true/false · 1 fill-in-the-blank','👉 Swipe through, then check the answers on the last card.','',
+  '💬 Drop your score in the comments!','5/5 🏆 Ready for the flight line','4/5 🥇 Passing zone','3/5 🔧 One more review','0–2 📘 Start with the chapter on the site','',
+  '📚 References','· '+refs().join('\n· '),'· Question bank: '+siteUrl(),'',
+  'Made by a 30-year ROKAF fighter-jet mechanic · New quizzes every Wed / Fri / Sun','FOLLOW @AEROMECHEXPERT','',HASH.en].join('\n');}
+function optsLine(it,l){return it[l].opts.map(function(o,k){return 'ABCD'[k]+') '+o;}).join('\n');}
+function threads(){var q1=state.items[0],q4=state.items[3];
+ var a=['✈️ FAA A&P '+subjName('ko')+' 한 문제, 30초 안에 풀어보세요.','','Q. '+q1.ko.q,optsLine(q1,'ko'),'','정답과 해설은 오늘 올린 캐러셀 마지막 장에 있습니다. 먼저 댓글로 답을 남겨보세요 👇','','#항공정비 #AeroMechExpert'].join('\n');
+ var b=['O일까 X일까? 🤔','','Q. '+q4.ko.q,'→ 제시된 답: 「'+q4.ko.claim+'」','','맞다고 생각하면 O, 틀리다고 생각하면 X를 댓글로! 정답은 캐러셀에서 확인하세요.','','#항공정비사 #AeroMechExpert'].join('\n');
+ var c=['✈️ Quick FAA A&P '+subjName('en')+' question — 30 seconds.','','Q. '+q1.en.q,optsLine(q1,'en'),'','Answer + explanation on the last card of today\'s carousel. Comment your pick first 👇','','#AviationMaintenance #AeroMechExpert'].join('\n');
+ return [['스레드 KO-1 · 객관식 맛보기',a],['스레드 KO-2 · OX 맛보기',b],['Threads EN-1 · MC teaser',c]];}
+function scene(it,l){var c=SUBJ[it.src.s].ch[it.src.ch];return c?(l==='ko'?c[3]:c[2]):'aircraft maintenance hangar';}
+function prompts(){var base=state.items[0],o=['# AERO QUIZ — 배경 이미지 프롬프트 (카드 7장 × 한·영 = 14개)','','주제: '+state.title.ko+' / '+state.title.en+'  ·  생성일 '+state.date,'공통: 시네마틱 디지털 아트(실사 금지) · 특정 기종명·로고 금지 · 텍스트 없음 · 어두운 밀리터리 톤 · 업로드 시 #AIGenerated 표기',''];
+ var KOT=' — 시네마틱 디지털 아트 일러스트, 어둡고 강렬한 밀리터리 톤, 청색·앰버 림라이트, 중앙과 하단은 어둡게 비워 글자 공간 확보, 정사각형 1080×1080, 글자·워터마크·로고 없음';
+ var ENT=', cinematic digital art illustration (not photorealistic), dark military mood, steel-blue and amber rim lighting, dark negative space in the center and bottom for text overlay, no specific aircraft model, square 1080x1080, no text, no watermark, no logos, no UI elements';
+ var roles=[['COVER','표지',scene(base,'ko')+', 넓은 구도의 상징적 장면',scene(base,'en')+', wide establishing shot, epic scale']];
+ var ang=[['클로즈업','extreme close-up detail'],['측면 중간 구도','medium side view'],['위에서 내려다본 구도','top-down view']];
+ state.items.forEach(function(it,i){var k=scene(it,'ko'),e=scene(it,'en');
+  if(it.type==='mc')roles.push(['Q'+(i+1),'객관식',k+', '+ang[i][0],e+', '+ang[i][1]]);
+  else if(it.type==='ox')roles.push(['Q'+(i+1),'OX',k+', 긴장감 있는 극적인 순간, 강한 대비',e+', dramatic tense moment, high contrast, split lighting']);
+  else roles.push(['Q'+(i+1),'빈칸',k+', 핵심 부품 디테일 매크로, 얕은 피사계 심도',e+', macro detail of the key component, shallow depth of field']);});
+ roles.push(['ANSWER','정답','점검을 마치고 손전등을 내리는 정비사의 뒷모습, 새벽빛이 드는 격납고, 성취감','mechanic lowering a flashlight after finishing an inspection, seen from behind, dawn light entering the hangar, sense of accomplishment']);
+ roles.forEach(function(r,n){o.push('## CARD '+(n+1)+' · ['+r[0]+'] '+r[1],'','### 🇰🇷 한국어 프롬프트',r[2]+KOT,'','### 🇺🇸 English Prompt',r[3]+ENT,'');});
+ return o.join('\n');}
+function quizJSON(l){var lv=LVL[state.lvl];
+ return JSON.stringify({topic:state.title.ko,topic_en:state.title.en,generated_date:state.date,target_exam:'FAA',difficulty:{b:'beginner',i:'intermediate',a:'advanced'}[state.lvl],language:l,question_count:5,
+  source:'AEROMECHEXPERT FAA A&P question banks ('+siteUrl()+')',
+  questions:state.items.map(function(it,i){var d=it[l],T=TYPE[it.type],S0=SUBJ[it.src.s];
+   var q={q_no:i+1,q_type:T.jk,q_type_label:l==='ko'?{mc:'객관식',ox:'OX퀴즈',blank:'빈칸 채우기'}[it.type]:{mc:'Multiple choice',ox:'True/False',blank:'Fill in the blank'}[it.type],
+    category:(l==='ko'?S0.ko+'('+S0.en+')':S0.en)+' · Ch.'+it.src.ch+' '+(l==='ko'?it.src.chko:it.src.chen),source_id:it.src.s+':'+it.src.id};
+   if(it.type==='mc'){q.question=d.q;q.choices=d.opts.map(function(o,k){return{label:'ABCD'[k],text:o};});q.answer='ABCD'[it.ans];}
+   else if(it.type==='ox'){q.question=d.q+(l==='ko'?' → 제시된 답: 「'+d.claim+'」 (맞으면 O, 틀리면 X)':' → Proposed answer: "'+d.claim+'" (O if correct, X if not)');q.choices=[{label:'O',text:l==='ko'?'맞다':'Correct'},{label:'X',text:l==='ko'?'틀리다':'Incorrect'}];q.answer=it.ans;}
+   else{q.question=d.q+(l==='ko'?' 정답: ____':' Answer: ____');q.choices=[];q.answer=d.answer;q.hint=d.hint;}
+   q.explanation=d.exp;q.answer_card_line=d.short;q.tip='';q.reference=[S0.hb,S0.acs];return q;})},null,2);}
+function md(){return '# AERO QUIZ — 인스타그램 캡션\n\n주제: '+state.title.ko+' / '+state.title.en+'\n\n## 🇰🇷 한국어 캡션\n\n'+caption('ko')+'\n\n---\n\n## 🇺🇸 English Caption\n\n'+caption('en')+'\n\n---\n\n## 🧵 스레드(Threads) 게시물\n\n'+threads().map(function(t){return '### '+t[0]+' ('+t[1].length+'자)\n\n'+t[1];}).join('\n\n')+'\n';}
+var OUTS=[['ocap_ko','인스타 캡션 · 한국어',function(){return caption('ko');},2200],['ocap_en','Instagram caption · English',function(){return caption('en');},2200]];
+function outputs(){var box=$('#outs'),list=OUTS.slice();threads().forEach(function(t,i){list.push(['oth'+i,t[0],function(){return t[1];},500]);});
+ list.push(['opr','이미지 프롬프트 14개',prompts,0]);
+ var h='';list.forEach(function(o){var v=o[2]();h+='<div class="out"><h3><span>'+esc(o[1])+'</span><span class="row" style="gap:6px">'+(o[3]?'<span class="cnt'+(v.length>o[3]?' bad':'')+'">'+v.length+'/'+o[3]+'</span>':'')+'<button class="sm" data-cp="'+o[0]+'">복사</button></span></h3><textarea id="'+o[0]+'" readonly>'+esc(v)+'</textarea></div>';});
+ box.innerHTML=h;}
+function copy(t){(navigator.clipboard&&navigator.clipboard.writeText?navigator.clipboard.writeText(t):Promise.reject()).then(function(){toast('복사했습니다 ✅');},function(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('복사했습니다 ✅');}catch(e){}ta.remove();});}
+function dlOut(){var files=[['quiz_ko.json',quizJSON('ko'),'application/json'],['quiz_en.json',quizJSON('en'),'application/json'],['aero_quiz_caption.md',md(),'text/markdown'],['aero_quiz_image_prompts.md',prompts(),'text/markdown']];
+ files.forEach(function(f,i){setTimeout(function(){dlBlob(new Blob([f[1]],{type:f[2]+';charset=utf-8'}),f[0]);},i*400);});}
+$('#dlAll').onclick=dlOut;
+
+/* ---------- bg slots ---------- */
+(function(){var h='';for(var n=0;n<7;n++)h+='<label class="slot" id="slot'+n+'"><span>'+(n+1)+' '+ROLES[n]+'</span><span class="x" data-x="'+n+'">✕</span><input type="file" accept="image/*" data-bg="'+n+'"></label>';$('#bgs').innerHTML=h;})();
+$('#bgs').addEventListener('change',function(e){var n=+e.target.dataset.bg,f=e.target.files&&e.target.files[0];if(!f)return;var r=new FileReader();
+ r.onload=function(ev){bgs[n]=ev.target.result;var s=$('#slot'+n);s.classList.add('loaded');s.style.backgroundImage='url("'+bgs[n]+'")';s.firstChild.textContent='✓ '+(n+1);var c=document.querySelector('#f'+n+' .card');if(c)applyBg(c,n);};r.readAsDataURL(f);});
+$('#bgs').addEventListener('click',function(e){if(e.target.dataset.x==null)return;e.preventDefault();var n=+e.target.dataset.x;bgs[n]=null;var s=$('#slot'+n);s.classList.remove('loaded');s.style.backgroundImage='';s.firstChild.textContent=(n+1)+' '+ROLES[n];s.querySelector('input').value='';var c=document.querySelector('#f'+n+' .card');if(c)applyBg(c,n);});
+
+/* ---------- wiring ---------- */
+function save(){try{localStorage.setItem(LS,JSON.stringify({state:state,lang:lang}));}catch(e){}}
+$('#subj').onchange=fillChap;$('#gen').onclick=generate;$('#edit').onchange=setEdit;
+$('#lvl').onchange=function(){if(state){state.lvl=this.value;save();render();}};
+document.querySelectorAll('#lang button').forEach(function(b){b.onclick=function(){lang=b.dataset.l;document.querySelectorAll('#lang button').forEach(function(x){x.classList.toggle('on',x===b);});save();render();};});
+window.addEventListener('resize',scaleAll);
+fillChap();
+try{var sv=JSON.parse(localStorage.getItem(LS)||'null');if(sv&&sv.state&&sv.state.items&&sv.state.items.length===5){state=sv.state;lang=sv.lang||'ko';
+ $('#subj').value=state.subj;fillChap();if(state.subj!=='mix')$('#chap').value=state.chap;$('#lvl').value=state.lvl;
+ document.querySelectorAll('#lang button').forEach(function(x){x.classList.toggle('on',x.dataset.l===lang);});}}catch(e){}
+if(!state){$('#chap').value='12';generate();}else render();
+window.QS={get state(){return state;},set state(v){state=v;render();},quizJSON:quizJSON,md:md,prompts:prompts,capture:capture,fname:fname,setLang:function(l){lang=l;render();}};
+})();
+</script>
+</body>
+</html>
