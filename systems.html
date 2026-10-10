@@ -58,7 +58,7 @@ a{color:inherit;}
 .scrolltop{position:fixed;bottom:26px;right:26px;width:44px;height:44px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);color:var(--cyan);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:60;}
 @media(max-width:860px){.sidebar{display:none;}.layout{padding:16px 14px 50px;}.goto-ch{margin-left:0;}}
 </style>
-</head>
+<style id="acs-rel-css">.acs-mini{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.04em;color:#34D399;border:1px solid rgba(52,211,153,.4);border-radius:5px;padding:0 5px;margin-right:6px;vertical-align:1px;font-style:normal}.acs-rel{margin:16px 0 4px;padding:12px 14px;border:1px dashed rgba(52,211,153,.35);border-radius:10px;background:rgba(52,211,153,.05)}.acs-rel-h{font-size:12.5px;font-weight:700;color:#34D399;margin-bottom:8px}.acs-rel-h span{font-weight:400;color:var(--t3);margin-left:6px;font-size:11.5px}.acs-rel-list{display:flex;flex-wrap:wrap;gap:6px 8px}.acs-rel-list a{font-size:12.5px;line-height:1.4;color:var(--t2);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;background:rgba(15,23,42,.35);max-width:100%;overflow-wrap:anywhere}.acs-rel-list a i{font-style:normal;color:var(--t3)}.acs-rel-list a:hover{border-color:#34D399;color:#F1F5F9}.acs-rel-list a b{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:#34D399;margin-right:6px}</style></head>
 <body>
 <div class="topbar">
   <a class="home" href="index.html">← 전체 목차 (Master Index)</a>
@@ -123,9 +123,19 @@ a{color:inherit;}
           <td class="ts-sym"><b>간헐 작동·발열</b><span class="ts-en">Intermittent / hot connection</span></td>
           <td class="ts-cause">접지 불량, 헐거운 접속, 산화 피막</td>
           <td class="ts-act">접지점 청소·본딩 확인, 접속부 조임 토크 점검, 산화·부식 제거</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>저항 측정값이 이상하거나 계기 손상</b><span class="ts-en">Odd ohmmeter reading or meter damage</span></td>
+          <td class="ts-cause">통전된 회로에서 저항계 사용, 병렬 경로가 측정에 끼어듦</td>
+          <td class="ts-act">전원 차단 후 부품 한쪽 단자를 분리하고 측정, 범위 선택과 영점 확인</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>전자 부품 교환 후 간헐 고장</b><span class="ts-en">Intermittent fault after replacing an electronic part</span></td>
+          <td class="ts-cause">정전기 민감 부품(ESDS)의 정전기 방전 손상</td>
+          <td class="ts-act">접지 손목띠·도전성 포장 사용, ESDS 표시 확인 후 취급</td>
         </tr></tbody>
         </table>
       </div>
+
+      <div class="acs-rel"><div class="acs-rel-h">🔗 관련 ACS 보강 주제<span>Related ACS topics</span></div><div class="acs-rel-list"><a href="ch04_basic_electricity.html#s-acs-resistor-color"><b>CH04</b>저항기의 종류와 색 코드 · 고전압 회로 주의</a><a href="ch04_basic_electricity.html#s-jep-meter-rules"><b>CH04</b>전압계·저항계 사용 6원칙<i> · 저항계 사용 시 손상 방지</i></a><a href="ch04_basic_electricity.html#s-jep-semiconductors"><b>CH04</b>반도체와 전자제어소자<i> · 디지털 논리·정전기·납땜</i></a><a href="ch04_basic_electricity.html#s-magnetism"><b>CH04</b>자기와 전자기<i> · 패러데이 법칙</i></a></div></div>
 
       <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
       <div class="kw-row">
@@ -170,9 +180,19 @@ a{color:inherit;}
           <td class="ts-sym"><b>부식·백색 결정(단자)</b><span class="ts-en">Terminal corrosion</span></td>
           <td class="ts-cause">전해질 누출, 통풍 불량, 과충전 가스 발생</td>
           <td class="ts-act">중화·세척(납산=베이킹소다, Ni-Cd=붕산), 벤트·배수 점검, 단자 보호</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>충전 중 전지 과열·전해액 넘침</b><span class="ts-en">Battery overheats or spews electrolyte while charging</span></td>
+          <td class="ts-cause">과충전, 셀 불균형, 니켈카드뮴 전지의 열폭주</td>
+          <td class="ts-act">충전 중지·환기, 전해액 높이는 완충 후 점검, 납산·NiCd 공구와 정비 장소 분리</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>전원을 끈 뒤에도 감전 위험</b><span class="ts-en">Shock hazard after power is removed</span></td>
+          <td class="ts-cause">커패시터·고전압 회로에 남은 전하</td>
+          <td class="ts-act">매뉴얼의 방전 절차·대기 시간을 지키고 절연 공구 사용</td>
         </tr></tbody>
         </table>
       </div>
+
+      <div class="acs-rel"><div class="acs-rel-h">🔗 관련 ACS 보강 주제<span>Related ACS topics</span></div><div class="acs-rel-list"><a href="ch04_basic_electricity.html#s-acs-resistor-color"><b>CH04</b>저항기의 종류와 색 코드 · 고전압 회로 주의</a><a href="ch04_basic_electricity.html#s-jep-gen-motor"><b>CH04</b>발전기·교류발전기·전동기<i> · 오른손 모터 법칙</i></a><a href="ch04_basic_electricity.html#s-capacitance-inductance"><b>CH04</b>커패시턴스와 인덕턴스<i> · 렌츠 법칙</i></a></div></div>
 
       <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
       <div class="kw-row">
@@ -217,9 +237,19 @@ a{color:inherit;}
           <td class="ts-sym"><b>자중 측정값 오류</b><span class="ts-en">Weighing error</span></td>
           <td class="ts-cause">저울 미영점(tare) 미보정, 타이어 초크 하중 포함, 기체 미수평</td>
           <td class="ts-act">스케일 영점·태어 보정, 수평 확인, 잔여물(연료·오물) 규정상태로</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>계산한 자중 CG가 기록과 크게 다름</b><span class="ts-en">Computed empty-weight CG differs greatly from records</span></td>
+          <td class="ts-cause">장비 목록과 실제 장착 장비 불일치, 계량 조건(연료·오일·수평) 차이</td>
+          <td class="ts-act">장비 목록과 실제 장비 대조, 계량 조건 재확인 후 다시 계량</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>저울 지시값이 의심됨</b><span class="ts-en">Scale readings are doubtful</span></td>
+          <td class="ts-cause">교정 기한 경과, 영점 조정 안 됨</td>
+          <td class="ts-act">교정 스티커·기한 확인, 영점 조정, 필요하면 다른 교정 저울 사용</td>
         </tr></tbody>
         </table>
       </div>
+
+      <div class="acs-rel"><div class="acs-rel-h">🔗 관련 ACS 보강 주제<span>Related ACS topics</span></div><div class="acs-rel-list"><a href="ch06_weight_balance.html#s-weighing"><b>CH06</b>항공기 무게측정<i> · 저울 교정 확인</i></a><a href="ch06_weight_balance.html#s-cg-calc"><b>CH06</b>CG 계산<i> · TCDS에서 CG 범위 찾기</i></a><a href="ch06_weight_balance.html#s-loading-limits"><b>CH06</b>적재 한계와 중요성<i> · 무게·평형 표지판과 한계 찾기</i></a><a href="ch06_weight_balance.html#s-equipment-list"><b>CH06</b>장비목록과 자중 CG 변경<i> · 장비 목록과 실제 장착 장비 대조</i></a><a href="ch11_regulations.html#s-airworthiness-docs"><b>CH11</b>감항성 서류<i> · 특정 항공기의 최대 허용 무게 찾기</i></a></div></div>
 
       <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
       <div class="kw-row">
@@ -264,9 +294,19 @@ a{color:inherit;}
           <td class="ts-sym"><b>표면 균열 의심</b><span class="ts-en">Suspected crack</span></td>
           <td class="ts-cause">피로·응력집중, 열처리 부적정</td>
           <td class="ts-act">적정 NDI 선택(자분=강자성, 침투=비자성 표면, 와전류·초음파=표면하) 후 판정</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>스웨이징 단자가 고/노고 게이지에 안 맞음</b><span class="ts-en">Swaged terminal fails the go/no-go gauge</span></td>
+          <td class="ts-cause">스웨이징 부족, 공구 조정 불량</td>
+          <td class="ts-act">재스웨이징 또는 재제작, 새 케이블은 정격 파단 강도 60%로 3분 proof load</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>자분탐상 후 부품에 자성이 남음</b><span class="ts-en">Part remains magnetized after magnetic particle inspection</span></td>
+          <td class="ts-cause">탈자 생략 또는 불충분</td>
+          <td class="ts-act">탈자 후 자기 지시계로 잔류 자기 확인</td>
         </tr></tbody>
         </table>
       </div>
+
+      <div class="acs-rel"><div class="acs-rel-h">🔗 관련 ACS 보강 주제<span>Related ACS topics</span></div><div class="acs-rel-list"><a href="ch07_materials_processes.html#s-acs-control-cable"><b>CH07</b>조종 케이블 구성품과 스웨이징 단자 제작</a><a href="ch07_materials_processes.html#s-acs-welds"><b>CH07</b>용접부 판정과 용접 수리</a><a href="ch07_materials_processes.html#s-acs-ndi-followup"><b>CH07</b>자분탐상 후 탈자와 복합재 탭 테스트</a><a href="ch07_materials_processes.html#s-torque-safety"><b>CH07</b>토크와 안전결선<i> · 고응력 핵심 패스너의 토크 기법</i></a><a href="ch07_materials_processes.html#s-ndi"><b>CH07</b>비파괴검사(NDI)<i> · 검사 방법·공구와 기법 선택</i></a><a href="ch07_materials_processes.html#s-metals"><b>CH07</b>금속 재료와 열처리<i> · 수리용 재료 선택과 적합성</i></a></div></div>
 
       <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
       <div class="kw-row">
@@ -311,9 +351,19 @@ a{color:inherit;}
           <td class="ts-sym"><b>응력부위 균열성 부식</b><span class="ts-en">Stress / intergranular</span></td>
           <td class="ts-cause">지속 인장응력 + 부식환경, 열처리 부적정</td>
           <td class="ts-act">NDI로 범위 판정, 구조 수리·교환은 정비교범 준수, 응력·환경 원인 제거</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>도장 후 조종면 균형 이상</b><span class="ts-en">Control surface out of balance after painting</span></td>
+          <td class="ts-cause">도료 무게로 평형 변화</td>
+          <td class="ts-act">도장 후 평형대에서 제작사 한계 확인, 승인된 방법으로 평형추 조정</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>플라스틱 창에 잔금(crazing)</b><span class="ts-en">Crazing on plastic windows</span></td>
+          <td class="ts-cause">용제·부적합 세척제, 마른 걸레로 문지름</td>
+          <td class="ts-act">물·승인된 세척제와 부드러운 천 사용, 심하면 매뉴얼대로 연마·교환</td>
         </tr></tbody>
         </table>
       </div>
+
+      <div class="acs-rel"><div class="acs-rel-h">🔗 관련 ACS 보강 주제<span>Related ACS topics</span></div><div class="acs-rel-list"><a href="ch08_corrosion_control.html#s-acs-markings-balance"><b>CH08</b>등록기호·표지판 재부착과 도장 후 조종면 균형</a><a href="ch08_corrosion_control.html#s-acs-cleaning-plastics"><b>CH08</b>고압 세척 장비와 플라스틱 세척·보호</a><a href="ch08_corrosion_control.html#s-acs-paint-systems"><b>CH08</b>도장 계통·시너 선택과 표면 준비</a><a href="ch08_corrosion_control.html#s-jep-corr-prevent"><b>CH08</b>부식 예방<i> · 부식 방지 화합물(CPC) 선택과 처리 주기</i></a><a href="ch08_corrosion_control.html#s-corrosion-inspection"><b>CH08</b>부식 검사 방법<i> · 육안 검사 수행</i></a><a href="ch08_corrosion_control.html#s-cleaning-safety"><b>CH08</b>세척제와 안전<i> · 환기와 화학 폐기물 처리</i></a></div></div>
 
       <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
       <div class="kw-row">
@@ -358,9 +408,19 @@ a{color:inherit;}
           <td class="ts-sym"><b>라인 오식별·오연결</b><span class="ts-en">Misidentified line</span></td>
           <td class="ts-cause">색·테이프 식별 누락, FLAM·PHDAN 표시 미숙지</td>
           <td class="ts-act">식별 테이프·기호 규정대로 부착, 계통별 색코드 확인, 인화·위험 라인 표시</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>피팅 연결부 누설</b><span class="ts-en">Leak at a fitting</span></td>
+          <td class="ts-cause">토크 부족·과다, 플레어 손상, 지정 실 미사용</td>
+          <td class="ts-act">토크 렌치로 지정 토크, 플레어 검사·재제작, 지정 실·테이프 사용</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>호스가 부풀거나 딱딱해짐</b><span class="ts-en">Hose bulging or hardened</span></td>
+          <td class="ts-cause">노화, 사용 기한 경과, 열 손상</td>
+          <td class="ts-act">호스 교환, 경화 날짜 확인, 고온부와 간격·방화 슬리브 확인</td>
         </tr></tbody>
         </table>
       </div>
+
+      <div class="acs-rel"><div class="acs-rel-h">🔗 관련 ACS 보강 주제<span>Related ACS topics</span></div><div class="acs-rel-list"><a href="ch09_fluid_lines.html#s-acs-line-maint"><b>CH09</b>라인 정비: 토크 실·계통 상태·안전장비</a><a href="ch09_fluid_lines.html#s-jep-line-install"><b>CH09</b>라인 설치·라우팅·클램프<i> · 토크 렌치를 써야 하는 이유와 공구 사용</i></a><a href="ch09_fluid_lines.html#s-line-id-leak"><b>CH09</b>라인 식별과 누설<i> · 위험 유체</i></a><a href="ch09_fluid_lines.html#s-hose-types"><b>CH09</b>호스 종류<i> · 고압 유체 계통의 위험</i></a></div></div>
 
       <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
       <div class="kw-row">
@@ -405,9 +465,19 @@ a{color:inherit;}
           <td class="ts-sym"><b>계통 흐름 오판</b><span class="ts-en">Schematic misread</span></td>
           <td class="ts-cause">기호 오독, 배선·유압 기호 미숙지</td>
           <td class="ts-act">범례(legend)·기호표 참조, 흐름 방향·연결점 추적</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>도면 치수와 실제 부품이 다름</b><span class="ts-en">Drawing dimensions do not match the part</span></td>
+          <td class="ts-cause">도면 개정판(리비전) 차이, 적용 대상(effectivity) 다름</td>
+          <td class="ts-act">도면 번호·리비전·적용 일련번호 범위를 확인하고 최신 승인 도면 사용</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>수리 기록의 스케치가 불명확</b><span class="ts-en">Repair sketch in records is unclear</span></td>
+          <td class="ts-cause">치수·재료·위치 기준 누락</td>
+          <td class="ts-act">기준선·치수·재료·패스너 규격을 넣어 스케치를 다시 작성</td>
         </tr></tbody>
         </table>
       </div>
+
+      <div class="acs-rel"><div class="acs-rel-h">🔗 관련 ACS 보강 주제<span>Related ACS topics</span></div><div class="acs-rel-list"><a href="ch05_aircraft_drawings.html#s-drawing-types"><b>CH05</b>도면의 종류<i> · 수리·개조 스케치 그리기</i></a><a href="ch05_aircraft_drawings.html#s-blueprint-elements"><b>CH05</b>도면 요소<i> · 도면으로 형식설계 부합 판단 · 수리 설계 기준 · 적용 대상</i></a><a href="ch05_aircraft_drawings.html#s-diagrams"><b>CH05</b>계통도<i> · 도면·계통도를 이용한 검사</i></a></div></div>
 
       <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
       <div class="kw-row">
@@ -452,9 +522,19 @@ a{color:inherit;}
           <td class="ts-sym"><b>자료 종류 오판</b><span class="ts-en">Wrong data type</span></td>
           <td class="ts-cause">승인 자료와 수용 자료 혼동</td>
           <td class="ts-act">작업 종류에 맞는 자료 선택(승인=Major, 수용=Minor 기준), 출처 확인</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>AD에 적힌 방법으로 수행할 수 없음</b><span class="ts-en">AD method cannot be followed</span></td>
+          <td class="ts-cause">기체 개조·부품 차이 등으로 지정 방법 적용 불가</td>
+          <td class="ts-act">FAA에 대체 준수 방법(AMOC) 승인을 받은 뒤 수행, 감항성 한계는 변경 불가</td>
+        </tr><tr>
+          <td class="ts-sym"><span class="acs-mini">ACS</span><b>부품의 감항성이 불확실</b><span class="ts-en">Part airworthiness is uncertain</span></td>
+          <td class="ts-cause">TSO·PMA 표시나 8130-3 태그 없음</td>
+          <td class="ts-act">표시와 서류 확인, 확인 안 되면 의심 부품으로 격리</td>
         </tr></tbody>
         </table>
       </div>
+
+      <div class="acs-rel"><div class="acs-rel-h">🔗 관련 ACS 보강 주제<span>Related ACS topics</span></div><div class="acs-rel-list"><a href="ch11_regulations.html#s-acs-amoc-als"><b>CH11</b>AD의 대체 준수 방법(AMOC)과 감항성 한계</a><a href="ch11_regulations.html#s-acs-tso-markings"><b>CH11</b>TSO·PMA 부품 표시와 계기 범위 표시 확인</a><a href="ch11_regulations.html#s-acs-manual-conventions"><b>CH11</b>경고·주의·노트와 유효성(Effectivity) 코드</a><a href="ch11_regulations.html#s-stc-pma"><b>CH11</b>STC와 PMA<i> · 부품의 적용 가능성 판단</i></a><a href="ch11_regulations.html#s-inspection-programs"><b>CH11</b>검사 프로그램<i> · 제조사 지정 정비·검사 주기의 준수 의무</i></a><a href="ch13_forms_records.html#s-form-8130"><b>CH13</b>FAA Form 8130-3(감항성 태그)<i> · 주요 FAA 양식 한눈에 보기</i></a></div></div>
 
       <div class="block-label">📝 연계 기출 키워드 <span>Related Exam Topics</span></div>
       <div class="kw-row">
