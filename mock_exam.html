@@ -73,6 +73,11 @@ padding:12px 22px;font-size:15px;cursor:pointer;font-family:'Noto Sans KR';trans
 .eng-only .opts li .en{font-size:14.5px;color:var(--t1);}
 .eng-only .opts li .ko-opt{display:none;}
 </style>
+
+
+
+
+<!--pwa--><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="A&amp;P General"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="icon" href="icons/favicon-32.png"><script src="app.js" defer></script><!--/pwa-->
 </head>
 <body>
 <div class="wrap">
@@ -258,6 +263,10 @@ function submitExam(){
     } else { if(wrongIds.indexOf(q.id) < 0) wrongIds.push(q.id); }
   });
   setWrong(wrongIds);
+  try{var chc={};examSet.forEach(function(q){var a=chc[q.ch]||(chc[q.ch]=[0,0]);a[1]++;if(answers[q.id]===q.ans)a[0]++;});
+    var hist=JSON.parse(localStorage.getItem('gen_mock_history')||'[]');
+    hist.push({date:new Date().toISOString().slice(0,10),mode:'모의고사',total:examSet.length,correct:right,pct:Math.round(right/examSet.length*100),ch:chc});
+    if(hist.length>50)hist=hist.slice(-50);localStorage.setItem('gen_mock_history',JSON.stringify(hist));}catch(e){}
   var pct = Math.round(right/examSet.length*100);
   var pass = pct >= 70;
   document.getElementById('exam').classList.add('hidden');

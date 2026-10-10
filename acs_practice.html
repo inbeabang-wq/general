@@ -94,6 +94,10 @@ h1{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-size:30px;margin:8
 .site-disclaimer{max-width:920px;margin:46px auto 26px;padding:16px;border-top:1px solid rgba(96,165,250,.18);font-size:12px;line-height:1.75;color:#7b8ba3;}
 @media(max-width:480px){h1{font-size:24px;}.wrap{padding:22px 14px 80px;}.it{padding:12px 13px;}.ttl{font-size:15px;}}
 </style>
+
+
+
+<!--pwa--><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="A&amp;P General"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="icon" href="icons/favicon-32.png"><script src="app.js" defer></script><!--/pwa-->
 </head>
 <body>
 <div class="wrap">
@@ -286,6 +290,7 @@ function hist(){var H=ld('h',[]);document.getElementById('hist').innerHTML=H.len
   route(); window.addEventListener('hashchange',route);})();
 function route(){
   var hs=decodeURIComponent((location.hash||'').slice(1));
+  if(hs==='again'||hs==='KRagain'){var w=hs==='again'?'S':'KR';if(tab!==w)swTab(document.querySelector('.tab[data-t="'+w+'"]'));mode='again';lim=40;render();return;}
   if(hs==='KR'||hs==='M'||hs==='S'){if(tab!==hs)swTab(document.querySelector('.tab[data-t="'+hs+'"]'));else render();}
   else if(/^AM\./.test(hs)&&BYC[hs]){var e=BYC[hs];var want=T(e)==='S'?'S':'KR';if(tab!==want)swTab(document.querySelector('.tab[data-t="'+want+'"]'));area=e.a;kind='';mode='';document.getElementById('q').value='';lim=999;render(true);
     var n=document.getElementById('c-'+hs.replace(/\./g,'_'));if(n)setTimeout(function(){n.scrollIntoView();},50);}
