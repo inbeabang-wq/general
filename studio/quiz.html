@@ -197,7 +197,7 @@ button:disabled{opacity:.5;cursor:default}
   <div class="mascp">
    <div class="mthumb" id="mthumb">🧑‍🔧<span>마스코트<br>없음</span></div>
    <div class="mctl">
-    <b>🧑‍🔧 마스코트 (정비사 강태윤)</b> <span class="hint">— 기본 캐릭터가 들어 있습니다. 다른 포즈는 배경을 지운 투명 PNG로 올리세요. 카드에 "AI CHARACTER" 표시와 캡션 AI 고지가 자동으로 들어갑니다.</span>
+    <b>🧑‍🔧 마스코트 (정비사 강정비)</b> <span class="hint">— 기본 캐릭터가 들어 있습니다. 다른 포즈는 배경을 지운 투명 PNG로 올리세요. 카드에 "AI CHARACTER" 표시와 캡션 AI 고지가 자동으로 들어갑니다.</span>
     <div class="row" style="margin-top:6px">
      <select id="mpick" style="width:auto"><option value="34">기본 캐릭터 · 3/4 각도</option><option value="front">기본 캐릭터 · 정면</option><option value="upload">직접 올린 이미지</option><option value="none">마스코트 끄기</option></select>
      <label class="slot" style="height:auto;padding:8px 12px;flex:0 0 auto;border-style:solid">📁 이미지 올리기<input type="file" accept="image/*" id="mfile"></label>
@@ -206,7 +206,7 @@ button:disabled{opacity:.5;cursor:default}
      <label class="hint row" style="gap:4px"><input type="checkbox" id="m_q"> 문제 카드</label>
      <label class="hint row" style="gap:4px"><input type="checkbox" id="m_answer" checked> 정답 카드</label>
     </div>
-    <div class="hint" style="margin-top:4px">표지 말풍선은 ✏️ 편집 모드에서 카드 위 글자를 눌러 바꿀 수 있습니다. 캐릭터 설정과 생성 프롬프트는 「마스코트_강태윤_캐릭터_바이블」 문서 참고.</div>
+    <div class="hint" style="margin-top:4px">표지 말풍선은 ✏️ 편집 모드에서 카드 위 글자를 눌러 바꿀 수 있습니다. 캐릭터 설정과 생성 프롬프트는 「마스코트_강정비_캐릭터_바이블」 문서 참고.</div>
    </div>
   </div>
  </div>
@@ -324,7 +324,7 @@ function acard(l){var h='<div class="card an '+l+'" style="--ac:#FF9500">'+chrom
   '<div class="c2"><span>'+(l==='ko'?'팔로우 @AEROMECHEXPERT':'FOLLOW @AEROMECHEXPERT')+'</span><span>inbeabang-wq.github.io/'+site+'</span></div>'+
   '<div class="tg">'+esc(HASH[l])+'</div></div></div></div>';return h;}
 function defMasc(){return {pick:'34',on:{cover:true,q:false,answer:true},txt:{ko:{cover:'같이 풀어볼까요? 30초면 충분해요!'},en:{cover:"Let's solve these together!"}}};}
-function mSrc(){var pk=(state&&state.masc&&state.masc.pick)||'34';if(pk==='none')return null;if(pk==='upload')return mimg;return pk==='front'?'img/taeyun_front.png':'img/taeyun_34.png';}
+function mSrc(){var pk=(state&&state.masc&&state.masc.pick)||'34';if(pk==='none')return null;if(pk==='upload')return mimg;return pk==='front'?'img/jeongbi_front.png':'img/jeongbi_34.png';}
 function mascOn(n){if(!mSrc()||!state)return false;var m=state.masc||(state.masc=defMasc());return n===0?m.on.cover:n===6?m.on.answer:m.on.q;}
 function cardHTML(n,l){var h=n===0?cover(l):n===6?acard(l):qcard(n-1,l);if(!mascOn(n))return h;
  var m=state.masc,bub=n===0?'<div class="bub" data-p="masc.txt.'+l+'.cover">'+esc((m.txt[l]||{}).cover||'')+'</div>':'';
