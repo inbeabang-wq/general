@@ -104,6 +104,16 @@ button:disabled{opacity:.5;cursor:default}
 .qc .cb{display:flex;align-items:center;gap:.6em;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.14);border-radius:14px;padding:.42em .7em}
 .qc .cn{flex:0 0 auto;width:1.55em;height:1.55em;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 .74em Orbitron;background:var(--acs);border:2.5px solid var(--ac);color:var(--ac)}
 .qc .ct{font-size:.8em;line-height:1.42;color:rgba(255,255,255,.93)}
+.qc .cw{display:flex;flex-direction:column;min-width:0}
+.qc .cte,.qc .qte,.qc .bhe{display:block;font-family:Inter,sans-serif;font-weight:500;color:rgba(190,210,240,.66);line-height:1.35;letter-spacing:0}
+.qc .cte{font-size:.6em;margin-top:.12em}
+.qc .qte{font-size:.6em;margin-top:.35em}
+.qc .claim .cte{font-size:.62em;margin-top:.2em}
+.qc .bhe{font-size:.5em;margin-top:.3em;color:rgba(48,209,88,.7)}
+.qc .badge small{font:600 .7em Inter;opacity:.75;margin-left:.4em}
+.an .axw{display:flex;flex-direction:column;min-width:0}
+.an .axe{font:500 .7em/1.35 Inter,sans-serif;color:rgba(190,210,240,.62);margin-top:.15em}
+.an .c1 small{display:block;font:500 20px Inter;color:rgba(255,255,255,.55);margin-top:4px}
 .qc .claim{margin-top:.75em;border-left:8px solid var(--ac);background:rgba(255,149,0,.1);padding:.5em .8em;border-radius:0 12px 12px 0}
 .qc .claim small{display:block;font:700 .55em "JetBrains Mono";letter-spacing:3px;color:var(--ac);margin-bottom:.2em}
 .qc .claim span{font-size:.86em;font-weight:700;line-height:1.4}
@@ -155,6 +165,7 @@ button:disabled{opacity:.5;cursor:default}
   <div class="row" style="margin-top:10px">
    <button class="pri" id="gen">🎲 새 퀴즈 5문제 뽑기</button>
    <span class="seg" id="lang"><button data-l="ko" class="on">한국어 KO</button><button data-l="en">English EN</button></span>
+   <label class="row hint" style="gap:6px"><input type="checkbox" id="bi" checked> 🇰🇷+🇺🇸 한국어 카드에 영어 함께 표기</label>
    <label class="row hint" style="gap:6px"><input type="checkbox" id="edit"> ✏️ 카드 글자 직접 고치기</label>
   </div>
   <p class="hint" style="margin:8px 0 0">구성: 객관식 3 · OX 1 · 빈칸 1 (문제은행의 FAA 문항을 그대로 쓰고, OX·빈칸은 같은 문항을 바꿔 만듭니다). 마음에 안 드는 문제는 카드 아래 <b>🔄 바꾸기</b>. 편집 모드에서 노란 점선 글자를 누르면 바로 고칠 수 있고, 고친 내용은 캡션·JSON에도 반영됩니다.</p>
@@ -185,7 +196,7 @@ button:disabled{opacity:.5;cursor:default}
 <script>
 (function(){
 var $=function(s){return document.querySelector(s)}, LS='aq_studio_v1';
-var state=null, lang='ko', bgs=[null,null,null,null,null,null,null], SIZE=1080;
+var state=null, lang='ko', bi=true, bgs=[null,null,null,null,null,null,null], SIZE=1080;
 var LVL={b:['초급','Beginner'],i:['중급','Intermediate'],a:['고급','Advanced']};
 var TYPE={mc:{ko:'객관식',en:'MULTIPLE CHOICE',ac:'#4A90D9',rgb:'74,144,217',jk:'multiple_choice'},ox:{ko:'OX 퀴즈',en:'TRUE / FALSE',ac:'#FF9500',rgb:'255,149,0',jk:'ox'},blank:{ko:'빈칸 채우기',en:'FILL IN THE BLANK',ac:'#30D158',rgb:'48,209,88',jk:'fill_blank'}};
 var ROLES=['cover','q1','q2','q3','q4','q5','answer'];
@@ -261,25 +272,27 @@ function refBox(it,l){var S=SUBJ[it.src.s];return '<div class="card-ref"><div cl
  '<div class="ref-row"><span class="ref-icon">▸</span><span class="ref-text">'+esc(S.hb)+'</span></div>'+
  '<div class="ref-row"><span class="ref-icon">▸</span><span class="ref-text">'+esc(S.acs)+'</span></div></div>';}
 function qcard(i,l){var it=state.items[i],T=TYPE[it.type],d=it[l],b='items.'+i+'.'+l+'.';
- var h='<div class="card qc '+l+'" style="--ac:'+T.ac+';--acs:rgba('+T.rgb+',.2);--acg:rgba('+T.rgb+',.45)">'+chrome(T.ac,i+2)+'<div class="inner"><div class="head"><div class="qn">Q'+(i+1)+'</div><div class="tags"><span class="badge">'+(l==='ko'?T.ko:T.en)+'</span>'+
+ var h='<div class="card qc '+l+'" style="--ac:'+T.ac+';--acs:rgba('+T.rgb+',.2);--acg:rgba('+T.rgb+',.45)">'+chrome(T.ac,i+2)+'<div class="inner"><div class="head"><div class="qn">Q'+(i+1)+'</div><div class="tags"><span class="badge">'+(l==='ko'?T.ko+(bi?'<small>'+{mc:'MC',ox:'O / X',blank:'BLANK'}[it.type]+'</small>':''):T.en)+'</span>'+
   '<span class="cat">'+esc(SUBJ[it.src.s].en.toUpperCase()+' · CH.'+it.src.ch+' '+(l==='ko'?it.src.chko:it.src.chen))+'</span></div></div><div class="body">';
+ var E=(l==='ko'&&bi)?it.en:null,eb='items.'+i+'.en.';
  h+=it.type==='blank'&&!/[?？]\s*$/.test(d.q)?'<div class="qt">'+P(b+'q',d.q)+' <u>&nbsp;&nbsp;&nbsp;</u></div>':P(b+'q',d.q,'div').replace('<div','<div class="qt"');
- if(it.type==='mc'){h+='<div class="ch">';d.opts.forEach(function(o,k){h+='<div class="cb"><span class="cn">'+'ABCD'[k]+'</span>'+P(b+'opts.'+k,o).replace('<span','<span class="ct"')+'</div>';});h+='</div>';}
- else if(it.type==='ox'){h+='<div class="claim"><small>'+(l==='ko'?'제시된 답':'PROPOSED ANSWER')+'</small>'+P(b+'claim',d.claim)+'</div><div class="oxrow"><div class="ox o">O</div><div class="ox x">X</div></div><div class="ask">'+(l==='ko'?'이 답은 맞을까요, 틀릴까요?':'Is this answer correct?')+'</div>';}
- else{h+='<div class="blank"><span>'+(l==='ko'?'정답 ▸':'ANSWER ▸')+'</span><span class="ln"></span></div>'+P(b+'hint',d.hint,'div').replace('<div','<div class="bh"');}
+ if(E)h+=P(eb+'q',E.q,'div').replace('<div','<div class="qte"');
+ if(it.type==='mc'){h+='<div class="ch">';d.opts.forEach(function(o,k){h+='<div class="cb"><span class="cn">'+'ABCD'[k]+'</span>'+'<span class="cw">'+P(b+'opts.'+k,o).replace('<span','<span class="ct"')+(E?P(eb+'opts.'+k,E.opts[k]).replace('<span','<span class="cte"'):'')+'</span></div>';});h+='</div>';}
+ else if(it.type==='ox'){h+='<div class="claim"><small>'+(l==='ko'?'제시된 답':'PROPOSED ANSWER')+'</small>'+P(b+'claim',d.claim)+(E?P(eb+'claim',E.claim).replace('<span','<span class="cte"'):'')+'</div><div class="oxrow"><div class="ox o">O</div><div class="ox x">X</div></div><div class="ask">'+(l==='ko'?'이 답은 맞을까요, 틀릴까요?'+(E?' · Is this answer correct?':''):'Is this answer correct?')+'</div>';}
+ else{h+='<div class="blank"><span>'+(l==='ko'?'정답 ▸':'ANSWER ▸')+'</span><span class="ln"></span></div>'+P(b+'hint',d.hint,'div').replace('<div','<div class="bh"')+(E?P(eb+'hint',E.hint,'div').replace('<div','<div class="bhe"'):'');}
  h+='</div>'+refBox(it,l)+'</div></div>';return h;}
 function ansText(it,l){if(it.type==='mc')return 'ABCD'[it.ans];if(it.type==='ox')return it.ans;return it[l].answer;}
 function acard(l){var h='<div class="card an '+l+'" style="--ac:#FF9500">'+chrome('#FF9500',7)+'<div class="inner"><div class="hdr"><span class="t">ANSWERS</span><span class="s">'+(l==='ko'?'정답과 해설':'Answers & key points')+'</span></div><div class="body">';
- state.items.forEach(function(it,i){h+='<div class="ar" style="--c:'+TYPE[it.type].ac+'"><span class="aq">Q'+(i+1)+'</span><span class="aa">'+esc(ansText(it,l))+'</span>'+P('items.'+i+'.'+l+'.short',it[l].short).replace('<span','<span class="ax"')+'</div>';});
+ state.items.forEach(function(it,i){h+='<div class="ar" style="--c:'+TYPE[it.type].ac+'"><span class="aq">Q'+(i+1)+'</span><span class="aa">'+esc(ansText(it,l))+'</span>'+'<span class="axw">'+P('items.'+i+'.'+l+'.short',it[l].short).replace('<span','<span class="ax"')+((l==='ko'&&bi)?P('items.'+i+'.en.short',it.en.short).replace('<span','<span class="axe"'):'')+'</span></div>';});
  var site=state.subj==='mix'?'general':SUBJ[state.subj].site;
- h+='</div><div class="cta"><div class="c1">'+(l==='ko'?'몇 개 맞았나요? 댓글로 점수를 남겨주세요 🔥':'How many did you get? Drop your score below 🔥')+'</div>'+
+ h+='</div><div class="cta"><div class="c1">'+(l==='ko'?'몇 개 맞았나요? 댓글로 점수를 남겨주세요 🔥'+(bi?'<small>How many did you get? Drop your score below</small>':''):'How many did you get? Drop your score below 🔥')+'</div>'+
   '<div class="c2"><span>'+(l==='ko'?'팔로우 @AEROMECHEXPERT':'FOLLOW @AEROMECHEXPERT')+'</span><span>inbeabang-wq.github.io/'+site+'</span></div>'+
   '<div class="tg">'+esc(HASH[l])+'</div></div></div></div>';return h;}
 function cardHTML(n,l){return n===0?cover(l):n===6?acard(l):qcard(n-1,l);}
 
 function applyBg(card,n){var u=bgs[n],bg=card.querySelector('.bg');if(u){bg.style.backgroundImage='url("'+u+'")';card.classList.add('hasbg');}else{bg.style.backgroundImage='';card.classList.remove('hasbg');}}
 function fit(card){var body=card.querySelector('.body');if(!body)return;var k=1;body.style.setProperty('--k',k);
- var guard=0;while(body.scrollHeight>body.clientHeight+1&&k>0.5&&guard++<40){k-=0.03;body.style.setProperty('--k',k.toFixed(2));}}
+ var guard=0;while(body.scrollHeight>body.clientHeight+1&&k>0.45&&guard++<40){k-=0.03;body.style.setProperty('--k',k.toFixed(2));}}
 function scaleAll(){document.querySelectorAll('.frame').forEach(function(f){var c=f.firstElementChild;if(c)c.style.transform='scale('+(f.clientWidth/SIZE)+')';});}
 function fname(n){var t=(state.title.en||'quiz').toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,'');
  return 'aero_quiz_'+t+'_'+lang.toUpperCase()+'_card'+(n+1)+'_'+ROLES[n]+'.png';}
@@ -380,13 +393,13 @@ $('#bgs').addEventListener('change',function(e){var n=+e.target.dataset.bg,f=e.t
 $('#bgs').addEventListener('click',function(e){if(e.target.dataset.x==null)return;e.preventDefault();var n=+e.target.dataset.x;bgs[n]=null;var s=$('#slot'+n);s.classList.remove('loaded');s.style.backgroundImage='';s.firstChild.textContent=(n+1)+' '+ROLES[n];s.querySelector('input').value='';var c=document.querySelector('#f'+n+' .card');if(c)applyBg(c,n);});
 
 /* ---------- wiring ---------- */
-function save(){try{localStorage.setItem(LS,JSON.stringify({state:state,lang:lang}));}catch(e){}}
-$('#subj').onchange=fillChap;$('#gen').onclick=generate;$('#edit').onchange=setEdit;
+function save(){try{localStorage.setItem(LS,JSON.stringify({state:state,lang:lang,bi:bi}));}catch(e){}}
+$('#subj').onchange=fillChap;$('#gen').onclick=generate;$('#edit').onchange=setEdit;$('#bi').onchange=function(){bi=this.checked;save();render();};
 $('#lvl').onchange=function(){if(state){state.lvl=this.value;save();render();}};
 document.querySelectorAll('#lang button').forEach(function(b){b.onclick=function(){lang=b.dataset.l;document.querySelectorAll('#lang button').forEach(function(x){x.classList.toggle('on',x===b);});save();render();};});
 window.addEventListener('resize',scaleAll);
 fillChap();
-try{var sv=JSON.parse(localStorage.getItem(LS)||'null');if(sv&&sv.state&&sv.state.items&&sv.state.items.length===5){state=sv.state;lang=sv.lang||'ko';
+try{var sv=JSON.parse(localStorage.getItem(LS)||'null');if(sv&&sv.state&&sv.state.items&&sv.state.items.length===5){state=sv.state;lang=sv.lang||'ko';if(sv.bi===false){bi=false;$('#bi').checked=false;}
  $('#subj').value=state.subj;fillChap();if(state.subj!=='mix')$('#chap').value=state.chap;$('#lvl').value=state.lvl;
  document.querySelectorAll('#lang button').forEach(function(x){x.classList.toggle('on',x.dataset.l===lang);});}}catch(e){}
 if(!state){$('#chap').value='12';generate();}else render();
