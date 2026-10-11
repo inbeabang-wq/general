@@ -1,5 +1,5 @@
 /* FAA General — service worker (offline support) */
-var VER='b0848180';
+var VER='b866d2ed';
 var CORE='faa-general-core-'+VER, PAGES='faa-general-pages', IMGS='faa-general-img';
 var PRECACHE=['./','index.html','progress.html','acs_practice.html','mock_exam.html','flashcards.html','offline.html','app.js','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/favicon-32.png'];
 var IMG_MAX=800;
