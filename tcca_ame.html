@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>캐나다 AME 자격 가이드 | Transport Canada AME Licence Guide</title>
+<meta name="description" content="캐나다 Transport Canada AME 면허(M1·M2·E·S) 요건, 취득 경로, 시험, 경력 계산기, 규정 연습문제 — 한국어·영어">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F172A;--panel:#13203b;--panel2:#1a2a4a;--cyan:#60A5FA;--gold:#FBBF24;--green:#34D399;--red:#F87171;--t1:#F1F5F9;--t2:#CBD5E1;--t3:#7c8db0;--line:rgba(96,165,250,.18);--maple:#EF4444}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;line-height:1.65;background-image:linear-gradient(rgba(96,165,250,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(96,165,250,.04) 1px,transparent 1px);background-size:44px 44px}
+a{color:var(--cyan)}
+.wrap{max-width:920px;margin:0 auto;padding:34px 16px 90px}
+.top-link{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--cyan);text-decoration:none}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--maple);letter-spacing:3px;margin-top:18px}
+h1{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-size:32px;line-height:1.25;margin:8px 0 4px}
+.sub{font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:13.5px;margin-bottom:18px}
+.en{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--t3);font-weight:400;margin-top:2px;line-height:1.45}
+.note{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.3);border-radius:12px;padding:13px 16px;font-size:14px;color:var(--t2);margin-bottom:18px}
+.note b{color:var(--gold)}
+.tabs{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:6px 0 20px;position:sticky;top:0;z-index:5;background:rgba(15,23,42,.94);padding:10px 0;backdrop-filter:blur(6px)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;white-space:nowrap;background:var(--panel);border:1.5px solid var(--line);border-radius:10px;padding:8px 13px;font:700 14px 'Noto Sans KR',sans-serif;color:var(--t2);cursor:pointer}
+.tab.on{border-color:var(--maple);color:#fff;background:rgba(239,68,68,.14)}
+section{display:none}section.on{display:block}
+.card{background:rgba(19,32,59,.95);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px}
+h2{font-size:21px;margin-bottom:10px;line-height:1.35}
+h3{font-size:16.5px;margin:14px 0 6px;color:var(--gold)}
+p,li{font-size:15px;color:var(--t2)}
+ul,ol{padding-left:20px}li{margin:4px 0}
+.tbl{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
+th,td{border:1px solid var(--line);padding:8px 9px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--t1);font-weight:700}
+td{color:var(--t2)}
+td b{color:var(--t1)}
+.tag{display:inline-block;font:700 12px 'JetBrains Mono',monospace;padding:2px 8px;border-radius:6px;margin-right:4px}
+.t-m{background:rgba(96,165,250,.16);color:#93c5fd}.t-e{background:rgba(52,211,153,.16);color:#6ee7b7}.t-s{background:rgba(251,191,36,.16);color:#fcd34d}.t-b{background:rgba(239,68,68,.16);color:#fca5a5}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;position:relative;padding:10px 12px 10px 48px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;margin:8px 0}
+.steps li:before{content:counter(s);position:absolute;left:12px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--maple);color:#fff;font:700 13px 'JetBrains Mono';display:flex;align-items:center;justify-content:center}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
+.path{border-left:4px solid var(--maple);background:rgba(255,255,255,.03);border-radius:0 10px 10px 0;padding:12px 14px}
+.path h4{font-size:15.5px;margin-bottom:4px}
+.calc label{display:flex;flex-direction:column;font-size:13px;color:var(--t3);gap:4px}
+.calc select,.calc input{background:#0b1222;border:1px solid #2c3a5c;border-radius:8px;color:var(--t1);padding:9px 10px;font:15px 'Noto Sans KR',sans-serif}
+.res{margin-top:14px;display:grid;gap:8px}
+.bar{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--t2)}
+.bar .lbl{flex:0 0 150px}
+.bar .trk{flex:1;height:12px;background:#0b1222;border-radius:7px;overflow:hidden;border:1px solid #2c3a5c}
+.bar .trk i{display:block;height:100%;background:var(--cyan);width:0}
+.bar.ok .trk i{background:var(--green)}
+.bar .v{flex:0 0 92px;text-align:right;font:700 13px 'JetBrains Mono'}
+.verdict{border-radius:10px;padding:12px 14px;font-size:15px;font-weight:700}
+.verdict.ok{background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.4);color:#6ee7b7}
+.verdict.no{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.35);color:#fca5a5}
+@media(max-width:520px){.bar .lbl{flex-basis:96px;font-size:12.5px}.bar .v{flex-basis:76px}h1{font-size:26px}}
+.q{background:rgba(19,32,59,.95);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+.q .qh{font-weight:700;font-size:15.5px}
+.q .opts{display:grid;gap:7px;margin-top:10px}
+.q button.o{text-align:left;background:#0b1222;border:1.5px solid #2c3a5c;border-radius:9px;color:var(--t1);padding:9px 12px;font:14.5px 'Noto Sans KR',sans-serif;cursor:pointer}
+.q button.o .en{margin-top:1px}
+.q button.o.right{border-color:var(--green);background:rgba(52,211,153,.12)}
+.q button.o.wrong{border-color:var(--red);background:rgba(248,113,113,.1)}
+.q .exp{display:none;margin-top:10px;font-size:14px;color:var(--t2);background:rgba(96,165,250,.06);border-radius:8px;padding:10px 12px}
+.q.done .exp{display:block}
+.qbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.qbar button{background:var(--panel);border:1.5px solid var(--line);border-radius:9px;color:var(--t2);padding:7px 12px;font:700 13px 'Noto Sans KR',sans-serif;cursor:pointer}
+.score{font:700 15px 'JetBrains Mono';color:var(--gold)}
+.src li{font-size:13.5px}
+footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
+</style>
+<!--pwa--><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="A&amp;P General"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="icon" href="icons/favicon-32.png"><meta name="theme-color" content="#0F172A"><script src="app.js" defer></script><!--/pwa-->
+</head>
+<body>
+<div class="wrap">
+<a class="top-link" href="index.html">← FAA A&amp;P GENERAL 홈</a>
+<div class="kicker">🍁 TRANSPORT CANADA · CAR 566</div>
+<h1>캐나다 AME 자격 가이드</h1>
+<div class="sub">Canadian Aircraft Maintenance Engineer (AME) Licence — M1 · M2 · E · S</div>
+<div class="note">📌 <b>2026년 10월 10일 기준</b> Transport Canada(TCCA) 공식 자료(CAR 403, 감항 매뉴얼 566장)를 요약했습니다. 규정은 바뀔 수 있으니 신청 전에 반드시 TCCA 원문과 가까운 Transport Canada Centre에서 확인하세요.<span class="en">Summary of TCCA sources as of 2026-10-10 (CAR 403, Airworthiness Manual Chapter 566). Always confirm with TCCA before applying.</span></div>
+
+<div class="tabs" id="tabs">
+ <button class="tab on" data-t="ov">개요</button>
+ <button class="tab" data-t="req">요건</button>
+ <button class="tab" data-t="path">취득 경로</button>
+ <button class="tab" data-t="exam">시험</button>
+ <button class="tab" data-t="calc">경력 계산기</button>
+ <button class="tab" data-t="keep">유지·갱신</button>
+ <button class="tab" data-t="quiz">연습문제 30</button>
+ <button class="tab" data-t="src">출처</button>
+</div>
+
+<!-- ============ 개요 ============ -->
+<section id="ov" class="on">
+ <div class="card">
+  <h2>AME 면허 등급<span class="en">Licence ratings</span></h2>
+  <div class="tbl"><table>
+   <tr><th style="width:120px">등급</th><th>정비 확인(서명) 범위</th></tr>
+   <tr><td><span class="tag t-m">M1</span></td><td>표준 522·523·523-VLA·527·549 및 동등 기준으로 인증된 <b>비(非)터보제트 항공기</b> (소형 비행기·회전익 등)<span class="en">Non-turbojet aircraft certified to Standards 522, 523, 523-VLA, 527, 549 and equivalent</span></td></tr>
+   <tr><td><span class="tag t-m">M2</span></td><td><b>M1에 속하지 않는 모든 항공기</b> (기구 제외) — 제트 여객기 등<span class="en">All aircraft not in M1, excluding balloons</span></td></tr>
+   <tr><td><span class="tag t-e">E</span></td><td><b>항공기 전자 계통</b> — 통신·항법·자동비행·계기<span class="en">Aircraft electronic systems: communication, navigation, auto flight, instruments</span></td></tr>
+   <tr><td><span class="tag t-s">S</span></td><td><b>항공기 구조</b> — 모든 기체 구조<span class="en">Aircraft structures (all airframe structures)</span></td></tr>
+   <tr><td><span class="tag t-b">Balloons</span></td><td>기구 전용 등급<span class="en">Balloon rating</span></td></tr>
+  </table></div>
+  <p>M1·M2 보유자는 추가로 <b>모든 터빈 헬리콥터</b>와 <b>SFAR 41C 비행기</b>(파생형 포함)에도 확인 권한이 있습니다.<span class="en">M1 and M2 holders also have privileges for all turbine-powered helicopters and SFAR 41C aeroplanes, including variants and derivatives.</span></p>
+ </div>
+ <div class="card">
+  <h2>FAA A&amp;P와 무엇이 다른가<span class="en">AME vs FAA A&amp;P at a glance</span></h2>
+  <div class="tbl"><table>
+   <tr><th></th><th>🍁 캐나다 AME (M1·M2)</th><th>🇺🇸 FAA A&amp;P</th></tr>
+   <tr><td><b>최소 나이</b></td><td>21세</td><td>18세</td></tr>
+   <tr><td><b>등급 구분</b></td><td>항공기 종류로 나눔 (M1 소형 / M2 그 외) + E·S 별도</td><td>계통으로 나눔 (Airframe / Powerplant)</td></tr>
+   <tr><td><b>경력</b></td><td>총 48개월 (전문 12, 민간 6개월 포함). 승인 교육으로 최대 24개월 대체</td><td>한 등급 18개월, 두 등급 30개월 또는 Part 147 학교 졸업</td></tr>
+   <tr><td><b>필기</b></td><td>Airframe · Powerplant · Standard Practices · Regulations</td><td>General · Airframe · Powerplant</td></tr>
+   <tr><td><b>실기</b></td><td>시험관 실기 없음 — 대신 정비 과제 기록(Appendix B 70% 이상)</td><td>구술·실기 시험(DME)</td></tr>
+   <tr><td><b>유효기간</b></td><td>10년마다 갱신 + 24개월 최근 경력</td><td>만료 없음 (권한 행사에는 24개월 중 6개월 경력)</td></tr>
+  </table></div>
+  <p>가장 큰 차이는 <b>실기 시험 대신 '경력 + 과제 기록'으로 실력을 증명</b>한다는 점입니다. 그래서 캐나다에서는 정비 기록부(logbook)를 처음부터 꼼꼼하게 쓰는 것이 면허의 절반입니다.<span class="en">The key difference: Canada proves skill through documented experience and a task record instead of a practical test.</span></p>
+ </div>
+</section>
+
+<!-- ============ 요건 ============ -->
+<section id="req">
+ <div class="card">
+  <h2>등급별 요건 (TCCA 표)<span class="en">Requirements by rating (TCCA)</span></h2>
+  <div class="tbl"><table>
+   <tr><th>등급</th><th>나이</th><th>기본 교육</th><th>경력 (총 / 전문 / 민간)</th><th>필기 시험</th></tr>
+   <tr><td><span class="tag t-m">M1</span><span class="tag t-m">M2</span></td><td>21</td><td>정비 이론 1,000시간</td><td><b>48 / 12 / 6</b>개월</td><td>Airframe, Powerplant, Standard Practices, Regulations</td></tr>
+   <tr><td><span class="tag t-e">E</span></td><td>21</td><td>전자 이론 1,000시간</td><td><b>48 / 12 / 6</b>개월</td><td>Avionics, Standard Practices, Regulations</td></tr>
+   <tr><td><span class="tag t-s">S</span></td><td>21</td><td>구조 이론 550시간</td><td><b>36 / 24 / 6</b>개월</td><td>Structures, Standard Practices, Regulations</td></tr>
+   <tr><td><span class="tag t-b">Balloons</span></td><td>21</td><td>인정된 기구 정비 과정</td><td>120시간</td><td>Regulations</td></tr>
+  </table></div>
+  <ul>
+   <li><b>국적 제한 없음</b> — 어느 나라 국민이든 신청할 수 있습니다.<span class="en">Citizenship of any country is accepted.</span></li>
+   <li><b>기술(Skill):</b> 감항 매뉴얼 566 Appendix B 과제 가운데 해당 등급 항목의 <b>70% 이상</b>을 기록해야 하며, 그중 <b>10% 이상은 민간 등록 항공기</b>에서 한 것이어야 합니다.<span class="en">Record at least 70% of the applicable Appendix B tasks; at least 10% on civil-registered aircraft.</span></li>
+  </ul>
+ </div>
+ <div class="card">
+  <h2>경력 계산 규칙<span class="en">How experience is counted</span></h2>
+  <ul>
+   <li>경력은 <b>기본 교육을 마친 뒤부터</b> 셉니다.<span class="en">Experience counts only after initial basic training.</span></li>
+   <li>상근 1년 = <b>1,800시간</b>. 시간제는 <b>150시간 = 1개월</b> (한 달에 최대 1개월).<span class="en">Full-time: 1,800 h/year. Part-time: 150 h = 1 month, max 1 month per calendar month.</span></li>
+   <li>승인 교육 크레딧: <b>100시간당 1개월</b>, 최대 <b>M·E 24개월 / S 18개월</b>.<span class="en">Approved training credit: 1 month per 100 h, capped at 24 months (M/E) or 18 months (S).</span></li>
+   <li><b>군 정비 경력</b>은 총·전문 경력에는 인정되지만 <b>민간 경력에는 들어가지 않습니다</b>. 군 출신은 민간 정비 6개월 이상이 꼭 필요합니다.<span class="en">Military maintenance counts toward total and specialty, not civil experience. Military applicants need at least 6 months civil.</span></li>
+   <li>인정되지 않는 경력: 초경량기·고급 초경량기·자작기(amateur-built)·소유자 정비 항공기.<span class="en">Not acceptable: ultra-light, advanced ultra-light, amateur-built, owner-maintained aircraft.</span></li>
+   <li>경력은 <b>정비 기록부(logbook)나 서명된 재직 증명서</b>로 증명합니다.<span class="en">Documented by logbook or signed employment letters.</span></li>
+   <li>신청 시점에는 총 경력에서 <b>6개월만 모자라도</b> 됩니다(나머지는 면허 발급 전까지 채움).<span class="en">At application you need all but 6 months of total experience.</span></li>
+  </ul>
+ </div>
+</section>
+
+<!-- ============ 경로 ============ -->
+<section id="path">
+ <div class="card">
+  <h2>나에게 맞는 경로<span class="en">Which path fits you</span></h2>
+  <div class="grid2">
+   <div class="path"><h4>🎓 ① 캐나다 승인 학교 졸업</h4><p>TCCA 승인 과정(ATO)을 마치면 <b>기술 필기 면제(knowledge credit)</b>와 <b>경력 크레딧(보통 18~24개월)</b>을 받습니다. 졸업 후 정비 회사(AMO)에서 나머지 경력을 채우고 규정(Regulations) 시험만 봅니다.</p></div>
+   <div class="path"><h4>🔧 ② 경력으로 취득</h4><p>승인 학교를 거치지 않으면 교육 이력을 개별 심사받고, <b>기술 필기를 모두</b> 봅니다(신청서 26-0638). 경력 48개월(M·E)을 채워야 합니다.</p></div>
+   <div class="path"><h4>🇺🇸 ③ FAA A&amp;P 보유자</h4><p>캐나다에는 <b>A&amp;P를 AME로 바로 바꿔 주는 제도가 없습니다</b>. 외국 면허 보유자도 <b>해당 등급의 TC 시험을 모두</b> 봐야 하며(566.07(1)(e)), 교육·경력은 심사로 인정받습니다. 1990년 1월 1일 이전부터 IA를 보유한 경우만 기본 교육이 면제됩니다.</p></div>
+   <div class="path"><h4>🇰🇷 ④ 한국 자격·군 경력 보유자</h4><p>한국은 ICAO 체약국이라 외국 면허로 심사받습니다. 학교·군 교육이 <b>이론 1,000시간 이상</b>(M·E)이면 기본 교육으로 인정될 수 있고, 군 경력은 총·전문 경력으로 들어갑니다. 단, <b>민간 경력 6개월</b>과 <b>민간 항공기 과제 10%</b>는 따로 채워야 합니다.</p></div>
+  </div>
+ </div>
+ <div class="card">
+  <h2>한국 경력자 단계별 체크리스트<span class="en">Step-by-step for applicants with Korean / military experience</span></h2>
+  <ol class="steps">
+   <li><b>서류 모으기</b> — 졸업증명서·성적·이수 시간표·교육 과정 상세(curriculum), 군 경력증명서, 한국 자격증. 모두 <b>영어(또는 프랑스어) 번역</b>과 원본 또는 공증 사본이 필요합니다.<span class="en">Gather diplomas, transcripts with hours, detailed curriculum, service records, licence — translated to English/French, originals or certified true copies.</span></li>
+   <li><b>교육 인정 신청</b> — 승인되지 않은 교육은 TCCA가 개별로 심사합니다. M·E는 이론 1,000시간, S는 550시간이 기준입니다.<span class="en">Unapproved training is assessed case by case (1,000 h M/E, 550 h S).</span></li>
+   <li><b>민간 정비 경력 만들기</b> — 캐나다 정비 회사(AMO)에서 최소 6개월. 이때 민간 항공기 과제를 기록해 10% 요건을 채웁니다.<span class="en">At least 6 months civil maintenance, logging civil-aircraft tasks.</span></li>
+   <li><b>신청서 26-0638 제출</b> → 승인되면 기술 필기(예: M은 Airframe·Powerplant·Standard Practices) 응시.<span class="en">Submit 26-0638, then write the technical exams.</span></li>
+   <li><b>신청서 24-0083 제출</b> — 총 경력에서 6개월만 남았을 때. 승인되면 Regulations 시험 응시.<span class="en">Submit 24-0083 with all but 6 months of experience, then write Regulations.</span></li>
+   <li><b>과제 기록 완성 → 면허 발급</b> — Appendix B 70% 이상, 남은 경력까지 채우면 발급됩니다.<span class="en">Complete the task record and remaining experience; licence issued.</span></li>
+  </ol>
+ </div>
+ <div class="card">
+  <h2>온타리오 주 TCCA 승인 과정 (크레딧)<span class="en">TCCA-approved courses in Ontario (experience &amp; knowledge credit)</span></h2>
+  <div class="tbl"><table>
+   <tr><th>학교 (도시)</th><th>과정</th><th>등급</th><th>크레딧</th></tr>
+   <tr><td><b>Centennial</b> (토론토 Downsview)</td><td>Aircraft Maintenance Technician / Aviation Technology – Aircraft Maintenance &amp; Management</td><td>M1·M2</td><td>18개월</td></tr>
+   <tr><td><b>Centennial</b> (토론토 Downsview)</td><td>Avionics / Aviation Technology – Avionics Maintenance &amp; Management</td><td>E</td><td>18개월</td></tr>
+   <tr><td><b>Mohawk</b> (해밀턴)</td><td>Aviation Technician – Aircraft Maintenance / Avionics / Aircraft Structures</td><td>M1·M2 / E / S</td><td>18 / 18 / 12개월</td></tr>
+   <tr><td><b>Fanshawe</b> (런던)</td><td>Aviation Technician – Aircraft Maintenance (2018 승인) / Avionics / Structural Repair</td><td>M1·M2 / E / S</td><td>24 / 18 / 10개월</td></tr>
+   <tr><td><b>Canadore</b> (노스베이)</td><td>Aircraft Maintenance, Avionics, Aircraft Maintenance and Avionics 등</td><td>M1·M2, E, S</td><td>10~24개월</td></tr>
+   <tr><td><b>Algonquin</b> (오타와)</td><td>Aviation Technician – Aircraft Maintenance Technician</td><td>M1·M2</td><td>18개월</td></tr>
+   <tr><td><b>Confederation</b> (선더베이)</td><td>Aviation Technician – Aircraft Maintenance</td><td>M1·M2</td><td>18개월</td></tr>
+   <tr><td><b>Sault</b> (수세인트마리)</td><td>Aircraft Structural Repair</td><td>S</td><td>10개월</td></tr>
+  </table></div>
+  <p style="font-size:13px;color:var(--t3)">출처: TCCA 「Basic training approved / acceptable training courses currently active」(2026-07-15 수정본). 크레딧은 "경력·지식(knowledge) 크레딧" 개월 수입니다. 입학 조건·학비는 각 학교에 확인하세요.</p>
+ </div>
+</section>
+
+<!-- ============ 시험 ============ -->
+<section id="exam">
+ <div class="card">
+  <h2>시험 규칙<span class="en">Examination rules</span></h2>
+  <ul>
+   <li>합격 점수: <b>과목마다 70%</b>.<span class="en">Pass mark: 70% on each exam.</span></li>
+   <li>재응시: 첫 불합격 후 <b>30일</b> 이상, 두 번째부터는 불합격할 때마다 <b>6개월</b> 이상 지나야 합니다.<span class="en">Retake: wait 30 days after the first failure, 6 months after each later failure.</span></li>
+   <li>기술 시험: 신청서 <b>26-0638</b>이 승인된 뒤 응시.<span class="en">Technical exams: after form 26-0638 is approved.</span></li>
+   <li>규정(Regulations) 시험: 신청서 <b>24-0083</b> 승인 + 총 경력에서 <b>6개월만 남았을 때</b>부터.<span class="en">Regulations exam: after 24-0083 approval and with all but 6 months of experience.</span></li>
+   <li>응시 승인은 TCCA 승인일로부터 <b>12개월</b> 유효.<span class="en">Approval to write is valid for 12 months.</span></li>
+   <li>시험은 <b>Transport Canada 지역 센터</b>에서 감독관 입회로, 예약해서 봅니다. 승인 후 온라인으로 예약·결제합니다.<span class="en">Invigilated at a Transport Canada Regional Service Centre by appointment; booked and paid online after approval.</span></li>
+  </ul>
+ </div>
+ <div class="card">
+  <h2>과목별 공부 방향 — 이 사이트 활용<span class="en">How to use this site for each exam</span></h2>
+  <div class="tbl"><table>
+   <tr><th>TC 시험</th><th>겹치는 FAA 내용</th><th>바로 가기</th></tr>
+   <tr><td><b>Standard Practices</b></td><td>재료·공정, 공구·측정, 유체 라인, 세척·부식, 무게·평형, 도면</td><td><a href="index.html">General 챕터</a> · <a href="mock_exam.html">모의고사</a></td></tr>
+   <tr><td><b>Airframe</b></td><td>구조, 판금, 복합재, 유압·착륙장치, 연료, 방빙, 화재 방지</td><td><a href="../airframe/index.html">Airframe 사이트</a></td></tr>
+   <tr><td><b>Powerplant</b></td><td>왕복·가스터빈, 연료·점화·윤활, 프로펠러</td><td><a href="../powerplant/index.html">Powerplant 사이트</a></td></tr>
+   <tr><td><b>Regulations</b></td><td>FAA 규정과 다름 — 캐나다 CARs(Part V 등)를 따로 공부해야 함</td><td><a href="#quiz" data-go="quiz">연습문제 30</a> (면허 규정 566)</td></tr>
+  </table></div>
+  <p>기술 내용(원리·정비 실무)은 FAA와 대부분 겹치지만, <b>Regulations는 완전히 다른 법</b>입니다. 기록·정비 확인(maintenance release)·정비 회사(AMO) 제도 같은 캐나다 규정을 TCCA 원문으로 따로 준비하세요.<span class="en">Technical content largely overlaps with FAA; Regulations is entirely Canadian law and must be studied separately.</span></p>
+ </div>
+</section>
+
+<!-- ============ 계산기 ============ -->
+<section id="calc">
+ <div class="card calc">
+  <h2>경력 계산기<span class="en">Experience calculator</span></h2>
+  <div class="grid2">
+   <label>등급 Rating<select id="c_r"><option value="M">M1 / M2</option><option value="E">E</option><option value="S">S</option></select></label>
+   <label>승인 교육 시간 (없으면 0)<span class="en">Approved training hours</span><input id="c_t" type="number" min="0" step="50" value="0"></label>
+   <label>군 정비 경력 (개월)<span class="en">Military maintenance (months)</span><input id="c_m" type="number" min="0" value="0"></label>
+   <label>민간 정비 경력 (개월)<span class="en">Civil maintenance (months)</span><input id="c_c" type="number" min="0" value="0"></label>
+   <label>그중 해당 전문 분야 경력 (개월)<span class="en">Of which in the rating specialty (months)</span><input id="c_s" type="number" min="0" value="0"></label>
+  </div>
+  <div class="res" id="c_out"></div>
+  <p style="font-size:12.5px;color:var(--t3);margin-top:10px">계산 방법: 총 경력 = 교육 크레딧(100시간당 1개월, M·E 최대 24 / S 최대 18) + 군 + 민간. 교육 크레딧은 총 경력에만 넣어 보수적으로 계산합니다. 실제 인정 여부는 TCCA 심사로 정해지며, 과제 기록(Appendix B 70%, 민간 10%)은 별도입니다.<span class="en">Estimate only; TCCA assessment decides. Training credit counted toward total only.</span></p>
+ </div>
+</section>
+
+<!-- ============ 유지 ============ -->
+<section id="keep">
+ <div class="card">
+  <h2>유효기간과 최근 경력<span class="en">Validity and recency</span></h2>
+  <ul>
+   <li><b>유효기간:</b> 발급(또는 갱신) 전 <b>마지막 생일로부터 10년</b>.<span class="en">Valid to a date ten years after the last birthday before issue or renewal.</span></li>
+   <li><b>최근 경력(566.05):</b> 권한을 쓰려면 최근 <b>24개월 안에</b> ① 규정 시험에 합격했거나 ② <b>6개월 이상</b> 정비·정비 감독·정비 교육을 했어야 합니다. 규정 시험에 떨어지면 합격할 때까지 갱신할 수 없습니다.<span class="en">Within the preceding 24 months: pass the regulatory exam, or perform/supervise/instruct maintenance for at least 6 months.</span></li>
+   <li><b>갱신:</b> 만료 전 신청서 24-0083과 수수료(CAR 104).<span class="en">Renew with form 24-0083 and the CAR 104 fee.</span></li>
+   <li><b>만료 후 재발급:</b> 만료 1년 미만이면 24-0083과 수수료, <b>1년 이상이면 규정 시험도 다시</b> 봐야 합니다.<span class="en">Expired under 1 year: form and fee. 1 year or more: regulatory exam as well.</span></li>
+  </ul>
+ </div>
+</section>
+
+<!-- ============ 퀴즈 ============ -->
+<section id="quiz">
+ <div class="qbar"><span class="score" id="q_score">0 / 30</span><button id="q_reset">다시 풀기</button><button id="q_wrong">틀린 문제만</button><button id="q_all">전체 보기</button></div>
+ <div id="q_box"></div>
+</section>
+
+<!-- ============ 출처 ============ -->
+<section id="src">
+ <div class="card">
+  <h2>출처<span class="en">Sources (Transport Canada)</span></h2>
+  <ul class="src">
+   <li><a href="https://tc.canada.ca/en/aviation/licensing-aircraft-maintenance-engineers-ames/obtaining-aircraft-maintenance-engineer-ame-licence/canadian-ame-licensing-general-information" target="_blank" rel="noopener">Canadian AME Licensing General Information</a> (2024-10-24 수정)</li>
+   <li><a href="https://tc.canada.ca/en/corporate-services/acts-regulations/list-regulations/canadian-aviation-regulations-sor-96-433/standards/airworthiness-chapter-566-aircraft-maintenance-engineer-ame-licensing-training-canadian-aviation-regulations-cars" target="_blank" rel="noopener">Airworthiness Manual Chapter 566 — AME Licensing and Training</a></li>
+   <li><a href="https://tc.canada.ca/en/aviation/licensing-aircraft-maintenance-engineers-ames/approved-training-organizations-atos-aircraft-maintenance-training/basic-training-approved-acceptable-training-courses-currently-active" target="_blank" rel="noopener">Basic training approved / acceptable courses currently active</a> (2026-07-15 수정)</li>
+   <li>문의: Transport Canada 1-800-305-2059</li>
+  </ul>
+ </div>
+</section>
+
+<footer>AEROMECHEXPERT · 30년 공군 전투기 정비사가 정리한 학습 자료입니다. 공식 판단은 TCCA가 합니다.<span class="en">Study notes, not official guidance. TCCA makes all licensing decisions.</span></footer>
+</div>
+
+<script>
+(function(){
+/* tabs */
+var tabs=document.querySelectorAll('.tab');
+function show(t){tabs.forEach(function(b){b.classList.toggle('on',b.dataset.t===t);});document.querySelectorAll('section').forEach(function(s){s.classList.toggle('on',s.id===t);});try{history.replaceState(null,'','#'+t);}catch(e){}var on=document.querySelector('.tab.on');if(on&&on.scrollIntoView)try{on.scrollIntoView({inline:'center',block:'nearest'});}catch(e){}}
+tabs.forEach(function(b){b.onclick=function(){show(b.dataset.t);window.scrollTo({top:0});};});
+document.addEventListener('click',function(e){var a=e.target.closest('[data-go]');if(a){e.preventDefault();show(a.dataset.go);window.scrollTo({top:0});}});
+var h=location.hash.slice(1);if(h&&document.getElementById(h)&&document.querySelector('.tab[data-t="'+h+'"]'))show(h);
+
+/* calculator */
+var R={M:{tot:48,sp:12,cap:24},E:{tot:48,sp:12,cap:24},S:{tot:36,sp:24,cap:18}};
+function num(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)||v<0?0:v;}
+function bar(lbl,v,need,unit){var ok=v>=need,p=Math.min(100,need?v/need*100:100);return '<div class="bar'+(ok?' ok':'')+'"><span class="lbl">'+lbl+'</span><span class="trk"><i style="width:'+p+'%"></i></span><span class="v">'+(Math.round(v*10)/10)+' / '+need+unit+'</span></div>';}
+function calc(){var r=R[document.getElementById('c_r').value],t=num('c_t'),m=num('c_m'),c=num('c_c'),s=num('c_s');
+ var cr=Math.min(r.cap,Math.floor(t/100)),tot=cr+m+c,canApply=tot>=r.tot-6,full=tot>=r.tot,civ=c>=6,sp=s>=r.sp;
+ var h=bar('교육 크레딧',cr,r.cap,'개월(최대)')+bar('총 경력',tot,r.tot,'개월')+bar('전문 분야',s,r.sp,'개월')+bar('민간 경력',c,6,'개월');
+ var msg;
+ if(full&&civ&&sp)msg='<div class="verdict ok">✅ 경력 요건을 모두 채운 것으로 계산됩니다. 과제 기록(Appendix B 70%, 민간 10%)과 시험만 남았습니다.</div>';
+ else if(canApply&&civ&&sp)msg='<div class="verdict ok">🟢 신청서 24-0083을 낼 수 있는 시점입니다(총 경력 6개월 이내 부족). 남은 '+Math.ceil(r.tot-tot)+'개월은 발급 전까지 채우세요.</div>';
+ else{var need=[];if(!canApply)need.push('총 경력 '+Math.ceil(r.tot-6-tot)+'개월 더 (신청 가능 시점까지)');if(!civ)need.push('민간 경력 '+Math.ceil(6-c)+'개월 더');if(!sp)need.push('전문 분야 '+Math.ceil(r.sp-s)+'개월 더');msg='<div class="verdict no">⏳ 아직 부족: '+need.join(' · ')+'</div>';}
+ document.getElementById('c_out').innerHTML=h+msg;
+ try{localStorage.setItem('tcca_calc',JSON.stringify({r:document.getElementById('c_r').value,t:t,m:m,c:c,s:s}));}catch(e){}}
+try{var sv=JSON.parse(localStorage.getItem('tcca_calc')||'null');if(sv){document.getElementById('c_r').value=sv.r;document.getElementById('c_t').value=sv.t;document.getElementById('c_m').value=sv.m;document.getElementById('c_c').value=sv.c;document.getElementById('c_s').value=sv.s;}}catch(e){}
+['c_r','c_t','c_m','c_c','c_s'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});calc();
+
+/* quiz */
+var Q=[
+['AME 면허를 받을 수 있는 최소 나이는?','Minimum age for an AME licence?',['18세','19세','21세'],['18','19','21'],2,'모든 등급 공통으로 발급 시점에 만 21세 이상이어야 합니다. FAA A&P(18세)보다 높습니다.','21 for every rating at issue — higher than the FAA A&P (18).'],
+['M1·M2 등급의 총 경력 요건은?','Total experience required for M1/M2?',['36개월','48개월','60개월'],['36 months','48 months','60 months'],1,'M1·M2·E는 총 48개월(전문 12, 민간 6개월 포함)입니다.','M1, M2 and E require 48 months total (12 specialty, 6 civil).'],
+['S(구조) 등급의 경력 요건(총/전문)은?','S rating experience (total / specialty)?',['36 / 24개월','48 / 12개월','24 / 12개월'],['36 / 24','48 / 12','24 / 12'],0,'S는 총 36개월, 그중 구조 전문 경력 24개월입니다.','S requires 36 months total with 24 in structures.'],
+['모든 등급에 공통으로 필요한 최소 민간 경력은?','Minimum civil experience for every M/E/S rating?',['3개월','6개월','12개월'],['3 months','6 months','12 months'],1,'군 출신도 민간 정비 경력 6개월 이상이 꼭 필요합니다.','At least 6 months of civil maintenance, including for military applicants.'],
+['TC AME 시험의 합격 점수는?','Pass mark for TC AME exams?',['과목당 60%','과목당 70%','전체 평균 70%'],['60% each','70% each','70% average'],1,'시험마다 70% 이상이어야 합니다. 평균으로 계산하지 않습니다.','70% on each exam, not an average.'],
+['첫 번째 불합격 후 재응시까지 기다려야 하는 기간은?','Wait after a first failure?',['7일','30일','6개월'],['7 days','30 days','6 months'],1,'첫 불합격은 30일, 두 번째부터는 6개월입니다.','30 days after the first failure; 6 months after later failures.'],
+['같은 시험에 두 번째 이상 불합격하면 재응시 대기 기간은?','Wait after a second or later failure?',['30일','3개월','6개월'],['30 days','3 months','6 months'],2,'두 번째 이후 불합격마다 최소 6개월을 기다려야 합니다.','At least 6 months after each later failure.'],
+['TCCA의 시험 응시 승인은 얼마 동안 유효한가?','How long is approval to write exams valid?',['6개월','12개월','24개월'],['6 months','12 months','24 months'],1,'승인일로부터 12개월 안에 응시해야 합니다.','12 months from TCCA approval.'],
+['기술 시험을 봐야 하는 신청자가 내는 서식은?','Form for applicants who must write the technical exams?',['24-0083','26-0638','Form 337'],['24-0083','26-0638','Form 337'],1,'26-0638은 기술 시험용 보충 신청서, 24-0083은 면허 신청서입니다.','26-0638 is the technical exam supplement; 24-0083 is the licence application.'],
+['AME 면허 신청서(갱신 포함) 서식 번호는?','AME licence application form (also for renewal)?',['24-0083','26-0638','8130-3'],['24-0083','26-0638','8130-3'],0,'면허 신청·갱신·재발급 모두 24-0083을 씁니다.','24-0083 is used to apply, renew and reissue.'],
+['면허 신청(24-0083) 시점에 필요한 총 경력은?','Experience needed when submitting 24-0083?',['전부 채워야 함','6개월만 모자라도 됨','절반만 있으면 됨'],['All of it','All but 6 months','Half'],1,'총 경력에서 6개월만 남았으면 신청할 수 있고, 나머지는 발급 전까지 채웁니다.','All but 6 months of total experience.'],
+['승인 기본 교육의 경력 크레딧 계산은?','How is approved training credited?',['100시간당 1개월','50시간당 1개월','과정당 12개월 고정'],['1 month per 100 h','1 month per 50 h','Fixed 12 months'],0,'100시간당 1개월, M·E는 최대 24개월, S는 최대 18개월입니다.','1 month per 100 h, max 24 (M/E) or 18 (S).'],
+['S 등급 신청자의 교육 크레딧 최대치는?','Maximum training credit for S applicants?',['12개월','18개월','24개월'],['12','18','24 months'],1,'S는 최대 18개월, M·E는 최대 24개월입니다.','18 months for S; 24 for M/E.'],
+['상근(full-time) 경력 1년은 몇 시간으로 보는가?','A full-time year of experience equals?',['1,500시간','1,800시간','2,080시간'],['1,500 h','1,800 h','2,080 h'],1,'상근 1년 = 1,800시간, 시간제는 150시간 = 1개월입니다.','1,800 h per year; part-time 150 h = 1 month.'],
+['군 정비 경력은 어떻게 인정되는가?','How is military maintenance experience credited?',['모든 경력으로 인정','총·전문 경력에만 인정, 민간 경력은 아님','인정되지 않음'],['All categories','Total and specialty only, not civil','Not credited'],1,'군 경력은 총·전문 경력에 들어가지만 민간 경력 6개월은 따로 채워야 합니다.','Counts toward total and specialty, not civil.'],
+['기술(Skill) 요건으로 기록해야 하는 Appendix B 과제 비율은?','Share of applicable Appendix B tasks to record?',['50% 이상','70% 이상','100%'],['50%+','70%+','100%'],1,'해당 등급 Appendix B 항목의 70% 이상을 기록해야 합니다.','At least 70% of the applicable items.'],
+['군 경력으로 과제를 주장할 때 민간 등록 항공기에서 한 과제의 최소 비율은?','Minimum share of tasks on civil-registered aircraft when claiming military tasks?',['5%','10%','25%'],['5%','10%','25%'],1,'과제 가운데 10% 이상은 민간 등록 항공기에서 수행해야 합니다.','At least 10% on civil-registered aircraft.'],
+['경력으로 인정되지 않는 것은?','Which maintenance experience is NOT acceptable?',['AMO에서의 상용기 정비','자작기(amateur-built) 정비','군 항공기 정비'],['Commercial aircraft at an AMO','Amateur-built aircraft','Military aircraft'],1,'초경량·고급 초경량·자작기·소유자 정비 항공기는 인정되지 않습니다.','Ultra-light, amateur-built and owner-maintained aircraft are excluded.'],
+['AME 면허의 유효기간은?','AME licence validity?',['5년','발급 전 마지막 생일로부터 10년','평생'],['5 years','10 years from the last birthday before issue','Lifetime'],1,'유효 종료일은 발급·갱신 전 마지막 생일로부터 10년입니다.','Valid to 10 years after the last birthday before issue or renewal.'],
+['최근 경력(recency) 요건으로 맞는 것은?','Which satisfies recency?',['최근 24개월 안에 6개월 이상 정비·감독·교육','최근 12개월 안에 3개월 정비','매년 시험 응시'],['6 months of maintenance/supervision/instruction in 24 months','3 months in 12 months','Yearly exam'],0,'최근 24개월 안에 규정 시험 합격 또는 6개월 이상 정비·감독·교육 중 하나가 필요합니다(566.05).','Within 24 months: pass the regulatory exam or 6 months of maintenance, supervision or instruction.'],
+['면허가 만료된 지 1년 이상 지났을 때 재발급 조건은?','Reissue when expired 1 year or more?',['서식과 수수료만','서식·수수료 + 규정 시험','기술 시험 전부 다시'],['Form and fee only','Form, fee and regulatory exam','All technical exams again'],1,'1년 미만이면 서식과 수수료, 1년 이상이면 규정 시험도 다시 봅니다.','Under 1 year: form and fee. 1 year or more: also the regulatory exam.'],
+['M2 등급의 범위는?','What does M2 cover?',['M1에 속하지 않는 모든 항공기(기구 제외)','터빈 헬리콥터만','전자 계통만'],['All aircraft not in M1 except balloons','Turbine helicopters only','Electronics only'],0,'M2는 M1이 아닌 모든 항공기이며 기구는 별도 등급입니다.','All aircraft not in M1, excluding balloons.'],
+['M1·M2 보유자에게 추가로 주어지는 권한은?','Extra privileges for M1/M2 holders?',['모든 터빈 헬리콥터와 SFAR 41C 비행기','구조 등급(S)','전자 등급(E)'],['Turbine helicopters and SFAR 41C aeroplanes','The S rating','The E rating'],0,'M1·M2는 터빈 헬리콥터와 SFAR 41C 비행기에도 권한이 있으며, E·S가 자동으로 붙지는 않습니다.','Turbine-powered helicopters and SFAR 41C aeroplanes; E and S are not included.'],
+['FAA A&P를 가진 사람이 AME를 받으려면?','An FAA A&P holder seeking an AME licence must…',['서류만 내면 자동 전환','해당 등급의 TC 시험을 모두 통과','Regulations 시험만 통과'],['Convert automatically','Pass all TC exams for the rating','Pass only Regulations'],1,'566.07(1)(e): 외국 면허 보유자는 종류와 관계없이 해당 등급의 TC 시험을 통과해야 합니다.','566.07(1)(e): foreign licence holders must pass the TC exams for the rating sought.'],
+['M·E 등급에 필요한 기본 교육 이론 시간은?','Basic theory training hours for M or E?',['550시간','1,000시간','1,800시간'],['550 h','1,000 h','1,800 h'],1,'M·E는 이론 1,000시간, S는 550시간입니다.','1,000 h for M and E; 550 h for S.'],
+['S 등급의 기본 교육 이론 시간은?','Basic theory training hours for S?',['550시간','800시간','1,000시간'],['550 h','800 h','1,000 h'],0,'구조(S)는 550시간입니다.','550 h for structures.'],
+['TC AME 시험은 어디에서 보는가?','Where are TC AME exams written?',['집에서 온라인','Transport Canada 지역 센터에서 감독 하에(예약)','소속 정비 회사에서'],['Online at home','At a TC Regional Service Centre, invigilated, by appointment','At your employer'],1,'TC 지역 센터에서 감독관 입회로 보며, 승인 후 온라인으로 예약·결제합니다.','Invigilated at a TC Regional Service Centre by appointment.'],
+['외국어 서류 제출 시 필요한 것은?','Documents in another language must be…',['영어 또는 프랑스어 번역','한국어 원본만','번역 불필요'],['Translated into English or French','Korean original only','No translation'],0,'원본 또는 공증 사본과 함께 영어나 프랑스어 번역이 필요합니다.','Translated into English or French, with originals or certified true copies.'],
+['M1·M2 필기 시험 과목은?','Exams for M1/M2?',['Airframe, Powerplant, Standard Practices, Regulations','General, Airframe, Powerplant','Avionics, Standard Practices, Regulations'],['AF, PP, SP, Regs','General, AF, PP','Avionics, SP, Regs'],0,'M은 4과목, E는 Avionics·Standard Practices·Regulations입니다.','M: four exams. E: Avionics, Standard Practices, Regulations.'],
+['규정(Regulations) 시험을 볼 수 있는 시점은?','When may the Regulations exam be written?',['기본 교육 시작 즉시','24-0083 승인 + 총 경력 6개월만 남았을 때','면허 발급 후'],['At the start of training','After 24-0083 approval with all but 6 months','After licence issue'],1,'24-0083 승인과 함께 총 경력에서 6개월만 남아 있어야 합니다.','After 24-0083 approval and with all but 6 months of experience.']
+];
+var KEY='tcca_quiz_v1',st={};try{st=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
+var onlyWrong=false;
+function render(){var h='';Q.forEach(function(q,i){var a=st[i];if(onlyWrong&&(a==null||a===q[4]))return;
+ h+='<div class="q'+(a!=null?' done':'')+'" data-i="'+i+'"><div class="qh">'+(i+1)+'. '+q[0]+'<span class="en">'+q[1]+'</span></div><div class="opts">';
+ q[2].forEach(function(o,k){var c='';if(a!=null){if(k===q[4])c=' right';else if(k===a)c=' wrong';}h+='<button class="o'+c+'" data-k="'+k+'">'+'ABC'[k]+'. '+o+'<span class="en">'+q[3][k]+'</span></button>';});
+ h+='</div><div class="exp">'+(a===q[4]?'✅ 정답':'❌ 정답은 '+'ABC'[q[4]])+' — '+q[5]+'<span class="en">'+q[6]+'</span></div></div>';});
+ document.getElementById('q_box').innerHTML=h||'<div class="card">틀린 문제가 없습니다 👍</div>';
+ var n=0;Q.forEach(function(q,i){if(st[i]===q[4])n++;});document.getElementById('q_score').textContent=n+' / '+Q.length+' 정답 · '+Object.keys(st).length+'문항 풂';}
+document.getElementById('q_box').addEventListener('click',function(e){var b=e.target.closest('button.o');if(!b)return;var i=+b.closest('.q').dataset.i;if(st[i]!=null)return;st[i]=+b.dataset.k;try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}render();});
+document.getElementById('q_reset').onclick=function(){st={};try{localStorage.removeItem(KEY);}catch(e){}onlyWrong=false;render();};
+document.getElementById('q_wrong').onclick=function(){onlyWrong=true;render();};
+document.getElementById('q_all').onclick=function(){onlyWrong=false;render();};
+render();
+})();
+</script>
+</body>
+</html>
