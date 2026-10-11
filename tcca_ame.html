@@ -73,6 +73,13 @@ td b{color:var(--t1)}
 .sj{background:var(--panel);border:1.5px solid var(--line);border-radius:11px;padding:10px 12px;color:var(--t1);font:700 14.5px 'Noto Sans KR',sans-serif;cursor:pointer;text-align:left}
 .sj small{display:block;font:500 12px 'JetBrains Mono',monospace;color:var(--t3);margin-top:2px}
 .sj.on{border-color:var(--maple);background:rgba(239,68,68,.12)}
+.modeb.on{border-color:var(--maple)!important;color:#fff!important;background:rgba(239,68,68,.14)!important}
+.pager{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px}
+.pager a{min-width:38px;text-align:center;font:700 13px 'JetBrains Mono',monospace;color:var(--t2);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 8px;text-decoration:none;cursor:pointer}
+.pager a.on{border-color:var(--maple);color:#fff;background:rgba(239,68,68,.18)}
+.pager a.dn{border-color:rgba(52,211,153,.45)}
+.pager .pinfo{flex-basis:100%;font:500 12.5px 'Noto Sans KR',sans-serif;color:var(--t3)}
+.pager select{background:#0b1222;border:1px solid #2c3a5c;border-radius:8px;color:var(--t1);padding:6px 8px;font:13px 'Noto Sans KR',sans-serif}
 .q .src{font:500 11.5px 'JetBrains Mono',monospace;color:var(--t3);margin-top:6px}
 .src li{font-size:13.5px}
 footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
@@ -267,8 +274,11 @@ footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
  <div id="q_box"></div>
  </div>
  <div id="tkwrap" style="display:none">
+  <div class="qbar"><button id="t_list" class="modeb">📚 전체 목록 (20문항씩 페이지)</button><button id="t_rand" class="modeb">🎲 무작위 20문항</button></div>
   <div class="qbar"><span class="score" id="t_score"></span><button id="t_new">🎲 새 20문항</button><button id="t_wrongset">❌ 틀린 문제로 20문항</button><button id="t_resetall">기록 지우기</button></div>
+  <div class="pager" id="pg_top"></div>
   <div id="t_box"><div class="card">문제를 불러오는 중…</div></div>
+  <div class="pager" id="pg_bot"></div>
  </div>
 </section>
 
@@ -382,31 +392,52 @@ function saveT(){try{localStorage.setItem(TK,JSON.stringify(ts));}catch(e){}}
 function build(){['sp','af','pp','av'].forEach(function(k){var d=SUB[k],rows=QBANK[d.s].filter(function(r){return d.ch.indexOf(r[1])>=0;}).map(function(r){return [d.s].concat(r);});
  if(d.x)rows=rows.concat(QBANK[d.x.s].filter(function(r){return d.x.ch.indexOf(r[1])>=0;}).map(function(r){return [d.x.s].concat(r);}));
  pool[k]=rows.filter(function(r){return !FAA.test(r[3]+' '+r[4]+' '+r[5].join(' ')+' '+r[6].join(' '));});});loaded=true;}
-function load(cb){if(loaded)return cb();if(loading)return;loading=true;var sc=document.createElement('script');sc.src='studio/qbank.js';sc.onload=function(){build();cb();};sc.onerror=function(){document.getElementById('t_box').innerHTML='<div class="card">문제은행을 불러오지 못했습니다. 인터넷 연결을 확인해 주세요.</div>';loading=false;};document.head.appendChild(sc);}
+function load(cb){if(loaded)return cb();if(loading)return;loading=true;var mt=document.createElement('script');mt.src='studio/meta.js';document.head.appendChild(mt);var sc=document.createElement('script');sc.src='studio/qbank.js';sc.onload=function(){build();cb();};sc.onerror=function(){document.getElementById('t_box').innerHTML='<div class="card">문제은행을 불러오지 못했습니다. 인터넷 연결을 확인해 주세요.</div>';loading=false;};document.head.appendChild(sc);}
 function key(r){return r[0]+':'+r[1];}
 function shuf(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
 function newSet(wrongOnly){var P=pool[cur];if(wrongOnly){P=P.filter(function(r){var a=ts[key(r)];return a!=null&&a!==r[7];});if(!P.length){alertBox('틀린 문제가 없습니다 👍');return;}}
  var fresh=P.filter(function(r){return ts[key(r)]==null;});var src=(!wrongOnly&&fresh.length>=20)?fresh:P;set=shuf(src.slice()).slice(0,20);renderT();window.scrollTo({top:document.getElementById('subj').offsetTop-70});}
 function alertBox(t){document.getElementById('t_box').innerHTML='<div class="card">'+t+'</div>';}
 function clean(x){return String(x||'').replace(/\s*\[FAA-S-ACS-1[^\]]*\]/g,'');}
-function renderT(){var h='';set.forEach(function(r,i){var a=ts[key(r)],L='ABCD';
- h+='<div class="q'+(a!=null?' done':'')+'" data-k="'+key(r)+'" data-i="'+i+'"><div class="qh">'+(i+1)+'. '+r[3]+'<span class="en">'+r[4]+'</span></div><div class="opts">';
+function renderT(off){off=off||0;renderT._o=off;var h='';set.forEach(function(r,i){var a=ts[key(r)],L='ABCD';
+ h+='<div class="q'+(a!=null?' done':'')+'" data-k="'+key(r)+'" data-i="'+i+'"><div class="qh">'+(off*20+i+1)+'. '+r[3]+'<span class="en">'+r[4]+'</span></div><div class="opts">';
  r[5].forEach(function(o,k){var c='';if(a!=null){if(k===r[7])c=' right';else if(k===a)c=' wrong';}h+='<button class="o'+c+'" data-o="'+k+'">'+L[k]+'. '+o+'<span class="en">'+r[6][k]+'</span></button>';});
  h+='</div><div class="exp">'+(a===r[7]?'✅ 정답':'❌ 정답은 '+L[r[7]])+' — '+clean(r[8])+'<span class="en">'+clean(r[9])+'</span><div class="src">출처: '+r[0]+' 사이트 Ch.'+r[2]+' 문제은행 #'+r[1]+'</div></div></div>';});
  document.getElementById('t_box').innerHTML=h;scoreT();}
 function scoreT(){var P=pool[cur]||[],done=0,ok=0;P.forEach(function(r){var a=ts[key(r)];if(a!=null){done++;if(a===r[7])ok++;}});
  var sOk=0,sDone=0;set.forEach(function(r){var a=ts[key(r)];if(a!=null){sDone++;if(a===r[7])sOk++;}});
- document.getElementById('t_score').textContent='이번 세트 '+sOk+'/'+sDone+' · 누적 '+ok+'/'+done+' 정답 (전체 '+P.length+'문항)';}
-document.getElementById('t_box').addEventListener('click',function(e){var b=e.target.closest('button.o');if(!b)return;var q=b.closest('.q'),k=q.dataset.k;if(ts[k]!=null)return;ts[k]=+b.dataset.o;saveT();renderT();});
+ document.getElementById('t_score').textContent=(mode==='list'?'이 쪽 ':'이번 세트 ')+sOk+'/'+sDone+' · 누적 '+ok+'/'+done+' 정답 (전체 '+P.length+'문항)';}
+document.getElementById('t_box').addEventListener('click',function(e){var b=e.target.closest('button.o');if(!b)return;var q=b.closest('.q'),k=q.dataset.k;if(ts[k]!=null)return;ts[k]=+b.dataset.o;saveT();if(mode==='list'){showPage(page[cur]||1);}else renderT();});
 document.getElementById('t_new').onclick=function(){newSet(false);};
 document.getElementById('t_wrongset').onclick=function(){newSet(true);};
-document.getElementById('t_resetall').onclick=function(){(pool[cur]||[]).forEach(function(r){delete ts[key(r)];});saveT();newSet(false);};
+document.getElementById('t_resetall').onclick=function(){if(!confirmReset())return;(pool[cur]||[]).forEach(function(r){delete ts[key(r)];});saveT();setMode(mode);};
+function confirmReset(){var b=document.getElementById('t_resetall');if(b.dataset.c){delete b.dataset.c;b.textContent='기록 지우기';return true;}b.dataset.c=1;b.textContent='한 번 더 누르면 지워집니다';setTimeout(function(){delete b.dataset.c;b.textContent='기록 지우기';},3000);return false;}
+var mode='list',page={};try{var _m=JSON.parse(localStorage.getItem('tcca_tech_nav')||'{}');mode=_m.mode||'list';page=_m.page||{};}catch(e){}
+function saveNav(){try{localStorage.setItem('tcca_tech_nav',JSON.stringify({mode:mode,page:page}));}catch(e){}}
+function sorted(){return pool[cur].slice().sort(function(a,b){return a[0]===b[0]?(a[2]-b[2]):(a[0]==='airframe'?-1:1);});}
+function chName(r){var C=window.SUBJ&&SUBJ[r[0]]&&SUBJ[r[0]].ch[r[2]];return 'Ch.'+r[2]+(C?' '+C[0]:'');}
+function showPage(n){var L=sorted(),N=Math.ceil(L.length/20);n=Math.max(1,Math.min(N,n||1));page[cur]=n;saveNav();set=L.slice((n-1)*20,n*20);renderT(n-1);pager(L,N,n);}
+function pager(L,N,n){var h='',first=set[0],last=set[set.length-1];
+ for(var i=1;i<=N;i++){var seg=L.slice((i-1)*20,i*20),dn=seg.every(function(r){return ts[key(r)]!=null;});h+='<a data-p="'+i+'" class="'+(i===n?'on':'')+(dn?' dn':'')+'" title="'+((i-1)*20+1)+'~'+Math.min(i*20,L.length)+'번">'+i+'</a>';}
+ var chs=[],seen={};L.forEach(function(r,i){var k=r[0]+r[2];if(!seen[k]){seen[k]=1;chs.push('<option value="'+(Math.floor(i/20)+1)+'">'+(r[0]==='general'?'General ':'')+chName(r)+' → '+(Math.floor(i/20)+1)+'쪽</option>');}});
+ var info='<span class="pinfo">'+n+' / '+N+'쪽 · '+((n-1)*20+1)+'~'+Math.min(n*20,L.length)+'번 ('+chName(first)+(chName(first)!==chName(last)?' ~ '+chName(last):'')+') · 초록 테두리 = 다 푼 쪽 '+
+  '<select class="chjump"><option value="">챕터로 이동…</option>'+chs.join('')+'</select></span>';
+ var prev=n>1?'<a data-p="'+(n-1)+'">◀</a>':'',next=n<N?'<a data-p="'+(n+1)+'">▶</a>':'';
+ document.getElementById('pg_top').innerHTML=info+prev+h+next;document.getElementById('pg_bot').innerHTML=prev+h+next;}
+['pg_top','pg_bot'].forEach(function(id){var el=document.getElementById(id);
+ el.addEventListener('click',function(e){var a=e.target.closest('a[data-p]');if(!a)return;showPage(+a.dataset.p);document.getElementById('pg_top').scrollIntoView({block:'start'});});
+ el.addEventListener('change',function(e){if(e.target.classList.contains('chjump')&&e.target.value){showPage(+e.target.value);}});});
+function setMode(m){mode=m;saveNav();document.getElementById('t_list').classList.toggle('on',m==='list');document.getElementById('t_rand').classList.toggle('on',m==='rand');
+ ['t_new','t_wrongset'].forEach(function(id){document.getElementById(id).style.display=m==='rand'?'':'none';});
+ if(m==='list')showPage(page[cur]||1);else{document.getElementById('pg_top').innerHTML='';document.getElementById('pg_bot').innerHTML='';newSet(false);}}
+document.getElementById('t_list').onclick=function(){setMode('list');};
+document.getElementById('t_rand').onclick=function(){setMode('rand');};
 function pick(s){cur=s;document.querySelectorAll('.sj').forEach(function(b){b.classList.toggle('on',b.dataset.s===s);});
  var note=document.getElementById('subjnote');
  if(s==='rg'){document.getElementById('rgwrap').style.display='';document.getElementById('tkwrap').style.display='none';note.style.display='none';return;}
  document.getElementById('rgwrap').style.display='none';document.getElementById('tkwrap').style.display='';
  note.style.display='';note.innerHTML='📌 <b>'+SUB[s].t+'</b> — '+SUB[s].n+'. Transport Canada는 실제 시험 문제를 공개하지 않으므로, 이 사이트 FAA 문제은행 가운데 <b>TC 시험 범위와 겹치는 기술 문항</b>을 골라 냈습니다(미국 규정 문항은 제외). 원리·정비 실무 대비용이며 TC 기출문제는 아닙니다.<span class="en">TC does not publish its exam questions. These are technical questions from this site\'s FAA banks that overlap the TC exam scope (US-regulation items removed) — not actual TC exam questions.</span>';
- load(function(){newSet(false);});}
+ load(function(){setMode(mode);});}
 document.getElementById('subj').addEventListener('click',function(e){var b=e.target.closest('.sj');if(b)pick(b.dataset.s);});
 })();
 </script>
