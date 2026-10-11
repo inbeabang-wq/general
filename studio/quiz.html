@@ -54,6 +54,24 @@ button:disabled{opacity:.5;cursor:default}
 #stage{position:absolute;left:-20000px;top:0;width:1080px;height:1080px;overflow:hidden}
 .toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#1c2742;border:1px solid #4A90D9;border-radius:10px;padding:9px 14px;font-size:13px;display:none;z-index:99}
 
+.mascp{display:flex;gap:12px;align-items:flex-start;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.mthumb{flex:0 0 84px;height:84px;border:1px dashed #3a4566;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:26px;color:var(--sub);background:#0b0e16 center/contain no-repeat}
+.mthumb span{font-size:10px;line-height:1.2;text-align:center}
+.mthumb.on{border-style:solid;border-color:var(--ox)}.mthumb.on span{display:none}
+.mctl{flex:1;min-width:0}
+/* mascot on cards */
+.card .masc{position:absolute;z-index:3;pointer-events:none}
+.card .masc img{display:block;height:100%;width:auto;filter:drop-shadow(0 10px 24px rgba(0,0,0,.55))}
+.card .masc .mtag{position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);white-space:nowrap;font:600 15px "JetBrains Mono",monospace;letter-spacing:2px;color:rgba(255,255,255,.55);background:rgba(0,0,0,.45);padding:2px 8px;border-radius:4px}
+.cv .masc{right:46px;bottom:70px;height:560px}
+.an .masc{right:34px;bottom:66px;height:270px}
+.qc .masc{right:58px;top:40px;height:176px}
+.qc .masc .mtag{font-size:11px;letter-spacing:1px}
+.cv .bub{position:absolute;right:-20px;bottom:calc(100% + 26px);width:max-content;max-width:330px;background:#fff;color:#111;font:800 28px/1.35 "Noto Sans KR",sans-serif;padding:16px 22px;border-radius:24px;border:3px solid #FF9500;pointer-events:auto}
+.cv.en .bub{font-family:Inter,sans-serif}
+.cv .bub:after{content:"";position:absolute;right:70px;bottom:-20px;border:16px solid transparent;border-top-color:#FF9500;border-bottom:0}
+.cv.hm .ttl{max-width:600px}.cv.hm .ttl2{max-width:560px}.cv.hm .go .by{display:none}.cv.hm .meta{max-width:600px}
+.an.hm .cta{padding-right:250px}.an.hm .cta .c2{flex-wrap:wrap;justify-content:flex-start;gap:4px 18px}.an.hm .cta .c2 span:last-child{white-space:nowrap}
 /* ===== 1080 × 1080 card ===== */
 .card{width:1080px;height:1080px;position:relative;overflow:hidden;color:#fff;font-family:"Noto Sans KR",sans-serif;background:linear-gradient(145deg,#0a0a0f 0%,#1a1a2e 55%,#0f0f1a 100%)}
 .card.en{font-family:Inter,"Noto Sans KR",sans-serif}
@@ -176,6 +194,20 @@ button:disabled{opacity:.5;cursor:default}
  <div class="panel">
   <h2>② 배경 이미지 (선택) <span class="hint">— 없으면 다크 그라디언트. 7칸 = 카드 7장</span></h2>
   <div class="bgs" id="bgs"></div>
+  <div class="mascp">
+   <div class="mthumb" id="mthumb">🧑‍🔧<span>마스코트<br>없음</span></div>
+   <div class="mctl">
+    <b>🧑‍🔧 마스코트 (정비사 태윤)</b> <span class="hint">— 배경을 지운 투명 PNG 권장. 카드에 "AI CHARACTER" 표시와 캡션 AI 고지가 자동으로 들어갑니다.</span>
+    <div class="row" style="margin-top:6px">
+     <label class="slot" style="height:auto;padding:8px 12px;flex:0 0 auto;border-style:solid">📁 이미지 올리기<input type="file" accept="image/*" id="mfile"></label>
+     <button class="sm" id="mclear">✕ 지우기</button>
+     <label class="hint row" style="gap:4px"><input type="checkbox" id="m_cover" checked> 표지</label>
+     <label class="hint row" style="gap:4px"><input type="checkbox" id="m_q"> 문제 카드</label>
+     <label class="hint row" style="gap:4px"><input type="checkbox" id="m_answer" checked> 정답 카드</label>
+    </div>
+    <div class="hint" style="margin-top:4px">표지 말풍선은 ✏️ 편집 모드에서 카드 위 글자를 눌러 바꿀 수 있습니다. 캐릭터 설정과 생성 프롬프트는 「마스코트_강태윤_캐릭터_바이블」 문서 참고.</div>
+   </div>
+  </div>
  </div>
 
  <div class="panel">
@@ -198,7 +230,7 @@ button:disabled{opacity:.5;cursor:default}
 <script>
 (function(){
 var $=function(s){return document.querySelector(s)}, LS='aq_studio_v1';
-var state=null, lang='ko', bi=true, bgs=[null,null,null,null,null,null,null], SIZE=1080;
+var state=null, lang='ko', bi=true, mimg=null, MKEY='aq_mascot_img', bgs=[null,null,null,null,null,null,null], SIZE=1080;
 var LVL={b:['초급','Beginner'],i:['중급','Intermediate'],a:['고급','Advanced']};
 var TYPE={mc:{ko:'객관식',en:'MULTIPLE CHOICE',ac:'#4A90D9',rgb:'74,144,217',jk:'multiple_choice'},ox:{ko:'OX 퀴즈',en:'TRUE / FALSE',ac:'#FF9500',rgb:'255,149,0',jk:'ox'},blank:{ko:'빈칸 채우기',en:'FILL IN THE BLANK',ac:'#30D158',rgb:'48,209,88',jk:'fill_blank'}};
 var ROLES=['cover','q1','q2','q3','q4','q5','answer'];
@@ -251,7 +283,7 @@ function generate(){var used={},items=[],types=['mc','mc','mc','ox','blank'];
  if(s==='mix'){ko='FAA A&P 종합';en='FAA A&P Mixed';}
  else if(c==='all'){ko='FAA A&P '+SUBJ[s].ko;en='FAA A&P '+SUBJ[s].en;}
  else{ko=SUBJ[s].ch[c][0];en=SUBJ[s].ch[c][1];}
- state={subj:s,chap:c,lvl:$('#lvl').value,title:{ko:ko,en:en},items:items,date:new Date().toISOString().slice(0,10)};
+ state={subj:s,chap:c,lvl:$('#lvl').value,title:{ko:ko,en:en},items:items,date:new Date().toISOString().slice(0,10),masc:(state&&state.masc)||defMasc()};
  save();render();}
 function reroll(i){var used={};state.items.forEach(function(x,j){if(j!==i)used[x.src.s+x.src.id]=1;});
  var t=state.items[i].type,p=pickOne(t,used);if(!p){toast('바꿀 문제가 없습니다');return;}
@@ -290,7 +322,12 @@ function acard(l){var h='<div class="card an '+l+'" style="--ac:#FF9500">'+chrom
  h+='</div><div class="cta"><div class="c1">'+(l==='ko'?'몇 개 맞았나요? 댓글로 점수를 남겨주세요 🔥'+(bi?'<small>How many did you get? Drop your score below</small>':''):'How many did you get? Drop your score below 🔥')+'</div>'+
   '<div class="c2"><span>'+(l==='ko'?'팔로우 @AEROMECHEXPERT':'FOLLOW @AEROMECHEXPERT')+'</span><span>inbeabang-wq.github.io/'+site+'</span></div>'+
   '<div class="tg">'+esc(HASH[l])+'</div></div></div></div>';return h;}
-function cardHTML(n,l){return n===0?cover(l):n===6?acard(l):qcard(n-1,l);}
+function defMasc(){return {on:{cover:true,q:false,answer:true},txt:{ko:{cover:'같이 풀어볼까? 30초면 충분해!'},en:{cover:"Let's solve these together!"}}};}
+function mascOn(n){if(!mimg||!state)return false;var m=state.masc||(state.masc=defMasc());return n===0?m.on.cover:n===6?m.on.answer:m.on.q;}
+function cardHTML(n,l){var h=n===0?cover(l):n===6?acard(l):qcard(n-1,l);if(!mascOn(n))return h;
+ var m=state.masc,bub=n===0?'<div class="bub" data-p="masc.txt.'+l+'.cover">'+esc((m.txt[l]||{}).cover||'')+'</div>':'';
+ var el='<div class="masc">'+bub+'<img src="'+mimg+'" alt=""><span class="mtag">AI CHARACTER</span></div>';
+ h=h.replace(/^<div class="card ([^"]*)"/,'<div class="card $1 hm"');return h.slice(0,-6)+el+h.slice(-6);}
 
 function applyBg(card,n){var u=bgs[n],bg=card.querySelector('.bg');if(u){bg.style.backgroundImage='url("'+u+'")';card.classList.add('hasbg');}else{bg.style.backgroundImage='';card.classList.remove('hasbg');}}
 function fit(card){var body=card.querySelector('.body');if(!body)return;var k=1;body.style.setProperty('--k',k);
@@ -341,13 +378,13 @@ function caption(l){var t=state.title[l];
   '📌 구성: 객관식 3 · OX 1 · 빈칸 1','👉 카드를 넘기며 풀고, 마지막 장에서 정답과 해설을 확인하세요.','',
   '💬 댓글로 점수를 남겨주세요!','5/5 🏆 현장 투입 가능','4/5 🥇 합격권','3/5 🔧 복습 한 번 더','0–2 📘 사이트에서 해당 챕터부터','',
   '📚 출제 근거','· '+refs().join('\n· '),'· 문제은행: '+siteUrl(),'',
-  '30년 공군 전투기 정비사 출신 선배가 직접 만든 퀴즈 · 매주 수·금·일 업로드','팔로우 @AEROMECHEXPERT','',HASH.ko].join('\n');
+  '30년 공군 전투기 정비사 출신 선배가 직접 만든 퀴즈 · 매주 수·금·일 업로드'].concat(aiNote('ko')).concat(['팔로우 @AEROMECHEXPERT','',HASH.ko]).join('\n');
  return ['✈️ FAA A&P '+subjName('en')+' Quiz — '+t+' (5 questions)','',
   'Knowing it and answering it fast on test day are two different things. Here are five that trip people up.','',
   '📌 Format: 3 multiple choice · 1 true/false · 1 fill-in-the-blank','👉 Swipe through, then check the answers on the last card.','',
   '💬 Drop your score in the comments!','5/5 🏆 Ready for the flight line','4/5 🥇 Passing zone','3/5 🔧 One more review','0–2 📘 Start with the chapter on the site','',
   '📚 References','· '+refs().join('\n· '),'· Question bank: '+siteUrl(),'',
-  'Made by a 30-year ROKAF fighter-jet mechanic · New quizzes every Wed / Fri / Sun','FOLLOW @AEROMECHEXPERT','',HASH.en].join('\n');}
+  'Made by a 30-year ROKAF fighter-jet mechanic · New quizzes every Wed / Fri / Sun'].concat(aiNote('en')).concat(['FOLLOW @AEROMECHEXPERT','',HASH.en]).join('\n');}
 function optsLine(it,l){return it[l].opts.map(function(o,k){return 'ABCD'[k]+') '+o;}).join('\n');}
 function threads(){var q1=state.items[0],q4=state.items[3];
  var a=['✈️ FAA A&P '+subjName('ko')+' 한 문제, 30초 안에 풀어보세요.','','Q. '+q1.ko.q,optsLine(q1,'ko'),'','정답과 해설은 오늘 올린 캐러셀 마지막 장에 있습니다. 먼저 댓글로 답을 남겨보세요 👇','','#항공정비 #AeroMechExpert'].join('\n');
@@ -394,6 +431,17 @@ $('#bgs').addEventListener('change',function(e){var n=+e.target.dataset.bg,f=e.t
  r.onload=function(ev){bgs[n]=ev.target.result;var s=$('#slot'+n);s.classList.add('loaded');s.style.backgroundImage='url("'+bgs[n]+'")';s.firstChild.textContent='✓ '+(n+1);var c=document.querySelector('#f'+n+' .card');if(c)applyBg(c,n);};r.readAsDataURL(f);});
 $('#bgs').addEventListener('click',function(e){if(e.target.dataset.x==null)return;e.preventDefault();var n=+e.target.dataset.x;bgs[n]=null;var s=$('#slot'+n);s.classList.remove('loaded');s.style.backgroundImage='';s.firstChild.textContent=(n+1)+' '+ROLES[n];s.querySelector('input').value='';var c=document.querySelector('#f'+n+' .card');if(c)applyBg(c,n);});
 
+
+/* ---------- mascot ---------- */
+function aiNote(l){var used=mimg&&state&&state.masc&&(state.masc.on.cover||state.masc.on.q||state.masc.on.answer);var bgAI=bgs.some(function(x){return !!x;});
+ if(!used&&!bgAI)return [];return l==='ko'?['※ 카드의 '+(used?'캐릭터':'')+(used&&bgAI?'·':'')+(bgAI?'배경':'')+' 이미지는 AI로 생성했습니다. (감수: @AEROMECHEXPERT)','']:['※ '+(used?'Character':'')+(used&&bgAI?' and ':'')+(bgAI?'background':'')+' images on these cards are AI-generated. (Reviewed by @AEROMECHEXPERT)',''];}
+function mthumb(){var t=$('#mthumb');if(mimg){t.style.backgroundImage='url("'+mimg+'")';t.classList.add('on');}else{t.style.backgroundImage='';t.classList.remove('on');}}
+function syncMascUI(){var m=(state&&state.masc)||defMasc();$('#m_cover').checked=m.on.cover;$('#m_q').checked=m.on.q;$('#m_answer').checked=m.on.answer;}
+try{mimg=localStorage.getItem(MKEY)||null;}catch(e){}
+$('#mfile').addEventListener('change',function(e){var f=e.target.files&&e.target.files[0];if(!f)return;var r=new FileReader();
+ r.onload=function(ev){mimg=ev.target.result;try{localStorage.setItem(MKEY,mimg);}catch(err){toast('이미지가 커서 이번 세션에서만 유지됩니다');}mthumb();render();};r.readAsDataURL(f);});
+$('#mclear').onclick=function(){mimg=null;try{localStorage.removeItem(MKEY);}catch(e){}$('#mfile').value='';mthumb();render();};
+['cover','q','answer'].forEach(function(k){$('#m_'+k).onchange=function(){if(!state)return;state.masc=state.masc||defMasc();state.masc.on[k]=this.checked;save();render();};});
 /* ---------- wiring ---------- */
 function save(){try{localStorage.setItem(LS,JSON.stringify({state:state,lang:lang,bi:bi}));}catch(e){}}
 $('#subj').onchange=fillChap;$('#gen').onclick=generate;$('#edit').onchange=setEdit;$('#bi').onchange=function(){bi=this.checked;save();render();};
@@ -404,7 +452,10 @@ fillChap();
 try{var sv=JSON.parse(localStorage.getItem(LS)||'null');if(sv&&sv.state&&sv.state.items&&sv.state.items.length===5){state=sv.state;lang=sv.lang||'ko';if(sv.bi===false){bi=false;$('#bi').checked=false;}
  $('#subj').value=state.subj;fillChap();if(state.subj!=='mix')$('#chap').value=state.chap;$('#lvl').value=state.lvl;
  document.querySelectorAll('#lang button').forEach(function(x){x.classList.toggle('on',x.dataset.l===lang);});}}catch(e){}
+if(state&&!state.masc)state.masc=defMasc();
+mthumb();
 if(!state){$('#chap').value='12';generate();}else render();
+syncMascUI();
 window.QS={get state(){return state;},set state(v){state=v;render();},quizJSON:quizJSON,md:md,prompts:prompts,capture:capture,fname:fname,setLang:function(l){lang=l;render();}};
 })();
 </script>
