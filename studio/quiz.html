@@ -62,10 +62,10 @@ button:disabled{opacity:.5;cursor:default}
 /* mascot on cards */
 .card .masc{position:absolute;z-index:3;pointer-events:none}
 .card .masc img{display:block;height:100%;width:auto;filter:drop-shadow(0 10px 24px rgba(0,0,0,.55))}
-.card .masc .mtag{position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);white-space:nowrap;font:600 15px "JetBrains Mono",monospace;letter-spacing:2px;color:rgba(255,255,255,.55);background:rgba(0,0,0,.45);padding:2px 8px;border-radius:4px}
-.cv .masc{right:46px;bottom:70px;height:560px}
-.an .masc{right:34px;bottom:66px;height:270px}
-.qc .masc{right:58px;top:40px;height:176px}
+.card .masc .mtag{z-index:2;position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);white-space:nowrap;font:600 15px "JetBrains Mono",monospace;letter-spacing:2px;color:rgba(255,255,255,.55);background:rgba(0,0,0,.45);padding:2px 8px;border-radius:4px}
+.cv .masc{right:40px;bottom:62px;height:640px}
+.an .masc{right:30px;bottom:62px;height:300px}
+.qc .masc{right:56px;top:34px;height:190px;width:170px;overflow:hidden;border-radius:0 0 18px 18px}.qc .masc img{height:560px;margin:0 auto}
 .qc .masc .mtag{font-size:11px;letter-spacing:1px}
 .cv .bub{position:absolute;right:-20px;bottom:calc(100% + 26px);width:max-content;max-width:330px;background:#fff;color:#111;font:800 28px/1.35 "Noto Sans KR",sans-serif;padding:16px 22px;border-radius:24px;border:3px solid #FF9500;pointer-events:auto}
 .cv.en .bub{font-family:Inter,sans-serif}
@@ -197,8 +197,9 @@ button:disabled{opacity:.5;cursor:default}
   <div class="mascp">
    <div class="mthumb" id="mthumb">🧑‍🔧<span>마스코트<br>없음</span></div>
    <div class="mctl">
-    <b>🧑‍🔧 마스코트 (정비사 태윤)</b> <span class="hint">— 배경을 지운 투명 PNG 권장. 카드에 "AI CHARACTER" 표시와 캡션 AI 고지가 자동으로 들어갑니다.</span>
+    <b>🧑‍🔧 마스코트 (정비사 태윤)</b> <span class="hint">— 기본 캐릭터가 들어 있습니다. 다른 포즈는 배경을 지운 투명 PNG로 올리세요. 카드에 "AI CHARACTER" 표시와 캡션 AI 고지가 자동으로 들어갑니다.</span>
     <div class="row" style="margin-top:6px">
+     <select id="mpick" style="width:auto"><option value="34">기본 캐릭터 · 3/4 각도</option><option value="front">기본 캐릭터 · 정면</option><option value="upload">직접 올린 이미지</option><option value="none">마스코트 끄기</option></select>
      <label class="slot" style="height:auto;padding:8px 12px;flex:0 0 auto;border-style:solid">📁 이미지 올리기<input type="file" accept="image/*" id="mfile"></label>
      <button class="sm" id="mclear">✕ 지우기</button>
      <label class="hint row" style="gap:4px"><input type="checkbox" id="m_cover" checked> 표지</label>
@@ -322,11 +323,12 @@ function acard(l){var h='<div class="card an '+l+'" style="--ac:#FF9500">'+chrom
  h+='</div><div class="cta"><div class="c1">'+(l==='ko'?'몇 개 맞았나요? 댓글로 점수를 남겨주세요 🔥'+(bi?'<small>How many did you get? Drop your score below</small>':''):'How many did you get? Drop your score below 🔥')+'</div>'+
   '<div class="c2"><span>'+(l==='ko'?'팔로우 @AEROMECHEXPERT':'FOLLOW @AEROMECHEXPERT')+'</span><span>inbeabang-wq.github.io/'+site+'</span></div>'+
   '<div class="tg">'+esc(HASH[l])+'</div></div></div></div>';return h;}
-function defMasc(){return {on:{cover:true,q:false,answer:true},txt:{ko:{cover:'같이 풀어볼까? 30초면 충분해!'},en:{cover:"Let's solve these together!"}}};}
-function mascOn(n){if(!mimg||!state)return false;var m=state.masc||(state.masc=defMasc());return n===0?m.on.cover:n===6?m.on.answer:m.on.q;}
+function defMasc(){return {pick:'34',on:{cover:true,q:false,answer:true},txt:{ko:{cover:'같이 풀어볼까? 30초면 충분해!'},en:{cover:"Let's solve these together!"}}};}
+function mSrc(){var pk=(state&&state.masc&&state.masc.pick)||'34';if(pk==='none')return null;if(pk==='upload')return mimg;return pk==='front'?'img/taeyun_front.png':'img/taeyun_34.png';}
+function mascOn(n){if(!mSrc()||!state)return false;var m=state.masc||(state.masc=defMasc());return n===0?m.on.cover:n===6?m.on.answer:m.on.q;}
 function cardHTML(n,l){var h=n===0?cover(l):n===6?acard(l):qcard(n-1,l);if(!mascOn(n))return h;
  var m=state.masc,bub=n===0?'<div class="bub" data-p="masc.txt.'+l+'.cover">'+esc((m.txt[l]||{}).cover||'')+'</div>':'';
- var el='<div class="masc">'+bub+'<img src="'+mimg+'" alt=""><span class="mtag">AI CHARACTER</span></div>';
+ var el='<div class="masc">'+bub+'<img src="'+mSrc()+'" alt=""><span class="mtag">AI CHARACTER</span></div>';
  h=h.replace(/^<div class="card ([^"]*)"/,'<div class="card $1 hm"');return h.slice(0,-6)+el+h.slice(-6);}
 
 function applyBg(card,n){var u=bgs[n],bg=card.querySelector('.bg');if(u){bg.style.backgroundImage='url("'+u+'")';card.classList.add('hasbg');}else{bg.style.backgroundImage='';card.classList.remove('hasbg');}}
@@ -433,14 +435,15 @@ $('#bgs').addEventListener('click',function(e){if(e.target.dataset.x==null)retur
 
 
 /* ---------- mascot ---------- */
-function aiNote(l){var used=mimg&&state&&state.masc&&(state.masc.on.cover||state.masc.on.q||state.masc.on.answer);var bgAI=bgs.some(function(x){return !!x;});
+function aiNote(l){var used=mSrc()&&state&&state.masc&&(state.masc.on.cover||state.masc.on.q||state.masc.on.answer);var bgAI=bgs.some(function(x){return !!x;});
  if(!used&&!bgAI)return [];return l==='ko'?['※ 카드의 '+(used?'캐릭터':'')+(used&&bgAI?'·':'')+(bgAI?'배경':'')+' 이미지는 AI로 생성했습니다. (감수: @AEROMECHEXPERT)','']:['※ '+(used?'Character':'')+(used&&bgAI?' and ':'')+(bgAI?'background':'')+' images on these cards are AI-generated. (Reviewed by @AEROMECHEXPERT)',''];}
-function mthumb(){var t=$('#mthumb');if(mimg){t.style.backgroundImage='url("'+mimg+'")';t.classList.add('on');}else{t.style.backgroundImage='';t.classList.remove('on');}}
-function syncMascUI(){var m=(state&&state.masc)||defMasc();$('#m_cover').checked=m.on.cover;$('#m_q').checked=m.on.q;$('#m_answer').checked=m.on.answer;}
+function mthumb(){var t=$('#mthumb'),src=mSrc();if(src){t.style.backgroundImage='url("'+src+'")';t.classList.add('on');}else{t.style.backgroundImage='';t.classList.remove('on');}}
+function syncMascUI(){var m=(state&&state.masc)||defMasc();$('#mpick').value=m.pick||'34';$('#m_cover').checked=m.on.cover;$('#m_q').checked=m.on.q;$('#m_answer').checked=m.on.answer;}
 try{mimg=localStorage.getItem(MKEY)||null;}catch(e){}
 $('#mfile').addEventListener('change',function(e){var f=e.target.files&&e.target.files[0];if(!f)return;var r=new FileReader();
- r.onload=function(ev){mimg=ev.target.result;try{localStorage.setItem(MKEY,mimg);}catch(err){toast('이미지가 커서 이번 세션에서만 유지됩니다');}mthumb();render();};r.readAsDataURL(f);});
-$('#mclear').onclick=function(){mimg=null;try{localStorage.removeItem(MKEY);}catch(e){}$('#mfile').value='';mthumb();render();};
+ r.onload=function(ev){mimg=ev.target.result;if(state){state.masc=state.masc||defMasc();state.masc.pick='upload';save();syncMascUI();}try{localStorage.setItem(MKEY,mimg);}catch(err){toast('이미지가 커서 이번 세션에서만 유지됩니다');}mthumb();render();};r.readAsDataURL(f);});
+$('#mclear').onclick=function(){mimg=null;if(state&&state.masc&&state.masc.pick==='upload'){state.masc.pick='34';save();syncMascUI();}try{localStorage.removeItem(MKEY);}catch(e){}$('#mfile').value='';mthumb();render();};
+$('#mpick').onchange=function(){if(!state)return;state.masc=state.masc||defMasc();if(this.value==='upload'&&!mimg){toast('먼저 이미지를 올려 주세요');this.value=state.masc.pick||'34';return;}state.masc.pick=this.value;save();mthumb();render();};
 ['cover','q','answer'].forEach(function(k){$('#m_'+k).onchange=function(){if(!state)return;state.masc=state.masc||defMasc();state.masc.on[k]=this.checked;save();render();};});
 /* ---------- wiring ---------- */
 function save(){try{localStorage.setItem(LS,JSON.stringify({state:state,lang:lang,bi:bi}));}catch(e){}}
@@ -452,7 +455,7 @@ fillChap();
 try{var sv=JSON.parse(localStorage.getItem(LS)||'null');if(sv&&sv.state&&sv.state.items&&sv.state.items.length===5){state=sv.state;lang=sv.lang||'ko';if(sv.bi===false){bi=false;$('#bi').checked=false;}
  $('#subj').value=state.subj;fillChap();if(state.subj!=='mix')$('#chap').value=state.chap;$('#lvl').value=state.lvl;
  document.querySelectorAll('#lang button').forEach(function(x){x.classList.toggle('on',x.dataset.l===lang);});}}catch(e){}
-if(state&&!state.masc)state.masc=defMasc();
+if(state&&!state.masc)state.masc=defMasc();if(state&&state.masc&&!state.masc.pick)state.masc.pick=mimg?'upload':'34';
 mthumb();
 if(!state){$('#chap').value='12';generate();}else render();
 syncMascUI();
