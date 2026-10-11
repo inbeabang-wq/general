@@ -69,6 +69,11 @@ td b{color:var(--t1)}
 .qbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
 .qbar button{background:var(--panel);border:1.5px solid var(--line);border-radius:9px;color:var(--t2);padding:7px 12px;font:700 13px 'Noto Sans KR',sans-serif;cursor:pointer}
 .score{font:700 15px 'JetBrains Mono';color:var(--gold)}
+.subj{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:14px}
+.sj{background:var(--panel);border:1.5px solid var(--line);border-radius:11px;padding:10px 12px;color:var(--t1);font:700 14.5px 'Noto Sans KR',sans-serif;cursor:pointer;text-align:left}
+.sj small{display:block;font:500 12px 'JetBrains Mono',monospace;color:var(--t3);margin-top:2px}
+.sj.on{border-color:var(--maple);background:rgba(239,68,68,.12)}
+.q .src{font:500 11.5px 'JetBrains Mono',monospace;color:var(--t3);margin-top:6px}
 .src li{font-size:13.5px}
 footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
 </style>
@@ -89,7 +94,7 @@ footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
  <button class="tab" data-t="exam">시험</button>
  <button class="tab" data-t="calc">경력 계산기</button>
  <button class="tab" data-t="keep">유지·갱신</button>
- <button class="tab" data-t="quiz">연습문제 30</button>
+ <button class="tab" data-t="quiz">과목별 문제</button>
  <button class="tab" data-t="src">출처</button>
 </div>
 
@@ -211,7 +216,7 @@ footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
    <tr><td><b>Standard Practices</b></td><td>재료·공정, 공구·측정, 유체 라인, 세척·부식, 무게·평형, 도면</td><td><a href="index.html">General 챕터</a> · <a href="mock_exam.html">모의고사</a></td></tr>
    <tr><td><b>Airframe</b></td><td>구조, 판금, 복합재, 유압·착륙장치, 연료, 방빙, 화재 방지</td><td><a href="../airframe/index.html">Airframe 사이트</a></td></tr>
    <tr><td><b>Powerplant</b></td><td>왕복·가스터빈, 연료·점화·윤활, 프로펠러</td><td><a href="../powerplant/index.html">Powerplant 사이트</a></td></tr>
-   <tr><td><b>Regulations</b></td><td>FAA 규정과 다름 — 캐나다 CARs(Part V 등)를 따로 공부해야 함</td><td><a href="#quiz" data-go="quiz">연습문제 30</a> (면허 규정 566)</td></tr>
+   <tr><td><b>Regulations</b></td><td>FAA 규정과 다름 — 캐나다 CARs(Part V 등)를 따로 공부해야 함</td><td><a href="#quiz" data-go="quiz">과목별 문제</a> (규정 40문항)</td></tr>
   </table></div>
   <p>기술 내용(원리·정비 실무)은 FAA와 대부분 겹치지만, <b>Regulations는 완전히 다른 법</b>입니다. 기록·정비 확인(maintenance release)·정비 회사(AMO) 제도 같은 캐나다 규정을 TCCA 원문으로 따로 준비하세요.<span class="en">Technical content largely overlaps with FAA; Regulations is entirely Canadian law and must be studied separately.</span></p>
  </div>
@@ -248,8 +253,22 @@ footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
 
 <!-- ============ 퀴즈 ============ -->
 <section id="quiz">
- <div class="qbar"><span class="score" id="q_score">0 / 30</span><button id="q_reset">다시 풀기</button><button id="q_wrong">틀린 문제만</button><button id="q_all">전체 보기</button></div>
+ <div class="subj" id="subj">
+  <button class="sj on" data-s="rg">📜 Regulations<small>캐나다 규정 40</small></button>
+  <button class="sj" data-s="sp">🧰 Standard Practices<small>806문항</small></button>
+  <button class="sj" data-s="af">✈️ Airframe<small>721문항</small></button>
+  <button class="sj" data-s="pp">⚙️ Powerplant<small>1,080문항</small></button>
+  <button class="sj" data-s="av">📡 Avionics (E)<small>416문항</small></button>
+ </div>
+ <div class="note" id="subjnote" style="display:none"></div>
+ <div id="rgwrap">
+ <div class="qbar"><span class="score" id="q_score">0 / 40</span><button id="q_reset">다시 풀기</button><button id="q_wrong">틀린 문제만</button><button id="q_all">전체 보기</button></div>
  <div id="q_box"></div>
+ </div>
+ <div id="tkwrap" style="display:none">
+  <div class="qbar"><span class="score" id="t_score"></span><button id="t_new">🎲 새 20문항</button><button id="t_wrongset">❌ 틀린 문제로 20문항</button><button id="t_resetall">기록 지우기</button></div>
+  <div id="t_box"><div class="card">문제를 불러오는 중…</div></div>
+ </div>
 </section>
 
 <!-- ============ 출처 ============ -->
@@ -324,7 +343,17 @@ var Q=[
 ['TC AME 시험은 어디에서 보는가?','Where are TC AME exams written?',['집에서 온라인','Transport Canada 지역 센터에서 감독 하에(예약)','소속 정비 회사에서'],['Online at home','At a TC Regional Service Centre, invigilated, by appointment','At your employer'],1,'TC 지역 센터에서 감독관 입회로 보며, 승인 후 온라인으로 예약·결제합니다.','Invigilated at a TC Regional Service Centre by appointment.'],
 ['외국어 서류 제출 시 필요한 것은?','Documents in another language must be…',['영어 또는 프랑스어 번역','한국어 원본만','번역 불필요'],['Translated into English or French','Korean original only','No translation'],0,'원본 또는 공증 사본과 함께 영어나 프랑스어 번역이 필요합니다.','Translated into English or French, with originals or certified true copies.'],
 ['M1·M2 필기 시험 과목은?','Exams for M1/M2?',['Airframe, Powerplant, Standard Practices, Regulations','General, Airframe, Powerplant','Avionics, Standard Practices, Regulations'],['AF, PP, SP, Regs','General, AF, PP','Avionics, SP, Regs'],0,'M은 4과목, E는 Avionics·Standard Practices·Regulations입니다.','M: four exams. E: Avionics, Standard Practices, Regulations.'],
-['규정(Regulations) 시험을 볼 수 있는 시점은?','When may the Regulations exam be written?',['기본 교육 시작 즉시','24-0083 승인 + 총 경력 6개월만 남았을 때','면허 발급 후'],['At the start of training','After 24-0083 approval with all but 6 months','After licence issue'],1,'24-0083 승인과 함께 총 경력에서 6개월만 남아 있어야 합니다.','After 24-0083 approval and with all but 6 months of experience.']
+['규정(Regulations) 시험을 볼 수 있는 시점은?','When may the Regulations exam be written?',['기본 교육 시작 즉시','24-0083 승인 + 총 경력 6개월만 남았을 때','면허 발급 후'],['At the start of training','After 24-0083 approval with all but 6 months','After licence issue'],1,'24-0083 승인과 함께 총 경력에서 6개월만 남아 있어야 합니다.','After 24-0083 approval and with all but 6 months of experience.'],
+['CAR 571.04의 특수 정비(Schedule II)에 해당하는 것은?','Which is specialized maintenance under CAR 571.04 (Schedule II)?',['침투·자분·방사선·초음파·와전류 비파괴검사','타이어 교환','엔진 오일 보충'],['Penetrant, magnetic particle, radiographic, ultrasonic, eddy current NDT','Tire change','Adding engine oil'],0,'Schedule II는 특수 정비 목록이며, 침투·자분·방사선·초음파·와전류 검사 같은 NDT가 들어 있습니다(Standard 571 Appendix K에 따른 검사는 예외).','Schedule II lists specialized maintenance, including NDT by penetrant, magnetic particle, radiographic, ultrasonic or eddy current (except inspections under Standard 571 Appendix K).'],
+['CAR 571.11(5)의 기본 작업(elementary work, Schedule III)에 해당하는 예는?','Which is an example of elementary work (Schedule III, CAR 571.11(5))?',['타이어·휠·브레이크·스키 교환','엔진 오버홀','주 날개보 수리'],['Replacing tires, wheels, brakes, skis','Engine overhaul','Main spar repair'],0,'Schedule III 기본 작업 목록에는 타이어·휠·브레이크·스키·착륙 스키드·스키드 슈 교환이 들어 있습니다.','Schedule III elementary work includes replacing tires, wheels, brakes, skis, landing skids and skid shoes.'],
+['AMO 인증 보유자가 반드시 임명해야 하는 사람은?','Whom must an AMO certificate holder appoint?',['정비 책임자(PRM, person responsible for maintenance)','안전 조종사','공항 운영자'],['A person responsible for maintenance (PRM)','A safety pilot','An airport operator'],0,'CAR 573.03(1)(a): AMO 인증 보유자는 정비 책임자(PRM)를 임명해야 합니다.','CAR 573.03(1)(a): the holder must appoint a person responsible for maintenance.'],
+['AMO가 갖춰야 하는 제도로 CAR 573.09에 규정된 것은?','What does CAR 573.09 require an AMO to have?',['품질 보증 프로그램(QA)과 감사 체계','광고 계획','비행 훈련 과정'],['A quality assurance program and audit system','An advertising plan','A flight training course'],0,'CAR 573.09는 AMO의 품질 보증 프로그램과 감사 체계를 다룹니다.','CAR 573.09 covers the AMO quality assurance program and audit system.'],
+['Balloons 등급의 경력 요건은?','Experience required for the Balloons rating?',['120시간','48개월','36개월'],['120 hours','48 months','36 months'],0,'기구 등급은 인정된 기구 정비 과정과 120시간 경력, 규정 시험이 필요합니다.','Balloons: an acceptable balloon course, 120 hours of experience and the Regulations exam.'],
+['시간제 경력은 어떻게 환산하는가?','How is part-time experience converted?',['150시간 = 1개월 (한 달에 최대 1개월)','100시간 = 1개월','시간제는 인정 안 됨'],['150 h = 1 month (max 1 month per calendar month)','100 h = 1 month','Not credited'],0,'시간제는 150시간을 1개월로 보며, 달력상 한 달에 1개월을 넘을 수 없습니다.','Part-time: 150 h = 1 month, no more than 1 month per calendar month.'],
+['경력은 언제부터 세는가?','When does experience start counting?',['기본 교육을 마친 뒤부터','입학한 날부터','면허 신청일부터'],['After initial basic training','From enrolment','From the application date'],0,'경력 크레딧은 기본 교육(예: 군 TQ/QL3)을 마친 뒤부터 인정됩니다.','Experience credit starts after initial basic training (e.g., TQ/QL level 3).'],
+['캐나다 밖에서 신청하는 사람은 서류를 어디로 내는가?','Where do applicants outside Canada submit?',['오타와의 Operational Airworthiness','가까운 캐나다 대사관','FAA 사무소'],['Operational Airworthiness in Ottawa','The nearest Canadian embassy','An FAA office'],0,'캐나다 안에서는 가까운 Transport Canada Centre·지역 사무소, 밖에서는 오타와 Operational Airworthiness로 냅니다.','In Canada: nearest TC Centre or Regional Office; outside Canada: Operational Airworthiness in Ottawa.'],
+['E 등급의 범위에 들어가는 것은?','Which falls under the E rating?',['통신·항법·자동비행·계기','기체 구조 수리','왕복엔진 오버홀'],['Communication, navigation, auto flight, instruments','Structural repair','Piston engine overhaul'],0,'E는 항공기 전자 계통 — 통신·항법·자동비행·계기입니다.','E covers aircraft electronic systems: communication, navigation, auto flight and instruments.'],
+['신청 서류의 사본을 공증(certified true copy)할 수 있는 사람이 아닌 것은?','Who may NOT certify true copies of documents?',['신청자 본인','공증인(notary public)','유효한 캐나다 AME 면허 보유자'],['The applicant','A notary public','A valid Canadian AME licence holder'],0,'공증인·선서관, TCCA 안전 감독관·직원, 유효한 캐나다 AME 면허 보유자가 인증할 수 있습니다. 본인 인증은 안 됩니다.','Notaries or commissioners for oaths, TCCA inspectors or staff, or a valid Canadian AME may certify — not the applicant.']
 ];
 var KEY='tcca_quiz_v1',st={};try{st=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
 var onlyWrong=false;
@@ -339,6 +368,45 @@ document.getElementById('q_reset').onclick=function(){st={};try{localStorage.rem
 document.getElementById('q_wrong').onclick=function(){onlyWrong=true;render();};
 document.getElementById('q_all').onclick=function(){onlyWrong=false;render();};
 render();
+
+/* ---- technical subjects: FAA bank questions overlapping TC exam scope ---- */
+var SUB={sp:{s:'general',ch:[2,3,4,5,6,7,8,9,10,14],t:'Standard Practices',n:'재료·하드웨어·공구·측정·유체 라인·부식·무게평형·도면·기초 전기·물리·수학·지상 운용'},
+ af:{s:'airframe',ch:[1,2,3,4,5,6,7,8,12,13,14,15,16,17],t:'Airframe',n:'구조·리깅·판금·용접·목재·복합재·도장·유압·착륙장치·연료·방빙·환경·화재 방지'},
+ pp:{s:'powerplant',ch:[1,2,3,4,5,6,7,8,9,10,11,12],t:'Powerplant',n:'왕복·가스터빈·연료·흡배기·점화·시동·윤활·냉각·프로펠러·엔진 장탈착·화재 방지'},
+ av:{s:'airframe',ch:[9,10,11],x:{s:'general',ch:[4]},t:'Avionics',n:'항공기 전기·계기·통신·항법 + 기초 전기'}};
+var FAA=/14 ?CFR|FAR\b|Part ?(4[0-9]|6[0-9]|9[0-9]|1[0-4][0-9])\b|A&P|\bIA\b|Form ?337|8130|8610|FAA|AC 43|감항성 개선명령|\bAD\b|TCDS|STC|PMA|DME|ACS|Airman|미국/i;
+var TK='tcca_tech_v1',ts={};try{ts=JSON.parse(localStorage.getItem(TK)||'{}');}catch(e){}
+var cur='rg',pool={},set=[],loaded=false,loading=false;
+function saveT(){try{localStorage.setItem(TK,JSON.stringify(ts));}catch(e){}}
+function build(){['sp','af','pp','av'].forEach(function(k){var d=SUB[k],rows=QBANK[d.s].filter(function(r){return d.ch.indexOf(r[1])>=0;}).map(function(r){return [d.s].concat(r);});
+ if(d.x)rows=rows.concat(QBANK[d.x.s].filter(function(r){return d.x.ch.indexOf(r[1])>=0;}).map(function(r){return [d.x.s].concat(r);}));
+ pool[k]=rows.filter(function(r){return !FAA.test(r[3]+' '+r[4]+' '+r[5].join(' ')+' '+r[6].join(' '));});});loaded=true;}
+function load(cb){if(loaded)return cb();if(loading)return;loading=true;var sc=document.createElement('script');sc.src='studio/qbank.js';sc.onload=function(){build();cb();};sc.onerror=function(){document.getElementById('t_box').innerHTML='<div class="card">문제은행을 불러오지 못했습니다. 인터넷 연결을 확인해 주세요.</div>';loading=false;};document.head.appendChild(sc);}
+function key(r){return r[0]+':'+r[1];}
+function shuf(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function newSet(wrongOnly){var P=pool[cur];if(wrongOnly){P=P.filter(function(r){var a=ts[key(r)];return a!=null&&a!==r[7];});if(!P.length){alertBox('틀린 문제가 없습니다 👍');return;}}
+ var fresh=P.filter(function(r){return ts[key(r)]==null;});var src=(!wrongOnly&&fresh.length>=20)?fresh:P;set=shuf(src.slice()).slice(0,20);renderT();window.scrollTo({top:document.getElementById('subj').offsetTop-70});}
+function alertBox(t){document.getElementById('t_box').innerHTML='<div class="card">'+t+'</div>';}
+function clean(x){return String(x||'').replace(/\s*\[FAA-S-ACS-1[^\]]*\]/g,'');}
+function renderT(){var h='';set.forEach(function(r,i){var a=ts[key(r)],L='ABCD';
+ h+='<div class="q'+(a!=null?' done':'')+'" data-k="'+key(r)+'" data-i="'+i+'"><div class="qh">'+(i+1)+'. '+r[3]+'<span class="en">'+r[4]+'</span></div><div class="opts">';
+ r[5].forEach(function(o,k){var c='';if(a!=null){if(k===r[7])c=' right';else if(k===a)c=' wrong';}h+='<button class="o'+c+'" data-o="'+k+'">'+L[k]+'. '+o+'<span class="en">'+r[6][k]+'</span></button>';});
+ h+='</div><div class="exp">'+(a===r[7]?'✅ 정답':'❌ 정답은 '+L[r[7]])+' — '+clean(r[8])+'<span class="en">'+clean(r[9])+'</span><div class="src">출처: '+r[0]+' 사이트 Ch.'+r[2]+' 문제은행 #'+r[1]+'</div></div></div>';});
+ document.getElementById('t_box').innerHTML=h;scoreT();}
+function scoreT(){var P=pool[cur]||[],done=0,ok=0;P.forEach(function(r){var a=ts[key(r)];if(a!=null){done++;if(a===r[7])ok++;}});
+ var sOk=0,sDone=0;set.forEach(function(r){var a=ts[key(r)];if(a!=null){sDone++;if(a===r[7])sOk++;}});
+ document.getElementById('t_score').textContent='이번 세트 '+sOk+'/'+sDone+' · 누적 '+ok+'/'+done+' 정답 (전체 '+P.length+'문항)';}
+document.getElementById('t_box').addEventListener('click',function(e){var b=e.target.closest('button.o');if(!b)return;var q=b.closest('.q'),k=q.dataset.k;if(ts[k]!=null)return;ts[k]=+b.dataset.o;saveT();renderT();});
+document.getElementById('t_new').onclick=function(){newSet(false);};
+document.getElementById('t_wrongset').onclick=function(){newSet(true);};
+document.getElementById('t_resetall').onclick=function(){(pool[cur]||[]).forEach(function(r){delete ts[key(r)];});saveT();newSet(false);};
+function pick(s){cur=s;document.querySelectorAll('.sj').forEach(function(b){b.classList.toggle('on',b.dataset.s===s);});
+ var note=document.getElementById('subjnote');
+ if(s==='rg'){document.getElementById('rgwrap').style.display='';document.getElementById('tkwrap').style.display='none';note.style.display='none';return;}
+ document.getElementById('rgwrap').style.display='none';document.getElementById('tkwrap').style.display='';
+ note.style.display='';note.innerHTML='📌 <b>'+SUB[s].t+'</b> — '+SUB[s].n+'. Transport Canada는 실제 시험 문제를 공개하지 않으므로, 이 사이트 FAA 문제은행 가운데 <b>TC 시험 범위와 겹치는 기술 문항</b>을 골라 냈습니다(미국 규정 문항은 제외). 원리·정비 실무 대비용이며 TC 기출문제는 아닙니다.<span class="en">TC does not publish its exam questions. These are technical questions from this site\'s FAA banks that overlap the TC exam scope (US-regulation items removed) — not actual TC exam questions.</span>';
+ load(function(){newSet(false);});}
+document.getElementById('subj').addEventListener('click',function(e){var b=e.target.closest('.sj');if(b)pick(b.dataset.s);});
 })();
 </script>
 </body>
