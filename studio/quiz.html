@@ -93,7 +93,7 @@ button:disabled{opacity:.5;cursor:default}
 /* cover */
 .cv .inner{justify-content:center}
 .cv .lab{position:absolute;top:0;left:0}
-.cv .ttl{font-weight:900;font-size:92px;line-height:1.12;letter-spacing:-1px;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.cv .ttl{word-break:keep-all;font-weight:900;font-size:92px;line-height:1.12;letter-spacing:-1px;text-shadow:0 4px 30px rgba(0,0,0,.6)}
 .cv.en .ttl{font-family:Orbitron;font-size:76px;letter-spacing:0}
 .cv .ttl2{font:600 30px "JetBrains Mono";color:rgba(255,255,255,.62);margin-top:18px}
 .cv .div{width:96px;height:8px;background:#FF9500;margin:40px 0 34px;border-radius:2px}
@@ -286,7 +286,8 @@ function generate(){var used={},items=[],types=['mc','mc','mc','ox','blank'];
  else{ko=SUBJ[s].ch[c][0];en=SUBJ[s].ch[c][1];}
  state={subj:s,chap:c,lvl:$('#lvl').value,title:{ko:ko,en:en},items:items,date:new Date().toISOString().slice(0,10),masc:(state&&state.masc)||defMasc()};
  save();render();}
-function reroll(i){var used={};state.items.forEach(function(x,j){if(j!==i)used[x.src.s+x.src.id]=1;});
+function syncCtl(){if(!state)return;$('#subj').value=state.subj;fillChap();if(state.subj!=='mix')$('#chap').value=state.chap;$('#lvl').value=state.lvl;}
+function reroll(i){syncCtl();var used={};state.items.forEach(function(x,j){if(j!==i)used[x.src.s+x.src.id]=1;});
  var t=state.items[i].type,p=pickOne(t,used);if(!p){toast('바꿀 문제가 없습니다');return;}
  state.items[i]=makeItem(t,p);save();render();}
 
@@ -392,7 +393,11 @@ function threads(){var q1=state.items[0],q4=state.items[3];
  var a=['✈️ FAA A&P '+subjName('ko')+' 한 문제, 30초 안에 풀어보세요.','','Q. '+q1.ko.q,optsLine(q1,'ko'),'','정답과 해설은 오늘 올린 캐러셀 마지막 장에 있습니다. 먼저 댓글로 답을 남겨보세요 👇','','#항공정비 #AeroMechExpert'].join('\n');
  var b=['O일까 X일까? 🤔','','Q. '+q4.ko.q,'→ 제시된 답: 「'+q4.ko.claim+'」','','맞다고 생각하면 O, 틀리다고 생각하면 X를 댓글로! 정답은 캐러셀에서 확인하세요.','','#항공정비사 #AeroMechExpert'].join('\n');
  var c=['✈️ Quick FAA A&P '+subjName('en')+' question — 30 seconds.','','Q. '+q1.en.q,optsLine(q1,'en'),'','Answer + explanation on the last card of today\'s carousel. Comment your pick first 👇','','#AviationMaintenance #AeroMechExpert'].join('\n');
- return [['스레드 KO-1 · 객관식 맛보기',a],['스레드 KO-2 · OX 맛보기',b],['Threads EN-1 · MC teaser',c]];}
+ return [['스레드 KO-1 · 객관식 맛보기',fit500(a)],['스레드 KO-2 · OX 맛보기',fit500(b)],['Threads EN-1 · MC teaser',fit500(c)]];}
+function fit500(t){if(t.length<=500)return t;var L=t.split('\n');function cut(x,n){return x.length>n?x.slice(0,n-1).replace(/\s+\S*$/,'')+'…':x;}
+ for(var n=90;n>=30&&L.join('\n').length>500;n-=10)L=L.map(function(x){return /^[ABCD]\) /.test(x)?cut(x,n):x;});
+ for(var m=200;m>=60&&L.join('\n').length>500;m-=20)L=L.map(function(x){return /^Q\. /.test(x)?cut(x,m):x;});
+ return L.join('\n');}
 function scene(it,l){var c=SUBJ[it.src.s].ch[it.src.ch];return c?(l==='ko'?c[3]:c[2]):'aircraft maintenance hangar';}
 function prompts(){var base=state.items[0],o=['# AERO QUIZ — 배경 이미지 프롬프트 (카드 7장 × 한·영 = 14개)','','주제: '+state.title.ko+' / '+state.title.en+'  ·  생성일 '+state.date,'공통: 시네마틱 디지털 아트(실사 금지) · 특정 기종명·로고 금지 · 텍스트 없음 · 어두운 밀리터리 톤 · 업로드 시 #AIGenerated 표기',''];
  var KOT=' — 시네마틱 디지털 아트 일러스트, 어둡고 강렬한 밀리터리 톤, 청색·앰버 림라이트, 중앙과 하단은 어둡게 비워 글자 공간 확보, 정사각형 1080×1080, 글자·워터마크·로고 없음';
@@ -459,7 +464,7 @@ if(state&&!state.masc)state.masc=defMasc();if(state&&state.masc&&state.masc.txt&
 mthumb();
 if(!state){$('#chap').value='12';generate();}else render();
 syncMascUI();
-window.QS={get state(){return state;},set state(v){state=v;render();},quizJSON:quizJSON,md:md,prompts:prompts,capture:capture,fname:fname,setLang:function(l){lang=l;render();}};
+window.QS={get state(){return state;},set state(v){state=v;syncCtl();render();},quizJSON:quizJSON,md:md,prompts:prompts,capture:capture,fname:fname,setLang:function(l){lang=l;render();}};
 })();
 </script>
 </body>
