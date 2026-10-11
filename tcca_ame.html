@@ -93,7 +93,7 @@ footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
 <div class="kicker">🍁 TRANSPORT CANADA · CAR 566</div>
 <h1>캐나다 AME 자격 가이드</h1>
 <div class="sub">Canadian Aircraft Maintenance Engineer (AME) Licence — M1 · M2 · E · S</div>
-<div class="note">📌 <b>2026년 10월 10일 기준</b> Transport Canada(TCCA) 공식 자료(CAR 403, 감항 매뉴얼 566장)를 요약했습니다. 규정은 바뀔 수 있으니 신청 전에 반드시 TCCA 원문과 가까운 Transport Canada Centre에서 확인하세요.<span class="en">Summary of TCCA sources as of 2026-10-10 (CAR 403, Airworthiness Manual Chapter 566). Always confirm with TCCA before applying.</span></div>
+<div class="note">📌 <b>2026년 10월 10일 기준</b> Transport Canada(TCCA) 공식 자료(CAR 403·571·605·104, 감항 매뉴얼 566장 등)를 요약했습니다. 규정은 바뀔 수 있으니 신청 전에 반드시 TCCA 원문과 가까운 Transport Canada Centre에서 확인하세요.<span class="en">Summary of TCCA sources as of 2026-10-10 (CAR 403, 571, 605, 104; Airworthiness Manual Chapter 566). Always confirm with TCCA before applying.</span></div>
 
 <div class="tabs" id="tabs">
  <button class="tab on" data-t="ov">개요</button>
@@ -101,6 +101,7 @@ footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
  <button class="tab" data-t="path">취득 경로</button>
  <button class="tab" data-t="exam">시험</button>
  <button class="tab" data-t="calc">경력 계산기</button>
+ <button class="tab" data-t="rules">핵심 규정</button>
  <button class="tab" data-t="keep">유지·갱신</button>
  <button class="tab" data-t="quiz">과목별 문제</button>
  <button class="tab" data-t="src">출처</button>
@@ -218,13 +219,30 @@ footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
   </ul>
  </div>
  <div class="card">
+  <h2>수수료와 처리 기간<span class="en">Fees and processing times</span></h2>
+  <div class="tbl"><table>
+   <tr><th>항목</th><th>수수료</th><th>근거</th></tr>
+   <tr><td>기술 시험 1회(재응시 포함)</td><td><b>$50</b></td><td>CAR 104 Schedule IV 항목 10</td></tr>
+   <tr><td>규정(Regulatory) 시험 1회</td><td><b>$100</b></td><td>항목 11</td></tr>
+   <tr><td>AME 면허 발급(재발급 포함)</td><td><b>$115</b></td><td>항목 12</td></tr>
+   <tr><td>AME 면허 갱신</td><td><b>$40</b></td><td>항목 13</td></tr>
+  </table></div>
+  <ul>
+   <li>처리 기간(TC 안내): 갱신 약 <b>20 근무일</b>, 만료 후 재발급(신규 발급으로 처리) 약 <b>40 근무일</b>.</li>
+   <li>새 디자인 면허는 <b>10년 유효</b>, 사진이 없습니다.</li>
+   <li>결제: TC 온라인 결제 시스템("Licence or Permit"), TC Centre 방문, 또는 1-800-305-2059.</li>
+   <li>규정 시험 문항 수: M·E·S <b>50문항</b>, 기구 25문항(PassCARs가 TC 공개 구조로 정리한 값). 시험 시간과 기술 시험 문항 수는 TC 공식 페이지에서 확인하지 못했습니다 — 예약 시 TC Centre에 확인하세요.</li>
+  </ul>
+  <p style="font-size:13px;color:var(--t3)">수수료는 Justice Laws 현행본(2025-02-17 기준) 금액입니다. TC가 수수료 개편을 협의 중이므로 결제 전 확인하세요.</p>
+ </div>
+ <div class="card">
   <h2>과목별 공부 방향 — 이 사이트 활용<span class="en">How to use this site for each exam</span></h2>
   <div class="tbl"><table>
    <tr><th>TC 시험</th><th>겹치는 FAA 내용</th><th>바로 가기</th></tr>
    <tr><td><b>Standard Practices</b></td><td>재료·공정, 공구·측정, 유체 라인, 세척·부식, 무게·평형, 도면</td><td><a href="index.html">General 챕터</a> · <a href="mock_exam.html">모의고사</a></td></tr>
    <tr><td><b>Airframe</b></td><td>구조, 판금, 복합재, 유압·착륙장치, 연료, 방빙, 화재 방지</td><td><a href="../airframe/index.html">Airframe 사이트</a></td></tr>
    <tr><td><b>Powerplant</b></td><td>왕복·가스터빈, 연료·점화·윤활, 프로펠러</td><td><a href="../powerplant/index.html">Powerplant 사이트</a></td></tr>
-   <tr><td><b>Regulations</b></td><td>FAA 규정과 다름 — 캐나다 CARs(Part V 등)를 따로 공부해야 함</td><td><a href="#quiz" data-go="quiz">과목별 문제</a> (규정 40문항)</td></tr>
+   <tr><td><b>Regulations</b></td><td>FAA 규정과 다름 — 캐나다 CARs(Part V 등)를 따로 공부해야 함</td><td><a href="#quiz" data-go="quiz">과목별 문제</a> (규정 76문항)</td></tr>
   </table></div>
   <p>기술 내용(원리·정비 실무)은 FAA와 대부분 겹치지만, <b>Regulations는 완전히 다른 법</b>입니다. 기록·정비 확인(maintenance release)·정비 회사(AMO) 제도 같은 캐나다 규정을 TCCA 원문으로 따로 준비하세요.<span class="en">Technical content largely overlaps with FAA; Regulations is entirely Canadian law and must be studied separately.</span></p>
  </div>
@@ -246,6 +264,65 @@ footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
  </div>
 </section>
 
+<!-- ============ 핵심 규정 ============ -->
+<section id="rules">
+ <div class="card">
+  <h2>정비 확인(Maintenance Release) — CAR 571.10·571.11<span class="en">Who signs and what the release says</span></h2>
+  <ul>
+   <li><b>필수 문구(571.10(2)):</b> <i>The described maintenance has been performed in accordance with the applicable airworthiness requirements.</i> — FAA의 "Approved for return to service"와 다릅니다.</li>
+   <li><b>조건부 확인(571.10(4)):</b> 지상에서 완료를 확인할 수 없으면 <i>subject to satisfactory test flight</i>를 붙입니다.</li>
+   <li><b>기본 작업(571.10(3)):</b> 정비 확인이 필요 없습니다. 단, 기술 기록에는 기록합니다.</li>
+   <li><b>비행 전(605.85(1)):</b> 정비 후에는 정비 확인이 있어야 이륙할 수 있습니다.</li>
+  </ul>
+  <div class="tbl"><table>
+   <tr><th>서명자</th><th>근거</th><th>조건</th></tr>
+   <tr><td><b>AME 면허 보유자</b></td><td>571.11(1)</td><td>해당 항공 제품에 맞는 등급이 있어야 함</td></tr>
+   <tr><td>상업 운항기(Part IV·VII)</td><td>571.11(3)</td><td>AME 면허 + AMO 정비 정책 매뉴얼(MPM)의 서명 권한. 면허만으로 AMO 서명 권한이 생기지 않음(Std 573.05)</td></tr>
+   <tr><td>수송류 비행기·터빈 헬기</td><td>571.11(4)·(5)</td><td>승인 형식 교육 수료 또는 1999-08-01 이전 형식 한정. Schedule III 작업(예: 타이어·휠·브레이크 교환)은 예외</td></tr>
+   <tr><td>자작기(amateur-built)</td><td>571.11(2)(b)</td><td>소유자도 가능</td></tr>
+   <tr><td>owner-maintenance 항공기</td><td>571.11(2)(d)</td><td>면장 있는 조종사이면서 소유자</td></tr>
+   <tr><td>RCA(제한 서명 권한)</td><td>571.11(7)·(8)</td><td>정해진 경우 AME가 아닌 사람</td></tr>
+  </table></div>
+  <p>다른 사람이 한 작업에 서명할 때는 <b>필요한 범위까지 직접 관찰</b>해야 합니다(571.11(6)).</p>
+ </div>
+ <div class="card">
+  <h2>이중 검사(Dual Inspection)<span class="en">Control systems — Std 571.10 item (d), AN C010</span></h2>
+  <ul>
+   <li>조종 계통 작업 후 <b>최소 두 사람</b>이 조립·고정 상태와 작동 방향·범위를 검사하고, <b>두 사람 모두 기록에 서명</b>합니다. 한 서명은 정비 확인자일 수 있습니다.</li>
+   <li>독립 점검 서명자는 AME가 아니어도 되지만 적절한 자격이 있어야 합니다.</li>
+   <li>이중 검사가 완료·서명되기 전에는 정비 확인을 하지 않습니다.</li>
+  </ul>
+ </div>
+ <div class="card">
+  <h2>기본 작업(Elementary Work)<span class="en">Standard 625 Appendix A</span></h2>
+  <ul>
+   <li>목록은 <b>망라적</b>입니다 — 목록에 없으면 기본 작업이 아닙니다.</li>
+   <li>예(소형 자가용기): 점화플러그 세척·교환, 엔진 오일 배출·보충. 예(공통): 배터리 탈·장착, 비구조 점검창 열고 닫기.</li>
+   <li>100시간 미만 주기 반복 점검을 정기 점검과 따로 하면 기본 작업, 정기 점검의 일부면 정비 확인이 필요합니다.</li>
+   <li>할 수 있는 사람(571.10(3)): 비상업 글라이더·기구·비여압 소형 피스톤기는 조종사, 상업 운항기는 MCM에 따라 교육·인가된 사람. AME·AMO가 아니어도 되지만 소유자가 권한을 통제합니다.</li>
+  </ul>
+ </div>
+ <div class="card">
+  <h2>기술 기록 — CAR 605<span class="en">Technical records and journey log</span></h2>
+  <div class="tbl"><table>
+   <tr><th>항목</th><th>규정</th><th>내용</th></tr>
+   <tr><td>필요 기록</td><td>605.92(1)</td><td>Journey log, 기체·각 엔진·각 가변피치 프로펠러 기술 기록, 자중·평형 보고서</td></tr>
+   <tr><td>Journey log 보존</td><td>605.94(3)</td><td>최소 1년</td></tr>
+   <tr><td>기타 기술 기록 보존</td><td>Std 625.96</td><td>항공기 등록이 말소될 때까지(반복 점검 기록은 다음 반복 때까지)</td></tr>
+   <tr><td>기재 방법</td><td>605.93</td><td>정확·읽기 쉽게·지워지지 않게, 이름과 서명(또는 직원 번호), 날짜</td></tr>
+   <tr><td>정정</td><td>605.93(5)</td><td>읽을 수 있게 줄 긋고 올바른 내용·날짜·사유·식별 추가</td></tr>
+   <tr><td>탑재</td><td>605.95</td><td>Journey log는 탑재해야 이륙(출발지로만 돌아오는 비행 등 예외). 기체·엔진 기록은 탑재 불필요</td></tr>
+   <tr><td>결함</td><td>Sched. I·Std 625.93(4)</td><td>비행 중 결함은 journey log에, 30일 안에 해당 기술 기록으로 옮겨 적음</td></tr>
+   <tr><td>소유권 이전</td><td>605.97</td><td>모든 기술 기록을 새 소유자에게</td></tr>
+  </table></div>
+ </div>
+ <div class="card">
+  <h2>특수 정비 — CAR 571.04 Schedule II<span class="en">Specialized maintenance</span></h2>
+  <p>구조 · 엔진 · 프로펠러 · 항공전자 · 계기 · 부품 · 용접 · 비파괴검사(침투·자분·방사선·초음파·와전류) 8개 범주입니다. 특수 정비의 정비 확인은 571.04 요건을 지켜야 합니다(571.10(5)).</p>
+  <p style="font-size:13px;color:var(--t3)">이 탭의 일부(571.11 세부, 기본 작업 항목, 기록 보존)는 CAR 원문을 인용한 교육 자료(PassCARs, AeroSisu 교육 자료)와 TC Airworthiness Notice C010·AC 571-006을 통해 확인했습니다. 시험 전 Justice Laws 원문으로 다시 확인하세요.</p>
+ </div>
+</section>
+
 <!-- ============ 유지 ============ -->
 <section id="keep">
  <div class="card">
@@ -262,7 +339,7 @@ footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
 <!-- ============ 퀴즈 ============ -->
 <section id="quiz">
  <div class="subj" id="subj">
-  <button class="sj on" data-s="rg">📜 Regulations<small>캐나다 규정 40</small></button>
+  <button class="sj on" data-s="rg">📜 Regulations<small>캐나다 규정 76</small></button>
   <button class="sj" data-s="sp">🧰 Standard Practices<small>806문항</small></button>
   <button class="sj" data-s="af">✈️ Airframe<small>721문항</small></button>
   <button class="sj" data-s="pp">⚙️ Powerplant<small>1,080문항</small></button>
@@ -270,7 +347,7 @@ footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
  </div>
  <div class="note" id="subjnote" style="display:none"></div>
  <div id="rgwrap">
- <div class="qbar"><span class="score" id="q_score">0 / 40</span><button id="q_reset">다시 풀기</button><button id="q_wrong">틀린 문제만</button><button id="q_all">전체 보기</button></div>
+ <div class="qbar"><span class="score" id="q_score">0 / 76</span><button id="q_reset">다시 풀기</button><button id="q_wrong">틀린 문제만</button><button id="q_all">전체 보기</button></div>
  <div id="q_box"></div>
  </div>
  <div id="tkwrap" style="display:none">
@@ -290,6 +367,10 @@ footer{margin-top:30px;font-size:12.5px;color:var(--t3)}
    <li><a href="https://tc.canada.ca/en/aviation/licensing-aircraft-maintenance-engineers-ames/obtaining-aircraft-maintenance-engineer-ame-licence/canadian-ame-licensing-general-information" target="_blank" rel="noopener">Canadian AME Licensing General Information</a> (2024-10-24 수정)</li>
    <li><a href="https://tc.canada.ca/en/corporate-services/acts-regulations/list-regulations/canadian-aviation-regulations-sor-96-433/standards/airworthiness-chapter-566-aircraft-maintenance-engineer-ame-licensing-training-canadian-aviation-regulations-cars" target="_blank" rel="noopener">Airworthiness Manual Chapter 566 — AME Licensing and Training</a></li>
    <li><a href="https://tc.canada.ca/en/aviation/licensing-aircraft-maintenance-engineers-ames/approved-training-organizations-atos-aircraft-maintenance-training/basic-training-approved-acceptable-training-courses-currently-active" target="_blank" rel="noopener">Basic training approved / acceptable courses currently active</a> (2026-07-15 수정)</li>
+   <li><a href="https://laws-lois.justice.gc.ca/eng/regulations/SOR-96-433/" target="_blank" rel="noopener">Canadian Aviation Regulations (SOR/96-433)</a> — CAR 104 Schedule IV 수수료, 571.04 Schedule II</li>
+   <li><a href="https://tc.canada.ca/en/aviation/licensing-aircraft-maintenance-engineers-ame/renewing-aircraft-maintenance-engineer-ame-licence" target="_blank" rel="noopener">Renewing an AME licence (TC)</a></li>
+   <li><a href="https://tc.canada.ca/en/aviation/reference-centre/airworthiness-notices/airworthiness-notices-c010-edition-2-10-october-2001" target="_blank" rel="noopener">Airworthiness Notice C010 — Dual inspection</a> · <a href="https://tc.canada.ca/en/aviation/reference-centre/advisory-circulars/advisory-circular-ac-no-571-006" target="_blank" rel="noopener">AC 571-006 — ARC electronic signatures</a></li>
+   <li>보조(CAR 원문 인용 교육 자료): <a href="https://www.passcars.ca/guides" target="_blank" rel="noopener">PassCARs guides</a> (2026-08 검토본) · <a href="https://www.aerosisu.ca/index_htm_files/Dual%20Inspection%20Training%20Material%20CARs.pdf" target="_blank" rel="noopener">AeroSisu dual inspection training material</a></li>
    <li>문의: Transport Canada 1-800-305-2059</li>
   </ul>
  </div>
@@ -356,7 +437,7 @@ var Q=[
 ['M1·M2 필기 시험 과목은?','Exams for M1/M2?',['Airframe, Powerplant, Standard Practices, Regulations','General, Airframe, Powerplant','Avionics, Standard Practices, Regulations'],['AF, PP, SP, Regs','General, AF, PP','Avionics, SP, Regs'],0,'M은 4과목, E는 Avionics·Standard Practices·Regulations입니다.','M: four exams. E: Avionics, Standard Practices, Regulations.'],
 ['규정(Regulations) 시험을 볼 수 있는 시점은?','When may the Regulations exam be written?',['기본 교육 시작 즉시','24-0083 승인 + 총 경력 6개월만 남았을 때','면허 발급 후'],['At the start of training','After 24-0083 approval with all but 6 months','After licence issue'],1,'24-0083 승인과 함께 총 경력에서 6개월만 남아 있어야 합니다.','After 24-0083 approval and with all but 6 months of experience.'],
 ['CAR 571.04의 특수 정비(Schedule II)에 해당하는 것은?','Which is specialized maintenance under CAR 571.04 (Schedule II)?',['침투·자분·방사선·초음파·와전류 비파괴검사','타이어 교환','엔진 오일 보충'],['Penetrant, magnetic particle, radiographic, ultrasonic, eddy current NDT','Tire change','Adding engine oil'],0,'Schedule II는 특수 정비 목록이며, 침투·자분·방사선·초음파·와전류 검사 같은 NDT가 들어 있습니다(Standard 571 Appendix K에 따른 검사는 예외).','Schedule II lists specialized maintenance, including NDT by penetrant, magnetic particle, radiographic, ultrasonic or eddy current (except inspections under Standard 571 Appendix K).'],
-['CAR 571.11(5)의 기본 작업(elementary work, Schedule III)에 해당하는 예는?','Which is an example of elementary work (Schedule III, CAR 571.11(5))?',['타이어·휠·브레이크·스키 교환','엔진 오버홀','주 날개보 수리'],['Replacing tires, wheels, brakes, skis','Engine overhaul','Main spar repair'],0,'Schedule III 기본 작업 목록에는 타이어·휠·브레이크·스키·착륙 스키드·스키드 슈 교환이 들어 있습니다.','Schedule III elementary work includes replacing tires, wheels, brakes, skis, landing skids and skid shoes.'],
+['CAR 571.11(5)·Schedule III 목록의 의미는?','What is the CAR 571.11(5) Schedule III list?',['수송류 비행기·터빈 헬기에서 형식 교육 없이도 AME가 서명할 수 있는 작업 목록','기본 작업(elementary work) 목록','특수 정비 목록'],['Tasks an AME may sign on transport aeroplanes or turbine helicopters without type training','The elementary work list','The specialized maintenance list'],0,'Schedule III(Types of Work)는 형식 교육 요건(571.11(4))의 예외 목록입니다. 예: 타이어·휠·브레이크·스키 교환. 기본 작업 목록은 Standard 625 Appendix A로 따로 있습니다.','Schedule III lists tasks exempt from the 571.11(4) type-training condition (e.g., tire, wheel, brake, ski replacement). Elementary work is listed separately in Standard 625 Appendix A.'],
 ['AMO 인증 보유자가 반드시 임명해야 하는 사람은?','Whom must an AMO certificate holder appoint?',['정비 책임자(PRM, person responsible for maintenance)','안전 조종사','공항 운영자'],['A person responsible for maintenance (PRM)','A safety pilot','An airport operator'],0,'CAR 573.03(1)(a): AMO 인증 보유자는 정비 책임자(PRM)를 임명해야 합니다.','CAR 573.03(1)(a): the holder must appoint a person responsible for maintenance.'],
 ['AMO가 갖춰야 하는 제도로 CAR 573.09에 규정된 것은?','What does CAR 573.09 require an AMO to have?',['품질 보증 프로그램(QA)과 감사 체계','광고 계획','비행 훈련 과정'],['A quality assurance program and audit system','An advertising plan','A flight training course'],0,'CAR 573.09는 AMO의 품질 보증 프로그램과 감사 체계를 다룹니다.','CAR 573.09 covers the AMO quality assurance program and audit system.'],
 ['Balloons 등급의 경력 요건은?','Experience required for the Balloons rating?',['120시간','48개월','36개월'],['120 hours','48 months','36 months'],0,'기구 등급은 인정된 기구 정비 과정과 120시간 경력, 규정 시험이 필요합니다.','Balloons: an acceptable balloon course, 120 hours of experience and the Regulations exam.'],
@@ -364,14 +445,51 @@ var Q=[
 ['경력은 언제부터 세는가?','When does experience start counting?',['기본 교육을 마친 뒤부터','입학한 날부터','면허 신청일부터'],['After initial basic training','From enrolment','From the application date'],0,'경력 크레딧은 기본 교육(예: 군 TQ/QL3)을 마친 뒤부터 인정됩니다.','Experience credit starts after initial basic training (e.g., TQ/QL level 3).'],
 ['캐나다 밖에서 신청하는 사람은 서류를 어디로 내는가?','Where do applicants outside Canada submit?',['오타와의 Operational Airworthiness','가까운 캐나다 대사관','FAA 사무소'],['Operational Airworthiness in Ottawa','The nearest Canadian embassy','An FAA office'],0,'캐나다 안에서는 가까운 Transport Canada Centre·지역 사무소, 밖에서는 오타와 Operational Airworthiness로 냅니다.','In Canada: nearest TC Centre or Regional Office; outside Canada: Operational Airworthiness in Ottawa.'],
 ['E 등급의 범위에 들어가는 것은?','Which falls under the E rating?',['통신·항법·자동비행·계기','기체 구조 수리','왕복엔진 오버홀'],['Communication, navigation, auto flight, instruments','Structural repair','Piston engine overhaul'],0,'E는 항공기 전자 계통 — 통신·항법·자동비행·계기입니다.','E covers aircraft electronic systems: communication, navigation, auto flight and instruments.'],
-['신청 서류의 사본을 공증(certified true copy)할 수 있는 사람이 아닌 것은?','Who may NOT certify true copies of documents?',['신청자 본인','공증인(notary public)','유효한 캐나다 AME 면허 보유자'],['The applicant','A notary public','A valid Canadian AME licence holder'],0,'공증인·선서관, TCCA 안전 감독관·직원, 유효한 캐나다 AME 면허 보유자가 인증할 수 있습니다. 본인 인증은 안 됩니다.','Notaries or commissioners for oaths, TCCA inspectors or staff, or a valid Canadian AME may certify — not the applicant.']
+['신청 서류의 사본을 공증(certified true copy)할 수 있는 사람이 아닌 것은?','Who may NOT certify true copies of documents?',['신청자 본인','공증인(notary public)','유효한 캐나다 AME 면허 보유자'],['The applicant','A notary public','A valid Canadian AME licence holder'],0,'공증인·선서관, TCCA 안전 감독관·직원, 유효한 캐나다 AME 면허 보유자가 인증할 수 있습니다. 본인 인증은 안 됩니다.','Notaries or commissioners for oaths, TCCA inspectors or staff, or a valid Canadian AME may certify — not the applicant.'],
+['정비 확인(maintenance release)에 반드시 들어가야 하는 문구는? (CAR 571.10(2))','Required maintenance release statement (CAR 571.10(2))?',['The aircraft is airworthy.','The described maintenance has been performed in accordance with the applicable airworthiness requirements.','Approved for return to service.'],['The aircraft is airworthy.','The described maintenance has been performed in accordance with the applicable airworthiness requirements.','Approved for return to service.'],1,'571.10(2)의 문구는 The described maintenance has been performed in accordance with the applicable airworthiness requirements 입니다. Approved for return to service는 FAA 방식입니다.','571.10(2) wording as shown; Approved for return to service is FAA phrasing.'],
+['지상에서 작업 완료를 확인할 수 없을 때 정비 확인에 붙이는 조건은? (571.10(4))','Condition added when completion cannot be verified on the ground (571.10(4))?',['subject to satisfactory test flight','pending inspection','temporary release'],['subject to satisfactory test flight','pending inspection','temporary release'],0,'시험 비행으로만 확인할 수 있는 작업은 정비 확인에 subject to satisfactory test flight 조건을 붙입니다.','The release includes subject to satisfactory test flight.'],
+['기본 작업(elementary work)에 정비 확인이 필요한가? (571.10(3))','Does elementary work require a maintenance release (571.10(3))?',['항상 필요','필요 없음(단, 기록은 해야 함)','AME가 했을 때만 필요'],['Always','No (but it must be recorded)','Only if an AME did it'],1,'인가된 사람이 한 기본 작업은 정비 확인이 필요 없습니다. 그래도 기술 기록(journey log)에는 기록해야 합니다.','No release is required for elementary work by an authorized person, but it must still be entered in the technical record.'],
+['원칙적으로 정비 확인에 서명할 수 있는 사람은? (571.11(1))','Who may normally sign a maintenance release (571.11(1))?',['해당 항공 제품에 맞는 등급의 AME 면허 보유자','모든 조종사','항공기 소유자'],['An AME licence holder with a rating appropriate to the product','Any pilot','The aircraft owner'],0,'571.11(1): 적절한 등급이 있는 AME 면허 보유자만 서명할 수 있습니다(예외 (2)·(7)). 등급이 맞지 않으면 면허가 있어도 안 됩니다.','571.11(1): only an AME with an appropriate rating, subject to exceptions in (2) and (7).'],
+['자작기(amateur-built aircraft)의 정비 확인에 서명할 수 있는 예외 대상은? (571.11(2)(b))','Exception signer for an amateur-built aircraft (571.11(2)(b))?',['항공기 소유자','항공 교통 관제사','부품 판매자'],['An owner of the aircraft','An air traffic controller','A parts seller'],0,'자작기는 소유자도 정비 확인에 서명할 수 있습니다.','For amateur-built aircraft, an owner may sign.'],
+['owner-maintenance 항공기의 정비 확인 서명자 조건은? (571.11(2)(d))','Signer for an owner-maintenance aircraft (571.11(2)(d))?',['면장이 있는 조종사이면서 그 항공기의 소유자','AME 면허 보유자만','AMO 직원만'],['A licensed pilot who is an owner of the aircraft','AME holders only','AMO staff only'],0,'owner-maintenance 항공기는 면장 있는 조종사이자 소유자가 서명할 수 있습니다.','A licensed pilot and an owner of the aircraft.'],
+['Part IV·VII로 운항하는 항공기의 정비 확인에 추가로 필요한 것은? (571.11(3))','Additional requirement for aircraft operated under Part IV or VII (571.11(3))?',['AMO 정비 정책 매뉴얼(MPM)에 따른 서명 권한','조종사 면장','국제 면허'],['Signing authority under an AMO maintenance policy manual (MPM)','A pilot licence','An international licence'],0,'상업 운항기는 AME 면허에 더해 AMO의 MPM에 따른 서명 권한이 있어야 합니다.','Commercial (Part IV/VII) aircraft also require authorization under an AMO MPM.'],
+['AME 면허만 있으면 AMO 안에서 자동으로 서명 권한이 생기는가?','Does an AME licence automatically give AMO signing authority?',['그렇다','아니다 — AMO가 따로 부여해야 한다','PRM이 없을 때만 그렇다'],['Yes','No — the AMO must grant it separately','Only without a PRM'],1,'Standard 573.05에 따라 AMO 서명 권한(ACA)은 AMO가 별도로 부여합니다.','Per Standard 573.05, the AMO grants signing authority separately.'],
+['다른 사람이 한 작업에 정비 확인을 할 때 서명자의 의무는? (571.11(6))','Duty when releasing work done by another person (571.11(6))?',['서류만 확인하면 된다','필요한 범위까지 작업을 직접 관찰해야 한다','작업자에게 서명을 맡긴다'],['Check paperwork only','Personally observe the work to the extent necessary','Let the worker sign'],1,'571.11(6): 다른 사람의 작업을 확인하는 서명자는 필요한 범위까지 직접 관찰해야 합니다.','571.11(6): personally observe the work to the extent necessary.'],
+['수송류 비행기·터빈 헬기 정비에 서명하려는 AME에게 요구되는 것은? (571.11(4))','What must an AME have to sign for transport aeroplanes or turbine helicopters (571.11(4))?',['장관 승인 형식(type) 교육 수료 또는 1999년 8월 1일 이전 형식 한정','5년 이상 경력','조종사 면장'],['Approved type training, or a type rating issued before 1 Aug 1999','5 years of experience','A pilot licence'],0,'승인된 형식 교육(Standard 571 Appendix M)을 마쳤거나 1999년 8월 1일 이전에 받은 형식 한정이 있어야 합니다. Schedule III 작업은 예외입니다.','Approved type training (Std 571 App. M) or a pre-1 Aug 1999 type rating; Schedule III tasks are exempt.'],
+['AME가 아닌 사람에게 특정 경우의 서명 권한을 주는 제도는? (571.11(7)–(8))','What lets a non-AME sign in a specified case (571.11(7)–(8))?',['RCA (Restricted Certification Authority)','PRM','ARC'],['RCA (Restricted Certification Authority)','PRM','ARC'],0,'RCA는 정해진 경우에 AME가 아닌 사람이 서명하도록 허용하는 제한 서명 권한입니다.','A Restricted Certification Authority allows a non-AME to sign in a specified case.'],
+['조종 계통 작업 후 이중 검사(dual inspection)의 요건은?','Dual inspection requirement after work on control systems?',['한 사람이 두 번 검사','최소 두 사람이 검사하고 두 사람 모두 기록에 서명','검사 불필요'],['One person inspects twice','At least two persons inspect and both sign the record','Not required'],1,'Standard 571.10 작업 유형 (d): 조립·고정 상태와 작동 방향·범위를 최소 두 사람이 검사하고 둘 다 서명합니다. 한 서명은 정비 확인자일 수 있습니다.','Std 571.10 item (d): at least two persons inspect and both sign; one may be the release signer.'],
+['이중 검사의 독립 점검 서명자 조건으로 맞는 것은? (AN C010)','Who may sign the independent check (AN C010)?',['반드시 AME','AME가 아니어도 되지만 적절한 자격을 갖춘 사람','조종사만'],['Must be an AME','Not necessarily an AME, but suitably qualified','Pilots only'],1,'Airworthiness Notice C010: 독립 점검 서명은 AME로 한정되지 않지만 적절한 자격이 있어야 합니다.','AN C010: not restricted to AMEs, but the person must be suitably qualified.'],
+['이중 검사가 끝나기 전 정비 확인에 서명할 수 있는가? (AN C010)','Can the release be signed before the dual inspection is complete (AN C010)?',['서명할 수 있다','원칙적으로 이중 검사 완료·서명 후에만 서명한다','시험 비행 후 서명한다'],['Yes','Normally only after the dual inspection is completed and signed','After a test flight'],1,'AN C010: 이중 검사가 완료·서명되기 전에는 정비 확인을 할 수 없습니다(항공기 출고를 막는 절차가 있는 경우 제외).','AN C010: not until the dual inspection is completed and signed, unless a procedure prevents release first.'],
+['기본 작업(elementary work) 목록이 있는 곳은?','Where is the elementary work list?',['Standard 625 Appendix A','CAR 571 Schedule II','Standard 566 Appendix B'],['Standard 625 Appendix A','CAR 571 Schedule II','Standard 566 Appendix B'],0,'기본 작업은 Standard 625 Appendix A에 나열되어 있고, 목록에 없으면 기본 작업이 아닙니다.','Standard 625 Appendix A; tasks not listed are not elementary work.'],
+['Standard 625 Appendix A 기본 작업 목록의 성격은?','Nature of the Standard 625 Appendix A list?',['예시일 뿐이라 비슷한 작업도 포함','망라적(exhaustive) — 목록에 없으면 기본 작업이 아님','제작사가 추가할 수 있음'],['Examples only','Exhaustive — if not listed, not elementary work','Manufacturers may add items'],1,'목록은 망라적입니다. 간단해 보이는 작업이라도 목록에 없으면 기본 작업이 아닙니다.','The list is exhaustive.'],
+['소형 자가용기에서 기본 작업에 해당하는 예는?','An elementary work example on a small privately operated aircraft?',['점화플러그 세척·교환, 엔진 오일 배출·보충','실린더 교환','프로펠러 오버홀'],['Cleaning/replacing spark plugs; draining/replenishing engine oil','Cylinder replacement','Propeller overhaul'],0,'Appendix A 항목 5(점화플러그)·8(엔진 오일 배출·보충)은 소형 자가용기 대상 기본 작업입니다.','Items 5 and 8 (small privately operated aircraft).'],
+['100시간 미만 주기의 반복 점검을 정기 점검과 따로(out of phase) 하면?','A repetitive check under 100 h done out of phase is…',['기본 작업','특수 정비','대수리'],['Elementary work','Specialized maintenance','A major repair'],0,'Appendix A 항목 29: 따로 하면 기본 작업, 정기 점검의 일부로 하면 정비 확인이 필요합니다.','Item 29: elementary work out of phase; part of a scheduled check it needs a release.'],
+['비상업 글라이더·기구·비여압 소형 피스톤기의 기본 작업을 할 수 있는 사람은? (571.10(3)(a))','Who may do elementary work on a private glider, balloon or unpressurized small piston aircraft (571.10(3)(a))?',['그 항공기의 조종사','누구나','AMO 직원만'],['The pilot of the aircraft','Anyone','AMO staff only'],0,'Part IV·VII로 운항하지 않는 이런 항공기는 조종사가 할 수 있습니다. 상업 운항기는 MCM에 따라 교육·인가된 사람입니다.','The pilot; for Part IV/VII, persons trained and authorized under the MCM.'],
+['기본 작업 수행자에 대해 맞는 것은?','Which is true of who performs elementary work?',['AME 면허나 AMO 없이도 할 수 있지만 소유자가 권한을 통제한다','아무나 해도 된다','AME만 할 수 있다'],['No AME licence or AMO needed, but the owner controls authorizations','Anyone may do it','AMEs only'],0,'Appendix A: 기본 작업은 AME나 AMO가 아니어도 되지만, 누가 할지는 소유자가 통제합니다.','Appendix A: no AME/AMO needed; the owner controls who is authorized.'],
+['CAR 605.92(1)에 따라 소유자가 갖춰야 하는 기록이 아닌 것은?','Which is NOT a record required by CAR 605.92(1)?',['Journey log','기체·각 엔진·각 가변피치 프로펠러 기술 기록','조종사 비행 시간 기록부'],['Journey log','Airframe, each engine and each variable-pitch propeller records','The pilot logbook'],2,'605.92(1): journey log, 기체·엔진·가변피치 프로펠러 기술 기록, 자중·평형 보고서입니다. 조종사 비행 기록부는 해당하지 않습니다.','605.92(1): journey log, airframe/engine/propeller records, empty weight and balance report.'],
+['Journey log의 최소 보존 기간은? (605.94(3))','Minimum retention of the journey log (605.94(3))?',['6개월','1년','5년'],['6 months','1 year','5 years'],1,'Journey log는 최소 1년 보관합니다.','At least one year.'],
+['기체·엔진 등 기술 기록의 보존 기간은? (Standard 625.96(1))','Retention of airframe/engine technical records (Std 625.96(1))?',['2년','항공기 등록이 말소될 때까지','다음 연간 검사까지'],['2 years','Until the aircraft is no longer registered','Until the next annual'],1,'기술 기록은 항공기가 더 이상 등록되지 않을 때까지 보관합니다. 반복 점검 기록은 다음 반복 점검 때까지 보관할 수 있습니다.','Until deregistration; repetitive-inspection records until the next repetition.'],
+['기술 기록의 잘못된 기재를 고치는 올바른 방법은? (605.93(5))','Correct way to fix an erroneous entry (605.93(5))?',['수정액으로 지운다','읽을 수 있게 줄을 긋고 올바른 내용·날짜·사유·식별을 적는다','페이지를 찢어 다시 쓴다'],['Use correction fluid','Strike it out legibly and add the correct entry, date, reason and identification','Tear out and rewrite'],1,'605.93(5): 잘못된 기재는 읽을 수 있게 남겨 두고 올바른 기재·날짜·사유·식별을 덧붙입니다.','605.93(5): strike out legibly, then add the correct entry, date, reason and identification.'],
+['Journey log를 싣지 않고 이륙할 수 있는 경우는? (605.95(2))','When may an aircraft take off without the journey log aboard (605.95(2))?',['언제든 가능','출발지 외에는 착륙·정지 계획이 없는 비행','야간 비행'],['Any time','A flight not planned to land or shut down away from the departure point','Night flights'],1,'605.95(1)은 journey log 탑재를 요구하며, 출발지로만 돌아오는 비행 등이 예외입니다.','605.95(1) requires it aboard; exception for flights returning to the departure point (and balloons with the log immediately available).'],
+['비행 중 생긴 결함을 처음 기록하는 곳은?','Where is a defect that arises in flight first recorded?',['Journey log','엔진 기술 기록만','AMO 품질 매뉴얼'],['Journey log','Engine record only','AMO quality manual'],0,'Schedule I 항목 9: 비행 중 생긴 결함은 journey log에 기록합니다.','Schedule I item 9: journey log.'],
+['Journey log에 처음 적은 결함은 며칠 안에 해당 기술 기록으로 옮겨 적어야 하는가? (Std 625.93(4))','Within how many days must a defect first entered in the journey log be transcribed (Std 625.93(4))?',['7일','30일','90일'],['7 days','30 days','90 days'],1,'해당 기체·엔진·프로펠러·부품 기록으로 30일 안에 옮겨 적습니다.','Within 30 days.'],
+['항공기 소유권이 넘어갈 때 기술 기록은? (605.97)','Technical records on transfer of ownership (605.97)?',['이전 소유자가 보관','새 소유자에게 모두 넘긴다','폐기한다'],['Kept by the old owner','Delivered to the new owner','Destroyed'],1,'605.97: 소유권 이전 시 관련 기술 기록을 모두 새 소유자에게 넘깁니다.','605.97: deliver all relevant records to the new owner.'],
+['정비를 한 뒤 비행 전에 필요한 것은? (605.85(1))','What is required before flight after maintenance (605.85(1))?',['정비 확인(maintenance release)','관제 허가만','소유자 서명만'],['A maintenance release','ATC clearance only','Owner signature only'],0,'605.85(1): 정비 후에는 정비 확인이 있어야 이륙할 수 있습니다(기본 작업은 예외).','605.85(1): a maintenance release is required (elementary work excepted).'],
+['정비 기록(Standard 571.03)에 들어가야 할 항목이 아닌 것은?','Which is NOT a required element of a maintenance entry (Std 571.03)?',['작업의 간단한 설명','날짜와 작업자 식별','작업에 걸린 비용'],['Brief description of the work','Date and employee identification','Cost of the work'],2,'제품 식별, 작업 설명, 비제작사 표준 참조, 날짜, 작업자 식별 등이 들어갑니다. 비용은 요건이 아닙니다.','Product ID, description, non-manufacturer standard reference, date, identification — not cost.'],
+['CAR 571.04 Schedule II 특수 정비 8개 범주에 들어가지 않는 것은?','Which is NOT one of the 8 Schedule II specialized maintenance categories?',['용접(welding)','비파괴검사(NDT)','도장(painting)'],['Welding','NDT','Painting'],2,'Schedule II는 구조·엔진·프로펠러·항공전자·계기·부품·용접·NDT 특수 정비입니다. 도장은 없습니다.','Structural, engine, propeller, avionics, instrument, component, welding, NDT — not painting.'],
+['Authorized Release Certificate(Form One) 14b 칸의 서명이 뜻하는 것은? (AC 571-006)','What does a signature in block 14b of the ARC (Form One) constitute (AC 571-006)?',['제작 적합성 선언','CAR 571.10에 따른 정비 확인','수입 허가'],['A statement of conformity','A maintenance release under CAR 571.10','An import permit'],1,'14b 서명은 571.10 정비 확인, 13b 서명은 Subpart 561 제작 적합성 선언입니다.','Block 14b = maintenance release (571.10); block 13b = statement of conformity (561).'],
+['ARC에 전자 서명을 쓸 수 있는 조건은? (AC 571-006)','When may electronic signatures be used on the ARC (AC 571-006)?',['언제든','Transport Canada가 승인한 경우에만','제작사가 원할 때'],['Any time','Only when authorized by Transport Canada','When the manufacturer wants'],1,'전자 서명 등 대체 서명 방법은 TC 승인을 받은 경우에만 쓸 수 있고, 절차를 승인된 매뉴얼에 넣어야 합니다.','Only when authorized by TC, with procedures in the approved manual.'],
+['AME 기술 시험 1회(재응시 포함) 수수료는? (CAR 104 Schedule IV 항목 10)','Fee for each AME technical exam writing (CAR 104 Schedule IV item 10)?',['$50','$100','$115'],['$50','$100','$115'],0,'기술 시험 1회 $50, 규정 시험 $100, 면허 발급 $115, 갱신 $40입니다(법령 현행본 기준).','Technical exam $50; regulatory exam $100; issuance $115; renewal $40.'],
+['AME 면허 갱신 수수료는? (CAR 104 Schedule IV 항목 13)','AME licence renewal fee (Schedule IV item 13)?',['$40','$115','$100'],['$40','$115','$100'],0,'갱신 $40, 발급 $115입니다.','Renewal $40; issuance $115.'],
+['1999년 8월 1일 이전에 만료된 AME 면허를 다시 받으려면?','Licence expired before 1 Aug 1999 — how to get it back?',['서식과 수수료만','처음 신청하는 사람으로 다시 신청','규정 시험만'],['Form and fee only','Apply as a first-time applicant','Regulatory exam only'],1,'TC 안내: 1999년 8월 1일 이전에 만료된 면허는 신규 신청자로 처리합니다.','Apply as a first-time applicant.']
 ];
 var KEY='tcca_quiz_v1',st={};try{st=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
 var onlyWrong=false;
+function perm(i){var x=(i*2654435761+7)>>>0,a=[0,1,2];for(var j=2;j>0;j--){x=(x*1103515245+12345)>>>0;var r=x%(j+1),t=a[j];a[j]=a[r];a[r]=t;}return a;}
 function render(){var h='';Q.forEach(function(q,i){var a=st[i];if(onlyWrong&&(a==null||a===q[4]))return;
  h+='<div class="q'+(a!=null?' done':'')+'" data-i="'+i+'"><div class="qh">'+(i+1)+'. '+q[0]+'<span class="en">'+q[1]+'</span></div><div class="opts">';
- q[2].forEach(function(o,k){var c='';if(a!=null){if(k===q[4])c=' right';else if(k===a)c=' wrong';}h+='<button class="o'+c+'" data-k="'+k+'">'+'ABC'[k]+'. '+o+'<span class="en">'+q[3][k]+'</span></button>';});
- h+='</div><div class="exp">'+(a===q[4]?'✅ 정답':'❌ 정답은 '+'ABC'[q[4]])+' — '+q[5]+'<span class="en">'+q[6]+'</span></div></div>';});
+ var pm=perm(i);pm.forEach(function(k,pos){var o=q[2][k],c='';if(a!=null){if(k===q[4])c=' right';else if(k===a)c=' wrong';}h+='<button class="o'+c+'" data-k="'+k+'">'+'ABC'[pos]+'. '+o+'<span class="en">'+q[3][k]+'</span></button>';});
+ h+='</div><div class="exp">'+(a===q[4]?'✅ 정답':'❌ 정답은 '+'ABC'[pm.indexOf(q[4])])+' — '+q[5]+'<span class="en">'+q[6]+'</span></div></div>';});
  document.getElementById('q_box').innerHTML=h||'<div class="card">틀린 문제가 없습니다 👍</div>';
  var n=0;Q.forEach(function(q,i){if(st[i]===q[4])n++;});document.getElementById('q_score').textContent=n+' / '+Q.length+' 정답 · '+Object.keys(st).length+'문항 풂';}
 document.getElementById('q_box').addEventListener('click',function(e){var b=e.target.closest('button.o');if(!b)return;var i=+b.closest('.q').dataset.i;if(st[i]!=null)return;st[i]=+b.dataset.k;try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}render();});
